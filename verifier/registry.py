@@ -9,14 +9,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 REFERENCE_TABLE_PATH = REPO_ROOT / "docs" / "constraint_reference_table.csv"
 RULES_DIR = REPO_ROOT / "verifier" / "rules"
 RUBRICS_DIR = REPO_ROOT / "verifier" / "rubrics"
-MODULE_TO_VERIFIABILITY = {
-    "GV": "verifiable",
-    "GN": "non_verifiable",
-    "FV": "verifiable",
-    "FN": "non_verifiable",
-}
-VALID_CHECK_MODES = {"rule", "rubric"}
-VALID_SCORE_TYPES = {"binary_10", "ternary_10", "continuous_10"}
+VALID_HARDNESS = {"hard", "soft"}
+VALID_CHECK_MODES = {"rule", "LLM-as-a-judge"}
+VALID_SCORE_TYPES = {"binary"}
 
 
 def _validate_row(row: dict[str, str]) -> dict[str, str]:
@@ -27,11 +22,9 @@ def _validate_row(row: dict[str, str]) -> dict[str, str]:
     if prefix != module:
         raise ValueError(f"{constraint_id} 的 module={module} 与 ID 前缀不一致")
 
-    expected_verifiability = MODULE_TO_VERIFIABILITY[module]
-    if row["verifiability"] != expected_verifiability:
-        raise ValueError(
-            f"{constraint_id} 的 verifiability={row['verifiability']} 与模块 {module} 不一致"
-        )
+    hardness = row["hardness"]
+    if hardness not in VALID_HARDNESS:
+        raise ValueError(f"{constraint_id} 的 hardness 非法: {hardness}")
 
     check_mode = row["check_mode"]
     if check_mode not in VALID_CHECK_MODES:
@@ -41,8 +34,14 @@ def _validate_row(row: dict[str, str]) -> dict[str, str]:
     if score_type not in VALID_SCORE_TYPES:
         raise ValueError(f"{constraint_id} 的 score_type 非法: {score_type}")
 
-    if check_mode == "rule" and score_type != "binary_10":
-        raise ValueError(f"{constraint_id} 为 rule，但 score_type 不是 binary_10")
+    if check_mode == "rule" and hardness != "hard":
+        raise ValueError(f"{constraint_id} 为 rule，但 hardness 不是 hard")
+
+    if check_mode == "LLM-as-a-judge" and hardness != "soft":
+        raise ValueError(f"{constraint_id} 为 LLM-as-a-judge，但 hardness 不是 soft")
+
+    if check_mode == "rule" and score_type != "binary":
+        raise ValueError(f"{constraint_id} 为 rule，但 score_type 不是 binary")
 
     return row
 

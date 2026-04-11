@@ -32,7 +32,7 @@ def result_pass(constraint_id: str, message: str, **evidence: Any) -> CheckResul
         constraint_id=constraint_id,
         status="pass",
         passed=True,
-        score=10.0,
+        score=1.0,
         message=message,
         evidence=evidence,
     )

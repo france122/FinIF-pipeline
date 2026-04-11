@@ -18,27 +18,18 @@ JUDGE_SYSTEM_PROMPT = """你是一个严格的约束遵循评测器。
 
 输出要求：
 1. 只能输出一个 JSON 对象
-2. `score` 必须严格遵守给定的 `score_type`
-3. `passed` 要与评分大体一致：高分通常为 true，低分通常为 false，中间分可按总体判断决定
+2. `score` 只能是 `1`（满足）或 `0`（不满足），半对算不满足
+3. `passed` 必须与 score 一致：score=1 则 passed=true，score=0 则 passed=false
 4. `reason` 要简短，聚焦是否满足约束
 5. `evidence` 要摘录回答中的关键证据，不要编造
 """
 
 
 def build_score_type_instructions(score_type: str) -> str:
-    if score_type == "binary_10":
-        return """- score_type: binary_10
-- 只允许打 `0` 或 `10`
-- `10` 表示满足，`0` 表示不满足"""
-    if score_type == "ternary_10":
-        return """- score_type: ternary_10
-- 只允许打 `0`、`5` 或 `10`
-- `10` 表示明显满足，`5` 表示部分满足/边界满足，`0` 表示不满足"""
-    if score_type == "continuous_10":
-        return """- score_type: continuous_10
-- 允许打 `0-10` 之间的连续分数
-- 请把 rubric 中给出的 `10/5/0` 视为 anchor，再据此细化评分"""
-    raise ValueError(f"未知 score_type: {score_type}")
+    return """- score_type: binary
+- 只允许打 `0` 或 `1`
+- `1` 表示满足，`0` 表示不满足
+- 半对、部分满足、边界情况一律算 `0`"""
 
 
 def build_judge_prompt(
@@ -50,8 +41,8 @@ def build_judge_prompt(
     extra_context: str | None = None,
 ) -> dict[str, str]:
     meta = get_constraint_meta(constraint_id)
-    if meta["check_mode"] != "rubric":
-        raise ValueError(f"{constraint_id} 不是 rubric 类型约束")
+    if meta["check_mode"] != "LLM-as-a-judge":
+        raise ValueError(f"{constraint_id} 不是 LLM-as-a-judge 类型约束")
     rubric_path = get_rubric_path(constraint_id)
     rubric_text = rubric_path.read_text(encoding="utf-8")
     constraint_text = rendered_constraint_text or meta["constraint_text"]
@@ -60,7 +51,7 @@ def build_judge_prompt(
     user_prompt = f"""## Constraint Meta
 
 - constraint_id: {constraint_id}
-- verifiability: {meta['verifiability']}
+- hardness: {meta['hardness']}
 - check_mode: {meta['check_mode']}
 - score_type: {score_type}
 - constraint_text: {constraint_text}
@@ -103,7 +94,7 @@ def build_judge_prompt(
 
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Build an LLM judge prompt from a rubric.")
+    parser = argparse.ArgumentParser(description="Build an LLM judge prompt from an LLM-as-a-judge rubric.")
     parser.add_argument("--constraint-id", required=True)
     parser.add_argument("--query-file", type=Path)
     parser.add_argument("--query-text")

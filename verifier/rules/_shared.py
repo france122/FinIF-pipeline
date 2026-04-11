@@ -28,6 +28,17 @@ RISK_LEVEL_RE = re.compile(r"\bR[1-5]\b")
 RATING_WORDS = ("买入", "增持", "中性", "减持", "卖出")
 NUMBERED_LINE_RE = re.compile(r"(?m)^\s*\d+\.\s+")
 MONEY_SYMBOL_RE = re.compile(r"[¥$]")
+BULLET_OR_LIST_RE = re.compile(r"(?m)^\s*(?:[-*+•]|\d+[.)]\s)")
+TABLE_RE = re.compile(r"(?m)^\s*\|.*\|.*\|")
+THIRD_PERSON_RE = re.compile(r"(本报告|本文|本分析|本研究|本白皮书|本方案)")
+PERCENT_RE = re.compile(r"%|％")
+ARABIC_DIGIT_RE = re.compile(r"[0-9]")
+FIN_ABBR_RE = re.compile(
+    r"\b(?:ROE|ROA|ROI|PE|PB|PS|EPS|EBITDA|GDP|CPI|PPI|IPO|ETF|QDII|QFII|"
+    r"NPL|LPR|MLF|SLF|OMO|ABS|MBS|CDO|CDS|VaR|CAPM|WACC|DCF|LBO|M&A|"
+    r"NAV|AUM|KYC|AML|ESG|P2P|NIM|CAR|CAGR|ROIC|FCF|EV|IRR|NPV)\b",
+    re.IGNORECASE,
+)
 
 
 def check_max_chars(constraint_id: str, response_text: str, params: dict):
@@ -107,9 +118,11 @@ def check_forbidden_word(constraint_id: str, response_text: str, params: dict):
 
 def check_first_word(constraint_id: str, response_text: str, params: dict):
     expected = params["word"]
+    text = response_text.strip()
+    if text.startswith(expected):
+        return result_pass(constraint_id, f"首词匹配: {expected}", actual=expected, expected=expected)
+    # 提取实际首词用于错误信息
     actual = first_word(response_text)
-    if actual == expected:
-        return result_pass(constraint_id, f"首词匹配: {actual}", actual=actual, expected=expected)
     return result_fail(constraint_id, f"首词不匹配: {actual} != {expected}", actual=actual, expected=expected)
 
 
@@ -236,3 +249,106 @@ def check_rating_word(constraint_id: str, response_text: str, params: dict):
         if word in response_text:
             return result_pass(constraint_id, "检测到投资评级词", rating=word)
     return result_fail(constraint_id, "未检测到投资评级词")
+
+
+# ──────────────────────────────────────────────────────────
+# 新增 checker（2026-04-09）
+# ──────────────────────────────────────────────────────────
+
+
+def check_speaking_duration(constraint_id: str, response_text: str, params: dict):
+    """GH-16: 控制在{N}分钟演讲/汇报时长（按 250 字/分钟估算）"""
+    target_min = int(params["n"])
+    chars = char_count_no_space(response_text)
+    speaking_rate = 250  # 中文演讲约 250 字/分钟
+    estimated_min = chars / speaking_rate
+    # 允许 ±30% 容差
+    low = target_min * 0.7
+    high = target_min * 1.3
+    if low <= estimated_min <= high:
+        return result_pass(
+            constraint_id,
+            f"估算时长 {estimated_min:.1f} 分钟，在目标 {target_min}±30% 内",
+            chars=chars, estimated_min=round(estimated_min, 1), target_min=target_min,
+        )
+    return result_fail(
+        constraint_id,
+        f"估算时长 {estimated_min:.1f} 分钟，超出目标 {target_min}±30% 范围",
+        chars=chars, estimated_min=round(estimated_min, 1), target_min=target_min,
+    )
+
+
+def check_document_elements(constraint_id: str, response_text: str, params: dict):
+    """GH-17: 包含完整文档要素（封面/目录/附件清单/签章位置等）"""
+    elements = {
+        "封面": bool(re.search(r"封面|题目|标题页", response_text)),
+        "目录": bool(re.search(r"目录|目\s*录", response_text)),
+        "附件": bool(re.search(r"附件|附录|清单", response_text)),
+        "签章": bool(re.search(r"签章|签字|盖章|签名|落款", response_text)),
+    }
+    found = [k for k, v in elements.items() if v]
+    missing = [k for k, v in elements.items() if not v]
+    # 至少命中 3/4 个要素算通过
+    if len(found) >= 3:
+        return result_pass(constraint_id, f"检测到文档要素: {found}", found=found, missing=missing)
+    return result_fail(constraint_id, f"缺少文档要素: {missing}", found=found, missing=missing)
+
+
+def check_no_table(constraint_id: str, response_text: str, params: dict):
+    """GH-18: 不得使用任何表格（反直觉约束）"""
+    if has_markdown_table(response_text):
+        return result_fail(constraint_id, "检测到表格，违反禁表格约束")
+    return result_pass(constraint_id, "未检测到表格")
+
+
+def check_no_list(constraint_id: str, response_text: str, params: dict):
+    """GH-19: 不得使用任何列表（反直觉约束）"""
+    matches = BULLET_OR_LIST_RE.findall(response_text)
+    if matches:
+        return result_fail(
+            constraint_id,
+            f"检测到 {len(matches)} 处列表标记，违反禁列表约束",
+            list_count=len(matches),
+        )
+    return result_pass(constraint_id, "未检测到列表标记")
+
+
+def check_first_person_no_third(constraint_id: str, response_text: str, params: dict):
+    """GH-20: 以第一人称叙事，不得使用"本报告/本文"等（反直觉约束）"""
+    matches = THIRD_PERSON_RE.findall(response_text)
+    if matches:
+        return result_fail(
+            constraint_id,
+            f"检测到第三人称表述: {list(set(matches))}",
+            found=list(set(matches)),
+        )
+    return result_pass(constraint_id, "未检测到第三人称客观表述")
+
+
+def check_no_percent(constraint_id: str, response_text: str, params: dict):
+    """FH-8: 不得出现百分号%（反直觉约束）"""
+    matches = PERCENT_RE.findall(response_text)
+    if matches:
+        return result_fail(constraint_id, f"检测到 {len(matches)} 处百分号", count=len(matches))
+    return result_pass(constraint_id, "未检测到百分号")
+
+
+def check_no_arabic_digits(constraint_id: str, response_text: str, params: dict):
+    """FH-9: 不得出现阿拉伯数字（反直觉约束）"""
+    matches = ARABIC_DIGIT_RE.findall(response_text)
+    if matches:
+        return result_fail(constraint_id, f"检测到 {len(matches)} 处阿拉伯数字", count=len(matches))
+    return result_pass(constraint_id, "未检测到阿拉伯数字")
+
+
+def check_no_fin_abbreviation(constraint_id: str, response_text: str, params: dict):
+    """FH-10: 不得使用金融术语英文缩写（反直觉约束）"""
+    matches = FIN_ABBR_RE.findall(response_text)
+    if matches:
+        unique = list(set(matches))
+        return result_fail(
+            constraint_id,
+            f"检测到金融英文缩写: {unique}",
+            abbreviations=unique,
+        )
+    return result_pass(constraint_id, "未检测到金融术语英文缩写")
