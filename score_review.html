@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Score Review - GPT-5.4 评分审核</title>
+<style>
+  :root { --bg:#0f1117; --card:#1a1d27; --border:#2a2d3a; --text:#e0e0e0; --dim:#888; --accent:#4f8ff7; --green:#34d399; --red:#f87171; --yellow:#fbbf24; --orange:#fb923c; --cyan:#22d3ee; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,'PingFang SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .header { position:sticky; top:0; z-index:100; background:var(--card); border-bottom:1px solid var(--border); padding:16px 24px; }
+  .header h1 { font-size:18px; font-weight:600; margin-bottom:8px; }
+  .stats { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+  .stat { padding:4px 12px; border-radius:6px; font-size:13px; font-weight:500; }
+  .filters { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .filters label { font-size:13px; color:var(--dim); }
+  select,input[type="text"] { background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:6px 10px; font-size:13px; }
+  .container { max-width:1100px; margin:0 auto; padding:16px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:14px; }
+  .card.pass { border-left:4px solid var(--green); }
+  .card.fail { border-left:4px solid var(--red); }
+  .card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { padding:2px 8px; border-radius:4px; font-size:11px; font-weight:500; }
+  .tag-id { background:#333; color:#aaa; }
+  .tag-track { background:#2d1e5f; color:#b07df7; }
+  .tag-pass { background:#1a3a2a; color:var(--green); }
+  .tag-fail { background:#3a1a1a; color:var(--red); }
+  .section { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; margin:10px 0 4px; }
+  .sec-prompt { color:var(--dim); }
+  .sec-response { color:var(--cyan); }
+  .sec-scores { color:var(--orange); }
+  .text-box { font-size:13px; white-space:pre-wrap; word-break:break-all; padding:10px 12px; border-radius:6px; max-height:200px; overflow-y:auto; line-height:1.7; }
+  .prompt-box { background:#16181f; border:1px solid #2a2d3a; }
+  .response-box { background:#0f2027; border:1px solid #1a4050; }
+  .score-row { display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid #222; font-size:13px; }
+  .score-row:last-child { border-bottom:none; }
+  .score-badge { display:inline-block; width:20px; height:20px; border-radius:4px; text-align:center; line-height:20px; font-size:11px; font-weight:700; }
+  .score-pass { background:var(--green); color:#000; }
+  .score-fail { background:var(--red); color:#fff; }
+  .score-type { font-size:11px; padding:2px 6px; border-radius:3px; }
+  .type-hard { background:#1e3a5f; color:#7db8f7; }
+  .type-soft { background:#3a2a1a; color:var(--orange); }
+  .score-msg { color:var(--dim); font-size:12px; margin-left:auto; max-width:400px; text-align:right; }
+  .toggle { font-size:12px; color:var(--accent); cursor:pointer; text-decoration:underline; }
+  .pagination { display:flex; justify-content:center; gap:8px; padding:20px 0 60px; }
+  .pg { padding:6px 14px; border-radius:6px; border:1px solid var(--border); background:var(--card); color:var(--text); cursor:pointer; font-size:13px; }
+  .pg:hover { border-color:var(--accent); }
+  .pg.active { background:var(--accent); color:#fff; }
+  .pg:disabled { opacity:.4; cursor:not-allowed; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>GPT-5.4 Score Review | Judge: GPT-5, temp=0</h1>
+  <div class="stats" id="stats"></div>
+  <div class="filters">
+    <label>Track:</label><select id="fTrack"><option value="all">全部</option></select>
+    <label>结果:</label><select id="fResult"><option value="all">全部</option><option value="pass">Pass</option><option value="fail">Fail</option></select>
+    <label>约束类型:</label><select id="fCType"><option value="all">全部</option><option value="hard">Hard Only</option><option value="soft">Soft Only</option><option value="has_fail">含失败约束</option></select>
+    <label>搜索:</label><input type="text" id="fSearch" placeholder="query_id / 关键词" style="width:160px">
+  </div>
+</div>
+<div class="container" id="container"></div>
+<div class="pagination" id="pagination"></div>
+<script>
+const PAGE=10; let allData=[],curPage=1;
+async function init(){
+  const r=await fetch('data/scores/review_data.json');
+  allData=await r.json();
+  const tts=[...new Set(allData.map(d=>d.track_type))].sort();
+  const sel=document.getElementById('fTrack');
+  tts.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.appendChild(o)});
+  ['fTrack','fResult','fCType'].forEach(id=>document.getElementById(id).addEventListener('change',()=>{curPage=1;render()}));
+  document.getElementById('fSearch').addEventListener('input',()=>{curPage=1;render()});
+  render();
+}
+function getFiltered(){
+  const ft=document.getElementById('fTrack').value;
+  const fr=document.getElementById('fResult').value;
+  const fc=document.getElementById('fCType').value;
+  const fs=document.getElementById('fSearch').value.toLowerCase();
+  return allData.filter(d=>{
+    if(ft!=='all'&&d.track_type!==ft)return false;
+    if(fr==='pass'&&!d.instruction_pass)return false;
+    if(fr==='fail'&&d.instruction_pass)return false;
+    if(fc==='hard'&&d.constraints.some(c=>c.type==='soft'))return false;
+    if(fc==='soft'&&d.constraints.some(c=>c.type==='hard'))return false;
+    if(fc==='has_fail'&&!d.constraints.some(c=>c.passed===false))return false;
+    if(fs&&!d.sample_id.toLowerCase().includes(fs)&&!d.prompt.toLowerCase().includes(fs))return false;
+    return true;
+  });
+}
+function render(){
+  const f=getFiltered(),tp=Math.max(1,Math.ceil(f.length/PAGE));
+  if(curPage>tp)curPage=tp;
+  const sl=f.slice((curPage-1)*PAGE,curPage*PAGE);
+  const totalP=allData.filter(d=>d.instruction_pass).length;
+  const totalF=allData.length-totalP;
+  document.getElementById('stats').innerHTML=`
+    <span class="stat" style="background:#1e3a5f;color:var(--accent)">总计 ${allData.length}</span>
+    <span class="stat" style="background:#1a3a2a;color:var(--green)">Pass ${totalP}</span>
+    <span class="stat" style="background:#3a1a1a;color:var(--red)">Fail ${totalF}</span>
+    <span class="stat" style="background:#2a2a3a;color:#aaa">筛选 ${f.length}</span>`;
+  const c=document.getElementById('container');
+  if(!sl.length){c.innerHTML='<div style="text-align:center;padding:60px;color:var(--dim)">无匹配</div>';return}
+  c.innerHTML=sl.map(d=>{
+    const cls=d.instruction_pass?'pass':'fail';
+    const tag=d.instruction_pass?'<span class="tag tag-pass">PASS</span>':'<span class="tag tag-fail">FAIL</span>';
+    const rows=d.constraints.map(cs=>{
+      const badge=cs.passed?'<span class="score-badge score-pass">1</span>':'<span class="score-badge score-fail">0</span>';
+      const tp=cs.type==='hard'?'<span class="score-type type-hard">H</span>':'<span class="score-type type-soft">S</span>';
+      const msg=(cs.message||'').substring(0,80);
+      return `<div class="score-row">${badge} ${tp} <strong>${cs.constraint_id}</strong> ${esc(cs.rendered_text).substring(0,60)} <span class="score-msg">${esc(msg)}</span></div>`;
+    }).join('');
+    return `<div class="card ${cls}">
+      <div class="card-head"><div class="tags"><span class="tag tag-id">${d.sample_id}</span><span class="tag tag-track">${d.track_type}</span>${tag}</div></div>
+      <div class="section sec-prompt">PROMPT <span class="toggle" onclick="this.parentElement.nextElementSibling.style.display=this.parentElement.nextElementSibling.style.display==='none'?'block':'none'">展开/收起</span></div>
+      <div class="text-box prompt-box" style="display:none">${esc(d.prompt)}</div>
+      <div class="section sec-response">RESPONSE</div>
+      <div class="text-box response-box">${esc(d.response)}</div>
+      <div class="section sec-scores">SCORES (${d.constraints.length})</div>
+      <div>${rows}</div>
+    </div>`;
+  }).join('');
+  let ph=`<button class="pg" onclick="go(${curPage-1})" ${curPage<=1?'disabled':''}>←</button>`;
+  const ms=7;let ps=Math.max(1,curPage-3),pe=Math.min(tp,ps+ms-1);
+  if(pe-ps<ms-1)ps=Math.max(1,pe-ms+1);
+  for(let i=ps;i<=pe;i++)ph+=`<button class="pg ${i===curPage?'active':''}" onclick="go(${i})">${i}</button>`;
+  ph+=`<button class="pg" onclick="go(${curPage+1})" ${curPage>=tp?'disabled':''}>→</button><span style="color:#888;font-size:13px;margin-left:8px">${curPage}/${tp}</span>`;
+  document.getElementById('pagination').innerHTML=ph;
+}
+function go(p){const f=getFiltered(),tp=Math.max(1,Math.ceil(f.length/PAGE));if(p<1||p>tp)return;curPage=p;render();window.scrollTo({top:0,behavior:'smooth'})}
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(curPage-1);if(e.key==='ArrowRight')go(curPage+1)});
+init();
+</script>
+</body>
+</html>
