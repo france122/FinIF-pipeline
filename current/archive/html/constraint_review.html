@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>N>=7</title><style>
+*{margin:0;padding:0;box-sizing:border-box}body{font:13px/1.5 -apple-system,"PingFang SC",sans-serif;background:#f5f5f5;padding:16px;color:#333}
+h1{text-align:center;font-size:18px;margin-bottom:12px}.info{text-align:center;color:#888;font-size:12px;margin-bottom:12px}
+.c{background:#fff;border-radius:8px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);cursor:pointer;overflow:hidden}
+.h{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}.h:hover{background:#fafafa}
+.bd{display:none;padding:0 14px 12px}.c.op .bd{display:block}
+.b{display:inline-block;padding:1px 6px;border-radius:8px;font-size:10px;font-style:normal;font-weight:600;margin-left:4px}
+.bn{background:#e8f0fe;color:#1a73e8}.bm{background:#fce8e6;color:#d93025}.bl{background:#e6f4ea;color:#137333}
+.lb{font-size:10px;color:#999;margin:8px 0 3px}pre{background:#f8f9fa;border-radius:5px;padding:8px;font-size:11px;white-space:pre-wrap;max-height:160px;overflow-y:auto;font-family:inherit}
+ul{list-style:none;margin-top:6px}li{padding:5px 8px;border-radius:4px;margin-bottom:2px;font-size:12px}
+li.o{background:#f0f7ff}li.m{background:#fff3e0;border-left:3px solid #e65100}
+li b{color:#888;font-weight:700;margin-right:4px}.tg{color:#e65100;font-size:10px}
+.ea{display:block;margin:0 auto 12px;padding:4px 14px;border:1px solid #ccc;border-radius:5px;background:#fff;cursor:pointer;font-size:11px}
+</style></head><body>
+<h1>约束 N>=7 (19条)</h1>
+<p class="info">蓝底=采样约束 橙底=从query移入的格式约束</p>
+<button class="ea" onclick="let c=document.querySelectorAll('.c'),o=[...c].some(x=>x.classList.contains('op'));c.forEach(x=>{o?x.classList.remove('op'):x.classList.add('op')})">展开/折叠全部</button>
+<div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.1-007-V3-R300</span><span><i class="b bl">T1.1</i><i class="b bn">共8</i><i class="b bm">格式+4</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，整理科达利的信息：
+1. 汇总行情数据（最新价/今开/昨收/最高/最低/涨跌幅/成交量/成交额/换手率/量比/委比）
+2. 汇总市值数据（总股本/流通股本/总市值/流通市值/涨停价/跌停价）
+3. 列出近5日成交数据（日期/成交额/换手率）
+4. 列出2024年年报关键财务指标</pre>
+<p class="lb">约束 (采样4 + 格式4)</p><ul><li class="o"><b>(1)</b> 5个2级标题</li><li class="o"><b>(2)</b> 从零售投资者的视角分析</li><li class="o"><b>(3)</b> 使用通俗语言，避免专业术语和行话</li><li class="o"><b>(4)</b> 末尾风险提示声明</li><li class="m"><b>(5)</b> 用表格汇总行情数据（最新价/今开/昨收/最高/最低/涨跌幅/成交量/成交额/换手率/量比/委比） <span class="tg">[格式]</span></li><li class="m"><b>(6)</b> 用表格汇总市值数据（总股本/流通股本/总市值/流通市值/涨停价/跌停价） <span class="tg">[格式]</span></li><li class="m"><b>(7)</b> 用表格列出近5日成交数据（日期/成交额/换手率） <span class="tg">[格式]</span></li><li class="m"><b>(8)</b> 用列表形式列出2024年年报关键财务指标 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.2-001-V3</span><span><i class="b bl">T1.2</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上公告，整理减持信息：
+1. 列出减持前后股东持股变动情况（减持前持股数/比例 → 减持后持股数/比例）
+2. 汇总减持方案要素（减持方式/数量/占比/时间窗口/价格确定方式/减持原因）
+3. 输出关键数值：总股本、拟减持数量、减持金额上限、减持后比例</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 以普通投资者能理解的方式撰写</li><li class="o"><b>(2)</b> 不使用“！”、“!”</li><li class="o"><b>(3)</b> 简洁干练，避免冗余修饰</li><li class="o"><b>(4)</b> 至少4处引用块</li><li class="o"><b>(5)</b> 从零售投资者的视角分析</li><li class="o"><b>(6)</b> 按重要性/影响程度从大到小排列</li><li class="m"><b>(7)</b> 用JSON格式输出 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.5-001-V3</span><span><i class="b bl">T2.5</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 行情概况：收盘35.68元/+2.35%，成交6.52亿元/换手3.28%，跑赢行业1.07pp，给出行情强度评价；
+2. 技术面分析：股价高于全部均线（MA5-MA60），MACD红柱放大、RSI 62.35、KDJ中J值86.02，综合判断技术趋势和超买信号；
+3. 资金面分析：主力净流入5,131万、融资净买入269万，结合近5日趋势判断多空力量对比；
+4. 估值快照：PE 27.88倍（低于行业32.5倍）、PB 3.52倍、ROE 12.63%、股息率1.12%，给出估值吸引力评级；
+5. 综合交易建议方向（看多/中性/看空）和主要依据。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 末尾风险提示声明</li><li class="o"><b>(2)</b> 若提到收益必须说明风险</li><li class="o"><b>(3)</b> 开头第一个词必须是"鉴于"</li><li class="o"><b>(4)</b> 专业术语英文缩写需给出中文全称</li><li class="o"><b>(5)</b> 首行用加粗文字</li><li class="o"><b>(6)</b> 以信用评级分析师的视角撰写</li><li class="m"><b>(7)</b> 以日度交易分析报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-T3.1-004-V1</span><span><i class="b bl">T3.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上信息完成以下分析：
+1. 将判决涉及的资金分为三类：本金返还(8,500万)、投资损失赔偿(2,506万)、关联账户转移资金(1,500万)，分析三类资金的法律性质差异
+2. 3,200万元场外衍生品投资最终损失1,856万元，计算损失率；分析剩余1,344万元的可能去向
+3. 安信信托持仓达总资产32%，按8,500万总资产计算该持仓的绝对金额，再计算650万损失占该持仓的比例
+4. 被告二周建华持股78%并担任法定代表人，分析法院认定「人格混同」的逻辑依据</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 不使用“！”、“!”</li><li class="o"><b>(2)</b> 数值保留2位小数</li><li class="o"><b>(3)</b> 段落间逻辑连贯，有明确过渡</li><li class="o"><b>(4)</b> 从零售投资者的视角分析</li><li class="o"><b>(5)</b> 站在监管机构的立场回答</li><li class="o"><b>(6)</b> 使用至少3层标题层级</li><li class="m"><b>(7)</b> 输出要求：按资金类别分段分析，每段附金额计算。 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.1-002-V3-R100</span><span><i class="b bl">T1.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，输出恒远新材的行情总结：
+1. 输出包含以下字段的行情数据：股票代码、当前价、涨跌幅、涨停价、跌停价、成交量、成交额、换手率
+2. 列出分时走势的关键时间节点（如触及高点的时间、尾盘回落情况）
+3. 概括当日量能情况（结合量比和成交额放大比例）</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 不使用“然而”、“但是”、“不过”</li><li class="o"><b>(2)</b> 不超过600字</li><li class="o"><b>(3)</b> 使用Markdown表格展示数据</li><li class="o"><b>(4)</b> 5个3级标题</li><li class="o"><b>(5)</b> 开头第一个词必须是"根据"</li><li class="o"><b>(6)</b> 首行用加粗文字</li><li class="m"><b>(7)</b> 用JSON格式输出 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.1-001-V3-R100</span><span><i class="b bl">T2.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下分析：
+1. 撰写东信智能科技（301587.SZ）的投资摘要，包含核心结论和关键数据支撑；
+2. 从盈利能力、成长性、现金流质量、资产质量四个维度分别给出评分（1-5分）并说明依据；
+3. 列出公司2024Q3的三个核心亮点和两个需关注的风险点；
+4. 基于全年营收185-195亿元的指引和三季度48.52亿元的数据，评估全年业绩达标概率。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 从ESG（环境、社会、治理）角度进行评价</li><li class="o"><b>(2)</b> 从产业链/供应链角度分析</li><li class="o"><b>(3)</b> 开头第一个词必须是"基于"</li><li class="o"><b>(4)</b> 正反两面对比论述（优势vs劣势/机会vs风险）</li><li class="o"><b>(5)</b> 分为7到11个段落</li><li class="o"><b>(6)</b> 使用类比或举例来辅助解释</li><li class="m"><b>(7)</b> 以投资研究备忘录的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.2-003-V3-R100</span><span><i class="b bl">T2.2</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 品牌矩阵评估：分析"盛味坊"（坚果线上前三）、"优品源"（短保面包）、"鲜乐多"三个品牌的市场定位和竞争力；
+2. 产品组合分析：按"营收占比-增速"制作四大品类的战略定位（休闲零食42.07%/+8.5%、烘焙29.28%/+16.2%、乳制品18.39%/+9.8%、其他10.26%/+5.2%）；
+3. 渠道效率对比：线上、线下、直营三个渠道的增长效率和投入产出分析；
+4. 2024年战略重点（健康零食、线上+25%、抖音直播、下沉市场、新增500经销商、新开60-80门店）的可行性评估。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 数值保留3位小数</li><li class="o"><b>(2)</b> 从产业链/供应链角度分析</li><li class="o"><b>(3)</b> 不得使用金融术语英文缩写（如ROE/PE/EBITDA等）</li><li class="o"><b>(4)</b> 以信用评级分析师的视角撰写</li><li class="o"><b>(5)</b> 使用Markdown表格展示数据</li><li class="o"><b>(6)</b> 至少3个独立章节</li><li class="m"><b>(7)</b> 以消费品行业投资分析报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.1-012-V5-R200</span><span><i class="b bl">T1.1</i><i class="b bn">共7</i><i class="b bm">格式+3</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下综合任务：
+1. 提取全部行业板块的涨跌幅和估值数据
+2. 计算半导体涨幅验证值、行业间涨幅差距、指数超额涨幅
+3. 分别展示涨幅前5行业和跌幅行业
+4. 对比四大指数表现
+5. 总结上半年A股行业轮动和市场风格特征</pre>
+<p class="lb">约束 (采样4 + 格式3)</p><ul><li class="o"><b>(1)</b> 按重要性/影响程度从大到小排列</li><li class="o"><b>(2)</b> 至少9个完整句子</li><li class="o"><b>(3)</b> 不使用百分号，用文字表达百分比</li><li class="o"><b>(4)</b> 不得使用金融术语英文缩写（如ROE/PE/EBITDA等）</li><li class="m"><b>(5)</b> 用表格分别展示涨幅前5行业和跌幅行业 <span class="tg">[格式]</span></li><li class="m"><b>(6)</b> 用表格对比四大指数表现 <span class="tg">[格式]</span></li><li class="m"><b>(7)</b> 用不超过100字总结上半年A股行业轮动和市场风格特征 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.2-002-V5-R200</span><span><i class="b bl">T1.2</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下综合任务：
+1. 提取中联环保2024年年报的全部财务数据
+2. 计算毛利率、净利率、研发费用率等关键比率
+3. 汇总利润表和分业务收入数据
+4. 对比2023年和2024年的盈利能力变化
+5. 概括中联环保2024年的经营亮点</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 第一人称叙事</li><li class="o"><b>(2)</b> 开头第一个词必须是"截至"</li><li class="o"><b>(3)</b> 以普通投资者能理解的方式撰写</li><li class="o"><b>(4)</b> 从零售投资者的视角分析</li><li class="o"><b>(5)</b> 金额统一使用元为单位</li><li class="o"><b>(6)</b> 使用Markdown表格展示数据</li><li class="m"><b>(7)</b> 用不超过100字 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.3-002-V3-R200</span><span><i class="b bl">T2.3</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 2023Q1至2024Q2共6个季度的营收趋势描述（标注各季度数值和环比/同比增速）；
+2. 业务板块亮点：公有云IaaS同比+52.3%（AI算力驱动）、SaaS ARR突破35亿、客户续费率92%+，分别评价；
+3. 客户增长指标：Q2新增4,128家（创历史新高）、中大型客户+128家、ARPU提升至18.52万元，分析客户质量变化；
+4. 给出天域云计算当前业务健康度的综合评级（高速增长/稳健增长/增长放缓/需关注）并阐述核心依据。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 至少11个完整句子</li><li class="o"><b>(2)</b> 使用通俗语言，避免专业术语和行话</li><li class="o"><b>(3)</b> 以谨慎保守的语气撰写</li><li class="o"><b>(4)</b> 数值保留2位小数</li><li class="o"><b>(5)</b> 控制在550到750字</li><li class="o"><b>(6)</b> 不超过600字</li><li class="m"><b>(7)</b> 以季度经营跟踪报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.1-012-V5-R300</span><span><i class="b bl">T1.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下综合任务：
+1. 提取全部行业板块的涨跌幅和估值数据
+2. 计算半导体涨幅验证值、行业间涨幅差距、指数超额涨幅
+3. 分别展示涨幅前5行业和跌幅行业
+4. 对比四大指数表现
+5. 总结上半年A股行业轮动和市场风格特征</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> JSON格式输出</li><li class="o"><b>(2)</b> 不使用百分号，用文字表达百分比</li><li class="o"><b>(3)</b> 不使用“综上所述”、“总而言之”</li><li class="o"><b>(4)</b> 先给出结论，再展开分析过程</li><li class="o"><b>(5)</b> 从零售投资者的视角分析</li><li class="o"><b>(6)</b> 分为3到6个段落</li><li class="m"><b>(7)</b> 用不超过100字 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.2-005-V5-R400</span><span><i class="b bl">T1.2</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下综合任务：
+1. 提取东方精工2025年Q1的全部财务和股东数据
+2. 计算Q1毛利率、净利率和资产负债率
+3. 展示利润表摘要和分业务收入
+4. 对比期初和期末的资产负债结构变化
+5. 概括东方精工Q1的经营特征</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> JSON格式输出</li><li class="o"><b>(2)</b> 语气客观中立，不包含主观投资建议</li><li class="o"><b>(3)</b> 简洁干练，避免冗余修饰</li><li class="o"><b>(4)</b> 使用通俗语言，避免专业术语和行话</li><li class="o"><b>(5)</b> 按重要性/影响程度从大到小排列</li><li class="o"><b>(6)</b> 至少8个完整句子</li><li class="m"><b>(7)</b> 用不超过80字 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.3-002-V3-R400</span><span><i class="b bl">T2.3</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 2023Q1至2024Q2共6个季度的营收趋势描述（标注各季度数值和环比/同比增速）；
+2. 业务板块亮点：公有云IaaS同比+52.3%（AI算力驱动）、SaaS ARR突破35亿、客户续费率92%+，分别评价；
+3. 客户增长指标：Q2新增4,128家（创历史新高）、中大型客户+128家、ARPU提升至18.52万元，分析客户质量变化；
+4. 给出天域云计算当前业务健康度的综合评级（高速增长/稳健增长/增长放缓/需关注）并阐述核心依据。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 正反两面对比论述（优势vs劣势/机会vs风险）</li><li class="o"><b>(2)</b> 开头第一个词必须是"综合"</li><li class="o"><b>(3)</b> 语气客观中立，不包含主观投资建议</li><li class="o"><b>(4)</b> 以机构投资者为目标读者撰写</li><li class="o"><b>(5)</b> 以专业分析师的口吻撰写</li><li class="o"><b>(6)</b> 段落间逻辑连贯，有明确过渡</li><li class="m"><b>(7)</b> 以季度经营跟踪报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T1.1-010-V5-R500</span><span><i class="b bl">T1.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下综合任务：
+1. 提取永泰能源近5日的行情和资金流向完整数据
+2. 计算5日日均主力净流入和累计验证
+3. 完整的资金流向和涨跌对比
+4. 分析主力资金流向与涨跌幅的相关性，总结</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 使用Markdown表格展示数据</li><li class="o"><b>(2)</b> 开头第一个词必须是"从"</li><li class="o"><b>(3)</b> 末尾风险提示声明</li><li class="o"><b>(4)</b> 4个3级标题</li><li class="o"><b>(5)</b> 按重要性/影响程度从大到小排列</li><li class="o"><b>(6)</b> 至少2处引用块</li><li class="m"><b>(7)</b> 用不超过80字 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.4-002-V3-R500</span><span><i class="b bl">T2.4</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 信用等级概览：当前AA/稳定，列出维持评级的支撑因素和可能触发降级的风险因素；
+2. 偿债能力指标看板：流动比率1.41、速动比率0.65、现金短债比1.75、EBIT保障倍数2.54、有息负债/EBITDA 4.42，逐项标注风险等级；
+3. 流动性缺口分析：一年内到期有息负债44.48亿 vs 货币资金32.56亿，缺口11.92亿的补偿方案（未使用授信65.30亿+抵押物112.58亿）评估；
+4. 风险清单：行业风险、流动性风险、土地储备风险（三四线35%）、关联交易风险（12.85亿关联方款项），逐项给出关注等级；
+5. 评级展望：维持AA/稳定展望的核心假设和需持续跟踪的指标。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 数值保留3位小数</li><li class="o"><b>(2)</b> 以信用评级分析师的视角撰写</li><li class="o"><b>(3)</b> 末尾风险提示声明</li><li class="o"><b>(4)</b> 控制在500到750字</li><li class="o"><b>(5)</b> 至少16个完整句子</li><li class="o"><b>(6)</b> 从风险管理的角度分析</li><li class="m"><b>(7)</b> 以信用监测报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.1-002-V3-R600</span><span><i class="b bl">T2.1</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 概括瑞联科技（688352.SH）2024年上半年的核心表现；
+2. 列出三个超预期因素和两个低于预期的因素；
+3. 从盈利能力（毛利率35.00%、净利率14.37%、ROE 12.56%）、偿债能力（资产负债率53.57%）、现金流（经营现金流/净利润=1.15）三个维度进行打分评价；
+4. 总结公司核心竞争力和面临的主要风险因素（下游行业周期、人才流失、汇率、原材料价格）。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 从宏观经济的角度分析</li><li class="o"><b>(2)</b> 以普通投资者能理解的方式撰写</li><li class="o"><b>(3)</b> 8到9条有序列表</li><li class="o"><b>(4)</b> 数据驱动论述，每个论点用数据佐证</li><li class="o"><b>(5)</b> 使用类比或举例来辅助解释</li><li class="o"><b>(6)</b> 以谨慎保守的语气撰写</li><li class="m"><b>(7)</b> 以卖方分析师半年报点评的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-Q-SYN-T2.4-002-V3-R600</span><span><i class="b bl">T2.4</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请基于以上数据，完成以下内容：
+1. 信用等级概览：当前AA/稳定，列出维持评级的支撑因素和可能触发降级的风险因素；
+2. 偿债能力指标：流动比率1.41、速动比率0.65、现金短债比1.75、EBIT保障倍数2.54、有息负债/EBITDA 4.42，逐项标注风险等级；
+3. 流动性缺口分析：一年内到期有息负债44.48亿 vs 货币资金32.56亿，缺口11.92亿的补偿方案（未使用授信65.30亿+抵押物112.58亿）评估；
+4. 风险清单：行业风险、流动性风险、土地储备风险（三四线35%）、关联交易风险（12.85亿关联方款项），逐项给出关注等级；
+5. 评级展望：维持AA/稳定展望的核心假设和需持续跟踪的指标。</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 不超过550字</li><li class="o"><b>(2)</b> 若提到收益必须说明风险</li><li class="o"><b>(3)</b> 以机构投资者为目标读者撰写</li><li class="o"><b>(4)</b> 从估值与定价角度分析</li><li class="o"><b>(5)</b> 使用类比或举例来辅助解释</li><li class="o"><b>(6)</b> 控制在550到850字</li><li class="m"><b>(7)</b> 以信用监测报告的格式 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-EXT-T1.3-008-Q2-R600</span><span><i class="b bl">T1.3</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请整理以上材料中的核心信息要素</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> JSON格式输出</li><li class="o"><b>(2)</b> 首行用加粗文字</li><li class="o"><b>(3)</b> 先给出结论，再展开分析过程</li><li class="o"><b>(4)</b> 不使用“个人观点”、“我认为”、“我觉得”</li><li class="o"><b>(5)</b> 末尾风险提示声明</li><li class="o"><b>(6)</b> 简洁干练，避免冗余修饰</li><li class="m"><b>(7)</b> 以Markdown表格 <span class="tg">[格式]</span></li></ul></div></div><div class="c" onclick="this.classList.toggle('op')">
+<div class="h"><span>S-EXT-T1.3-008-Q3-R600</span><span><i class="b bl">T1.3</i><i class="b bn">共7</i><i class="b bm">格式+1</i></span></div>
+<div class="bd"><p class="lb">Query</p><pre>请提取以上材料的关键事实和数据</pre>
+<p class="lb">约束 (采样6 + 格式1)</p><ul><li class="o"><b>(1)</b> 首行包含"摘要"，末行包含"---"</li><li class="o"><b>(2)</b> 开头第一个词必须是"基于"</li><li class="o"><b>(3)</b> 若提到杠杆必须说明风险</li><li class="o"><b>(4)</b> 首行用加粗文字</li><li class="o"><b>(5)</b> 以普通投资者能理解的方式撰写</li><li class="o"><b>(6)</b> 按重要性/影响程度从大到小排列</li><li class="m"><b>(7)</b> 以Q/A问答格式 <span class="tg">[格式]</span></li></ul></div></div>
+</body></html>

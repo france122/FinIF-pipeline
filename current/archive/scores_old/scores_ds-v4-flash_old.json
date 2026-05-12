@@ -1,0 +1,2809 @@
+{
+  "model": "ds-v4-flash",
+  "results": {
+    "T1.1-001": {
+      "T1.1-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.1-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.1-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-001#C9": {
+        "pass": true,
+        "reason": "模型输出包含明确的'零售投资者视角分析'一节，用通俗语言从散户角度分析涨停价空间、资金流向、操作建议等，符合零售投资者视角要求。",
+        "evidence": "作为散户，看到涨停价1.89元远高于当前价，容易产生“抄底博涨停”冲动...散户不宜仅凭涨停价空间追涨，需警惕次日低开风险。",
+        "type": "soft"
+      },
+      "T1.1-001#C11": {
+        "pass": true,
+        "reason": "模型输出开头第一段（共3句话）直接给出核心结论（股价收跌、距涨停有空间但主力资金态度未改善、需警惕回调风险），后续段落再展开详细分析，符合“先给出结论，再展开分析过程”的约束。",
+        "evidence": "截至2025年05月15日收盘，金正大（002470.SZ）当日行情显示股价收跌，距涨停价仍有明显空间，但对比前一日资金动向，主力资金态度未见改善，短线投资者需警惕回调风险。",
+        "type": "soft"
+      }
+    },
+    "T1.1-002": {
+      "T1.1-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.1-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.1-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-002#C13": {
+        "pass": true,
+        "reason": "输出内容用词通俗，通过计算示例和类比解释专业概念，适合普通投资者阅读。",
+        "evidence": "进行简单计算：0.12%（基金收益率）减去0.10%（赛道基准收益率）等于0.02%",
+        "type": "soft"
+      }
+    },
+    "T1.1-003": {
+      "T1.1-003#C10": {
+        "pass": true,
+        "reason": "模型输出仅对CPI数据进行客观分析和数据提取，没有包含任何明确的投资操作建议，并且附有风险提示声明，符合约束要求。",
+        "type": "soft"
+      },
+      "T1.1-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.1-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-003#C14": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.1-003#C13": {
+        "pass": true,
+        "reason": "模型输出中出现的唯一金融专业术语英文缩写“CPI”在首次出现时已给出中文全称“居民消费价格指数”。",
+        "evidence": "从检索内容中，可提取出以下明确的居民消费价格指数（CPI）同比涨幅数据点",
+        "type": "soft"
+      },
+      "T1.1-003#C15": {
+        "pass": true,
+        "reason": "输出通篇为客观数据分析与事实陈述，不含主观投资建议，且末尾明确声明不构成投资建议。",
+        "evidence": "本文仅基于公开检索数据进行客观分析，不构成任何投资建议。",
+        "type": "soft"
+      }
+    },
+    "T1.1-004": {
+      "T1.1-004#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.1-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.1-004#C13": {
+        "pass": false,
+        "reason": "模型输出中出现了金融术语英文缩写'ETF'，违反了不得使用英文缩写的约束。",
+        "evidence": "模型输出中写道：'鹏扬中证国有企业红利ETF'，其中'ETF'为英文缩写。",
+        "type": "soft"
+      }
+    },
+    "T1.1-005": {
+      "T1.1-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-005#C11": {
+        "pass": true,
+        "reason": "输出末尾包含总结段，概括了前文核心要点且未引入新信息。",
+        "evidence": "总结：一鸣食品2025年05月15日当日主力净流入为正，但二十日和十日主力净流入均为负，形成了中期净流出与单日股价上涨的背离现象，这反映了短期资金与中期趋势的不一致，需谨慎对待后续走势。",
+        "type": "soft"
+      }
+    },
+    "T1.1-006": {
+      "T1.1-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.1-006#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-006#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-006#C10": {
+        "pass": false,
+        "reason": "输出中使用了'超额收益'、'超额回撤'、'超额胜率'、'年化收益率'等专业术语，未进行解释或通俗化，不符合避免专业术语的要求。",
+        "evidence": "文本包含'超额收益与回撤控制能力一般'、'相对基准超额回撤32.47%'、'滚动持有1年超额胜率7%'等术语，未做通俗解释。",
+        "type": "soft"
+      },
+      "T1.1-006#C11": {
+        "pass": true,
+        "reason": "输出使用了'年化收益率''超额收益''跑输赛道基准''超额回撤''管理规模'等专业术语，段落结构清晰（分核心数据概览和收益风险分析两个部分），符合专业分析师口吻。",
+        "evidence": "使用了'超额收益''年化收益率''跑输赛道基准''超额回撤''滚动持有1年超额胜率'等术语，并包含表格和计算公式。",
+        "type": "soft"
+      }
+    },
+    "T1.1-007": {
+      "T1.1-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-007#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.1-007#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-007#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.1-007#C9": {
+        "pass": true,
+        "reason": "输出使用了“同比增长”“环比下降”“净流入”等专业术语，段落结构清晰专业，包含市场表现、财务分析、资金流向、计算验证和风险提示，完全符合分析师报告风格。",
+        "evidence": "“属于小幅放量上涨的态势”“显示亏损显著收窄的积极趋势”“主力资金净流出307.91万元”“资金流向平衡严格成立”“基于归母净利润...可反推去年同期的归母净利润”等",
+        "type": "soft"
+      }
+    },
+    "T1.1-008": {
+      "T1.1-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.1-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.1-008#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.1-008#C11": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融专业术语英文缩写，无需给出中文全称解释，约束自动满足。",
+        "evidence": "全文仅使用中文指数名称（如上证指数、沪深300等）和中文术语（北向资金），未出现ROE、PE、EBITDA等英文缩写。",
+        "type": "soft"
+      },
+      "T1.1-008#C12": {
+        "pass": true,
+        "reason": "输出全文为客观数据对比和计算，无主观投资建议，语气中立。",
+        "evidence": "核心结论：2023年6月29日市场整体明显弱于6月28日；数据提取和对比均为客观陈述；涨跌比和北向资金倍数计算不含建议。无买入/卖出等操作建议。",
+        "type": "soft"
+      }
+    },
+    "T1.1-009": {
+      "T1.1-009#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-009#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-009#C10": {
+        "pass": false,
+        "reason": "模型输出开头是数据表格而非核心结论，且首段包含大量数据细节，违反\"先给出结论\"的要求。",
+        "evidence": "模型输出开头为\"### 结论（抽取结果按逆序排列） | 项目（按逆序排列） | 本期值 | 上年同期值 | ...\"，表格中罗列多项数据，没有1-3句话给出核心结论。",
+        "type": "soft"
+      },
+      "T1.1-009#C11": {
+        "pass": true,
+        "reason": "输出使用了通俗语言和解释性文字，如将专业术语“归母净利润”“扣非净利润”附上中文全称，并用“暴增”“亏损扩大”等比喻说明，同时给出了机遇/风险分析，适合普通投资者理解。",
+        "evidence": "如“归母净利润暴增的主要原因是……”“扣非净利润增长62.75%体现了主营业务的实际改善”“经营活动现金流依然为负且亏损扩大”等，并附有机遇与风险提示。",
+        "type": "soft"
+      },
+      "T1.1-009#C12": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融术语英文缩写（如ROE/PE/EBITDA等），所有指标均使用中文表述。",
+        "evidence": "输出中仅出现'营业收入''归母净利润''扣非净利润''基本每股收益''流动资产合计'等中文术语，无英文缩写。",
+        "type": "soft"
+      },
+      "T1.1-009#C16": {
+        "pass": true,
+        "reason": "结论表格中的项目按原文出现顺序逆序排列，符合约束。",
+        "type": "soft"
+      }
+    },
+    "T1.1-010": {
+      "T1.1-010#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-010#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-010#C10": {
+        "pass": true,
+        "reason": "输出中未出现任何金融专业术语英文缩写，无需提供中文全称，约束条件自动满足。",
+        "evidence": "模型输出中仅包含中文术语，未出现ROE、PE、EBITDA等英文缩写。",
+        "type": "soft"
+      },
+      "T1.1-010#C12": {
+        "pass": true,
+        "reason": "输出中所有金额数据（如-13,281.57万元、44,000.00万元等）均已使用Markdown加粗格式，满足约束要求。",
+        "evidence": "实际净利润为**-13,281.57万元**，承诺净利润为**44,000.00万元**，业绩完成率为**-30.19%**等",
+        "type": "soft"
+      }
+    },
+    "T1.1-011": {
+      "T1.1-011#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-011#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T1.1-011#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      }
+    },
+    "T1.1-012": {
+      "T1.1-012#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.1-012#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.1-012#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.1-012#C14": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      }
+    },
+    "T1.1-013": {
+      "T1.1-013#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.1-013#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.1-013#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-013#C10": {
+        "pass": true,
+        "reason": "输出开头第一句即给出核心结论'中国经济开局平稳'并概括关键指标，后续分段展开详细分析，符合先结论后分析的约束。",
+        "evidence": "从2026年一季度国民经济数据看，中国经济开局平稳，GDP同比增长5.0%，第三产业占比超过六成，贸易顺差超1.8万亿元，CPI温和上涨，PPI降幅收窄。以下是具体分析：",
+        "type": "soft"
+      },
+      "T1.1-013#C11": {
+        "pass": true,
+        "reason": "输出用词通俗，对CPI、PPI等术语有明确说明，数据解释清晰，并附有普通投资者启示，适合无金融背景者阅读。",
+        "evidence": "如“GDP同比增长5.0%”“CPI温和上涨”“PPI降幅收窄”等表述，以及最后“对普通投资者的启示”段落使用简单语言分析。",
+        "type": "soft"
+      }
+    },
+    "T1.1-014": {
+      "T1.1-014#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-014#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.1-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-014#C9": {
+        "pass": true,
+        "reason": "输出中唯一出现的英文缩写'GDP'已给出了中文全称'国内生产总值'",
+        "evidence": "2026年一季度国内生产总值（GDP）达到334193亿元",
+        "type": "soft"
+      }
+    },
+    "T1.1-015": {
+      "T1.1-015#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-015#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T1.1-015#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      }
+    },
+    "T1.1-016": {
+      "T1.1-016#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.1-016#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.1-016#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.1-016#C10": {
+        "pass": false,
+        "reason": "总结段（‘总结’字段）中包含了‘建议多关注科技、资源类行业……’等新信息，违反了‘总结段应简洁（2-4句），不引入新信息’的约束。",
+        "type": "soft"
+      },
+      "T1.1-016#C11": {
+        "pass": true,
+        "reason": "输出使用了通俗语言，如“赚钱能力增强”“民营经济活力足”“回款可能变慢”等，未出现alpha、beta、夏普比率等专业术语，满足约束要求。",
+        "evidence": "\"从散户视角看，一季度企业整体赚钱能力增强...建议多关注科技、资源类行业，对汽车、建材等冷门行业保持谨慎。\"",
+        "type": "soft"
+      },
+      "T1.1-016#C14": {
+        "pass": true,
+        "reason": "输出明确标注'从散户视角看'，使用了通俗语言（如赚钱能力、回款变慢），并给出投资建议，符合零售投资者分析要求。",
+        "evidence": "\"从散户视角看，一季度企业整体赚钱能力增强...建议多关注科技、资源类行业，对汽车、建材等冷门行业保持谨慎。\"",
+        "type": "soft"
+      }
+    },
+    "T1.1-017": {
+      "T1.1-017#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-017#C9": {
+        "pass": false,
+        "reason": "输出虽然在结构上先列出了‘分析结论’再展开详细过程，但‘分析结论’部分直接包含了大量具体数据（如12782元、57.3%、9116元等），违反了‘首段不应包含大量数据细节’的约束要求。",
+        "type": "soft"
+      },
+      "T1.1-017#C10": {
+        "pass": false,
+        "reason": "输出中未使用'同比增长''环比下降'等专业术语，缺乏分析师报告的专业口吻",
+        "evidence": "全文未出现'同比增长''环比下降''净流入'等专业术语，仅使用'占比''绝对差额'等一般性表述",
+        "type": "soft"
+      },
+      "T1.1-017#C11": {
+        "pass": true,
+        "reason": "输出使用了通俗语言，没有出现'alpha''beta''夏普比率'等专业术语，非专业读者能够理解。",
+        "evidence": "全文未出现alpha、beta、夏普比率等专业术语，语言通俗，如'工资性收入占比最高''城镇居民平均比农村居民多收入9116元'。",
+        "type": "soft"
+      }
+    },
+    "T1.1-020": {
+      "T1.1-020#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-020#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-020#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.1-020#C12": {
+        "pass": true,
+        "reason": "开头第一句直接给出了核心结论判断，后续才展开具体数据和分析，满足先结论后分析的要求。",
+        "evidence": "一季度固定资产投资增速小幅正增长，结构分化明显：基础设施与高技术产业投资保持较快增长...",
+        "type": "soft"
+      }
+    },
+    "T1.1-021": {
+      "T1.1-021#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-021#C10": {
+        "pass": true,
+        "reason": "输出使用了通俗语言和明确的计算解释，如'平均售价为销售额除以销售面积'，并用百分比和除法说明，适合普通投资者理解。",
+        "evidence": "平均售价为销售额除以销售面积，即17262亿元除以19525万平方米，约等于0.8843亿元/万平方米，换算成每平方米价格约为8843元。",
+        "type": "soft"
+      },
+      "T1.1-021#C11": {
+        "pass": true,
+        "reason": "输出明确面向普通投资者，使用通俗语言和计算，关注投资决策信息，符合零售投资者视角。",
+        "evidence": "以下是为普通投资者整理的要点分析；住宅投资占比约76.4%；个人按揭贷款下降34.6%降幅最大。",
+        "type": "soft"
+      },
+      "T1.1-021#C12": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融术语英文缩写（如ROE/PE/EBITDA等），所有表述均为中文，符合约束要求。",
+        "evidence": "输出中使用'百分之七十六点四'、'百分之三十四点六'等中文方式表述百分比，未出现英文缩写。",
+        "type": "soft"
+      }
+    },
+    "T1.2-001": {
+      "T1.2-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-001#C9": {
+        "pass": false,
+        "reason": "输出结论部分直接包含了大量数据细节（每个股东的减持股数、占比、均价等），未做到首段简洁概括核心结论。",
+        "evidence": "结论中列出：张成康减持股数2,156,300股，占比0.5280%，集中竞价，均价19.23元；刘伟超1,425,600股，占比0.3490%……等详细数据。",
+        "type": "soft"
+      },
+      "T1.2-001#C11": {
+        "pass": true,
+        "reason": "输出中包含明确的零售投资者视角分析，语言通俗，关注实际投资决策信息，未假设专业背景。",
+        "evidence": "零售投资者视角：大股东集中减持（近1.2%股本）通常传递资金需求或估值偏高信号，且减持金额近亿元，短期或对股价形成压力。",
+        "type": "soft"
+      }
+    },
+    "T1.2-002": {
+      "T1.2-002#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.2-002#C12": {
+        "pass": true,
+        "reason": "输出通篇为客观数据陈述和计算验证，未出现'建议买入/卖出'等主观投资建议，语气客观中立。",
+        "evidence": "基于公告内容，以下是对...客观分析。...此次权益变动后，合计持股比例仍维持在27%以上，保持了对公司的重要影响力。",
+        "type": "soft"
+      }
+    },
+    "T1.2-003": {
+      "T1.2-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.2-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.2-003#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-003#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.2-003#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      }
+    },
+    "T1.2-004": {
+      "T1.2-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.2-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.2-004#C12": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融术语英文缩写，所有指标均使用中文表述。",
+        "evidence": "输出中使用了'百分之一点一八四六'、'百分之二十八点二零'等中文表述，未出现ROE/PE/EBITDA等缩写。",
+        "type": "soft"
+      },
+      "T1.2-004#C14": {
+        "pass": true,
+        "reason": "输出末尾包含一段总结，归纳了赛意信息与晶升股份减持的核心对比要点，未引入新信息。",
+        "evidence": "总结来说，赛意信息控股股东及一致行动人的减持占公司总股本的比例更高，导致其合计持股比例下降的幅度也更大；而晶升股份虽然减持金额更多，但相对其较小的总股本和较高的股价，减持比例反而略低。投资者需要关注赛意信息控股股东持股比例下降更快，可能对公司控制权稳定性有一定影响，但两家公司的减持均符合法规要求，不会导致控制权变更。",
+        "type": "soft"
+      },
+      "T1.2-004#C15": {
+        "pass": true,
+        "reason": "输出使用百分比、加减乘除等通俗表达，并对比两家公司数据，无未解释的专业术语，适合普通投资者阅读。",
+        "evidence": "例如：'赛意信息减持比例为百分之一点一八四六'、'张成康减持金额约4146.6万元（2,156,300股乘以19.23元）'等，语言简明清晰。",
+        "type": "soft"
+      }
+    },
+    "T1.2-005": {
+      "T1.2-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.2-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.2-005#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.2-005#C13": {
+        "pass": true,
+        "reason": "模型输出仅包含事实描述、数据计算和客观分析，未提供任何明确的买入、卖出、持有等投资操作建议，也未引导投资者做出具体买卖决策，符合约束要求。",
+        "type": "soft"
+      },
+      "T1.2-005#C14": {
+        "pass": true,
+        "reason": "模型输出第三部分明确以零售投资者视角分析，使用通俗语言解释大宗交易对市场的实际影响，并给出投资决策建议。",
+        "evidence": "从零售投资者的视角看，这类股东公告往往容易引发短期情绪波动，但理性分析后可以发现，大宗交易并不在二级市场直接抛售……",
+        "type": "soft"
+      }
+    },
+    "T1.2-006": {
+      "T1.2-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.2-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-006#C11": {
+        "pass": true,
+        "reason": "输出中未出现任何金融术语英文缩写，全部使用中文表述",
+        "evidence": "输出内容：'国家集成电路产业投资基金二期认购了1562.5万股'等，全程无英文缩写。",
+        "type": "soft"
+      },
+      "T1.2-006#C12": {
+        "pass": true,
+        "reason": "模型输出用词通俗，对专业术语（如稀释比例、持股比例等）进行了解释和计算说明，适合普通投资者阅读。",
+        "evidence": "解释稀释比例：新增股份占发行后总股本的百分比，并用3750万除以5亿计算；说明持股比例变化并指出控制权未变。",
+        "type": "soft"
+      },
+      "T1.2-006#C13": {
+        "pass": true,
+        "reason": "模型输出未使用任何专业术语或行话，语言通俗易懂，符合约束要求。",
+        "evidence": "输出中无'alpha''beta''夏普比率'等术语，使用'稀释比例''控制权'等常见金融表述。",
+        "type": "soft"
+      }
+    },
+    "T1.2-007": {
+      "T1.2-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.2-007#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.2-007#C12": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融专业术语英文缩写，无需提供中文全称解释。",
+        "evidence": "输出全文均为中文表述，无ROE、PE、EBITDA等英文缩写出现。",
+        "type": "soft"
+      }
+    },
+    "T1.2-008": {
+      "T1.2-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.2-008#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.2-008#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.2-008#C9": {
+        "pass": true,
+        "reason": "输出使用了'应收账款增速''销售回款速度放缓''赊销比例''经营性现金流承压'等专业术语，分析段落结构清晰，逻辑严谨，符合分析师报告风格。",
+        "evidence": "应收账款增速（6.7%）高于营业收入增速（5.0%），表明企业销售回款速度放缓...需警惕坏账风险累积对利润质量的侵蚀；私营企业利润增速（25.4%）显著高于国有控股企业（10.1%），主要源于...高景气行业...基数较低，弹性更大等。",
+        "type": "soft"
+      },
+      "T1.2-008#C13": {
+        "pass": true,
+        "reason": "模型输出中未出现任何专业术语英文缩写，因此无需提供中文全称，约束自动满足。",
+        "evidence": "输出内容为JSON对象，仅包含中文分析文字和数字，无英文缩写出现。",
+        "type": "soft"
+      }
+    },
+    "T1.2-012": {
+      "T1.2-012#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-012#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-012#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T1.2-012#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-012#C13": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      }
+    },
+    "T1.2-013": {
+      "T1.2-013#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-013#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-013#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-013#C11": {
+        "pass": true,
+        "reason": "输出末尾有明确的总结段，概括了核心要点且未引入新信息。",
+        "evidence": "总结：一季度中国经济延续平稳增长，消费仍是压舱石...未来需进一步激发内需潜力，同时巩固外贸优势。",
+        "type": "soft"
+      }
+    },
+    "T1.2-014": {
+      "T1.2-014#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.2-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.2-014#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.2-014#C10": {
+        "pass": true,
+        "reason": "输出在开头两句话（结论段）给出了核心结论，随后展开详细分析，满足先结论后分析的要求。",
+        "evidence": "### 结论\n2026年一季度，居民消费率约为62.3%，恩格尔系数为32.0%，农村居民实际收入增速比城镇快2.2个百分点，名义与实际增长率之差反映温和通胀（约0.9%-1.0%）。从零售投资者视角，收入增长放缓且消费意愿谨慎，城乡差距略有收窄，但结构性压力值得关注。\n---\n### 分析过程",
+        "type": "soft"
+      },
+      "T1.2-014#C11": {
+        "pass": true,
+        "reason": "输出明确从零售投资者视角分析，用通俗语言解读数据，并给出实际投资决策相关的建议。",
+        "evidence": "结论中提到'从零售投资者视角'，分析过程第4点以'从零售投资者视角看'开头，用通俗语言解释收入增长放缓、消费倾向保守，并列举了防御性板块、消费升级等投资方向。",
+        "type": "soft"
+      }
+    },
+    "T1.2-015": {
+      "T1.2-015#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-015#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-015#C11": {
+        "pass": true,
+        "reason": "输出使用了'同比增长'、'毛利率'、'净利率'、'费用率'等专业术语，结构清晰，符合分析师报告风格。",
+        "evidence": "标题为'利润表分析备忘录'，包含'致管理层'格式；正文多次使用'同比增长'、'同比变动'、'毛利率'等术语，并分四个部分逻辑分析。",
+        "type": "soft"
+      }
+    },
+    "T1.3-001": {
+      "T1.3-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.3-001#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.3-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.3-001#C10": {
+        "pass": true,
+        "reason": "模型输出中未使用任何金融术语英文缩写（如ROE/PE/EBITDA等），所有相关术语均为中文表述。",
+        "evidence": "输出全文无英文缩写，如'虚增利润'、'罚款总额'等均为中文。",
+        "type": "soft"
+      },
+      "T1.3-001#C12": {
+        "pass": true,
+        "reason": "输出中未包含任何买入、卖出等投资建议，仅是对处罚决定的客观分析和陈述，整体语气符合客观中立要求。",
+        "evidence": "全文围绕处罚事实和数据分析展开，如“虚增营业收入3856万元”、“罚款合计700万元”等，未出现投资建议类表述。",
+        "type": "soft"
+      }
+    },
+    "T1.3-002": {
+      "T1.3-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-002#C14": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.3-002#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.3-002#C13": {
+        "pass": true,
+        "reason": "输出全文为客观分析股东大会通知的合规性，语气中立，不含任何主观投资建议",
+        "evidence": "模型输出仅对会议信息、时间间隔、利益关联方进行事实陈述和合规分析，无'建议买入/卖出'等投资操作表述",
+        "type": "soft"
+      }
+    },
+    "T1.3-003": {
+      "T1.3-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.3-003#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.3-003#C9": {
+        "pass": true,
+        "reason": "模型输出使用了通俗易懂的语言，没有出现'alpha'、'beta'、'夏普比率'等专业术语，并且对财务数据进行了简单解释，符合非专业读者的理解水平。",
+        "type": "soft"
+      }
+    },
+    "T1.3-004": {
+      "T1.3-004#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.3-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.3-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-004#C10": {
+        "pass": true,
+        "reason": "输出中明确从零售投资者视角分析，关注实际控制人处罚缺位等投资决策信息，语言通俗易懂。",
+        "evidence": "责任匹配分析中写道'从零售投资者视角看...投资者需警惕公司治理中实际控制人缺位带来的道德风险'，风险提示也提醒退市风险和索赔可能性。",
+        "type": "soft"
+      }
+    },
+    "T1.3-005": {
+      "T1.3-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-005#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.3-005#C9": {
+        "pass": true,
+        "reason": "输出明确从零售投资者视角分析，使用通俗语言解释指标含义和检索难度，总结部分关注实际投资决策信息。",
+        "evidence": "包含“从零售投资者视角”标题、总结中“表现强劲的成长性”“定价能力与成本控制增强”“适合长期价值投资者关注”等通俗表述。",
+        "type": "soft"
+      },
+      "T1.3-005#C11": {
+        "pass": true,
+        "reason": "输出末尾包含以“总结”开头的段落，概括了前文核心要点，简洁且不引入新信息。",
+        "evidence": "总结（零售投资者视角）\n从零售投资者角度看，今世缘在2014-2023年间表现出色……适合长期价值投资者关注。",
+        "type": "soft"
+      },
+      "T1.3-005#C12": {
+        "pass": true,
+        "reason": "输出中关键词字段使用逗号分隔的列表格式存储（如'营收,归母净利润,CAGR,分红率,ROE,毛利率,净利率'），符合约束要求。",
+        "evidence": "Info:[['2014','2023','2024'],['今世缘'],['营收','归母净利润','CAGR','分红率','ROE','毛利率','净利率']]",
+        "type": "soft"
+      },
+      "T1.3-005#C13": {
+        "pass": true,
+        "reason": "模型输出中明确包含了年份、公司名称、关键词三个属性，且每个属性均有值，符合约束要求。",
+        "evidence": "Info:[['2014','2023','2024'],['今世缘'],['营收','归母净利润','CAGR','分红率','ROE','毛利率','净利率']]",
+        "type": "soft"
+      }
+    },
+    "T1.3-006": {
+      "T1.3-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.3-006#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.3-006#C11": {
+        "pass": true,
+        "reason": "输出开头三句话即给出核心结论（9个有效问答对、主题分类、最长回复对象），后续展开分析过程，符合“先给结论再展开”的约束。",
+        "evidence": "经分析，本次紫金矿业2023年三季度业绩交流会中共有5位投资者参与提问，涉及9个有效问答对。按主题分类：成本类3个，投资类2个，产量类2个，市场类1个，其他类1个。",
+        "type": "soft"
+      },
+      "T1.3-006#C13": {
+        "pass": false,
+        "reason": "模型输出未使用严格的Q:<问题> A:<回复>格式，而是包含序号、主题描述等额外内容，如'**1. 尹国新（雨量控股）问题一：成本主题** Q:'，不符合约束要求。",
+        "evidence": "模型输出以'**1. 尹国新（雨量控股）问题一：成本主题** Q:'开头，而非直接以'Q:'开头；且包含'## 结论'、'## 分析过程'等额外内容。",
+        "type": "soft"
+      }
+    },
+    "T1.3-007": {
+      "T1.3-007#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-007#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.3-007#C9": {
+        "pass": true,
+        "reason": "输出用通俗语言、比喻从散户视角解释案件要素和财务比率，关注实际投资决策信息，不假设专业背景。",
+        "evidence": "打个比方，你投了100块钱，对方给你亏了将近30块；好比你家规定零食花费不能超过100块，结果你花了217块。",
+        "type": "soft"
+      },
+      "T1.3-007#C10": {
+        "pass": true,
+        "reason": "输出使用通俗比喻和日常语言，未出现专业术语，满足通俗易懂要求。",
+        "evidence": "“简单说就是啥事、谁告谁、赔多少”“用手机算一下”“打个比方，你投了100块钱”",
+        "type": "soft"
+      }
+    },
+    "T1.3-008": {
+      "T1.3-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-008#C12": {
+        "pass": true,
+        "reason": "模型输出仅提供客观的财务分析和交易事实描述，并明确声明‘不构成投资建议’，未包含任何引导投资者做出具体买卖决策的内容。",
+        "type": "soft"
+      },
+      "T1.3-008#C10": {
+        "pass": true,
+        "reason": "模型输出中出现的英文缩写PE在首次使用时给出了中文全称解释（市盈率）。",
+        "evidence": "市盈率（PE，Price-to-Earnings Ratio，即股价与每股收益的比率）",
+        "type": "soft"
+      },
+      "T1.3-008#C11": {
+        "pass": true,
+        "reason": "模型输出使用了溢价率、市盈率（PE）、资产负债率、协同效应等专业术语，段落结构清晰分节，符合分析师报告风格。",
+        "evidence": "输出包含“交易溢价率计算”、“市盈率（PE）倍数计算”、“资金来源验证”等分析，术语如“溢价率”、“PE倍数”、“资产负债率”均属专业表达。",
+        "type": "soft"
+      }
+    },
+    "T1.3-009": {
+      "T1.3-009#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.3-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.3-009#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-009#C12": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      }
+    },
+    "T1.3-010": {
+      "T1.3-010#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-010#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.3-010#C9": {
+        "pass": true,
+        "reason": "输出末尾包含一段总结，概括前文核心要点，共4句且无新信息，符合约束要求。",
+        "evidence": "### 总结\n\n2026年一季度，全国规模以上工业企业利润总额同比增长15.5%，整体实现较快增长。但行业间分化显著……这一格局反映出当前经济新旧动能转换过程中，产业利润正向高端制造和资源密集型领域集中，传统周期性行业的复苏仍需时间。",
+        "type": "soft"
+      },
+      "T1.3-010#C11": {
+        "pass": true,
+        "reason": "输出全文为客观数据整理与分析，语气中立，未出现任何主观投资建议表述。",
+        "evidence": "全文以数据排名、行业分析为主，如'前三位行业...增速极为显著'，无建议买入/卖出等内容。",
+        "type": "soft"
+      }
+    },
+    "T1.3-011": {
+      "T1.3-011#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-011#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.3-011#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.3-011#C10": {
+        "pass": true,
+        "reason": "输出明确从零售投资者视角给出分析，包含投资建议（如关注防御属性、规避高估值等），语言通俗易懂。",
+        "evidence": "总结中明确写有“从零售投资者视角看”，并给出具体投资建议，如“相关龙头公司具备防御属性”“需规避相关高估值个股”等。",
+        "type": "soft"
+      },
+      "T1.3-011#C13": {
+        "pass": false,
+        "reason": "模型输出末尾虽然有一段以'总结：'开头的文字，但该段引入了'零售投资者视角''储蓄意愿可能上升''需规避相关高估值个股'等原始数据中未出现的新信息，且总句数超过4句，不符合'不引入新信息'和'简洁（2-4句）'的要求。",
+        "evidence": "**总结：** 从零售投资者视角看...需规避相关高估值个股...整体建议以稳健配置为主...（共5句，含新信息）",
+        "type": "soft"
+      }
+    },
+    "T1.3-012": {
+      "T1.3-012#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.3-012#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-012#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.3-012#C10": {
+        "pass": true,
+        "reason": "输出语气客观中立，仅基于数据进行分析和描述，不含主观投资建议，且有明确风险提示。",
+        "evidence": "风险提示声明：'本内容不构成任何形式的投资建议，投资者应独立审慎决策，注意风险。'",
+        "type": "soft"
+      },
+      "T1.3-012#C13": {
+        "pass": true,
+        "reason": "模型输出使用了'降幅'、'调整态势'、'量价同步下行'等专业术语，段落结构清晰，包含数据说明和简要分析，符合分析师报告风格。",
+        "evidence": "根据国家统计局发布的2026年1—3月数据...整体延续调整态势...分地区来看，东部地区...销售额降幅较大...中部地区...降幅相对最窄...西部地区...投资增速降幅最小...东北地区...各项指标降幅最为突出。",
+        "type": "soft"
+      }
+    },
+    "T1.3-013": {
+      "T1.3-013#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-013#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-013#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.3-013#C9": {
+        "pass": true,
+        "reason": "模型输出末尾包含以'总结来看'开头的总结段，概括了行业分化和经济增速的核心要点，未引入新信息，符合约束要求。",
+        "evidence": "总结来看，一季度服务业中的高端领域如租赁商务、信息技术增长强劲，制造业和工业保持稳健，但建筑业与房地产业双双下滑...总体经济增速5.0%的背景下，产业分化态势值得关注。",
+        "type": "soft"
+      },
+      "T1.3-013#C12": {
+        "pass": false,
+        "reason": "模型输出开头第一句虽给出了核心判断，但紧接着第二句便开始详细列举各行业具体增速数据（如“租赁和商务服务业以12.2%的增速领跑”等），首段包含了大量数据细节，违反了“首段不应包含大量数据细节”的约束。约束要求开头1-3句话给出核心结论，后续再展开分析，本输出未做到这一点。",
+        "type": "soft"
+      }
+    },
+    "T1.3-014": {
+      "T1.3-014#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.3-014#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.3-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.3-014#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.3-014#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-014#C9": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      }
+    },
+    "T2.1-001": {
+      "T2.1-001#C11": {
+        "pass": true,
+        "reason": "输出从风险管理角度分析了营收集中度、云音乐负增长、费用扩张等风险因素，并给出预测计算和情景分析，符合约束要求。",
+        "evidence": "从机构投资者的风险管理角度看，这种'单腿走路'的营收结构存在集中度风险……云音乐成为唯一负增长板块……核心风险集中于三点……",
+        "type": "soft"
+      },
+      "T2.1-001#C12": {
+        "pass": true,
+        "reason": "输出明确面向机构投资者，使用了‘机构投资者视角’‘风险管理’等术语，包含营收结构集中度分析、同比增速对比、净利率分析、情景预测及投资建议，专业金融术语和数据密度符合专业水平。",
+        "evidence": "从机构投资者的风险管理角度看……对于机构投资者而言……整体净利率24.4%……费用扩张速度（13%）是否可持续？……保守情景下建议采用8%-9%的增速区间……综合风险提示与投资关注点",
+        "type": "soft"
+      },
+      "T2.1-001#C13": {
+        "pass": true,
+        "reason": "模型输出各段落之间有明确逻辑过渡，如'与此对比'、'从机构投资者视角'等，论述连贯，主题衔接自然不跳跃。",
+        "type": "soft"
+      },
+      "T2.1-001#C14": {
+        "pass": false,
+        "reason": "输出中使用了'集中度风险''商业模式天花板''净利率'等专业术语，未进行通俗化解释",
+        "evidence": "如'集中度风险'、'商业模式天花板'、'净利率'、'ARPU'、'用户留存'、'变现持续性'等词汇",
+        "type": "soft"
+      }
+    },
+    "T2.1-002": {
+      "T2.1-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.1-002#C11": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T2.1-002#C12": {
+        "pass": true,
+        "reason": "模型输出使用正式书面语，无口语化表达，专业术语规范。",
+        "evidence": "全文如'营业收入7,139,451千元'、'研发费用占营收比例53.13%'等均为正式书面表达，未出现'挺好的''差不多''搞清楚'等口语化词汇。",
+        "type": "soft"
+      },
+      "T2.1-002#C13": {
+        "pass": true,
+        "reason": "模型输出中明确分析了利率、汇率、政策（美国IRA法案、欧盟市场准入政策）等宏观因素对百济神州的影响，符合从宏观经济角度分析的要求。",
+        "evidence": "2.1(3)宏观与竞争环境:从宏观经济看，全球生物医药融资环境虽有所回暖，但利率仍维持高位...美国《通胀削减法案》对药品定价的潜在影响...欧盟市场准入政策的变化...3.3(1)汇率风险管理...",
+        "type": "soft"
+      },
+      "T2.1-002#C15": {
+        "pass": true,
+        "reason": "模型输出在改进计划部分专门设置了“风险管理与财务稳健性”小节，明确讨论了汇率风险、融资与现金流管理、研发临床风险，并提出了远期结汇、债务结构调整、里程碑决策机制等风险控制措施，同时在前文问题分析中也识别了宏观政策、竞争环境等风险因素，符合从风险管理角度分析的要求。",
+        "evidence": "改进计划：3.3 风险管理与财务稳健性：(1)汇率风险管理...建议通过远期结汇、货币互换等工具对冲汇率风险；(2)融资与现金流管理...适当降低短期借款比例，以降低流动性风险；(3)研发临床风险管控...建立阶段性的“里程碑-决策”机制。",
+        "type": "soft"
+      }
+    },
+    "T2.1-003": {
+      "T2.1-003#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.1-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.1-003#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.1-003#C11": {
+        "pass": true,
+        "reason": "输出语气谨慎保守，使用了'需注意''可能''需警惕''谨慎'等措辞，未出现绝对化判断。",
+        "evidence": "需注意，预测数据基于特定假设，实际结果可能因市场波动而偏离；但需警惕成本潜在上升风险；投资者应保持谨慎。",
+        "type": "soft"
+      },
+      "T2.1-003#C13": {
+        "pass": true,
+        "reason": "模型输出中使用了至少两处类比（如'类似于一家小型初创企业'和'这类似于两种不同投资'），满足约束要求。",
+        "evidence": "这一变化堪比'旱地拔葱'——类似于一家小型初创企业突然因市场供需失衡而获得暴利……这类似于两种不同投资：锂精矿如同固定收益产品……",
+        "type": "soft"
+      },
+      "T2.1-003#C14": {
+        "pass": true,
+        "reason": "输出明确从ESG维度分析了环境（水资源消耗、尾矿、污染物排放）、社会（环境和社会风险）和治理（高负债并购争议），至少涉及一个维度。",
+        "evidence": "从ESG维度审视，天齐锂业的高毛利率背后隐含环境和社会风险。锂矿开采需消耗大量水资源并产生尾矿...治理层面，公司历史上因高负债并购引发争议。",
+        "type": "soft"
+      }
+    },
+    "T2.1-004": {
+      "T2.1-004#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.1-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T2.1-004#C10": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T2.1-004#C11": {
+        "pass": true,
+        "reason": "输出全文使用正式书面语，无口语化表达，专业术语规范",
+        "evidence": "全文如'一季度，我国国内生产总值实现334193亿元，按不变价格计算同比增长5.0%'等语句均为正式书面语，未出现'挺好的''差不多''搞清楚'等口语化词汇。",
+        "type": "soft"
+      }
+    },
+    "T2.1-005": {
+      "T2.1-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.1-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.1-005#C9": {
+        "pass": true,
+        "reason": "模型输出明确从环境(E)、社会(S)、治理(G)三个维度进行了分析，满足至少涉及一个维度的要求。",
+        "evidence": "从ESG环境维度看...社会维度上...从ESG社会维度看...治理层面...从ESG治理维度看...从ESG视角，政府应引导行业向绿色建筑、智慧社区转型（环境），保障购房者权益（社会），并强化房地产企业财务透明度和治理水平（治理）。",
+        "type": "soft"
+      }
+    },
+    "T2.1-008": {
+      "T2.1-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.1-008#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T2.1-008#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.1-008#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T2.1-008#C9": {
+        "pass": true,
+        "reason": "模型输出从ESG环境、社会、治理三个维度进行了具体分析，满足约束条件。",
+        "evidence": "第1点提及'从ESG环境维度看'，第2点提及'从ESG社会维度看'，第4点提及'对ESG治理维度的影响'。",
+        "type": "soft"
+      },
+      "T2.1-008#C13": {
+        "pass": true,
+        "reason": "输出从风险管理角度分析了负债率上升、应收账款积压等风险因素，并提出了风险防范措施，符合约束要求。",
+        "evidence": "第4点明确从风险管理角度出发，识别了资产负债率上升、应收账款同比增长6.7%等风险，并提出防范坏账与流动性收紧的连锁反应。",
+        "type": "soft"
+      }
+    },
+    "T2.1-009": {
+      "T2.1-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.1-009#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.1-009#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.1-009#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.1-009#C9": {
+        "pass": true,
+        "reason": "模型输出明确从风险管理角度分析了集采、研发、竞争和现金流等风险因素，并给出了风险度量数据，符合约束要求。",
+        "evidence": "从风险管理角度，以下要点需重点关注：1. 集采持续扩面风险...2. 研发管线失败风险...3. 仿制药竞争加剧风险...4. 现金流与资本开支匹配风险...",
+        "type": "soft"
+      },
+      "T2.1-009#C11": {
+        "pass": true,
+        "reason": "输出整体语气客观中立，分析了财务数据和风险，并声明不构成投资建议，没有包含主观投资建议。",
+        "evidence": "全文为客观分析，末尾有'本报告...不构成任何投资建议。投资者应独立判断，审慎决策。'的声明。",
+        "type": "soft"
+      }
+    },
+    "T2.1-010": {
+      "T2.1-010#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.1-010#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.1-010#C14": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.1-010#C9": {
+        "pass": true,
+        "reason": "输出中使用了至少两处类比来辅助解释复杂概念",
+        "evidence": "这一比例如同一家餐厅的营收主要来源于菜品销售...；类比一家服装厂突然接到一笔冬奥会定制大单...",
+        "type": "soft"
+      },
+      "T2.1-010#C10": {
+        "pass": true,
+        "reason": "模型输出中未出现需要解释的金融专业术语英文缩写（如ROE、PE、EBITDA等），因此自动满足约束条件",
+        "evidence": "输出中仅出现'Q3'、'Q4'等季度缩写，未出现其他需解释的专业术语英文缩写",
+        "type": "soft"
+      },
+      "T2.1-010#C13": {
+        "pass": true,
+        "reason": "输出中多次使用'可能''需注意'等措辞，语气谨慎保守，未出现绝对化断言",
+        "evidence": "如'但需注意'、'可能明显回落'、'需关注'、'保守假设'等",
+        "type": "soft"
+      }
+    },
+    "T2.2-001": {
+      "T2.2-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.2-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.2-001#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_no_arabic_numerals"
+      },
+      "T2.2-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.2-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T2.2-001#C14": {
+        "pass": false,
+        "reason": "模型输出未使用约束中明确要求的专业术语如‘同比增长’‘环比下降’‘净流入’等，虽然整体结构清晰且采用了分析师报告风格，但不符合必须包含这些术语的硬性规定。",
+        "type": "soft"
+      }
+    },
+    "T2.2-002": {
+      "T2.2-002#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.2-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_arabic_numerals"
+      },
+      "T2.2-002#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T2.2-002#C10": {
+        "pass": true,
+        "reason": "模型输出段落间使用了'其次'、'此外'、'基于以上'等过渡词，逻辑连贯，主题衔接自然。",
+        "evidence": "包括'其次，创新药产品管线已经形成规模收入效应'等过渡词，及'基于以上研发投入数据，可以反算出...'的承接表述。",
+        "type": "soft"
+      }
+    },
+    "T2.2-003": {
+      "T2.2-003#C9": {
+        "pass": true,
+        "reason": "输出内容为客观计算与监管视角分析，不包含任何主观投资建议，语气中立",
+        "evidence": "全文无'建议买入/卖出'等字样，仅从数据计算和监管合规角度进行分析",
+        "type": "soft"
+      },
+      "T2.2-003#C10": {
+        "pass": true,
+        "reason": "模型输出始终以监管机构立场进行分析，关注普惠金融、风险合规、消费者保护等监管关切，未涉及投资收益角度。",
+        "evidence": "全文使用“监管视角：监管机构需关注……”“监管机构应关注……”“督促银行落实审慎授信和消费者保护要求”等表述，围绕合规性、风险监测和市场秩序维护展开。",
+        "type": "soft"
+      },
+      "T2.2-003#C11": {
+        "pass": true,
+        "reason": "输出使用正式书面语，无口语化表达，专业术语规范。",
+        "evidence": "全文采用客观、严谨的表述，如'基于监管机构立场的客观计算与分析'、'监管视角'等，无口语化词汇。",
+        "type": "soft"
+      }
+    },
+    "T2.2-004": {
+      "T2.2-004#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.2-004#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.2-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.2-004#C9": {
+        "pass": true,
+        "reason": "模型输出末尾包含一段以'### 总结'开头的概括性段落，归纳了前文核心要点且未引入新信息。",
+        "evidence": "### 总结\n\n一季度居民收入实际增速4.00%保持韧性，消费实际增速2.60%相对温和，城乡差距持续收窄，收入分配结构优于多数新兴市场。但需警惕三大风险：财产净收入低增长削弱居民财富效应；食品烟酒涨价推高恩格尔系数；医疗保健负增长后的补偿性反弹。",
+        "type": "soft"
+      },
+      "T2.2-004#C13": {
+        "pass": true,
+        "reason": "输出使用了专业金融术语（如财产性收入占比、恩格尔系数、城乡收入比、中位数/平均数比值等），分析深入（识别风险、结构问题及趋势），数据密度高，并明确以机构投资者为对象给出建议，符合专业水平。",
+        "evidence": "全文包含财产净收入占比8.07%、消费率62.24%、恩格尔系数32.04%、城乡收入比2.23等专业数据，并分析回调风险、结构降级等，结尾直接建议机构投资者关注消费结构转变等。",
+        "type": "soft"
+      },
+      "T2.2-004#C14": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如‘类似家庭理财中过度依赖主业薪资’、‘类比一个企业若仅靠主营业务盈利’、‘类似慢跑者追上领跑者’、‘类似一个班级成绩中游水平接近平均分’），满足约束要求。",
+        "evidence": "类似家庭理财中过度依赖“主业”薪资而缺乏多元“副业”收入；类比一个企业若仅靠主营业务盈利而缺乏投资收益；类似“慢跑者追上领跑者”；类似一个班级成绩中游水平接近平均分",
+        "type": "soft"
+      }
+    },
+    "T2.2-005": {
+      "T2.2-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T2.2-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.2-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.2-005#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.2-005#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.2-005#C13": {
+        "pass": true,
+        "reason": "模型输出分为三个章节，主题依次为产业结构转型、新旧动能转换、风险行业与制造业地位，逻辑顺序合理，各段主题由整体到局部、由新动能到风险行业自然衔接，论述连贯，虽然没有使用明确的过渡词汇，但段落间内容紧密相连，无跳跃，符合‘段落间逻辑连贯，有明确过渡’的约束。",
+        "type": "soft"
+      }
+    },
+    "T2.2-006": {
+      "T2.2-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.2-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.2-006#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.2-006#C10": {
+        "pass": false,
+        "reason": "输出开头包含明确的投资建议“增持”评级，违反客观中立要求",
+        "evidence": "**核心结论：...给予“增持”评级。**",
+        "type": "soft"
+      },
+      "T2.2-006#C12": {
+        "pass": true,
+        "reason": "输出使用了'同比增长'、'毛利率下滑'、'加权平均ROE'等专业术语，并包含评分和推导步骤，段落结构清晰专业，符合分析师口吻。",
+        "evidence": "营收同比增长24.01%至47.82亿元，归母净利润增长41.05%，经营性现金流净额增长52.14%……加权平均ROE提升至14.2%，净利率约17.5%。",
+        "type": "soft"
+      },
+      "T2.2-006#C14": {
+        "pass": true,
+        "reason": "输出使用通俗语言、提供评分和风险提示、简化推导，从散户角度分析投资决策所需信息。",
+        "evidence": "核心结论给出增持评级，分项评分并解释，推导综合毛利率和研发费用率，提示风险如客户集中度、产能开支等。",
+        "type": "soft"
+      }
+    },
+    "T2.3-001": {
+      "T2.3-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.3-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T2.3-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.3-001#C11": {
+        "pass": true,
+        "reason": "输出明确以监管机构视角进行量化分析与风险提示，关注投资者保护和市场风险防范，未从投资收益角度出发。",
+        "evidence": "总结：根据近5日沪深市场行情数据，现从监管机构视角对投资者关注的问题进行量化分析与解读，以帮助普通投资者理解市场动态，注意防范风险。",
+        "type": "soft"
+      },
+      "T2.3-001#C13": {
+        "pass": true,
+        "reason": "模型输出语言通俗，对专业术语（如连续复利、线性外推）进行了清晰解释，适合无金融背景的普通投资者阅读，同时满足其他格式要求。",
+        "type": "soft"
+      }
+    },
+    "T2.3-002": {
+      "T2.3-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T2.3-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.3-002#C9": {
+        "pass": true,
+        "reason": "模型输出包含专门的ESG评价部分，明确讨论了社会（非裔和西班牙裔失业率）和治理（依赖数据、透明沟通）维度，满足至少涉及一个维度的要求。",
+        "evidence": "从ESG角度，提及非裔和西班牙裔失业率远高于全国平均水平（社会），委员会强调‘依赖数据’和‘透明沟通’（治理）。",
+        "type": "soft"
+      },
+      "T2.3-002#C10": {
+        "pass": false,
+        "reason": "输出包含大量投资建议（如增持短期国债、配置防御性资产等），从投资收益角度出发，而非监管视角。",
+        "evidence": "模型输出了三条具体投资建议，包括“增持短期国债”、“配置投资级公司债”、“增持TIPS”，以及“短期与长期视角”等投资分析内容。",
+        "type": "soft"
+      },
+      "T2.3-002#C12": {
+        "pass": true,
+        "reason": "输出使用了大量专业金融术语（PCE、核心PCE、CPI、SLOOS、TIPS等），引用了纪要原文具体数据，分析深度和数据密度符合机构投资者专业水平。",
+        "evidence": "劳动力市场紧张、通胀仍高、经济韧性等分类，引用纪要具体指标如‘总体PCE价格通胀为3.8%’等，并提出三条具体投资建议及ESG评价。",
+        "type": "soft"
+      },
+      "T2.3-002#C13": {
+        "pass": true,
+        "reason": "模型输出包含专门的“宏观经济分析”章节，并讨论了经济韧性、信贷收紧、通胀下行、全球央行同步紧缩、美元走弱等宏观因素，符合政策、利率、汇率、经济周期等宏观分析要求。",
+        "evidence": "当前美国经济处于“软着陆”博弈阶段：消费韧性支撑短期增长，但信贷收紧与滞后效应将拖累2024年经济活动。通胀下行路径仍存不确定性……外发达经济体央行同步收紧，美元小幅走弱有利于新兴市场资本回流，但需警惕全球制造业疲软对出口型经济体的拖累。",
+        "type": "soft"
+      }
+    },
+    "T2.3-003": {
+      "T2.3-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.3-003#C10": {
+        "pass": true,
+        "reason": "模型输出从零售投资者视角出发，在每个问题中均识别了风险因素（如政策波动、竞争加剧、价格下跌、海外贸易壁垒），进行了风险度量（如市占率、销量倍数、增速推算、价格跌幅），并提出了风险控制措施（如分散配置、避免重仓、关注龙头），完全符合‘从风险管理角度分析’的约束，而非纯收益分析。",
+        "type": "soft"
+      },
+      "T2.3-003#C12": {
+        "pass": true,
+        "reason": "输出明确以零售投资者视角展开，使用通俗语言解释数据含义和风险，提供实际投资决策建议，未假设专业背景。",
+        "evidence": "开头即明确'以下从零售投资者视角'，后续多次使用'作为零售投资者'、'零售投资者应...'等表述，并通俗解释计算结果和风险。",
+        "type": "soft"
+      }
+    },
+    "T2.3-004": {
+      "T2.3-004#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.3-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.3-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.3-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.3-004#C10": {
+        "pass": true,
+        "reason": "输出使用了分析师报告风格，包含'同比增长'、'成本改善'、'结构分化'等专业术语，段落结构清晰专业",
+        "evidence": "开篇核心结论，分四个部分详细分析，引用数据并附表格，如'私营企业（25.4%）'、'每百元营业收入中的成本84.93元'等",
+        "type": "soft"
+      },
+      "T2.3-004#C14": {
+        "pass": true,
+        "reason": "输出多处使用'可能''需注意'等谨慎措辞，避免绝对化判断，符合谨慎保守语气要求",
+        "evidence": "例如'可能受全球贸易摩擦…拖累'、'需注意基数效应'、'可能暗示回款压力'、'或预示后续利润增速难以维持高位'等。",
+        "type": "soft"
+      }
+    },
+    "T2.3-005": {
+      "T2.3-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.3-005#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.3-005#C10": {
+        "pass": true,
+        "reason": "模型输出末尾包含一段以“### 总结”开头的段落，概括了前文分地区投资增速、均价对比、东北地区原因及销售降幅分析的核心要点，且未引入新信息，符合约束要求。",
+        "type": "soft"
+      },
+      "T2.3-005#C11": {
+        "pass": true,
+        "reason": "全文使用了‘可能的原因包括’、‘需谨慎看待’、‘更可能的情况是’、‘建议密切关注’、‘谨慎解读’等谨慎保守措辞，未出现绝对化判断。",
+        "evidence": "可能的原因包括、需谨慎看待、更可能的情况是、建议密切关注、谨慎解读",
+        "type": "soft"
+      }
+    },
+    "T2.3-006": {
+      "T2.3-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.3-006#C9": {
+        "pass": true,
+        "reason": "输出明确提及机构投资者，使用专业金融术语，分析深度和数据密度符合专业水平。",
+        "evidence": "对机构投资者而言，这释放出工业需求回暖、企业利润修复的积极信号，有助于改善制造业投资信心和库存周期。",
+        "type": "soft"
+      },
+      "T2.3-006#C11": {
+        "pass": true,
+        "reason": "输出整体使用通俗语言，避免了如'alpha'、'beta'、'夏普比率'等专业术语，虽出现'通缩压力'、'库存周期'等词汇但结合上下文可理解，符合非专业读者阅读需求。",
+        "evidence": "输出中用'食品价格受猪肉拖累表现疲软'、'居民消费的内生需求其实在温和回升'等通俗表述，未出现未解释的专业术语。",
+        "type": "soft"
+      }
+    },
+    "T2.4-001": {
+      "T2.4-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T2.4-001#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.4-001#C10": {
+        "pass": true,
+        "reason": "输出使用了'需注意''可能''需谨慎'等委婉措辞，避免绝对化判断，语气符合谨慎保守要求。",
+        "evidence": "需注意，差值在周内震荡剧烈...融券余额的回升可能意味着空头情绪...但需谨慎的是...建议机构投资者结合其他市场指标进行交叉验证。",
+        "type": "soft"
+      },
+      "T2.4-001#C11": {
+        "pass": true,
+        "reason": "模型输出从风险管理角度分析了融资融券数据，包含了风险因素识别（多空切换、情绪反转）、风险度量（极值点、差值波动）和风险控制措施（关注极端值、交叉验证控制仓位风险）。",
+        "evidence": "'风险管理应关注此类短期极端值对持仓的冲击'、'从风险管理视角看，极值点往往伴随市场情绪反转'、'建议机构投资者...结合其他市场指标进行交叉验证，以控制仓位风险'",
+        "type": "soft"
+      },
+      "T2.4-001#C12": {
+        "pass": true,
+        "reason": "模型输出了分析师风格的专业分析，使用了环比变动、净流入、极差等术语，段落结构清晰专业。",
+        "evidence": "融资余额的每日环比变动...均值约为+811万元...多头资金净流入力度大于空头...极差约1.09亿元...差值在周内震荡剧烈",
+        "type": "soft"
+      },
+      "T2.4-001#C14": {
+        "pass": true,
+        "reason": "输出使用了专业金融术语（如融券余额、多空力量、净流入），进行了深度分析（差值计算、变动幅度、极值点、情绪判断），数据密度高，并明确提及“建议机构投资者”，符合专业水平。",
+        "evidence": "使用了“机构投资者”、“风险管理”、“交叉验证”、“仓位风险”等表述，并进行了详细的日度差值计算、变动分析、极值点识别和情绪分析。",
+        "type": "soft"
+      }
+    },
+    "T2.4-002": {
+      "T2.4-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.4-002#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.4-002#C11": {
+        "pass": true,
+        "reason": "输出的MDD（Maximum Drawdown）在首次出现时给出了中文全称“最大回撤”和英文全称，满足约束要求。",
+        "evidence": "最大回撤（英文：Maximum Drawdown，简称MDD）",
+        "type": "soft"
+      }
+    },
+    "T2.4-003": {
+      "T2.4-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.4-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.4-003#C9": {
+        "pass": true,
+        "reason": "输出全程使用通俗语言，如“风向标”、“钱袋子”等，未出现alpha、beta、夏普比率等专业术语，非专业读者可理解。",
+        "evidence": "模型输出中未包含任何专业术语，使用了如‘风向标’、‘钱袋子’、‘卖不动、还不起债’等通俗表述。",
+        "type": "soft"
+      },
+      "T2.4-003#C10": {
+        "pass": true,
+        "reason": "输出多次使用'可能'、'需关注'等措辞，避免绝对化判断，语气谨慎保守。",
+        "evidence": "如'新房供应量可能继续萎缩'、'可能需要警惕'、'暂时还谈不上系统性崩溃'等表述，且无'必然''一定'等绝对词。",
+        "type": "soft"
+      }
+    },
+    "T2.4-004": {
+      "T2.4-004#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.4-004#C9": {
+        "pass": true,
+        "reason": "输出使用了比喻、通俗解释和清晰的语言，如'接力赛''冰火两重天'，并对专业术语进行了解释，适合无金融背景的普通投资者阅读。",
+        "evidence": "原文包含'就像一场接力赛'、'为什么民间投资会萎缩？'等通俗解释，以及'固定资产投资'等术语在上下文中可理解。",
+        "type": "soft"
+      },
+      "T2.4-004#C11": {
+        "pass": true,
+        "reason": "输出从宏观经济角度分析了民间投资与国有投资分化、区域失衡、外资撤退、第三产业投资负增长等宏观因素，并提及政策影响和政策建议，符合宏观分析要求。",
+        "evidence": "从宏观经济角度看，这种分化带来的风险不容小觑；政策是否出台减税降费、放宽准入等措施；政府债务压力可能加大；经济增长内生动力不足等。",
+        "type": "soft"
+      }
+    },
+    "T2.4-005": {
+      "T2.4-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.4-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.4-005#C10": {
+        "pass": false,
+        "reason": "英文缩写“ESG”在首次出现（结论部分）时未给出其中文全称“环境、社会和治理”，违反了“专业术语英文缩写需给出中文全称”的约束。",
+        "type": "soft"
+      },
+      "T2.4-005#C12": {
+        "pass": true,
+        "reason": "模型输出专门设置了ESG视角的结构性风险评价章节，明确涉及环境(E)、社会(S)、治理(G)三个维度，符合从ESG角度分析的要求。",
+        "evidence": "【五、ESG视角的结构性风险评价】5.1 环境（E）维度：高增长行业的“绿色赤字”；5.2 社会（S）维度：就业与供应链的“隐形断层”；5.3 治理（G）维度：杠杆与信用风险的管理挑战。",
+        "type": "soft"
+      },
+      "T2.4-005#C13": {
+        "pass": true,
+        "reason": "输出在开头结论段中直接给出了核心结论（利润增长但结构风险突出），后续分段展开详细分析，符合'先结论后分析'要求",
+        "evidence": "2026年一季度全国规模以上工业企业利润同比增长15.5%，表面数据亮眼，但内部结构性风险十分突出。",
+        "type": "soft"
+      },
+      "T2.4-005#C8": {
+        "pass": true,
+        "reason": "模型输出中使用了多个类比（如篮球队得分王、白条工资）和举例（如钢铁行业餐厅比喻）来辅助解释复杂数据，符合约束要求。",
+        "evidence": "“类比：就像一支篮球队只有两名“得分王”在投篮”、“举例：钢铁行业就像是一家“双倍支出、零收入”的餐厅”、“类比：这就像你每个月工资表上写着“月薪5万””",
+        "type": "soft"
+      }
+    },
+    "T2.4-008": {
+      "T2.4-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.4-008#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.4-008#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.4-008#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      }
+    },
+    "T2.4-009": {
+      "T2.4-009#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.4-009#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.4-009#C9": {
+        "pass": false,
+        "reason": "模型输出各段落之间缺乏明确的逻辑过渡词语（如'进一步分析''与此相关'等），主题切换较为直接，不符合要求。",
+        "evidence": "第二部分开头直接写'不良规模验算'，第三部分开头直接写'按风险等级由高至低'，均无过渡语句。",
+        "type": "soft"
+      }
+    },
+    "T2.5-001": {
+      "T2.5-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T2.5-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T2.5-001#C11": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如'这就像两波人从左边口袋掏出钱'、'好比接力赛'等）和具体例子（如'去年某消费股'、'2022年某医药股'），满足约束要求。",
+        "evidence": "这就像两波人从左边口袋掏出钱...好比接力赛...像去年某消费股因业绩利好被砸盘后",
+        "type": "soft"
+      },
+      "T2.5-001#C13": {
+        "pass": true,
+        "reason": "模型输出明确从风险管理角度分析了资金流向的风险因素（主力撤离、散户接盘）、风险度量（后续股价大概率下探）及风险控制建议（等待企稳），满足约束。",
+        "evidence": "从风险管理角度看...散户接盘后往往面临更大的抛压风险...从风险优先原则看...建议等待主力资金企稳后再做决策。",
+        "type": "soft"
+      },
+      "T2.5-001#C14": {
+        "pass": true,
+        "reason": "输出使用通俗语言和比喻解释资金流向，未出现alpha、beta、夏普比率等专业术语，非专业读者能理解。",
+        "evidence": "使用'资金搬家''温水煮青蛙''接力赛'等生活化比喻解释数据，未使用专业术语。",
+        "type": "soft"
+      }
+    },
+    "T2.5-002": {
+      "T2.5-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.5-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.5-002#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.5-002#C11": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T2.5-002#C12": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如‘假设去年营收是100元’、‘好比一杯糖水’、‘就像杠杆效应’）来辅助解释计算过程，满足约束条件。",
+        "evidence": "为了验证，可以类比：假设去年营收是100元，今年下降2.29%则变为97.71元；反推时用97.71除以0.9771得到100元，逻辑一致。",
+        "type": "soft"
+      },
+      "T2.5-002#C13": {
+        "pass": true,
+        "reason": "模型输出中未出现需解释的金融专业术语英文缩写（如ROE、PE、EBITDA等），约束条件不适用。",
+        "evidence": "输出中仅使用'Q1-3''Q3''pct'等通用缩写，未出现需给出中文全称的典型金融术语缩写。",
+        "type": "soft"
+      }
+    },
+    "T2.5-003": {
+      "T2.5-003#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.5-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T2.5-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.5-003#C12": {
+        "pass": true,
+        "reason": "模型输出明确从ESG角度分析了环境（E）、社会（S）、治理（G）三个维度",
+        "evidence": "国开行绿色贷款（E维）、*ST美讯退市风险（G维）、黑龙江出入境增长（S维）等具体分析",
+        "type": "soft"
+      }
+    },
+    "T2.5-004": {
+      "T2.5-004#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_arabic_numerals"
+      },
+      "T2.5-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.5-004#C9": {
+        "pass": false,
+        "reason": "输出中出现口语化表达“我认为”，不符合正式书面语要求。",
+        "evidence": "第四，为何不全部使用现金支付的分析：我认为，本次交易采用“发行股份加现金”的组合方式...",
+        "type": "soft"
+      },
+      "T2.5-004#C12": {
+        "pass": true,
+        "reason": "输出整体为客观分析，未包含'建议买入/卖出'等主观投资建议，语气中立。",
+        "evidence": "全文为关键词摘要、数据计算和支付方式分析，无任何投资操作建议。",
+        "type": "soft"
+      }
+    },
+    "T2.5-006": {
+      "T2.5-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.5-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.5-006#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.5-006#C10": {
+        "pass": false,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T2.5-006#C12": {
+        "pass": true,
+        "reason": "输出明确提及从ESG视角分析，涉及环境（环境技术升级）和社会（社会公平）两个维度",
+        "evidence": "从ESG视角看，高技术产业投资增长7.4000%（环境技术升级方向）与乡村消费增长3.1000%（社会公平维度）值得关注。",
+        "type": "soft"
+      },
+      "T2.5-006#C13": {
+        "pass": true,
+        "reason": "输出明确从宏观经济角度分析了地产链风险、就业结构性矛盾等宏观因素，并引用了CPI、PPI等宏观指标，符合约束要求。",
+        "evidence": "宏观经济角度需警惕：① 地产链风险：...② 就业结构性矛盾：...（同时引用CPI、PPI等指标）",
+        "type": "soft"
+      }
+    },
+    "T2.5-007": {
+      "T2.5-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T2.5-007#C9": {
+        "pass": true,
+        "reason": "输出末尾有以'**总结**'开头的段落，归纳了前文核心要点，未引入新信息，符合约束要求。",
+        "evidence": "**总结**：2026年一季度全国居民收入与消费均保持正增长，但实际增速均低于名义增速，表明物价因素不可忽视...总体而言，一季度居民收支数据呈现“稳中有忧”的态势。",
+        "type": "soft"
+      },
+      "T2.5-007#C11": {
+        "pass": true,
+        "reason": "输出中使用了'可能''或许''需关注'等谨慎措辞，未出现绝对化判断，符合谨慎保守的语气要求。",
+        "evidence": "如'可能与资本市场波动或租金收入增长乏力有关''居民储蓄意愿或有所增强''可能受公共卫生政策影响''需关注居民消费意愿的恢复节奏'等",
+        "type": "soft"
+      }
+    },
+    "T3.1-001": {
+      "T3.1-001#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.1-001#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.1-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.1-001#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      }
+    },
+    "T3.1-002": {
+      "T3.1-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T3.1-002#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T3.1-002#C10": {
+        "pass": true,
+        "reason": "输出各段落以编号顺序展开，主题明确，且使用了“核验通过、正如同”“累计结果如同”“但”“注意”“然而”等过渡语，逻辑连贯，从数据核验逐步过渡到税务分析，无跳跃。",
+        "evidence": "“核验通过，正如同检查账本中每一笔收支是否平衡——减法结果均吻合。”“累计结果如同拼图碎片完全吻合，无遗漏或重复。”“但公告中实际减持比例…与差值1.1900%的微小差异…”“注意：欧阳湘英的准确金额需要官方均价…”“然而，若上述股东所持股份属于‘首次公开发行前限售股’…”",
+        "type": "soft"
+      },
+      "T3.1-002#C11": {
+        "pass": true,
+        "reason": "模型输出中使用了多处类比，如'正如同检查账本中每一笔收支是否平衡'、'累计结果如同拼图碎片完全吻合'等，符合约束要求。",
+        "evidence": "'正如同检查账本中每一笔收支是否平衡'、'累计结果如同拼图碎片完全吻合'、'如同声称温度升高了1度'、'普通投资者买卖股票像在菜市场买菜'等",
+        "type": "soft"
+      }
+    },
+    "T3.1-003": {
+      "T3.1-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T3.1-003#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T3.1-003#C12": {
+        "pass": true,
+        "reason": "输出在展示专业财务术语和计算时，都附带了通俗的解释和具体计算过程，适合无金融背景的普通投资者理解。",
+        "evidence": "例如：'毛利率 = 毛利润8,872万元 ÷ 营业收入38,560万元 = 23.01%'，以及对应收账款周转天数计算每一步的详细说明。",
+        "type": "soft"
+      },
+      "T3.1-003#C13": {
+        "pass": false,
+        "reason": "模型输出在开头结论段落中包含了大量具体数据细节（如毛利率23.01%、13.89%，成本增速15.29%等），违反了‘首段不应包含大量数据细节’的约束要求。虽然开头1-3句话给出了核心结论，但紧接着在同一段落中嵌入了详细数据，未做到先给出简洁结论再在后续段落展开分析。",
+        "type": "soft"
+      }
+    },
+    "T3.1-004": {
+      "T3.1-004#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T3.1-004#C11": {
+        "pass": true,
+        "reason": "模型输出中使用了多处类比和举例来辅助解释复杂概念（如损失合计、超限比例等），满足约束要求",
+        "evidence": "类比说明：如同购买两件商品，一件损失1,856元，另一件损失650元，总损失即为2,506元，账目清晰无误。",
+        "type": "soft"
+      },
+      "T3.1-004#C12": {
+        "pass": true,
+        "reason": "输出多次明确标注'零售投资者视角'，并使用了购物、盐量、消费维权等通俗比喻解释判决内容，从散户关心的投资损失和判决结果出发，语言通俗易懂，不假设专业背景。",
+        "evidence": "零售投资者视角：若投资者用自己的积蓄参与类似投资，相当于10万元本金中亏损5.8万元…这好比合同规定每道菜中盐最多占15%的重量，实际却放了32%…这如同消费者要求商家退款并赔偿全部损失…相当于购买100元商品缴纳0.55元税费。",
+        "type": "soft"
+      },
+      "T3.1-004#C13": {
+        "pass": false,
+        "reason": "输出中包含多处口语化比喻和表达，如'这好比合同规定每道菜中盐最多占15%的重量...直接导致菜品过咸'、'这如同消费者要求商家退款...维权获得完全成功'等，不符合正式书面语要求。",
+        "evidence": "这好比合同规定每道菜中盐最多占15%的重量，实际却放了32%，...直接导致菜品过咸；这如同消费者要求商家退款并赔偿全部损失，...维权获得完全成功。",
+        "type": "soft"
+      }
+    },
+    "T3.1-009": {
+      "T3.1-009#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T3.1-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T3.1-009#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T3.1-009#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      }
+    },
+    "T3.1-010": {
+      "T3.1-010#C9": {
+        "pass": true,
+        "reason": "输出中使用了'可能''需关注''面临较大不确定性'等谨慎措辞，无绝对化判断，符合谨慎保守语气要求。",
+        "evidence": "多处使用'若未来业绩不及预期''可能进一步压缩''需关注下半年是否能有效释放利润''面临较大不确定性'等谨慎表述。",
+        "type": "soft"
+      },
+      "T3.1-010#C10": {
+        "pass": true,
+        "reason": "输出仅包含风险分析和客观陈述，未出现‘建议买入/卖出’等主观投资建议，语气客观中立。",
+        "evidence": "最后一段有‘建议持续关注…审慎评估…’但属于中性建议，并非投资操作指令。",
+        "type": "soft"
+      },
+      "T3.1-010#C11": {
+        "pass": true,
+        "reason": "各段落之间通过编号标题和递进内容实现了逻辑连贯，结构清晰，主题衔接自然。",
+        "evidence": "从总体风险评级到审批时间线，再到业绩完成率计算和宏观经济分析，最后结论，层次分明，过渡合理。",
+        "type": "soft"
+      },
+      "T3.1-010#C12": {
+        "pass": true,
+        "reason": "输出明确包含‘宏观经济视角下的风险分析’章节，从行业周期、政策、资金压力等宏观因素进行了分析，符合约束要求。",
+        "evidence": "‘当前宏观经济环境对本次并购投后表现构成多重压力：锂行业周期下行...政策与竞争格局...商誉减值风险...资金压力与配套募资效益’",
+        "type": "soft"
+      }
+    },
+    "T3.1-011": {
+      "T3.1-011#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.1-011#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.1-011#C10": {
+        "pass": false,
+        "reason": "各章之间缺乏明确过渡词（如'进一步分析'等），主题衔接跳跃，不满足段落间逻辑连贯要求。",
+        "type": "soft"
+      },
+      "T3.1-011#C11": {
+        "pass": true,
+        "reason": "输出从风险管理角度分析了行业集中度、超额收益持续为负、资产配置偏离等风险因素，并提出了风险控制建议，符合约束要求。",
+        "evidence": "‘从风险管理角度，该持仓结构使得基金净值对新能源产业链极为敏感’、‘持续负超额收益意味着投资者承担了高于基准的波动风险’、‘建议投资者严格控制单只基金配置比例不超过15%’",
+        "type": "soft"
+      },
+      "T3.1-011#C12": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T3.1-011#C14": {
+        "pass": true,
+        "reason": "输出明确标注目标读者为机构投资者，使用了行业集中度、超额收益、风险敞口等专业金融术语，并进行了持仓集中度、业绩偏离、资产配置等深度数据分析，符合专业水平。",
+        "evidence": "目标读者：机构投资者；包含行业分类汇总表、超额收益对比表、资产配置偏离分析，使用行业集中度风险、超额收益、风险等级评定等术语。",
+        "type": "soft"
+      }
+    },
+    "T3.2-001": {
+      "T3.2-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T3.2-001#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T3.2-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.2-001#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T3.2-001#C12": {
+        "pass": false,
+        "reason": "各段落之间直接以标题分隔，缺少明确的逻辑过渡词或过渡句，论述连接不自然",
+        "evidence": "输出结构：摘要→一、三种路径→二、监控指标→三、A公司计算→四、合规依据→五、确认事项→结语，段落间未使用'进一步分析'、'与此相关'等过渡语句",
+        "type": "soft"
+      }
+    },
+    "T3.2-002": {
+      "T3.2-002#C10": {
+        "pass": true,
+        "reason": "模型输出明确从ESG三个维度进行了分析，包括治理(G)的内部控制、社会(S)的市场公平性、环境(E)的行业中性合规，符合约束要求。",
+        "evidence": "从治理（G）角度来看...体现了较强的内部控制和合规透明度；从社会（S）角度...严格的员工交易限制能够维护市场公平性；从环境（E）角度...包含宁德时代和比亚迪...合规管控不因行业热度而放松。",
+        "type": "soft"
+      },
+      "T3.2-002#C11": {
+        "pass": false,
+        "reason": "输出中存在未解释的专业术语'ESG'和'老鼠仓'，不符合通俗语言要求",
+        "evidence": "从ESG角度的评价...防止'抢先交易'或'老鼠仓'的嫌疑",
+        "type": "soft"
+      },
+      "T3.2-002#C12": {
+        "pass": true,
+        "reason": "输出使用了专业金融术语（如非公开发行、内幕交易、合规管控、ESG等），进行了行业分类、法律依据分析和ESG评价，分析深度和数据密度符合专业水平，面向机构投资者。",
+        "evidence": "输出包含行业分类（医药生物、食品饮料等）、法律区别分析（内幕交易vs合规管理）以及ESG评价（治理、社会、环境维度），术语专业，逻辑清晰。",
+        "type": "soft"
+      },
+      "T3.2-002#C13": {
+        "pass": true,
+        "reason": "模型输出整体语气客观中立，仅陈述事实和分析结论，未出现'建议买入/卖出'等主观投资建议。",
+        "evidence": "输出汇总了受限清单行业分布、管控力度对比、法律依据区别及ESG评价，均为客观分析，如'从数量上看，新增限制多于解除限制'，不含投资操作建议。",
+        "type": "soft"
+      },
+      "T3.2-002#C15": {
+        "pass": true,
+        "reason": "段落间有明确标题和逻辑过渡，论述连贯，主题衔接自然。",
+        "evidence": "因此，当前新增受限清单覆盖4个行业；此外，还有一只股票；简单说：前者是法律硬约束；从治理（G）角度来看",
+        "type": "soft"
+      }
+    },
+    "T3.2-003": {
+      "T3.2-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.2-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T3.2-003#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T3.2-003#C14": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T3.2-003#C11": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T3.2-003#C15": {
+        "pass": true,
+        "reason": "模型输出中未出现金融术语英文缩写（如ROE/PE/EBITDA等），仅使用了行业合规相关缩写（如AOC、SAQ、PCI DSS），不属于约束明确禁止的金融术语英文缩写，因此符合约束要求。",
+        "type": "soft"
+      }
+    },
+    "T3.2-004": {
+      "T3.2-004#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T3.2-004#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T3.2-004#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T3.2-004#C12": {
+        "pass": true,
+        "reason": "输出全文使用正式书面语，无口语化表达，专业术语规范。",
+        "evidence": "经逐项核查，本次交易在资金来源核验、溢价率计算、关联方信息披露及财务数据完整性方面存在若干瑕疵。",
+        "type": "soft"
+      },
+      "T3.2-004#C13": {
+        "pass": true,
+        "reason": "输出中使用了'可能引发投资者理解偏差''可能面临监管处罚''存在业绩波动风险'等谨慎措辞，未出现'必然''一定''肯定'等绝对化表述，语气符合谨慎保守要求。",
+        "evidence": "多处使用'可能''存在风险''涉嫌'等措辞，如'可能引发投资者理解偏差''可能面临监管处罚''存在业绩波动风险'，且结论部分给出'建议'而非绝对判断。",
+        "type": "soft"
+      }
+    },
+    "T3.2-008": {
+      "T3.2-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T3.2-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.2-008#C11": {
+        "pass": true,
+        "reason": "输出中出现的所有金融专业术语英文缩写（GDP、CPI、PPI、MLF、LPR、PSL）均在首次出现时给出了中文全称解释。",
+        "evidence": "国内生产总值（GDP）、全国居民消费价格指数（CPI）、工业生产者出厂价格指数（PPI）、MLF（中期借贷便利）、LPR（贷款市场报价利率）、PSL（抵押补充贷款）",
+        "type": "soft"
+      },
+      "T3.2-008#C12": {
+        "pass": true,
+        "reason": "模型输出了宏观经济分析，明确提及政策（财政、货币、房地产政策）、利率（降准、MLF、LPR）、汇率（弹性增强）及经济周期（基数效应、二季度展望）等宏观因素，符合约束要求。",
+        "evidence": "报告包含货币政策空间、降准降息预测、汇率弹性分析、二季度GDP增速展望等内容，如“预计二季度可能实施1-2次降准或MLF利率下调”。",
+        "type": "soft"
+      }
+    },
+    "T3.2-009": {
+      "T3.2-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.2-009#C11": {
+        "pass": true,
+        "reason": "模型输出中多处使用了类比（如卖包子、月薪类比、开餐馆记账）来辅助解释财务概念，满足约束要求。",
+        "evidence": "毛利率计算后：'就像卖包子，去年每个包子能赚1.3元...'；净利率计算后：'这好比一个人月薪从1万涨到1.05万...'；经营现金流分析：'像开餐馆的老板，客人吃饭签单记账'。",
+        "type": "soft"
+      },
+      "T3.2-009#C12": {
+        "pass": true,
+        "reason": "全文使用通俗类比（如卖包子、月薪类比、开餐馆记账等）解释专业财务指标，对专业术语均有清晰说明，适合普通投资者阅读。",
+        "evidence": "例如毛利率计算后解释'就像卖包子，去年每个包子能赚1.3元，今年成本涨了，每个只能赚1.2元'；经营现金流负值用'开餐馆老板客人签单记账'类比。",
+        "type": "soft"
+      },
+      "T3.2-009#C13": {
+        "pass": true,
+        "reason": "模型输出在第三节和第四节明确从宏观经济角度分析，提到了行业周期下行、融资环境偏紧、利率上升等宏观因素对标的的影响。",
+        "evidence": "当前建筑行业处于周期下行阶段，房地产开发商资金链普遍承压，地方政府财政紧张导致回款慢。融资环境对民企偏紧，银行可能抽贷或提高利率，导致财务费用激增。",
+        "type": "soft"
+      }
+    },
+    "T3.2-010": {
+      "T3.2-010#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.2-010#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.2-010#C10": {
+        "pass": true,
+        "reason": "输出明确包含从风险管理角度分析的核心风险因素及控制措施，符合约束要求。",
+        "evidence": "第四部分'风险管理视角下的投资考量'详细列出了产能出清节奏不确定、海外贸易壁垒、技术路线切换等风险，并提出了关注资产负债率、经营性现金流等风险控制措施。",
+        "type": "soft"
+      },
+      "T3.2-010#C11": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T3.2-010#C12": {
+        "pass": true,
+        "reason": "输出全文使用正式书面语，无口语化表达，专业术语使用规范",
+        "evidence": "全文未出现'挺好的''差不多''搞清楚'等口语化表达，专业术语如'毛利率''产能过剩''经营性现金流'等使用规范",
+        "type": "soft"
+      },
+      "T3.2-010#C14": {
+        "pass": true,
+        "reason": "输出中明确从宏观经济角度分析了行业周期和政策影响，符合约束要求。",
+        "evidence": "从宏观经济角度看，光伏行业正经历“产能过剩—价格战—利润塌陷”的典型周期。国家能源局要求各省2025年新增装机不低于十四五规划目标的25%，这一政策有助于托底国内需求。",
+        "type": "soft"
+      }
+    },
+    "T3.2-011": {
+      "T3.2-011#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T3.2-011#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T3.2-011#C9": {
+        "pass": false,
+        "reason": "输出中使用了'久期'、'信用下沉'、'尾部风险'等专业术语，未进行通俗化解释，不符合避免专业术语的约束。",
+        "evidence": "久期管理视角；信用下沉与利差机会；尾部风险不可忽视；拉长久期",
+        "type": "soft"
+      },
+      "T3.2-011#C10": {
+        "pass": false,
+        "reason": "第二部分'下半年配置策略参考'中多次出现'建议'等主观投资建议表述（如'建议根据自身负债期限...''建议关注利差变化趋势...''建议保持组合的灵活性...'），不符合客观中立、不包含主观投资建议的约束",
+        "evidence": "建议根据自身负债期限和风险承受能力，权衡久期暴露的利弊；建议关注利差变化趋势，若后续经济数据或政策调整导致利差重新走阔，可择机进行信用债配置；建议保持组合的灵活性",
+        "type": "soft"
+      },
+      "T3.2-011#C12": {
+        "pass": true,
+        "reason": "输出使用了专业金融术语和机构投资者关注的分析框架（久期管理、信用利差、违约风险），数据密度高，分析深度符合专业水平。",
+        "evidence": "包含'久期管理视角'、'信用下沉与利差机会'、'收益率曲线形态'、'信用利差收窄'等专业术语，并引用具体数值（如10Y国债2.18%）进行分析。",
+        "type": "soft"
+      }
+    },
+    "T3.3-001": {
+      "T3.3-001#C9": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T3.3-001#C10": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      },
+      "T3.3-001#C11": {
+        "pass": true,
+        "reason": "模型输出明确设置了监管机构立场专栏，从信息披露合规性、一致行动人监管、短线交易核查等角度分析，关注监管关切而非投资收益。",
+        "evidence": "监管机构立场部分提到：'信息披露合规性：公告数据准确、格式规范，及时披露...符合要求'、'监管关注重点：一致行动人持股合并计算，防范短线交易...需核查交易记录'、'建议措施：要求公司发布减持计划实施进展公告'",
+        "type": "soft"
+      }
+    },
+    "T3.3-002": {
+      "T3.3-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T3.3-002#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.3-002#C12": {
+        "pass": true,
+        "reason": "输出第一段即为核心结论（指出存在一处不一致但整体一致性高），后续展开验证过程，符合先结论后分析的约束。",
+        "evidence": "经核查，锦泰电子科技股份有限公司2024年年报与2025年一季报数据整体一致性较高，但存在一处显著不一致……以下依次展开验证过程与评估。",
+        "type": "soft"
+      },
+      "T3.3-002#C14": {
+        "pass": true,
+        "reason": "输出末尾明确从宏观经济角度分析了全球电子行业回暖、地缘政治风险、供应链波动以及国内经济结构性调整等宏观因素对标的的影响。",
+        "evidence": "从宏观经济角度分析，2024年全球电子行业在AI、新能源汽车及消费电子复苏推动下逐步回暖。...在宏观不确定性仍存的背景下（如地缘政治风险、供应链波动）...当前国内经济处于结构性调整期...",
+        "type": "soft"
+      }
+    },
+    "T3.3-003": {
+      "T3.3-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.3-003#C11": {
+        "pass": true,
+        "reason": "输出中使用了类比（如'就像坐飞机需要提前值机'）和举例（如'就像考试前14天发复习资料'）来辅助解释复杂概念。",
+        "evidence": "类比与风险提示：就像坐飞机需要提前值机... 举例：就像考试前14天发复习资料，最后一天才收作业。",
+        "type": "soft"
+      },
+      "T3.3-003#C12": {
+        "pass": false,
+        "reason": "模型输出中出现了金融术语英文缩写，包括'T+3'（交易后第三个工作日）和'H股'（香港上市股票），违反了'不得使用金融术语英文缩写'的约束。",
+        "type": "soft"
+      },
+      "T3.3-003#C13": {
+        "pass": true,
+        "reason": "输出末尾存在一段总结，归纳了日期核查、间隔合规等核心要点，且未引入新信息，符合约束要求。",
+        "evidence": "经核查，本次股东大会通知中所有日期、间隔均符合相关法规与市场惯例：7月15日确为星期二，7月10日确为星期四；股权登记日到会议日间隔5个自然日（3个交易日），满足交收要求；公告日到会议日恰好15天...股东应审慎投票。",
+        "type": "soft"
+      },
+      "T3.3-003#C14": {
+        "pass": true,
+        "reason": "parsed from malformed json",
+        "type": "soft"
+      }
+    },
+    "T3.3-004": {
+      "T3.3-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.3-004#C16": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.3-004#C11": {
+        "pass": true,
+        "reason": "输出自始至终使用正式书面语，无口语化表达，专业术语规范。",
+        "evidence": "致：相关监管机构及机构投资者\n本文档基于招股说明书承诺摘要及经审计的实际经营数据，采用专业分析师口吻进行审阅。",
+        "type": "soft"
+      },
+      "T3.3-004#C12": {
+        "pass": true,
+        "reason": "输出明确面向机构投资者，使用专业金融术语、深度分析和数据表格",
+        "evidence": "标题'致：相关监管机构及机构投资者'，全文采用专业分析师口吻，包含完成率计算、趋势分析、风险提示及监管建议",
+        "type": "soft"
+      },
+      "T3.3-004#C14": {
+        "pass": true,
+        "reason": "模型输出以监管机构立场撰写，聚焦承诺履行审核、合规性核查及信息披露规范，未从投资收益角度分析。",
+        "evidence": "标题为‘IPO承诺执行情况审核报告’，致意‘相关监管机构’，明确‘严格遵循监管机构立场’，内容逐项核查业绩承诺、募投项目进度、资金变更合规性，并给出监管建议。",
+        "type": "soft"
+      },
+      "T3.3-004#C15": {
+        "pass": true,
+        "reason": "输出使用了专业分析师口吻，包含完成率计算、趋势分析、风险提示等专业段落结构，术语使用得当（如'完成率''降幅''杠杆水平'），符合分析师报告风格。",
+        "evidence": "采用专业分析师口吻，以Checkbox格式标记确认事项；包含完成率计算表格、风险提示、监管立场建议等专业结构。",
+        "type": "soft"
+      }
+    },
+    "T3.3-005": {
+      "T3.3-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.3-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.3-005#C9": {
+        "pass": true,
+        "reason": "输出末尾包含以**总结**开头的段落，归纳了前文核心要点，未引入新信息。",
+        "evidence": "**总结**：基于2026年一季度数据，我们推算出隐含CPI约为0.9%，显示通胀温和；按当前城乡收入增速，约需7年时间将收入比降至2.0以下；消费率提升1个百分点可额外释放约1790亿元消费；恩格尔系数32%表明居民生活处于相对富裕阶段。整体来看，居民收入实际增长稳健，消费结构持续优化...",
+        "type": "soft"
+      },
+      "T3.3-005#C12": {
+        "pass": false,
+        "reason": "段落之间缺少明确的逻辑过渡词或衔接句，直接以标题分隔，主题切换跳跃，不符合连贯性要求。",
+        "evidence": "第一段结尾直接进入第二段标题'### 二、城乡收入比收敛趋势的测算'；第二段结尾直接进入第三段标题'### 三、消费率提升的潜在影响与恩格尔系数解读'，无过渡语句。",
+        "type": "soft"
+      }
+    },
+    "T3.3-006": {
+      "T3.3-006#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T3.3-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.3-006#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.3-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T3.3-006#C9": {
+        "pass": false,
+        "reason": "段落之间缺少明确的逻辑过渡词（如'进一步分析''与此相关'等），仅最后一段有总结过渡，其他段落衔接不够清晰",
+        "evidence": "一、二、三、四段之间无过渡词，仅第五段开头有'从以上四个维度'作为过渡",
+        "type": "soft"
+      },
+      "T3.3-006#C14": {
+        "pass": true,
+        "reason": "模型输出使用了通俗语言和比喻，对专业术语（如去化周期、资金覆盖倍数）给出了清晰易懂的解释，适合普通投资者阅读。",
+        "evidence": "去化周期（即当前库存按现有销售速度全部卖完所需的季度数）；资金覆盖倍数（到位资金/开发投资）；线性外推假设；以价换量；冰封",
+        "type": "soft"
+      }
+    },
+    "T3.3-007": {
+      "T3.3-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.3-007#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T3.3-007#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T3.3-007#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T3.3-007#C11": {
+        "pass": true,
+        "reason": "输出全文采用正式书面语，无口语化表达，专业术语使用规范。",
+        "evidence": "如'权益仓位72.5%'、'加权平均涨跌幅'、'集中度风险'等，未见口语化词汇。",
+        "type": "soft"
+      },
+      "T3.3-007#C14": {
+        "pass": true,
+        "reason": "输出末尾包含一段以“总结”开头的总结段，概括了前文要点并给出建议，符合约束要求。",
+        "evidence": "总结上述分析，本季度组合通过提升权益仓位并重仓半导体与新能源板块，实现了显著的超额收益，但前十大持仓集中度高达76.36%，且单一行业占比超过37%，存在较高集中度风险。建议后续适度分散行业配置，降低个股权重，以平衡收益与波动。",
+        "type": "soft"
+      }
+    }
+  },
+  "scores": {
+    "T1.1-001": 1.0,
+    "T1.1-002": 1.0,
+    "T1.1-003": 0.8333333333333334,
+    "T1.1-004": 0.5,
+    "T1.1-005": 1.0,
+    "T1.1-006": 0.8333333333333334,
+    "T1.1-007": 0.8,
+    "T1.1-008": 1.0,
+    "T1.1-009": 0.8333333333333334,
+    "T1.1-010": 1.0,
+    "T1.1-011": 1.0,
+    "T1.1-012": 0.75,
+    "T1.1-013": 1.0,
+    "T1.1-014": 1.0,
+    "T1.1-015": 1.0,
+    "T1.1-016": 0.5,
+    "T1.1-017": 0.5,
+    "T1.1-020": 1.0,
+    "T1.1-021": 0.75,
+    "T1.2-001": 0.6666666666666666,
+    "T1.2-002": 1.0,
+    "T1.2-003": 1.0,
+    "T1.2-004": 1.0,
+    "T1.2-005": 0.8,
+    "T1.2-006": 1.0,
+    "T1.2-007": 1.0,
+    "T1.2-008": 0.8,
+    "T1.2-012": 1.0,
+    "T1.2-013": 1.0,
+    "T1.2-014": 1.0,
+    "T1.2-015": 0.6666666666666666,
+    "T1.3-001": 1.0,
+    "T1.3-002": 0.8333333333333334,
+    "T1.3-003": 0.6666666666666666,
+    "T1.3-004": 0.8,
+    "T1.3-005": 1.0,
+    "T1.3-006": 0.75,
+    "T1.3-007": 1.0,
+    "T1.3-008": 1.0,
+    "T1.3-009": 0.75,
+    "T1.3-010": 0.75,
+    "T1.3-011": 0.4,
+    "T1.3-012": 1.0,
+    "T1.3-013": 0.4,
+    "T1.3-014": 1.0,
+    "T2.1-001": 0.75,
+    "T2.1-002": 1.0,
+    "T2.1-003": 0.8333333333333334,
+    "T2.1-004": 1.0,
+    "T2.1-005": 1.0,
+    "T2.1-008": 0.8333333333333334,
+    "T2.1-009": 1.0,
+    "T2.1-010": 0.6666666666666666,
+    "T2.2-001": 0.6666666666666666,
+    "T2.2-002": 0.75,
+    "T2.2-003": 1.0,
+    "T2.2-004": 0.8333333333333334,
+    "T2.2-005": 1.0,
+    "T2.2-006": 0.8333333333333334,
+    "T2.3-001": 1.0,
+    "T2.3-002": 0.8333333333333334,
+    "T2.3-003": 1.0,
+    "T2.3-004": 1.0,
+    "T2.3-005": 1.0,
+    "T2.3-006": 1.0,
+    "T2.4-001": 1.0,
+    "T2.4-002": 1.0,
+    "T2.4-003": 1.0,
+    "T2.4-004": 1.0,
+    "T2.4-005": 0.8333333333333334,
+    "T2.4-008": 0.75,
+    "T2.4-009": 0.3333333333333333,
+    "T2.5-001": 1.0,
+    "T2.5-002": 1.0,
+    "T2.5-003": 1.0,
+    "T2.5-004": 0.75,
+    "T2.5-006": 0.8333333333333334,
+    "T2.5-007": 1.0,
+    "T3.1-001": 0.75,
+    "T3.1-002": 0.75,
+    "T3.1-003": 0.75,
+    "T3.1-004": 0.75,
+    "T3.1-009": 0.75,
+    "T3.1-010": 1.0,
+    "T3.1-011": 0.8333333333333334,
+    "T3.2-001": 0.8,
+    "T3.2-002": 0.8,
+    "T3.2-003": 0.8333333333333334,
+    "T3.2-004": 0.8,
+    "T3.2-008": 1.0,
+    "T3.2-009": 1.0,
+    "T3.2-010": 1.0,
+    "T3.2-011": 0.6,
+    "T3.3-001": 1.0,
+    "T3.3-002": 1.0,
+    "T3.3-003": 0.8,
+    "T3.3-004": 1.0,
+    "T3.3-005": 0.75,
+    "T3.3-006": 0.6666666666666666,
+    "T3.3-007": 1.0
+  },
+  "tier_scores": {
+    "T1": 85.7,
+    "T2": 89.4,
+    "T3": 84.7,
+    "overall": 86.7
+  }
+}

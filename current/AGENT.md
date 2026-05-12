@@ -1,122 +1,214 @@
-# FinIF Benchmark — Current Status & Next Steps
+# FinIF — 金融指令遵循评测 & SFT 训练
 
-## Project Overview
+## 项目概况
 
-FinIF (Financial Instruction Following) Benchmark：金融指令遵循能力评测。
-目标是测量大模型（GPT-4o, GPT-5）和小模型（Qwen3-8B）在金融场景下的**计算、推理、判断**能力差异。
+FinIF (Financial Instruction Following) Benchmark：评测大模型在金融场景下的指令遵循能力。
+配套 SFT 训练 pipeline，目标是让 Qwen3-8B 通过针对性训练达到/超过大模型水平。
 
-- 54 个 case，分三层：T1（数据提取+计算, 27个）、T2（分析+洞察, 15个）、T3（合规核验+推断, 12个）
-- 227 个约束（160 hard + 67 soft）
-- Hard constraint 由 `checkers.py` 中的 Python 函数执行
-- Soft constraint 由 LLM judge（GPT-4o）评判
+- **Benchmark**: 100 case / 300 约束（187 hard + 113 soft），全部为 IF 约束，eval-prompt 完全对齐，9 模型已评测
+- **约束数分布**: 1条(15) / 2条(20) / 3条(30) / 4条(20) / 5条(15)
+- **设计决策**: C6 计算正确性约束已移除；query 隐式约束（C1 覆盖度/C2 证据等）也已清理，eval_config 只包含 prompt「附加要求」中显式列出的约束
+- **约束分类体系**: 5 大类 20 子标签（F1-F7 / N1-N3 / L1-L4 / S1-S4 / C3,C5）
+- **SFT Pipeline**: 2134 条 prompt，约束数 1-5 条梯度采样，弱项 tag 加权（N3/S3/F4 ×3.0）
 
-## File Structure
+## 最新评测结果（2026-05-12，10 模型）
+
+| 排名 | 模型 | Prompt-level | Instruction-level | Hard | Soft |
+|:----:|------|:-----------:|:-----------------:|:----:|:----:|
+| 1 | GPT-5.4 | **88.00%** | **96.0%** | 94.7% | **98.2%** |
+| 2 | GPT-5.2 | 87.00% | 95.7% | 94.7% | 97.3% |
+| 3 | GPT-5 | 77.00% | 92.0% | 92.0% | 92.0% |
+| 3 | **Qwen3-8B-SFT** | **77.00%** | **91.3%** | **92.0%** | **90.3%** |
+| 3 | DS-V4-Pro-Think | 77.00% | 90.7% | 90.4% | 91.2% |
+| 6 | DS-V4-Pro | 76.00% | 90.0% | 88.8% | 92.0% |
+| 6 | DS-V4-Flash | 75.00% | 90.0% | 89.3% | 91.2% |
+| 8 | DS-V4-Flash-Think | 73.00% | 89.7% | 89.3% | 90.3% |
+| 9 | GPT-5.1 | 69.00% | 88.0% | 85.0% | 92.9% |
+| 10 | Qwen3-8B (SFT前) | 62.00% | 84.3% | 86.1% | 81.4% |
+
+- Prompt-level: 全部约束通过才算 pass
+- Instruction-level: 单条约束维度通过率
+- Judge: ds-v4-flash (temperature=0)
+- Hard checker: 本地规则函数，完全确定性
+- Soft checker: LLM-as-Judge，agreement ~90%
+- 详细结果见 `docs/FinIF_eval_results.md`
+
+## 目录结构
 
 ```
 current/
-├── benchmark_all.json        # 54 cases: case_id, prompt, context
-├── benchmark_all.jsonl        # 同上，逐行格式（供外部平台使用）
-├── eval_config_all.json       # 227 约束配置 {"constraints": {"T1.1-001#C1": {...}, ...}}
-├── checkers.py                # Hard constraint checker 函数库（16 种 checker）
-├── eval_responses.py          # 评测脚本：hard check + LLM judge
-├── gen_responses.py           # 回复生成脚本（调用 gpt_call_all.py）
-├── upgrade_benchmark.py       # query 升级脚本（记录从 v1→v2 的改写逻辑）
-├── qwen-3-output.jsonl        # Qwen3-8B 原始回复（外部生成）
-├── viewer.html / viewer.py    # 可视化工具
-└── output/
-    ├── responses_*.jsonl       # 三模型回复（GPT-4o, GPT-5, Qwen3-8B）
-    └── scores_*.json           # 三模型评分结果
+├── AGENT.md                     # 本文件
+├── DATA_INDEX.md                # 数据文件分类索引
+├── checkers.py                  # ~50 个 checker 函数
+├── gen_async.py                 # 异步并行回复生成（多 provider: DS + SiliconFlow）
+├── gen_responses_ds.py          # 回复生成 + 评测（gen/eval 子命令，--models 过滤）
+├── score_sft_responses.py       # SFT 训练数据打分
+├── build_stats.py               # HTML dashboard 生成
+├── trim_constraints.py          # 约束数量裁剪脚本（3-6 → 1-5）
+│
+├── benchmark/                   # Benchmark 数据 + 评测结果
+│   ├── benchmark_all.json       # 100 cases: case_id, prompt, context
+│   ├── benchmark_prompts_100.jsonl  # 100 条组装好的推理输入
+│   ├── eval_config_all.json     # 300 IF 约束配置（eval-prompt 对齐）
+│   ├── constraint_taxonomy.json # 约束体系规范（5大类20子标签）
+│   ├── responses/               # 10 模型回复（responses_*.jsonl）
+│   └── scores/                  # 10 模型评分（scores_*.json）
+│
+├── sft_data/                    # SFT 训练数据 + 修复脚本
+│   ├── sft_input_2134.jsonl     # 最终 SFT 输入 prompt
+│   ├── sft_data.jsonl           # GPT-5.4 teacher 原始回复
+│   ├── flash_repair_v2.json     # 374 条修复后回复
+│   ├── sft_sharegpt_2132.json   # 最终 ShareGPT 训练数据
+│   ├── sft_scores.json          # 训练数据打分结果
+│   └── constraint_gen_output_v3.jsonl  # 约束采样结果（冲突清理后）
+│
+├── sft_pipeline/                # SFT pipeline 代码 + 中间数据
+│   ├── config/task_labels.json  # L1/L2 任务标签定义
+│   ├── data/samples_clean_2134.jsonl  # 清洗后的 sample
+│   └── gen_constraint_text.py   # 约束采样 + LLM 生成（N=1-5, TAG_BOOST）
+│
+├── docs/                        # 文档资料
+│   ├── pipeline.md              # 全流程 Pipeline 详细说明
+│   ├── FinIF_eval_results.md    # 10 模型详细评测报告
+│   ├── IFEval_results.md        # IFEval 通用 IF 评测结果
+│   ├── sft_train.md             # SFT 训练实验报告
+│   └── sft_findings.md          # SFT 训练效果分析
+│
+├── html/                        # HTML 可视化页面
+│   ├── benchmark_stats.html     # 10 模型对比 dashboard
+│   ├── data_review.html         # 100 case 数据审查
+│   └── review_responses.html    # 模型回复详情查看
+│
+├── diagrams/                    # 流程图
+│   ├── pipeline.drawio
+│   └── whole_pipeline.drawio
+│
+└── archive/                     # 归档（旧版脚本/数据/打分）
 ```
 
-## Current Evaluation Results
+## 评测流程
 
-| Model | T1 | T2 | T3 | Overall |
-|---|---|---|---|---|
-| GPT-5 | 71.6% | 75.7% | 83.6% | **75.4%** |
-| Qwen3-8B | 70.7% | 70.7% | 77.2% | **72.1%** |
-| GPT-4o | 61.4% | 80.7% | 81.9% | **71.3%** |
+```
+benchmark_all.json + eval_config_all.json (300 IF constraints)
+         │
+         ▼
+   gen_async.py <model_key>       → benchmark/responses/responses_*.jsonl
+         │                          (支持 DS/SiliconFlow 多 provider，20 并发)
+         │                          (GPT 模型通过 Vulcan 平台生成，手动转换格式)
+         ▼
+   gen_responses_ds.py eval --models <model> --judge-workers 20
+         ├── Hard checker (checkers.py, 本地规则函数) → bool
+         └── Soft checker (ds-v4-flash LLM-as-Judge + rubric) → {pass, reason}
+         │
+         ▼
+   benchmark/scores/scores_*.json  (per-case → T1/T2/T3 tier → overall)
+         │
+         ▼
+   build_stats.py                 → html/benchmark_stats.html (10模型对比 dashboard)
+```
 
-**问题：三模型差距太小（GPT-5 vs Qwen3-8B 仅 3.3pp），benchmark 无法有效区分大小模型。**
+## 约束体系
 
-## Root Cause Analysis: Hard Checker 设计缺陷
+### 分类标签
 
-这是当前最核心的问题。分析详情：
+| 大类 | 标签 | 说明 |
+|------|------|------|
+| Format | F1 章节, F2 列表, F3 表格, F4 JSON, F5 引用块, F6 首尾, F7 特殊 | 结构/格式约束 |
+| Number | N1 字数, N2 元素计数, N3 精度 | 数值约束 |
+| Linguistic | L1 关键词, L2 禁止模式, L3 术语, L4 金融符号 | 语言学约束 |
+| Style | S1 语气, S2 角色, S3 连贯性, S4 修辞 | 风格约束 |
+| Content | C3 视角, C5 条件触发 | 内容约束 |
 
-### 1. 72.5% 的 hard constraint 三模型全过，零区分度
-160 个 hard constraint 中有 116 个三模型全部 PASS，完全没有区分能力。
+### 约束池
 
-### 2. `check_has_calculation`（62 个）— 只检测有没有算式
-这个 checker 只看输出中是否包含 `+`, `-`, `×`, `/`, `=` 等运算符号。任何模型只要 show work 就能过，完全不验证计算结果是否正确。GPT-4o pass rate 98.4%, Qwen3-8B 90.3%。
+| 类型 | 数量 | 说明 |
+|------|------|------|
+| Hard checker（参数化规则） | 14 tags | F1-F7, L1-L2, L4, N1-N3, C5 |
+| Soft rubric（LLM-as-Judge） | 9 tags | C3, F4, F6, F7, L3, S1-S4 |
 
-### 3. `check_computation_result`（40 个）— 做的是"关键词+数字共现"而非计算验证
-这个 checker 的逻辑是：在输出中找到包含 `label`（如"涨幅空间"）的行，然后看该行是否有一个数字落在 `expected ± tolerance` 范围内。
+Benchmark 约束数分布：1条(15) / 2条(20) / 3条(30) / 4条(20) / 5条(15) = 300 约束。
+SFT 约束数分布：1条(10%) / 2条(20%) / 3条(30%) / 4条(25%) / 5条(15%)，共 2134 条。
 
-**致命问题**：它测的是**用词**而非**计算能力**。例如：
-- GPT-5 算出了正确答案 `11.83%`，但它写的是"距涨停约 11.83%"而不是"涨幅空间 11.83%"，label "涨幅空间" 匹配不上 → **FAIL**
-- Qwen3-8B 写了"上涨空间百分比 ≈ 11.83%"，包含"空间" → **PASS**
-- 同一个正确答案，因为用词不同，结果相反
+详见 `constraint_taxonomy.json`。
 
-### 4. `check_value_exact`（10 个）— 同样的 label 匹配问题
-要求 key-value 同行出现，但不同模型对同一数据的表述方式不同。
+## L2 类别
 
-### 5. 所有模型都 FAIL 的约束（11 个）— 约束设计本身有问题
-包括 `check_word_limit`（字数限制太严）、`check_ranking`（排序检测逻辑有 bug）、`check_table_sort_alpha` 等。
+| L1 | L2 | 描述 | Case 数 |
+|----|-----|------|---------|
+| T1 | T1.1 | 行情/基金/宏观数据提取与四则运算 | 19 |
+| T1 | T1.2 | 基于公告/财报的财务比率计算 | 12 |
+| T1 | T1.3 | 公告/文书关键字段提取与结构化输出 | 14 |
+| T2 | T2.1 | 多维度业绩或宏观经济综合分析 | 8 |
+| T2 | T2.2 | 竞争优势/业务结构/收入质量评估 | 6 |
+| T2 | T2.3 | 时序趋势研判与跨实体横向对比 | 6 |
+| T2 | T2.4 | 量化风险指标计算与风险定性判断 | 7 |
+| T2 | T2.5 | 高格式密度：摘要+指标+结构化并行 | 6 |
+| T3 | T3.1 | 财务数据异常审查与逻辑验证 | 7 |
+| T3 | T3.2 | 撰写专业金融报告 | 8 |
+| T3 | T3.3 | 跨表/跨期一致性核验与数学推导 | 7 |
 
-### 6. Per-checker pass rate summary
+## SFT Pipeline 进度
 
-| Checker | Count | GPT-4o | GPT-5 | Qwen3-8B | 区分度 |
-|---|---|---|---|---|---|
-| check_has_calculation | 62 | 98.4% | 87.1% | 90.3% | 低 |
-| check_computation_result | 40 | 75.0% | 70.0% | 77.5% | 极低（Qwen > GPT-5） |
-| check_markdown_table | 12 | 83.3% | 75.0% | 100.0% | 反向（小模型更高） |
-| check_value_exact | 10 | 60.0% | 80.0% | 80.0% | 反向 |
-| check_arithmetic_correct | 7 | 100% | 100% | 100% | 零 |
-| check_field_coverage | 6 | 100% | 100% | 100% | 零 |
-| check_keyword_presence | 6 | 100% | 100% | 100% | 零 |
+- [x] Step 0-3: prompt 合成（context + query + 约束 + 参数化扩增 → 2394 条）
+- [x] Context 去重（剔除 benchmark 重叠 260 条 → 2134 条 clean）
+- [x] Step 3.5: 约束文本动态生成（1-5 条梯度采样 + 冲突检测 + LLM 生成 + 弱项加权 N3/S3/F4）
+- [x] Benchmark query 清洗（格式指令从正文移到约束块）
+- [x] SFT query 清洗（566/2134 修改）
+- [x] 约束数量裁剪（Benchmark: 3-6 → 1-5，SFT: 同步调整）
+- [x] Benchmark 9模型评测（DS×4 + GPT×4 + Qwen3-8B baseline）
+- [x] SFT 输入拼装（sft_data/sft_input_2134.jsonl）
+- [ ] Step 4: teacher response 生成（GPT-5.4 via Vulcan，K=4~8）
+- [ ] Step 5: 约束打分 + 拒绝采样（τ=0.7）
+- [ ] Step 6: 格式化 Qwen3 SFT 格式（non-thinking: 空 think 标签）
+- [x] SFT 训练 + 评测（Qwen3-8B-SFT: 77.00% prompt / 91.3% instruction，排名第 3）
+- [ ] GRPO（可选）
 
-## What Needs to Be Done
+## API 配置
 
-### Priority 1: 重写 Hard Checker（最关键）
+| 用途 | Provider | Base URL | Model |
+|------|----------|----------|-------|
+| Benchmark 回复生成 | DeepSeek | `https://api.deepseek.com` | deepseek-v4-flash / v4-pro |
+| Soft Judge | DeepSeek | `https://api.deepseek.com` | deepseek-v4-flash |
+| Teacher (SFT) | DeepSeek | `https://api.deepseek.com` | deepseek-v4-flash (thinking) |
+| Qwen3-8B 推理 | SiliconFlow | `https://api.siliconflow.cn/v1` | Qwen/Qwen3-8B |
+| GPT-5/5.1/5.2/5.4 | Vulcan 平台 | — | gpt-5 / gpt-5.1 / gpt-5.2 / gpt-5.4 |
 
-当前 checker 本质上是**字符串匹配测试**，不是**推理能力测试**。需要彻底重新设计：
+### gen_async.py 模型配置
 
-**A. `check_computation_result` 需要改为真正的计算验证：**
-- 不应该依赖 label 关键词匹配
-- 应该从 context 中提取原始数据，独立计算 expected 值，然后在输出中搜索该数值（不依赖 label）
-- 或者：constraint 中直接给出 expected 数值范围，在整个输出中搜索是否出现该数值
+| Key | API Model | Provider | Thinking |
+|-----|-----------|----------|----------|
+| ds-v4-flash | deepseek-v4-flash | DeepSeek | No |
+| ds-v4-pro | deepseek-v4-pro | DeepSeek | No |
+| ds-v4-flash-thinking | deepseek-v4-flash | DeepSeek | Yes (high) |
+| ds-v4-pro-thinking | deepseek-v4-pro | DeepSeek | Yes (high) |
+| qwen3-8b | Qwen/Qwen3-8B | SiliconFlow | No (enable_thinking=False) |
 
-**B. `check_has_calculation` 需要升级为 `check_calculation_correct`：**
-- 不能只检测"有没有算式"，要验证"算式结果是否正确"
-- 方案：用 Python `eval()` 或正则提取算式并验算
-- 或者：改为 soft constraint 交给 LLM judge 验证
+## 关键设计决策
 
-**C. 减少零区分度约束：**
-- `check_field_coverage`, `check_keyword_presence`, `check_arithmetic_correct` 全部三模型 100%，应删除或替换
-- `check_markdown_table` 对小模型反而更友好，应删除
+| 决策 | 选择 | 依据 |
+|------|------|------|
+| 评测框架 | 纯 IF compliance（C6 correctness 独立评测） | 参考 SciIF 双轴设计 |
+| eval-prompt 对齐 | eval_config 只含 prompt「附加要求」中的约束 | query 隐式要求不公平 |
+| 约束数梯度 | 1-5 条/case，分布 15/20/30/20/15 | 难度梯度 + 统计充分 |
+| Judge 模型 | DS-V4-Flash (temperature=0) | 成本低、速度快、agreement ~90% |
+| SFT 底座 | Qwen3-8B | 部署成本低，提升空间充足 |
+| SFT Teacher | GPT-5.4 (via Vulcan) | Benchmark 最强模型，96% instruction-level |
+| SFT 弱项加权 | N3/S3/F4 权重 ×3.0 | Qwen3-8B baseline 这三类最弱 |
+| SFT 不教 reasoning | 空 think 标签 | CoT SFT 损害 IF（文献支持） |
+| GRPO reward | 仅 Hard checker | 零 API 成本，可大量采样 |
 
-### Priority 2: 约束类型重新分配
+## 常用命令
 
-当前 160 hard / 67 soft 的比例不合理。建议：
-- 将无法用代码精确验证的"计算正确性"类约束改为 soft（交给 LLM judge）
-- Hard constraint 只保留可以 100% 确定性验证的（如：数值精确匹配、格式检查）
-- 目标：hard 约束少而精，每个都有区分度
+```bash
+# 生成回复（支持多模型并行）
+python3 gen_async.py ds-v4-flash ds-v4-pro
 
-### Priority 3: 增加真正有区分度的约束
+# 单模型评测（只评指定模型，不影响其他）
+python3 gen_responses_ds.py eval --judge-workers 20 --models ds-v4-pro
 
-需要新增能区分大小模型的约束类型：
-- **多步推理链验证**：要求模型完成 A→B→C 的推导，验证中间步骤
-- **反事实推理**：如"如果利率上调 50bp 而非 25bp，影响如何"
-- **矛盾检测**：在 context 中埋入矛盾数据，看模型能否识别
-- **定量判断**：给出计算结果后的定性判断（如"属于强势/弱势"），小模型往往判断失误
+# 生成 HTML dashboard
+python3 build_stats.py
 
-## Dependencies
-
-- `gen_responses.py` 依赖项目根目录的 `gpt_call_all.py`（minimax API 代理调用）
-- GPT-5 是推理模型，`max_tokens` 需设为 16384+（已在 gen_responses.py 中处理）
-- LLM judge 使用 GPT-4o (`eval_responses.py` 中 `JUDGE_MODEL = "gpt-4o-2024-11-20"`)
-
-## Key Design Decisions
-
-- **Context 不变**：54 个 case 的原始文档内容（context 字段）保持不变，只修改 query
-- **Query 升级模式**：A（提取+计算）、B（分析+洞察）、C（核验+推断）
-- **升级脚本**：`upgrade_benchmark.py` 包含完整的 NEW_QUERIES 和 NEW_CONSTRAINTS 字典，记录了所有改写逻辑
+# SFT 约束采样
+cd sft_pipeline && python3 gen_constraint_text.py prepare
+```

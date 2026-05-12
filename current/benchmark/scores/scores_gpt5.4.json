@@ -1,0 +1,3126 @@
+{
+  "model": "gpt5.4",
+  "results": {
+    "T1.1-001": {
+      "T1.1-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.1-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.1-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T1.1-001#C9": {
+        "pass": true,
+        "reason": "输出通篇从零售投资者角度出发，使用通俗语言解释计算过程和市场现象，关注实际交易决策信息。",
+        "evidence": "“从零售投资者角度看”、“从零售投资者视角”、“对普通投资者来说”、“尾盘承接力度一般”等表述，以及“有空间不等于有动力”的通俗解释。",
+        "type": "soft"
+      }
+    },
+    "T1.1-002": {
+      "T1.1-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      }
+    },
+    "T1.1-003": {
+      "T1.1-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.1-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-003#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.1-003#C13": {
+        "pass": true,
+        "reason": "模型输出首次出现CPI时给出了中文全称“居民消费价格指数”，满足约束要求",
+        "evidence": "居民消费价格指数（CPI，Consumer Price Index）",
+        "type": "soft"
+      },
+      "T1.1-003#C15": {
+        "pass": true,
+        "reason": "输出全程客观陈述数据和计算，未出现任何投资建议类表述",
+        "evidence": "全文均为数据列举、计算和客观分析，结尾附有风险提示，无'建议买入/卖出'等字样",
+        "type": "soft"
+      }
+    },
+    "T1.1-004": {
+      "T1.1-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      }
+    },
+    "T1.1-005": {
+      "T1.1-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-005#C11": {
+        "pass": true,
+        "reason": "输出最后一段以'总结：'开头，归纳了收盘价、涨幅、资金流向等前文核心要点，共3句，未引入新信息，符合约束要求。",
+        "evidence": "总结：一鸣食品在2025年05月15日收于21.81元...是否形成持续走强仍需观察后续资金连续性。",
+        "type": "soft"
+      }
+    },
+    "T1.1-006": {
+      "T1.1-006#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.1-006#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-006#C10": {
+        "pass": true,
+        "reason": "输出未使用'alpha'、'beta'或'夏普比率'等明确禁止的术语，整体语言通俗易懂，非专业读者可理解。",
+        "evidence": "输出使用了'超额收益率'、'超额回撤'等术语，但未出现约束禁止的特定术语，且通过计算和比喻进行了解释。",
+        "type": "soft"
+      }
+    },
+    "T1.1-007": {
+      "T1.1-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-007#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.1-007#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      }
+    },
+    "T1.1-008": {
+      "T1.1-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.1-008#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.1-008#C11": {
+        "pass": true,
+        "reason": "模型输出中未出现金融专业术语英文缩写，无需给出中文全称解释。",
+        "evidence": "输出中仅使用了‘北向资金’等中文全称术语，未出现ROE、PE、EBITDA等英文缩写。",
+        "type": "soft"
+      },
+      "T1.1-008#C12": {
+        "pass": true,
+        "reason": "输出全文为客观数据分析和事实陈述，没有出现任何主观投资建议如'建议买入/卖出'等。",
+        "evidence": "全文包含数据提取、涨跌比计算、北向资金倍数计算，语气客观中立。",
+        "type": "soft"
+      }
+    },
+    "T1.1-009": {
+      "T1.1-009#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-009#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-009#C12": {
+        "pass": true,
+        "reason": "输出中未出现任何金融术语英文缩写，均使用中文表述。",
+        "evidence": "全文未出现ROE、PE、EBITDA等英文缩写，例如使用'基本每股收益'、'净资产收益率'等中文术语。",
+        "type": "soft"
+      },
+      "T1.1-009#C16": {
+        "pass": true,
+        "reason": "模型输出中明确标注了各抽取结果按原文出现先后次序逆序排列，并展示了具体的逆序顺序结构",
+        "evidence": "结论摘要部分标明“按原文出现先后‘逆序’排列”，且各表格说明中均注明“按原文出现先后次序进行逆序排序”",
+        "type": "soft"
+      }
+    },
+    "T1.1-010": {
+      "T1.1-010#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T1.1-010#C12": {
+        "pass": true,
+        "reason": "所有出现的金额数据（如-13,281.57万元、44,000.00万元等）均使用了Markdown加粗格式。",
+        "evidence": "实际净利润为**-13,281.57万元**，承诺净利润为**44,000.00万元**，缺口绝对值**57,281.57万元**，累计净利润**-28,269.21万元**，累计承诺**152,700.00万元**。",
+        "type": "soft"
+      }
+    },
+    "T1.1-011": {
+      "T1.1-011#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-011#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T1.1-011#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      }
+    },
+    "T1.1-012": {
+      "T1.1-012#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.1-012#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.1-012#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      }
+    },
+    "T1.1-013": {
+      "T1.1-013#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.1-013#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      }
+    },
+    "T1.1-014": {
+      "T1.1-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      }
+    },
+    "T1.1-015": {
+      "T1.1-015#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.1-015#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T1.1-015#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      }
+    },
+    "T1.1-016": {
+      "T1.1-016#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.1-016#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.1-016#C10": {
+        "pass": true,
+        "reason": "输出末尾包含独立的“总结”段落，共3句话，概括了核心结论和投资者建议，符合约束要求。",
+        "evidence": "\"总结\": \"总体看，一季度工业企业利润恢复势头较好，私营企业和部分制造业亮点突出。对零售投资者来说，可以更多关注利润增长快、成本改善明显的行业，同时对利润下滑或由盈转亏的板块保持谨慎，避免只看热度不看基本面。\"",
+        "type": "soft"
+      },
+      "T1.1-016#C11": {
+        "pass": true,
+        "reason": "模型输出使用了通俗易懂的语言，如'赚钱明显回升'、'家底仍然较厚'等，未出现如'alpha''beta''夏普比率'等专业术语，适合非专业读者理解。",
+        "evidence": "一季度工业企业赚钱明显回升，其中私营企业增长最快...私营企业利润占全部利润约四分之一...家底仍然较厚。",
+        "type": "soft"
+      },
+      "T1.1-016#C14": {
+        "pass": true,
+        "reason": "输出明确包含‘零售投资者视角分析’章节，并以‘从普通投资者角度看’等通俗语言进行解读，关注实际投资决策信息，满足零售投资者视角要求。",
+        "evidence": "零售投资者视角分析: 从普通投资者角度看，这份数据说明...；总结: 对零售投资者来说，可以更多关注利润增长快、成本改善明显的行业。",
+        "type": "soft"
+      }
+    },
+    "T1.1-017": {
+      "T1.1-017#C11": {
+        "pass": true,
+        "reason": "输出未使用专业术语如'alpha''beta''夏普比率'等，语言通俗易懂，符合使用通俗语言的要求。",
+        "evidence": "输出中无金融专业术语，主要使用'工资性收入''经营净收入'等常见统计词汇，并伴有解释性说明，如'居民收入主要依靠就业和劳动所得'。",
+        "type": "soft"
+      }
+    },
+    "T1.1-020": {
+      "T1.1-020#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.1-020#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.1-020#C12": {
+        "pass": true,
+        "reason": "输出开头第一句即给出了核心结论，随后再展开详细分析过程，符合‘先给出结论，再展开分析过程’的要求。",
+        "evidence": "核心结论：一季度固定资产投资总体温和增长，第二、第三产业合计占总投资约97.7%，但地区与投资主体分化明显，既有下行风险，也存在结构性机遇。",
+        "type": "soft"
+      }
+    },
+    "T1.1-021": {
+      "T1.1-021#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.1-021#C11": {
+        "pass": true,
+        "reason": "输出明确以零售投资者/普通投资者为视角，使用通俗语言解释数据意义和投资决策信息",
+        "evidence": "对普通投资者来说…从零售投资者角度看…给普通投资者的几点直观看法…",
+        "type": "soft"
+      },
+      "T1.1-021#C12": {
+        "pass": true,
+        "reason": "模型输出中未出现任何金融术语英文缩写，全部使用中文表述",
+        "evidence": "输出全文未出现ROE/PE/EBITDA等英文缩写，均使用中文如'个人按揭贷款'、'住宅投资占比'等。",
+        "type": "soft"
+      }
+    },
+    "T1.2-001": {
+      "T1.2-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-001#C9": {
+        "pass": true,
+        "reason": "输出开头第一句即给出核心结论（合计套现金额和主要减持人），后续展开详细分析和计算，满足先结论后分析的要求",
+        "evidence": "**结论：**4位股东合计套现约**9,293.92万元**，其中张成康减持金额最高。若按“**合计减持占总股本1.02%**”反推，公司总股本约**4.743亿股**。",
+        "type": "soft"
+      },
+      "T1.2-001#C11": {
+        "pass": true,
+        "reason": "输出中明确包含'零售投资者视角'段落，使用通俗语言（如'压制股价情绪'），关注实际决策信息（价格区间、后续计划），不假设专业背景。",
+        "evidence": "零售投资者视角：这次是控股股东及一致行动人集体减持，短期容易压制股价情绪；但减持价格集中在18.9元-19.3元附近，也可视作当前重要交易区。需继续看后续是否还有持续减持计划。",
+        "type": "soft"
+      }
+    },
+    "T1.2-002": {
+      "T1.2-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      }
+    },
+    "T1.2-003": {
+      "T1.2-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T1.2-003#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.2-003#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.2-003#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      }
+    },
+    "T1.2-004": {
+      "T1.2-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_percent"
+      },
+      "T1.2-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.2-004#C12": {
+        "pass": true,
+        "reason": "输出中未出现任何金融术语英文缩写，全部使用中文表述。",
+        "evidence": "全文未发现ROE、PE、EBITDA等英文缩写，仅使用中文如“减持金额”“持股比例”等。",
+        "type": "soft"
+      },
+      "T1.2-004#C15": {
+        "pass": true,
+        "reason": "输出用通俗语言解释减持细节和对比，无过多专业术语，适合普通投资者理解",
+        "evidence": "如'四位一致行动人发生减持'、'按股数乘以均价或价格中位数估算'、'赛意信息属于减持比例更高，晶升股份属于减持金额更高'",
+        "type": "soft"
+      }
+    },
+    "T1.2-005": {
+      "T1.2-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.2-005#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      }
+    },
+    "T1.2-006": {
+      "T1.2-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.2-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-006#C13": {
+        "pass": true,
+        "reason": "输出使用通俗易懂的语言，未出现'alpha''beta''夏普比率'等专业术语，并对'稀释比例'等概念进行了通俗化解释，非专业读者可以理解。",
+        "evidence": "用通俗的话说，老股东原来手里的股份数量没变的话，在总股本变大以后，单个股东原有股份所占的‘盘子比例’会被摊薄一些。",
+        "type": "soft"
+      }
+    },
+    "T1.2-007": {
+      "T1.2-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.2-007#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.2-007#C12": {
+        "pass": true,
+        "reason": "输出中未出现金融专业术语英文缩写，因此无需提供中文全称，约束自然满足。",
+        "evidence": "输出全文无ROE、PE、EBITDA等英文缩写，均为中文表述。",
+        "type": "soft"
+      }
+    },
+    "T1.2-008": {
+      "T1.2-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.2-008#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      }
+    },
+    "T1.2-012": {
+      "T1.2-012#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-012#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      }
+    },
+    "T1.2-013": {
+      "T1.2-013#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-013#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-013#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      }
+    },
+    "T1.2-014": {
+      "T1.2-014#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T1.2-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.2-014#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.2-014#C11": {
+        "pass": true,
+        "reason": "输出从零售投资者视角解读数据，使用通俗语言解释含义，并未假设专业背景。",
+        "evidence": "从零售投资者视角看，这说明居民收入仍在增长……对零售投资者而言，这代表居民消费意愿并未明显走弱……",
+        "type": "soft"
+      }
+    },
+    "T1.2-015": {
+      "T1.2-015#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T1.2-015#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.2-015#C11": {
+        "pass": true,
+        "reason": "输出使用了‘同比增长’、‘同比下降’、‘毛利率’、‘净利率’、‘ROE’等专业术语，段落结构分章节标题且逻辑清晰，符合专业分析师口吻。",
+        "evidence": "营业收入同比增长12.27%；营业利润同比下降59.32%；归母净利润同比下降63.98%；加权平均净资产收益率(ROE)为2.85%",
+        "type": "soft"
+      }
+    },
+    "T1.3-001": {
+      "T1.3-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T1.3-001#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T1.3-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T1.3-001#C10": {
+        "pass": true,
+        "reason": "输出全文中未出现任何金融术语的英文缩写形式（如ROE、PE、EBITDA等），仅使用了中文表述。",
+        "evidence": "全文未出现英文缩写，如ROE、PE、EBITDA等词汇。",
+        "type": "soft"
+      }
+    },
+    "T1.3-002": {
+      "T1.3-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-002#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.3-002#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      }
+    },
+    "T1.3-003": {
+      "T1.3-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T1.3-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T1.3-003#C9": {
+        "pass": true,
+        "reason": "模型输出使用通俗语言，没有出现'alpha''beta''夏普比率'等专业术语，所有内容如'虚增营业收入'、'关联交易'、'利润率'均属于常见财经概念，非专业读者可以理解。",
+        "evidence": "虚增营业收入3,856万元，虚增营业成本2,917万元，虚增利润939万元；关联交易金额合计5,280万元。罚款总额计算为：400万+200万+100万=700万元。虚增业务的利润率=939÷3856≈24.35%。",
+        "type": "soft"
+      }
+    },
+    "T1.3-004": {
+      "T1.3-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T1.3-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-004#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-004#C10": {
+        "pass": true,
+        "reason": "输出包含专门的“零售投资者视角”章节，从散户关注点、投资判断等角度分析，语言通俗易懂，不假设专业背景。",
+        "evidence": "“零售投资者视角”包含“年报虚增利润会误导对公司盈利能力的判断…”“对零售投资者而言，此类案件的核心不是罚多少…”等表述。",
+        "type": "soft"
+      }
+    },
+    "T1.3-005": {
+      "T1.3-005#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.3-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-005#C9": {
+        "pass": true,
+        "reason": "输出明确以“零售投资者视角”进行分析，语言通俗，关注实际投资决策所需财务指标，未假设专业背景。",
+        "evidence": "文中包含标题“零售投资者视角下的关键数据梳理”及总结“从零售投资者视角看”，且描述如“显著增长”“稳步提升”等用语通俗易懂。",
+        "type": "soft"
+      },
+      "T1.3-005#C11": {
+        "pass": true,
+        "reason": "输出末尾包含一段总结，共三句话，简洁归纳了前文核心要点（成长性、盈利能力、股东回报等），未引入新信息。",
+        "evidence": "**总结**\\n从零售投资者视角看...核心围绕今世缘...重点涉及成长性、盈利能力、股东回报和资本回报水平四大财务主线。提取结果中...最值得关注的是营收和归母净利润持续增长...",
+        "type": "soft"
+      },
+      "T1.3-005#C13": {
+        "pass": true,
+        "reason": "输出明确包含了年份、公司名称、关键词三个属性及其对应列表，满足约束要求",
+        "evidence": "表格中列出年份['2014','2023','2024']、公司名称['今世缘']、关键词['营收',...]",
+        "type": "soft"
+      }
+    },
+    "T1.3-006": {
+      "T1.3-006#C13": {
+        "pass": true,
+        "reason": "输出中每个问答对均以Q:开头提问、A:开头回答，符合约束",
+        "evidence": "Q: 我想请教一下就是关于我们公司那个铜矿和金矿的这个开采成本问题...\nA: 如果是尽快的话，我们一般来说啊...",
+        "type": "soft"
+      }
+    },
+    "T1.3-007": {
+      "T1.3-007#C10": {
+        "pass": true,
+        "reason": "输出使用通俗语言，未出现alpha、beta、夏普比率等专业术语，对连带责任等概念进行了通俗解释，适合非专业读者理解。",
+        "evidence": "从普通投资者角度看……如果公司不还，周建华也要一起还……这说明资金过度集中，风险明显放大。",
+        "type": "soft"
+      }
+    },
+    "T1.3-008": {
+      "T1.3-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-008#C10": {
+        "pass": true,
+        "reason": "输出中PE缩写首次出现时给出了中文全称“市盈率”和英文全称Price Earnings Ratio，满足约束",
+        "evidence": "市盈率（PE，Price Earnings Ratio，市盈率）",
+        "type": "soft"
+      },
+      "T1.3-008#C12": {
+        "pass": true,
+        "reason": "输出中仅包含客观的财务数据提取、测算和分析，未出现任何明确的投资操作建议用语。",
+        "evidence": "全文未出现'建议买入/卖出/持有'、'推荐配置'、'应该加仓/减仓'等引导具体买卖决策的内容，均为事实陈述和计算。\n",
+        "type": "soft"
+      }
+    },
+    "T1.3-009": {
+      "T1.3-009#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      }
+    },
+    "T1.3-010": {
+      "T1.3-010#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T1.3-010#C12": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T1.3-010#C11": {
+        "pass": true,
+        "reason": "输出全篇为客观数据排名和描述性分析，未包含任何买入/卖出等投资建议",
+        "evidence": "仅列出行业利润增速排名及简要分析，如‘计算机、通信和其他电子设备制造业利润同比增长124.5%，位居首位’，无主观投资建议。",
+        "type": "soft"
+      }
+    },
+    "T1.3-011": {
+      "T1.3-011#C9": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-011#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.3-011#C10": {
+        "pass": true,
+        "reason": "输出明确标注了零售投资者视角，并提供了零售投资者实际决策所需的信息，语言通俗易懂。",
+        "evidence": "分析视角为\"零售投资者\"，总结中提到\"对零售投资者而言，食品烟酒、日用品和服装等高频消费赛道更值得关注\"。",
+        "type": "soft"
+      },
+      "T1.3-011#C13": {
+        "pass": true,
+        "reason": "输出末尾的'总结'字段段落概括了前文核心要点，简洁且无新信息，符合约束要求。",
+        "evidence": "\"总结\": \"总体看，一季度居民消费以刚需为主，结构上仍偏稳健；对零售投资者而言，食品烟酒、日用品和服装等高频消费赛道更值得关注，而医疗保健相关消费短期需谨慎跟踪。\"",
+        "type": "soft"
+      }
+    },
+    "T1.3-012": {
+      "T1.3-012#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.3-012#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      }
+    },
+    "T1.3-013": {
+      "T1.3-013#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-013#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-013#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      }
+    },
+    "T1.3-014": {
+      "T1.3-014#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T1.3-014#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T1.3-014#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_currency_format"
+      },
+      "T1.3-014#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      }
+    },
+    "T2.1-001": {
+      "T2.1-001#C13": {
+        "pass": true,
+        "reason": "各段落之间有明确的逻辑过渡词如'进一步解读''综合来看'等，主题衔接自然不跳跃",
+        "evidence": "如'二、各板块同比增速对比'后接'进一步解读'；'三、Q4整体净利率计算'后接'补充参考'和'风险管理视角解读'；'四、...预测'后接'风险管理视角解读'等，结构清晰连贯",
+        "type": "soft"
+      },
+      "T2.1-001#C14": {
+        "pass": true,
+        "reason": "输出使用通俗语言，未出现'alpha''beta''夏普比率'等专业术语，适合非专业读者理解。",
+        "evidence": "全文使用'游戏占比约77%'、'主业稳健'、'集中度偏高'等通俗表述，无专业金融术语。",
+        "type": "soft"
+      }
+    },
+    "T2.1-002": {
+      "T2.1-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.1-002#C12": {
+        "pass": true,
+        "reason": "输出全文使用正式书面语，无口语化表达，专业术语使用规范。",
+        "evidence": "全文使用'商业化放量''正向运营杠杆''经调整营业利润'等专业术语，无'挺好的''差不多''搞清楚'等口语化表达。",
+        "type": "soft"
+      },
+      "T2.1-002#C15": {
+        "pass": true,
+        "reason": "输出包含风险因素识别（如海外竞争、国内政策、利率等）、风险度量（如现金流改善、盈亏平衡时间估算）和风险控制措施（如优化资源配置、产品多元化、现金流管理），符合从风险管理角度分析的要求。",
+        "evidence": "“对于公司流动性安全和风险管理具有重要意义”“从风险管理角度，若考虑以下不确定性：1.海外创新药市场竞争加剧”“从股东回报与风险管理的角度看”等。",
+        "type": "soft"
+      }
+    },
+    "T2.1-003": {
+      "T2.1-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.1-003#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.1-003#C11": {
+        "pass": true,
+        "reason": "输出中使用了'较为谨慎地看''需要保守指出''需警惕''宜保持审慎'等谨慎措辞，未见绝对化判断，语气符合谨慎保守要求。",
+        "evidence": "多处使用'可能''需关注''较为谨慎地看''需要保守指出'等措辞，且无'必然''一定''肯定'等绝对化表述。",
+        "type": "soft"
+      },
+      "T2.1-003#C13": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如'如果类比来看'、'就像同一辆车'、'若打个比方'）来辅助解释概念，满足约束要求。",
+        "evidence": "如果类比来看，锂精矿更像“原材料放量”，而锂化合物则更像“深加工产品在景气周期中放大弹性”",
+        "type": "soft"
+      },
+      "T2.1-003#C14": {
+        "pass": true,
+        "reason": "输出末尾明确从环境、社会、治理三个维度进行了ESG评价，满足约束要求。",
+        "evidence": "从ESG角度看，天齐锂业这类锂资源企业的盈利高弹性固然吸引人，但仍需结合可持续性审视：- 环境（E）：锂资源开发伴随水资源消耗、土地扰动、碳排放和尾矿处理问题。... - 社会（S）：锂矿开发往往涉及社区关系、劳工安全... - 治理（G）：周期行业中，治理能力决定了公司能否在高景气时克制扩张...",
+        "type": "soft"
+      }
+    },
+    "T2.1-004": {
+      "T2.1-004#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.1-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      }
+    },
+    "T2.1-005": {
+      "T2.1-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.1-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.1-005#C9": {
+        "pass": true,
+        "reason": "输出明确包含环境(E)、社会(S)、治理(G)三个维度的分析，满足ESG评价要求。",
+        "evidence": "第六部分标题为'ESG视角评价'，下设1. 环境（E）、2. 社会（S）、3. 治理（G）子节，分别讨论绿色建造、住房保障、行业治理等内容。",
+        "type": "soft"
+      }
+    },
+    "T2.1-008": {
+      "T2.1-008#C8": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_forbidden_pattern"
+      },
+      "T2.1-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.1-008#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.1-008#C13": {
+        "pass": true,
+        "reason": "输出从风险管理角度系统分析了风险因素（如行业集中度、所有制差异、回款压力）、风险度量（杠杆率、应收账款增速）和风险控制措施（优化资本开支、强化回款管理），而非单纯分析收益。",
+        "evidence": "“从风险管理看，利润越来越集中于制造业中的少数高景气行业…一旦外需、价格或库存周期逆转，利润波动可能放大。”及“风险管理上，应重点关注三类风险…并综合提出优化资本开支、强化回款管理等控制措施。”",
+        "type": "soft"
+      }
+    },
+    "T2.1-009": {
+      "T2.1-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.1-009#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.1-009#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.1-009#C9": {
+        "pass": true,
+        "reason": "输出明确从风险管理角度分析，识别了集采降价、品种依赖、扩围风险等，并进行了度量和控制措施讨论，非纯收益分析。",
+        "evidence": "第2部分专门列出三类风险（集采降价侵蚀利润率、单一大品种依赖、后续集采扩围）；第5部分强调‘更适合作为风险管理框架下的区间判断’。",
+        "type": "soft"
+      }
+    },
+    "T2.1-010": {
+      "T2.1-010#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.1-010#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.1-010#C9": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如'总成绩与裸分'、'主要原料打折'、'项目到节点才入账'、'账面销售与付款速度'）来辅助解释复杂概念，满足约束要求。",
+        "evidence": "打个比方，如果把归母净利润看成“总成绩”，扣非净利润更像“去掉加分项后的裸分”...这有些类似制造业遇到“主要原料打折”...更像工程类业务“项目到节点才入账”...简单类比，就是“账面销售很好看，但客户付款速度如果放慢，现金流压力就会增加”。",
+        "type": "soft"
+      },
+      "T2.1-010#C10": {
+        "pass": true,
+        "reason": "模型输出中未出现需要中文全称的金融专业术语英文缩写（如ROE、PE、EBITDA等），因此约束条件自动满足。",
+        "evidence": "输出中出现缩写如Q3、Q4，但非金融专业术语，且无ROE等英文缩写。",
+        "type": "soft"
+      },
+      "T2.1-010#C13": {
+        "pass": true,
+        "reason": "输出中多次使用'需关注''需审慎评估''可能'等谨慎措辞，未出现'必然''一定'等绝对化判断，符合谨慎保守的语气要求。",
+        "evidence": "如'也应注意...后续持续性仍需审慎评估'、'若碳酸锂价格继续反弹...可能承压'、'全年判断仍宜保持保守'等。",
+        "type": "soft"
+      }
+    },
+    "T2.2-001": {
+      "T2.2-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.2-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.2-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.2-001#C13": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      }
+    },
+    "T2.2-002": {
+      "T2.2-002#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      }
+    },
+    "T2.2-003": {
+      "T2.2-003#C9": {
+        "pass": true,
+        "reason": "输出全文为客观监管分析，无'建议买入/卖出'等投资建议，语气中立。",
+        "evidence": "全文从监管视角进行指标测算与分析，未出现推荐买入/卖出等主观投资建议。",
+        "type": "soft"
+      },
+      "T2.2-003#C10": {
+        "pass": true,
+        "reason": "输出全文从监管视角分析，关注合规性、信息披露、消费者保护、风险集中度等监管关切，未涉及投资收益角度。",
+        "evidence": "监管视角下，应关注银行是否对高净值客户形成过度依赖，以及客户分层经营过程中是否存在销售适当性、信息披露和消费者保护方面的风险。",
+        "type": "soft"
+      },
+      "T2.2-003#C11": {
+        "pass": true,
+        "reason": "全文使用正式书面语，无口语化表达，专业术语规范。",
+        "evidence": "输出中未出现'挺好的''差不多''搞清楚'等口语化表达，使用了'已知''测算''结论'等正式书面语结构。",
+        "type": "soft"
+      }
+    },
+    "T2.2-004": {
+      "T2.2-004#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.2-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.2-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.2-004#C14": {
+        "pass": true,
+        "reason": "输出中多处使用了类比（如'若用企业财务作类比'、'类似上市公司收入中...'、'若用投资中的仓位分布打比方'等），符合约束要求。",
+        "evidence": "若用企业财务作类比，当前居民部门更像‘利润表有所改善，但现金支出依旧偏谨慎’；类似上市公司收入中‘经常性主营业务收入’占比较高；若用投资中的仓位分布打比方",
+        "type": "soft"
+      }
+    },
+    "T2.2-005": {
+      "T2.2-005#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T2.2-005#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.2-005#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.2-005#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.2-005#C13": {
+        "pass": true,
+        "reason": "段落间有明确标题引导，内部使用'首先、其次、再次、进一步看、综合来看'等过渡词，逻辑连贯，主题衔接自然。",
+        "evidence": "各段标题如'一、总体结构判断''二、新旧动能转换'等，内部使用'首先、其次、再次''进一步看''综合来看'等过渡词，论述连贯不跳跃。",
+        "type": "soft"
+      }
+    },
+    "T2.2-006": {
+      "T2.2-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.2-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.2-006#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_line_format"
+      },
+      "T2.2-006#C10": {
+        "pass": false,
+        "reason": "输出中明确给出了“增持”的投资评级，并向零售投资者提供了操作建议，违反了客观中立、不含主观投资建议的要求。",
+        "evidence": "投资评级：增持。对零售投资者而言，可以关注其汽车芯片市占率继续提升的持续性；但若风险偏好较低，则需要同步关注客户集中和资本开支对估值的压制。",
+        "type": "soft"
+      },
+      "T2.2-006#C14": {
+        "pass": true,
+        "reason": "输出中多次明确提及“对零售投资者而言”“从零售投资者视角看”等表述，并用通俗语言解释专业指标，关注散户实际决策所需信息。",
+        "evidence": "“对零售投资者而言，这意味着公司当前处于景气扩张阶段”“从零售投资者视角看，业务结构优化通常意味着估值稳定性提升”“零售投资者应重点关注的信号”",
+        "type": "soft"
+      }
+    },
+    "T2.3-001": {
+      "T2.3-001#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.3-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      }
+    },
+    "T2.3-002": {
+      "T2.3-002#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      },
+      "T2.3-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.3-002#C10": {
+        "pass": true,
+        "reason": "输出明确标明从监管机构与机构投资者视角，并在各部分关注金融稳定、信贷条件、ESG治理等监管关切，而非单纯投资收益角度。",
+        "evidence": "以下从监管机构与机构投资者视角...给机构投资者的3条投资建议（含原文依据）...ESG/监管视角：避免...关注...金融稳定",
+        "type": "soft"
+      },
+      "T2.3-002#C12": {
+        "pass": true,
+        "reason": "输出明确面向机构投资者，使用专业金融术语并包含深度分析和具体数据引用",
+        "evidence": "输出从监管机构与机构投资者视角出发，包含经济数据指标、FOMC纪要分析、投资建议及ESG视角，使用GDP、PCE、CPI等专业术语和具体数值。",
+        "type": "soft"
+      },
+      "T2.3-002#C13": {
+        "pass": true,
+        "reason": "输出从宏观经济角度分析，涵盖了政策（加息/暂停）、利率（联邦基金利率及峰值）、经济周期（GDP韧性、经济放缓）、就业和通胀等宏观因素，符合要求。",
+        "evidence": "内容涉及‘实际GDP仍有韧性’‘就业市场仍偏紧’‘通胀仍明显高于目标’‘联邦基金利率的目标区间’‘市场隐含的联邦基金利率峰值’等宏观指标和政策讨论。",
+        "type": "soft"
+      }
+    },
+    "T2.3-003": {
+      "T2.3-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.3-003#C10": {
+        "pass": true,
+        "reason": "输出从风险管理角度识别了行业集中度、竞争、政策依赖、产能过剩等风险因素，并提供了风险度量和控制建议。",
+        "evidence": "风险含义、风险管理提示、对零售投资者的启示等段落明确从风险角度分析，包含风险因素识别（如产能过剩）、度量（如价格跌幅数据）和控制措施（如优先关注龙头）。",
+        "type": "soft"
+      },
+      "T2.3-003#C12": {
+        "pass": true,
+        "reason": "输出明确以零售投资者视角展开，使用通俗语言解释市场数据、风险含义，并给出具体投资启示，符合约束条件。",
+        "evidence": "基于零售投资者视角，并从风险管理出发...对零售投资者的启示：优先关注龙头公司...谨慎规避...一句话总结：新能源行业景气仍在，但最需防的是销量增长掩盖盈利下滑。",
+        "type": "soft"
+      }
+    },
+    "T2.3-004": {
+      "T2.3-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.3-004#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T2.3-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.3-004#C10": {
+        "pass": true,
+        "reason": "输出使用了‘同比增长’‘同比下降’‘由盈转亏’等专业术语，并包含清晰的标题、表格和分析段落，符合分析师报告风格。",
+        "evidence": "模型输出中频繁出现‘同比增长15.5%’‘同比下降3.2%’‘由盈转亏’等术语，并采用分节标题和表格展示数据，结构专业清晰。",
+        "type": "soft"
+      },
+      "T2.3-004#C14": {
+        "pass": true,
+        "reason": "输出中大量使用了'通常''往往''可能''需谨慎看待'等措辞，避免了'必然''肯定'等绝对化判断，符合谨慎保守的语气要求。",
+        "evidence": "如'这通常反映出'、'利润增速往往更容易放大'、'需要谨慎看待'、'可能对应的景气特征'、'更像是……的结果'、'修复基础仍需观察'等。",
+        "type": "soft"
+      }
+    },
+    "T2.3-005": {
+      "T2.3-005#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      }
+    },
+    "T2.3-006": {
+      "T2.3-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.3-006#C9": {
+        "pass": true,
+        "reason": "输出使用专业金融术语（如核心CPI、PPI转正、环比、上游资源品等），分析深度足（涵盖数据解读、行业影响、资产配置建议），数据密度高（引用多个具体数值），明确面向机构投资者。",
+        "evidence": "多次出现‘对机构投资者而言’、‘从资产配置角度看’等表述，详细分析CPI/PPI结构及对工业企业利润、政策环境的影响。",
+        "type": "soft"
+      },
+      "T2.3-006#C11": {
+        "pass": true,
+        "reason": "输出未使用任何专业术语或行话，完全使用通俗语言，符合约束要求。",
+        "evidence": "全文未出现'alpha''beta''夏普比率'等专业术语，语言平实易懂，如'消费端价格温和回升'等。",
+        "type": "soft"
+      }
+    },
+    "T2.4-001": {
+      "T2.4-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T2.4-001#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.4-001#C10": {
+        "pass": true,
+        "reason": "输出全文使用'可能''或许''需关注''较为审慎'等谨慎保守措辞，避免绝对化判断，符合要求",
+        "evidence": "如'不宜简单解读为持续性看空力量显著增强，更合理的理解是…'、'较为审慎的结论应是略偏多'、'需关注融资余额上升是否伴随…拥挤交易风险'",
+        "type": "soft"
+      },
+      "T2.4-001#C11": {
+        "pass": true,
+        "reason": "输出中包含专门的风险管理视角分析，识别了风险因素（波动率交易升温、多空分歧）、提出了风险度量和控制措施（净多头敞口关注、流动性监控、回撤约束），符合约束要求。",
+        "evidence": "从机构投资者的风险管理角度看...更稳妥的做法应是将该周数据视为“风险偏好边际修复，但尚不足以确认持续做多共识”的信号...机构投资者宜继续以仓位纪律、流动性监控和回撤约束为核心。",
+        "type": "soft"
+      }
+    },
+    "T2.4-002": {
+      "T2.4-002#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_last_line"
+      },
+      "T2.4-002#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.4-002#C11": {
+        "pass": true,
+        "reason": "输出中出现的英文缩写'Maximum Drawdown'已给出了中文全称'最大回撤'，满足约束要求。",
+        "evidence": "最大回撤（Maximum Drawdown，最大回撤）",
+        "type": "soft"
+      }
+    },
+    "T2.4-003": {
+      "T2.4-003#C9": {
+        "pass": true,
+        "reason": "输出全程使用通俗语言，未出现'alpha''beta''夏普比率'等专业术语，并通过比喻和直白解释让非专业读者能理解。",
+        "evidence": "输出中使用'收缩战线''卖不动、回款慢''钱进来的速度，赶不上压力累积的速度'等通俗表达，无专业术语。",
+        "type": "soft"
+      }
+    },
+    "T2.4-004": {
+      "T2.4-004#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T2.4-004#C9": {
+        "pass": true,
+        "reason": "全文用通俗语言撰写，大量解释性内容，避免未解释的专业术语，适合普通投资者阅读。",
+        "evidence": "“如果用普通投资者容易理解的话来说：当前投资没有'全面塌陷'，但已经出现了几个值得警惕的风险点”以及各风险点的详细通俗解释。",
+        "type": "soft"
+      },
+      "T2.4-004#C11": {
+        "pass": true,
+        "reason": "模型输出从宏观经济角度分析了固定资产投资数据，涉及政策、经济增长、就业、消费、区域平衡等宏观因素，符合约束要求。",
+        "evidence": "输出中包含'从宏观经济角度看'、'宏观经济影响'、'政策投资可以托底'等表述，并分析了民间投资、区域失衡、外资撤退、第三产业投资等对宏观经济的传导链条。",
+        "type": "soft"
+      }
+    },
+    "T2.4-005": {
+      "T2.4-005#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T2.4-005#C8": {
+        "pass": true,
+        "reason": "输出中多处使用具体类比（如柱子撑房、球队得分、老船漏水、饭店记账、商场客流）辅助解释复杂概念，符合约束要求。",
+        "evidence": "例如'像几根强柱子撑起了一座房子'、'有点像一支球队靠三名主力得分赢球'、'像一条大河里的老船'等类比。",
+        "type": "soft"
+      },
+      "T2.4-005#C10": {
+        "pass": true,
+        "reason": "输出中首次出现ESG时给出了中文全称（环境、社会、治理）。",
+        "evidence": "从ESG（环境、社会、治理）角度看",
+        "type": "soft"
+      },
+      "T2.4-005#C12": {
+        "pass": true,
+        "reason": "模型输出明确从ESG角度分析，涉及环境、社会、治理三个维度，而非纯财务指标分析。",
+        "evidence": "E（环境）：高增长更多来自电子、有色等行业，若背后是资源消耗和能耗强度较高的扩张，未来可能面临绿色约束；S（社会）：传统行业承压可能传导至就业、工资和供应链稳定性；G（治理）：应收账款增速快于收入增速，说明回款质量弱于经营扩张。",
+        "type": "soft"
+      }
+    },
+    "T2.4-008": {
+      "T2.4-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T2.4-008#C10": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      },
+      "T2.4-008#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      }
+    },
+    "T2.4-009": {
+      "T2.4-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.4-009#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.4-009#C9": {
+        "pass": true,
+        "reason": "报告通过分节标题和逻辑顺序实现段落间自然过渡（不良验算→处置排序→损失测算→结论），内容衔接连贯，无跳跃。",
+        "evidence": "报告分为四个小节：一、不良规模验算与拨备缺口测算；二、前五大风险项目处置优先级排序；三、最大可能损失测算；四、风险评估结论摘要。各节通过标题和内容逻辑顺序紧密相连。",
+        "type": "soft"
+      }
+    },
+    "T2.5-001": {
+      "T2.5-001#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T2.5-001#C11": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如“就像商场里几家大客户在撤柜离场”“就像一辆车正在下坡”等），满足约束要求。",
+        "evidence": "“这就像商场里几家大客户在撤柜离场，而普通顾客把这些货慢慢买走了”“这就像一辆车正在下坡，老司机和熟路的人先下车了”",
+        "type": "soft"
+      }
+    },
+    "T2.5-002": {
+      "T2.5-002#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      },
+      "T2.5-002#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_blockquote_count"
+      },
+      "T2.5-002#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T2.5-002#C12": {
+        "pass": true,
+        "reason": "输出中多次使用了类比（如'营收像轻微打滑，利润像踩急刹车'）和具体举例（如'就像一家店铺...'）来辅助解释复杂概念。",
+        "evidence": "可以把这个弹性系数理解成：营收只像“轻微打滑”了一下，但利润却像“踩了急刹车”",
+        "type": "soft"
+      },
+      "T2.5-002#C13": {
+        "pass": true,
+        "reason": "模型输出中出现的英文缩写'pct'已给出中文全称'百分点'，满足约束条件。",
+        "evidence": "这里的“pct”是 percentage points，百分点",
+        "type": "soft"
+      }
+    },
+    "T2.5-003": {
+      "T2.5-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.5-003#C12": {
+        "pass": true,
+        "reason": "输出明确从ESG三个维度（环境、社会、治理）进行了分析，符合约束要求。",
+        "evidence": "从环境维度看，智能物流装备有助于绿色转型；从社会维度看，机器人产业推动产业升级；从治理维度看，需甄别公司信息披露能力。",
+        "type": "soft"
+      }
+    },
+    "T2.5-004": {
+      "T2.5-004#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      }
+    },
+    "T2.5-006": {
+      "T2.5-006#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T2.5-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.5-006#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T2.5-006#C10": {
+        "pass": true,
+        "reason": "段落间使用了'基于上述结构分化''不过'等明确的逻辑过渡词，各段主题衔接自然不跳跃。",
+        "evidence": "从【数据速览】到【投资机会】：“基于上述结构分化”；从【投资机会】到【风险提示】：“不过，风险同样清晰”。",
+        "type": "soft"
+      },
+      "T2.5-006#C13": {
+        "pass": false,
+        "reason": "输出仅提及宏观经济数据（GDP、工业增加值等）和产业分析，未涉及约束要求的政策、利率、汇率、经济周期等宏观因素对标的的影响。",
+        "evidence": "输出包含GDP、工业增加值、社零、投资、进出口、PPI等数据，但未提及政策、利率、汇率或经济周期分析。",
+        "type": "soft"
+      }
+    },
+    "T2.5-007": {
+      "T2.5-007#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_word"
+      },
+      "T2.5-007#C9": {
+        "pass": true,
+        "reason": "输出末尾包含以'总结：'开头的段落，归纳了前文核心要点，简洁且未引入新信息，满足约束。",
+        "evidence": "总结：整体而言，2026年一季度全国居民收入和消费支出延续平稳增长，收入端表现好于消费端...但内需恢复基础仍需进一步巩固。",
+        "type": "soft"
+      },
+      "T2.5-007#C11": {
+        "pass": true,
+        "reason": "全文使用了大量谨慎措辞如'需关注''可能''不宜简单作单向判断''需观察'等，未出现绝对化表述，语气谨慎保守。",
+        "evidence": "多处使用'需关注''可能''不宜简单作单向判断''需观察'等措辞，如'消费增速低于收入增速…可能意味着…'、'居住类支出总体较稳定，短期扩张不明显…可能反映…'、'医疗保健支出小幅下降，需谨慎解读…不宜简单作单向判断'等。",
+        "type": "soft"
+      }
+    },
+    "T3.1-001": {
+      "T3.1-001#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.1-001#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.1-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      }
+    },
+    "T3.1-002": {
+      "T3.1-002#C10": {
+        "pass": true,
+        "reason": "段落间使用了‘再’、‘进一步’、‘对于你提到的’、‘如按’等过渡词，结构清晰连贯，主题衔接自然，无跳跃。",
+        "evidence": "从第1步‘先核验’到第2步‘再核验’，再到第3步‘核验“触及1%整数倍”’，第4步‘计算…’，第5步‘判断…’，第6步‘如按…’最后第7步‘最终核验结论汇总’，过渡明确。",
+        "type": "soft"
+      },
+      "T3.1-002#C11": {
+        "pass": true,
+        "reason": "输出中使用了多处类比（如'对账'、'小账本汇总成总账本'、'身高记到厘米'、'卖房子类比'）来辅助解释复杂概念，满足约束要求。",
+        "evidence": "例如：'可以把这类核验理解为“对账”'、'这一步相当于把四个人的小账本汇总成总账本'、'就像把几个人的身高都只记到厘米...'、'类比卖房子'。",
+        "type": "soft"
+      }
+    },
+    "T3.1-003": {
+      "T3.1-003#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_first_person"
+      }
+    },
+    "T3.1-004": {
+      "T3.1-004#C11": {
+        "pass": true,
+        "reason": "模型输出中多次使用类比（如'可类比为一名投资者将资金交由他人代管'等）和具体例子来辅助解释，符合约束要求。",
+        "evidence": "（引用多处类比）'这可类比为一名投资者将资金交由他人代管…'、'若将其类比为个人将100万元委托理财…'、'可类比为家庭理财中…'等。",
+        "type": "soft"
+      }
+    },
+    "T3.1-009": {
+      "T3.1-009#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T3.1-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      }
+    },
+    "T3.1-010": {
+      "T3.1-010#C12": {
+        "pass": true,
+        "reason": "模型输出从宏观经济角度分析了利率、经济增长节奏、行业周期等宏观因素对标的的影响，满足约束要求。",
+        "evidence": "第四部分第3节明确讨论'宏观经济增长节奏''利率与融资环境变化''新能源产业链周期波动'；第六部分第4节分析'行业周期与价格波动风险'。",
+        "type": "soft"
+      }
+    },
+    "T3.1-011": {
+      "T3.1-011#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.1-011#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_sentence_count"
+      },
+      "T3.1-011#C10": {
+        "pass": true,
+        "reason": "输出中段落间使用了'进一步看''基于上述背景''在适当性评估中''进一步分析''基于上述分析'等过渡词，逻辑连贯，主题衔接自然。",
+        "evidence": "进一步看，基金经理...；基于上述背景，以下将从...；在适当性评估中，仅观察绝对收益并不足够...；进一步分析，基金的基准中...；基于上述分析，本备忘录建议...",
+        "type": "soft"
+      },
+      "T3.1-011#C11": {
+        "pass": true,
+        "reason": "输出从风险管理角度分析了风险因素、风险度量和控制措施，如行业集中、超额收益风险、风险等级评定及配置建议。",
+        "evidence": "从风险管理角度看，这种‘行业相关性偏高的适度集中’应当比单纯的持仓比例更值得关注……持续负超额收益意味着承担了主动偏离风险后，未能获得相应风险补偿……建议评定为中高风险（R4）产品……辅以明确的止损、再平衡和风格暴露监测机制。",
+        "type": "soft"
+      },
+      "T3.1-011#C12": {
+        "pass": true,
+        "reason": "全文使用了‘可能’‘值得关注’‘建议’等谨慎措辞，未出现‘必然’‘一定’等绝对化判断，语气符合谨慎保守要求。",
+        "evidence": "如‘可能加剧组合的风格偏离’‘值得关注’‘建议将其定位为…并辅以明确的止损…’等。",
+        "type": "soft"
+      }
+    },
+    "T3.2-001": {
+      "T3.2-001#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.2-001#C12": {
+        "pass": true,
+        "reason": "各段落间均使用了明确的过渡语句（如'在识别路径的基础上''为了避免''根据题干数据''上述检测方案''最后'等），逻辑连贯，主题衔接自然。",
+        "evidence": "第三部分开头'在识别路径的基础上'、第四部分'为了避免单一指标误伤'、第五部分'根据题干数据'、第六部分'上述检测方案可直接挂靠'、第七部分'最后，为保证方案可执行'。",
+        "type": "soft"
+      }
+    },
+    "T3.2-002": {
+      "T3.2-002#C10": {
+        "pass": true,
+        "reason": "输出包含专门的ESG评价部分，明确分析了治理(G)和社会(S)维度，并提及环境(E)维度，满足从ESG角度评价的约束。",
+        "evidence": "五、从ESG角度的评价：从ESG角度看，这份通知主要体现的是G，即治理，同时也与S，即社会责任有一定关系。1）治理（G）层面...2）社会（S）层面...3）环境（E）层面...",
+        "type": "soft"
+      },
+      "T3.2-002#C15": {
+        "pass": true,
+        "reason": "输出中段落间有明确过渡，如'以下基于通知原文整理'、'这四只证券构成了'、'这说明限制范围并不集中于单一板块'、'从数量上看'、'进一步看'、'从ESG角度看'等，逻辑连贯，主题衔接自然。",
+        "evidence": "从数量上看，新增限制多于解除限制，净增加2项。因此，可以判断：当前合规管控力度总体上是在加强。进一步看，受限原因虽然都指向“防止不当交易”，但法律和治理逻辑有所不同。",
+        "type": "soft"
+      }
+    },
+    "T3.2-003": {
+      "T3.2-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.2-003#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_table"
+      },
+      "T3.2-003#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_no_list"
+      },
+      "T3.2-003#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      }
+    },
+    "T3.2-004": {
+      "T3.2-004#C11": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_decimal_places"
+      },
+      "T3.2-004#C14": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_keyword_presence"
+      }
+    },
+    "T3.2-008": {
+      "T3.2-008#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T3.2-008#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.2-008#C12": {
+        "pass": true,
+        "reason": "输出从GDP、出口、投资、消费、物价、货币政策和房地产等宏观因素展开分析，并讨论了政策、利率、经济周期等内容，满足宏观经济角度分析的要求。",
+        "evidence": "从总体经济研判、核心驱动力分析、房地产拖累量化、物价与货币政策等章节，系统分析了GDP、利率、政策、经济周期等宏观因素。",
+        "type": "soft"
+      }
+    },
+    "T3.2-009": {
+      "T3.2-009#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.2-009#C11": {
+        "pass": true,
+        "reason": "模型输出中使用了多处类比如'可以打个比方：中天建设现在像一家“接单很多的工程承包商”'和'可以类比成：一个工程队...'来辅助解释复杂概念",
+        "evidence": "可以打个比方：中天建设现在像一家“接单很多的工程承包商”",
+        "type": "soft"
+      },
+      "T3.2-009#C13": {
+        "pass": true,
+        "reason": "输出包含宏观经济与行业背景分析，明确讨论了基建政策、地产调整、融资环境（利率、信用分层）等宏观因素对标的的影响。",
+        "evidence": "从宏观经济角度看，2025年上半年国内经济总体延续修复…稳增长背景下，基础设施、公共工程、城市更新等领域仍有项目释放…融资环境边际改善但分层明显…市场利率总体不算高，但信用分层明显。",
+        "type": "soft"
+      }
+    },
+    "T3.2-010": {
+      "T3.2-010#C9": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.2-010#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.2-010#C12": {
+        "pass": true,
+        "reason": "输出中未发现口语化表达，专业术语使用规范，整体语言正式书面化。",
+        "evidence": "全文使用正式书面语，如'高产出、低价格、弱盈利'等表述，专业术语规范，无'挺好的''差不多''搞清楚'等口语化表达。",
+        "type": "soft"
+      },
+      "T3.2-010#C14": {
+        "pass": true,
+        "reason": "模型输出中明确提及全球经济温和复苏、利率中枢偏高、海外贸易壁垒、稳增长政策等宏观因素，从宏观经济角度进行了分析。",
+        "evidence": "结合宏观经济看，全球经济温和复苏、利率中枢仍偏高、海外贸易壁垒扰动持续；宏观上，在稳增长、绿色投资和能源安全三重驱动下，光伏仍属战略产业。",
+        "type": "soft"
+      }
+    },
+    "T3.2-011": {
+      "T3.2-011#C9": {
+        "pass": true,
+        "reason": "输出整体使用了通俗易懂的语言，未出现'alpha''beta''夏普比率'等明确禁止的专业术语，且对出现的金融术语（如基点、信用利差）有上下文解释，非专业读者可理解。",
+        "evidence": "全文未出现alpha、beta、夏普比率等术语；对信用利差、久期等概念在上下文中进行了说明，如'信用利差是债券收益率与同期限国债收益率之间的差额'等（隐含解释）。",
+        "type": "soft"
+      },
+      "T3.2-011#C10": {
+        "pass": true,
+        "reason": "输出整体语气客观中立，以数据和事实分析为主，未出现明确买入/卖出等投资建议",
+        "evidence": "全文使用'可重点关注'、'可继续关注'等策略分析表述，无'建议买入/卖出'等操作建议，语气中立",
+        "type": "soft"
+      }
+    },
+    "T3.3-001": {
+      "T3.3-001#C9": {
+        "pass": true,
+        "reason": "输出包含专门从零售投资者视角分析的部分，使用通俗语言解释对散户的影响，关注实际投资决策信息。",
+        "evidence": "六、从零售投资者视角分析\n对散户来说，最重要的不是算术对不对，而是这件事意味着什么。\n1）这是一则偏中性的“利空信号”...",
+        "type": "soft"
+      },
+      "T3.3-001#C10": {
+        "pass": true,
+        "reason": "输出包含‘从风险管理角度分析’章节，具体识别了市场风险、流动性风险、信息风险、估值风险等，并讨论了风险控制措施，符合风险管理分析要求。",
+        "evidence": "七、从风险管理角度分析\n1）市场风险：减持压制股价...属于典型的供给冲击风险。\n2）流动性风险：后续可能仍有卖压...形成‘事件链风险’。\n3）信息风险：需核查减持计划与合规性。\n4）估值风险：股东减持可能反映‘收益兑现’。\n风险管理角度已明确展开。",
+        "type": "soft"
+      },
+      "T3.3-001#C11": {
+        "pass": true,
+        "reason": "输出包含明确的监管视角部分，聚焦数据一致性、披露义务、合规性等监管关切，而非投资收益角度。",
+        "evidence": "第八部分开头：‘监管层最关心的，不是“市场觉得利空不利空”，而是披露是否真实、准确、完整、及时，交易是否合规。’",
+        "type": "soft"
+      }
+    },
+    "T3.3-002": {
+      "T3.3-002#C14": {
+        "pass": true,
+        "reason": "模型输出明确从宏观经济角度分析了行业背景和公司表现，提到了出口需求、行业景气、宏观环境等宏观因素。",
+        "evidence": "从宏观经济的角度分析，在2024年至2025年一季度，电子制造行业通常受到出口需求修复、消费电子补库、工业自动化升级以及产业链国产替代等因素影响。",
+        "type": "soft"
+      }
+    },
+    "T3.3-003": {
+      "T3.3-003#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.3-003#C11": {
+        "pass": true,
+        "reason": "模型输出中多处使用类比（如'像寄快递参加活动''就像家庭在经济前景不明朗时提前申请备用授信'等）来辅助解释，满足约束要求。",
+        "evidence": "这就像从某个已知站点数公交站一样；可以打个比方：像寄快递参加活动；这就像盖房子；这就像考试前一天还能打印准考证；就像家庭在经济前景不明朗时提前申请一笔备用授信。",
+        "type": "soft"
+      }
+    },
+    "T3.3-004": {
+      "T3.3-004#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_conditional_trigger"
+      },
+      "T3.3-004#C16": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_checkbox_format"
+      },
+      "T3.3-004#C11": {
+        "pass": true,
+        "reason": "全文使用正式书面语，专业术语规范，无口语化表达",
+        "evidence": "参考输出中'专项审查意见''经比对招股书承诺与实际执行情况''建议以严格口径优先、审慎包容口径补充说明'等表述。",
+        "type": "soft"
+      },
+      "T3.3-004#C14": {
+        "pass": true,
+        "reason": "输出明确采用监管核查视角，关注合规性、信息披露、募投执行、业绩承诺兑现等监管关切，未从投资收益角度分析。",
+        "evidence": "本文从监管核查与机构投资者尽调双重视角出发；从监管立场审视；从监管审查角度；从监管与机构投资者视角看",
+        "type": "soft"
+      }
+    },
+    "T3.3-005": {
+      "T3.3-005#C9": {
+        "pass": true,
+        "reason": "输出末尾有明确的'# 总结'段落，概括了前文核心要点，简洁且未引入新信息。",
+        "evidence": "# 总结\\n综合来看，2026年一季度居民收入呈现…隐含价格指数约为 **0.87%—0.9%**。…城乡收入比大约 **6年左右** 可降到 **2.0以下**。…可额外释放约 **1789亿元、约合1800亿元** 的消费需求。…从恩格尔系数 **32%** 判断…",
+        "type": "soft"
+      }
+    },
+    "T3.3-006": {
+      "T3.3-006#C10": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_depth"
+      },
+      "T3.3-006#C11": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.3-006#C13": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_risk_disclaimer"
+      },
+      "T3.3-006#C9": {
+        "pass": true,
+        "reason": "输出各段落之间有明确过渡，如'接着推导同比变化率''这里的含义很重要''从区域数据看'等，逻辑连贯不跳跃",
+        "evidence": "段落间使用了'接着推导同比变化率''这里的含义很重要''从区域数据看'等过渡词句",
+        "type": "soft"
+      }
+    },
+    "T3.3-007": {
+      "T3.3-007#C12": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_heading_level"
+      },
+      "T3.3-007#C15": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_paragraph_count"
+      },
+      "T3.3-007#C11": {
+        "pass": true,
+        "reason": "全文使用正式书面语，无口语化表达，专业术语使用规范。",
+        "evidence": "依据前十大权益持仓明细，可将其归并为以下行业口径...行业加权平均涨跌幅...权益总市值=156.8×72.5%=113.68亿元...超额收益=8.56%-5.23%=3.33%",
+        "type": "soft"
+      },
+      "T3.3-007#C14": {
+        "pass": true,
+        "reason": "输出末尾存在以'总结'开头的段落，共4句，简洁归纳了前文关键结论（总市值验证、集中度、超额收益来源、整体评价），未引入新信息。",
+        "evidence": "总结：基于季度报告数据测算，Q2末权益总市值约113.68亿元，固收总市值约28.69亿元，均与仓位比例及明细数据基本一致；前十大持仓市值合计86.8亿元，对应权益集中度76.36%，处于中高水平；组合二季度实现超额收益3.33%，其主要alpha来源于权益仓位上调、对半导体与新能源高景气行业的重仓配置，以及龙头个股的较优表现。整体上，该组合在二季度展现出较强的主动进攻能力，但后续亦需警惕高集中度与风格偏离所带来的波动风险。",
+        "type": "soft"
+      }
+    }
+  },
+  "scores": {
+    "T1.1-001": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-002": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-003": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-004": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-005": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-006": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-007": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-008": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-009": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-010": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-011": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-012": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-013": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-014": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-015": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-016": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.1-017": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-020": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-021": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.2-001": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.2-002": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-003": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 5,
+        "passed": 5
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-004": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.2-005": {
+      "total": 2,
+      "passed": 1,
+      "score": 0.5,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-006": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.2-007": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.2-008": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-012": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-013": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-014": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.2-015": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-001": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-002": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 5,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.3-003": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-004": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-005": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.3-006": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-007": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-008": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.3-009": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.3-010": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-011": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.3-012": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.3-013": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.3-014": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.1-001": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.1-002": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.1-003": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.1-004": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.1-005": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.1-008": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.1-009": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.1-010": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.2-001": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 4,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.2-002": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.2-003": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.2-004": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.2-005": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.2-006": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T2.3-001": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.3-002": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.3-003": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.3-004": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.3-005": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.3-006": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.4-001": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.4-002": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.4-003": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.4-004": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.4-005": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.4-008": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.4-009": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.5-001": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.5-002": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.5-003": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.5-004": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T2.5-006": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T2.5-007": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.1-001": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T3.1-002": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.1-003": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T3.1-004": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.1-009": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T3.1-010": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.1-011": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T3.2-001": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.2-002": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.2-003": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T3.2-004": {
+      "total": 2,
+      "passed": 1,
+      "score": 0.5,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T3.2-008": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.2-009": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.2-010": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.2-011": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.3-001": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T3.3-002": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-003": {
+      "total": 2,
+      "passed": 2,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-004": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T3.3-005": {
+      "total": 1,
+      "passed": 1,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-006": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-007": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    }
+  },
+  "tier_scores": {
+    "T1": 0.951111111111111,
+    "T2": 0.9702020202020202,
+    "T3": 0.9772727272727273,
+    "overall": 0.9631666666666666
+  }
+}

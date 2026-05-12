@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>SFT 训练数据抽样审查 (100/2134)</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, 'PingFang SC', sans-serif; background:#f5f5f5; padding:20px; }
+.header { background:#fff; padding:20px 24px; border-radius:12px; margin-bottom:16px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.header h1 { font-size:20px; margin-bottom:12px; }
+.stats { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.stats-label { font-weight:600; font-size:13px; color:#666; min-width:60px; }
+.stat-item { font-size:12px; background:#f0f0f0; padding:2px 8px; border-radius:4px; }
+.filters { display:flex; gap:12px; margin-top:12px; align-items:center; flex-wrap:wrap; }
+.filters input { padding:6px 12px; border:1px solid #ddd; border-radius:6px; font-size:14px; width:240px; }
+.filters select { padding:6px 10px; border:1px solid #ddd; border-radius:6px; font-size:14px; }
+.filters button { padding:6px 14px; border:none; background:#4a90d9; color:#fff; border-radius:6px; cursor:pointer; font-size:13px; }
+.filters button:hover { background:#357abd; }
+.count { font-size:13px; color:#888; margin-left:8px; }
+.card { background:#fff; border-radius:10px; margin-bottom:8px; box-shadow:0 1px 3px rgba(0,0,0,.06); overflow:hidden; }
+.card-header { padding:12px 16px; cursor:pointer; display:flex; align-items:center; gap:10px; user-select:none; }
+.card-header:hover { background:#fafafa; }
+.sid { font-size:13px; font-family:monospace; color:#333; flex:1; }
+.badge { font-size:11px; padding:2px 8px; border-radius:4px; font-weight:500; }
+.badge.l2 { background:#e3f2fd; color:#1565c0; }
+.badge.n { background:#f3e5f5; color:#7b1fa2; }
+.arrow { font-size:11px; color:#999; transition:transform .2s; }
+.card.open .arrow { transform:rotate(90deg); }
+.card-body { display:none; padding:0 16px 16px; }
+.card.open .card-body { display:block; }
+.section { margin-top:12px; }
+.section-label { font-size:12px; font-weight:600; color:#888; margin-bottom:4px; }
+.context { font-size:13px; color:#666; background:#f8f8f8; padding:8px 12px; border-radius:6px; white-space:pre-wrap; max-height:120px; overflow-y:auto; line-height:1.6; }
+.query { font-size:14px; color:#222; background:#fffde7; padding:10px 12px; border-radius:6px; white-space:pre-wrap; line-height:1.7; }
+.ct-item { font-size:13px; padding:6px 10px; margin:4px 0; border-radius:6px; display:flex; align-items:baseline; gap:4px; line-height:1.6; }
+.ct-item.sampled { background:#e8f5e9; border-left:3px solid #43a047; }
+.ct-item.moved { background:#fff3e0; border-left:3px solid #ef6c00; }
+.ct-num { color:#999; font-size:12px; flex-shrink:0; }
+.ct-tag { font-size:10px; background:rgba(0,0,0,.06); padding:1px 6px; border-radius:3px; margin-left:auto; flex-shrink:0; color:#888; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>SFT 训练数据抽样审查 (100 / 2134)</h1>
+  <div class="stats"><span class="stats-label">L2:</span><span class="stat-item">T1.1: 21</span><span class="stat-item">T1.2: 13</span><span class="stat-item">T1.3: 14</span><span class="stat-item">T2.1: 7</span><span class="stat-item">T2.2: 6</span><span class="stat-item">T2.3: 5</span><span class="stat-item">T2.4: 3</span><span class="stat-item">T2.5: 7</span><span class="stat-item">T3.1: 8</span><span class="stat-item">T3.2: 9</span><span class="stat-item">T3.3: 7</span></div>
+  <div class="stats"><span class="stats-label">约束数:</span><span class="stat-item">N=3: 19</span><span class="stat-item">N=4: 36</span><span class="stat-item">N=5: 32</span><span class="stat-item">N=6: 13</span></div>
+  <div class="filters">
+    <input id="search" placeholder="搜索 sample_id / query..." oninput="filterCards()">
+    <select id="filterL2" onchange="filterCards()"><option value="">全部 L2</option></select>
+    <select id="filterN" onchange="filterCards()"><option value="">全部 N</option></select>
+    <button onclick="expandAll()">全部展开</button>
+    <button onclick="collapseAll()">全部收起</button>
+    <span class="count" id="countLabel"></span>
+  </div>
+</div>
+<div id="cards">
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T1.1-003-Q3-R100</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">证券代码：603843 证券简称：*ST 正平 公告编号：2026-067
+正平路桥建设股份有限公司
+关于股票交易的风险提示公告
+正平路桥建设股份有限公司（以下简称“公司”）股票在短期内连续涨停，交易
+风险高度累积。公司多次发布股票交易异常波动及风险提示公告，请广大投资者充分
+关注公司存在的相关风险，理性决策，审慎投资。
+一、二级市场交易风险。
+公司股票于 2026 年 4 月 28 日、4 月 ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请从材料中找出主要数值，计算同比/环比变化率</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>开头第一个词必须是&quot;根据&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>第一人称叙事<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T1.2-001-Q2-R200</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">持股5%以上的股东永辉超市股份有限公司保证向本公司提供的信息内容真实、准
+确、完整，没有虚假记载、误导性陈述或重大遗漏。
+本公司及董事会全体成员保证公告内容与信息披露义务人提供的信息一致。
+证券代码：002697 证券简称：红旗连锁 公告编号：2026-020
+成都红旗连锁股份有限公司
+关于持股5%以上股东减持股份的预披露公告
+特别提示：
+成都红旗连锁股份有限公司（以下简称“公司”“本公司”）于 ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请从以上材料提取财务指标数据，分析其变化趋势</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不超过550字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>至少3个独立章节<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T1.2-006-Q2-R600</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">上 海 证 券 交 易 所
+上证科创公函 上证科创公函 上证科创公函 上证科创公函【【 【【2022 2022 2022 2022】】 】】0003 0003 0003 0003 号号 号号
+关于上海凯赛生物技术股份有限公司
+部分募投项目变更的问询函
+上海凯赛生物技术股份有限公司：
+2022 年1月12 日， 你公司披露 《变更部分募集资金投资项目公告》 ，
+拟减少 “40000 吨/年生物法癸二...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请从以上材料提取财务指标数据，分析其变化趋势</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用至少3层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>金额统一使用亿元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>若提到涨幅必须说明回调<span class="ct-tag">C5</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T1.3-008-Q2-R300</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">2026/5/7 00:49中国证监会⾏政处罚决定书（惠程科技）_中国证券监督管理委员会
+第1/4⻚https://www.csrc.gov.cn/csrc/c101928/c7506518/content.shtml
+繁體|English
+当前位置：⾸页 &gt; 政务信息 &gt; 政府信息公开 &gt; 主动公开 &gt; 按主题查看 &gt; ⾏政执法 &gt; ⾏政处罚
+索  引  号bm56000001/2024-000...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query"></div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>开头第一个词必须是&quot;基于&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>若提到亏损必须说明止损<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>5个3级标题<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>不使用“综上所述”、“总而言之”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>3到5条有序列表<span class="ct-tag">F2</span></div><div class="ct-item moved"><span class="ct-num">（6）</span>请以Markdown表格整理以上材料中的核心信息要素<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T2.1-004-Q3-R300</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">上 海 证 券 交 易 所
+上证科创公函 上证科创公函 上证科创公函 上证科创公函【【 【【2024 2024 2024 2024】】 】】0050 0050 0050 0050 号号 号号
+关于苏州昀冢电子科技股份有限公司放弃控关于苏州昀冢电子科技股份有限公司放弃控关于苏州昀冢电子科技股份有限公司放弃控关于苏州昀冢电子科技股份有限公司放弃控
+股孙公司优先增资权暨关联交易事项的问询股孙公司优先增资...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请综合以上材料，给出核心指标的分析判断和投资建议</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少16个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T2.1-005-Q1-R300</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">上 海 证 券 交 易 所
+上证科创公函 上证科创公函 上证科创公函 上证科创公函【【 【【2024 2024 2024 2024】】 】】0003 0003 0003 0003 号号 号号
+关于对普源精电科技股份有限公司使用
+自有资金收购北京耐数电子有限公司
+部分股权并签订表决权委托协议
+相关事项的问询函
+普源精电科技股份有限公司：
+2024 年 1 月 9 日，你公司发布《关于以现金方式收购北...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请对以上材料进行综合分析，评估其中反映的财务状况和经营趋势</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用表格<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少16个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>必须包含&quot;短期&quot;和&quot;长期&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>数值保留3位小数<span class="ct-tag">N3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T2.2-007-Q1-R200</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">苏州恒久光电科技股份有限公司 2025 年年度报告摘要
+证券代码：002808 证券简称：*ST 恒久 公告编号：2026-024
+苏州恒久光电科技股份有限公司 2025 年年度报告摘要
+一、重要提示
+本年度报告摘要来自年度报告全文，为全面了解本公司的经营成果、财务状况及未来发展规划，投
+资者应当到证监会指定媒体仔细阅读年度报告全文。
+所有董事均已出席了审议本报告的董事会会议。
+非标准审计意见提示...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请对比以上材料中不同板块/产品的数据，分析结构变化</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>分为7到10个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以信用评级分析师的视角撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>数值保留2位小数<span class="ct-tag">N3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T3.1-010-Q1-R300</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">2026/5/7 00:50中国证监会⾏政处罚决定书（涂尔帆）_中国证券监督管理委员会
+第1/3⻚https://www.csrc.gov.cn/csrc/c101928/c7508746/content.shtml
+繁體|English
+当前位置：⾸页 &gt; 政务信息 &gt; 政府信息公开 &gt; 主动公开 &gt; 按主题查看 &gt; ⾏政执法 &gt; ⾏政处罚
+索  引  号bm56000001/2024-0001...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请审查以上材料中的数据逻辑一致性，识别可能的异常或矛盾</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>若提到个股必须说明风险提示<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>金额统一使用元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T3.1-010-Q1-R600</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">2026/5/7 00:50中国证监会⾏政处罚决定书（涂尔帆）_中国证券监督管理委员会
+第1/3⻚https://www.csrc.gov.cn/csrc/c101928/c7508746/content.shtml
+繁體|English
+当前位置：⾸页 &gt; 政务信息 &gt; 政府信息公开 &gt; 主动公开 &gt; 按主题查看 &gt; ⾏政执法 &gt; ⾏政处罚
+索  引  号bm56000001/2024-0001...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请审查以上材料中的数据逻辑一致性，识别可能的异常或矛盾</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;综合&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>末尾风险提示声明<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T3.1-010-Q2-R600</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">2026/5/7 00:50中国证监会⾏政处罚决定书（涂尔帆）_中国证券监督管理委员会
+第1/3⻚https://www.csrc.gov.cn/csrc/c101928/c7508746/content.shtml
+繁體|English
+当前位置：⾸页 &gt; 政务信息 &gt; 政府信息公开 &gt; 主动公开 &gt; 按主题查看 &gt; ⾏政执法 &gt; ⾏政处罚
+索  引  号bm56000001/2024-0001...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上材料推导关键指标间的数量关系，验证其合理性</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从宏观经济的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-EXT-T3.2-011-Q2-R300</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">2026/5/7 00:54中国证监会市场禁⼊决定书（吴光胜）_中国证券监督管理委员会
+第1/4⻚https://www.csrc.gov.cn/csrc/c101927/c7467933/content.shtml
+繁體|English
+当前位置：⾸页 &gt; 政务信息 &gt; 政府信息公开 &gt; 主动公开 &gt; 按主题查看 &gt; ⾏政执法 &gt; 市场禁⼊
+索  引  号bm56000001/2024-0000...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请撰写以上材料的结构化分析报告，包含事实认定和定量分析</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>数值保留4位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>若提到收益必须说明风险<span class="ct-tag">C5</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-001-V1-R400</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">权威金融查询检索1: 文章标题：2025年06月20日瑞丰光电行情数据。 发布时间：2025年06月20日 星期五 文章内容：瑞丰光电（瑞丰光电(300241.SZ)）属于深圳证券交易所创业板，当前时间为2025年06月20日15时03分，当日为交易日，当前市场交易状态为：已收盘；2025年06月20日截止目前瑞丰光电的当前价为12.35元、最高价为12.80元、最低价为12.20元、涨跌幅为-2...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下分析：
+1. 提取瑞丰光电2025年06月20日的当前价、最高价、最低价
+2. 提取2025年06月19日的主力资金流入和流出数据
+3. 列出华西证券给出的评级和目标价
+4. 提取过去5日、10日、20日的主力资金总流入数据</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>首行包含&quot;概要&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>控制在350到650字<span class="ct-tag">N1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-001-V4-R500</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">权威金融查询检索1: 文章标题：2025年06月20日瑞丰光电行情数据。 发布时间：2025年06月20日 星期五 文章内容：瑞丰光电（瑞丰光电(300241.SZ)）属于深圳证券交易所创业板，当前时间为2025年06月20日15时03分，当日为交易日，当前市场交易状态为：已收盘；2025年06月20日截止目前瑞丰光电的当前价为12.35元、最高价为12.80元、最低价为12.20元、涨跌幅为-2...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从以下角度分析瑞丰光电的短期走势信号：
+1. 对比06月19日和06月20日的涨跌幅变化，判断短期价格走势方向
+2. 分析近期主力资金持续流入趋势（5日/10日/20日数据），判断资金面支撑强度
+3. 结合研发费用增长和新产品良率数据，评估基本面支撑
+4. 综合华西证券目标价15.50元与当前价12.35元的差距，分析上行空间</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数值保留3位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>末尾风险提示声明<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>首行包含&quot;摘要&quot;<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-003-V2-R100</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天天基金网 基金详情页
+基金名称：南方优选价值混合A（基金代码：202011）
+基金类型：混合型-偏股 | 基金规模：28.73亿元（截至2025年03月31日）
+基金经理：张明辉 | 成立日期：2018年05月16日
+最新净值：2.3651（2025年06月18日）| 累计净值：2.8951
+
+业绩表现（截至2025年06月18日）：
+近一周收益率：+0.85%
+近一月收益率：+3.42%
+近三...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算：
+1. 计算南方优选价值混合A近一月的超额收益率（基金收益率 - 同期业绩比较基准）
+2. 计算近一年的超额收益率
+3. 计算近三月的超额收益率
+4. 根据近一周同类排名326/3847，计算该基金近一周在同类基金中的百分位排名</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>控制在400到700字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;综合&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-003-V3</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天天基金网 基金详情页
+基金名称：南方优选价值混合A（基金代码：202011）
+基金类型：混合型-偏股 | 基金规模：28.73亿元（截至2025年03月31日）
+基金经理：张明辉 | 成立日期：2018年05月16日
+最新净值：2.3651（2025年06月18日）| 累计净值：2.8951
+
+业绩表现（截至2025年06月18日）：
+近一周收益率：+0.85%
+近一月收益率：+3.42%
+近三...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以下列格式整理南方优选价值混合A的信息：
+1. 制作一张对比表格，对比基金收益率与同期业绩比较基准在各时间维度的表现（近一周至近一年）
+2. 用表格列出四个风险指标：夏普比率、最大回撤、波动率、信息比率
+3. 用饼图数据格式（类别:占比）列出资产配置情况</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>5个2级标题<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数值保留4位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>不使用“众所周知”、“显而易见”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>末尾风险提示声明<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-003-V5-R200</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天天基金网 基金详情页
+基金名称：南方优选价值混合A（基金代码：202011）
+基金类型：混合型-偏股 | 基金规模：28.73亿元（截至2025年03月31日）
+基金经理：张明辉 | 成立日期：2018年05月16日
+最新净值：2.3651（2025年06月18日）| 累计净值：2.8951
+
+业绩表现（截至2025年06月18日）：
+近一周收益率：+0.85%
+近一月收益率：+3.42%
+近三...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取南方优选价值混合A的基本信息（代码、类型、规模、成立日期、基金经理）
+2. 分别计算近一周、近一月、近三月、近一年的超额收益率
+3. 汇总业绩表现和风险指标
+4. 综合分析该基金的收益能力和风险控制水平，给出评价</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少3个独立章节<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>3个3级标题<span class="ct-tag">F1</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>评价不超过100字<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-004-V1</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天天基金网 基金对比工具
+对比日期：2025年06月15日
+
+═══ 基金A：博时主题行业混合(LOF)A（160505）═══
+最新净值：3.1280
+近一年收益率：+18.62%
+近三年年化收益率：+12.35%
+基金规模：45.82亿元
+管理费率：1.50%/年
+托管费率：0.25%/年
+夏普比率（近一年）：1.56
+最大回撤（近一年）：-11.23%
+股票仓位：89.15%
+
+═══ 基金...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取以下信息：
+1. 博时主题行业混合(160505)和工银瑞信核心价值混合A(481001)的近一年收益率和近三年年化收益率
+2. 两只基金的夏普比率和最大回撤
+3. 两只基金经理的姓名、任职时间和管理规模
+4. 两只基金前三大行业持仓及其占比</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>控制在300到600字<span class="ct-tag">N1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-004-V2</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天天基金网 基金对比工具
+对比日期：2025年06月15日
+
+═══ 基金A：博时主题行业混合(LOF)A（160505）═══
+最新净值：3.1280
+近一年收益率：+18.62%
+近三年年化收益率：+12.35%
+基金规模：45.82亿元
+管理费率：1.50%/年
+托管费率：0.25%/年
+夏普比率（近一年）：1.56
+最大回撤（近一年）：-11.23%
+股票仓位：89.15%
+
+═══ 基金...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算：
+1. 分别计算两只基金近一年相对沪深300指数的超额收益率
+2. 分别计算两只基金近一年相对中证500指数的超额收益率
+3. 计算两只基金近一年收益率的差值
+4. 分别计算两只基金的管理费+托管费合计年费率</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行包含&quot;摘要&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数值保留1位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>分为4到5个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>末尾风险提示声明<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-005-V2-R400</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">国家统计局 数据发布
+发布时间：2025年07月10日
+标题：2025年上半年居民消费价格指数(CPI)月度数据
+
+2025年上半年全国居民消费价格指数月度数据如下：
+1月份：同比上涨0.5%，环比上涨0.8%
+2月份：同比上涨0.7%，环比上涨1.2%（受春节因素影响）
+3月份：同比上涨0.4%，环比下降0.3%
+4月份：同比上涨0.3%，环比下降0.1%
+5月份：同比上涨0.6%，环比上涨0....</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算：
+1. 计算2025年上半年6个月CPI同比涨幅的算术平均值
+2. 计算上半年6个月CPI环比变动的算术平均值
+3. 找出上半年CPI同比涨幅最高月份和最低月份，计算二者差值
+4. 计算6月份所有分类中对CPI影响为正的分项合计影响百分点</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>金额统一使用万元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>不使用表格<span class="ct-tag">F3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-005-V3-R500</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">国家统计局 数据发布
+发布时间：2025年07月10日
+标题：2025年上半年居民消费价格指数(CPI)月度数据
+
+2025年上半年全国居民消费价格指数月度数据如下：
+1月份：同比上涨0.5%，环比上涨0.8%
+2月份：同比上涨0.7%，环比上涨1.2%（受春节因素影响）
+3月份：同比上涨0.4%，环比下降0.3%
+4月份：同比上涨0.3%，环比下降0.1%
+5月份：同比上涨0.6%，环比上涨0....</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以如下格式整理CPI数据：
+1. 制作一张月度CPI汇总表（1-6月），列出每月的同比涨幅和环比变动
+2. 制作一张6月份分类价格变动表，列出各分类的同比涨幅及对CPI的影响百分点
+3. 将各分类按对CPI影响从大到小排序</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用“！”、“!”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数值保留2位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>若提到亏损必须说明止损<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>末尾风险提示声明<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-005-V5-R300</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">国家统计局 数据发布
+发布时间：2025年07月10日
+标题：2025年上半年居民消费价格指数(CPI)月度数据
+
+2025年上半年全国居民消费价格指数月度数据如下：
+1月份：同比上涨0.5%，环比上涨0.8%
+2月份：同比上涨0.7%，环比上涨1.2%（受春节因素影响）
+3月份：同比上涨0.4%，环比下降0.3%
+4月份：同比上涨0.3%，环比下降0.1%
+5月份：同比上涨0.6%，环比上涨0....</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取1-6月各月CPI同比和环比完整数据
+2. 计算月均CPI同比涨幅和同比涨幅的最高-最低差值
+3. 汇总6月份各分类价格变动及CPI拉动情况
+4. 概括2025年上半年物价走势的总体特征</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>若提到收益必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>必须包含&quot;利好&quot;和&quot;利空&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>至少5个完整句子<span class="ct-tag">N2</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>不超过100字<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-009-V5</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">国家统计局 新闻发布会
+发布时间：2025年07月16日
+标题：2025年上半年国民经济运行情况
+
+初步核算，2025年上半年国内生产总值(GDP)616832亿元，按不变价格计算，同比增长5.2%。分季度看，一季度国内生产总值296573亿元，同比增长5.4%；二季度国内生产总值320259亿元，同比增长5.0%。
+
+分产业看，2025年上半年：
+第一产业增加值33856亿元，同比增长3.8%，...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取上半年GDP、三次产业、主要经济指标的全部数据
+2. 计算贸易顺差和二季度GDP环比增量
+3. 分别展示产业结构、主要指标、地区增速
+4. 综合各项数据，概述上半年国民经济运行的总体特征</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item moved"><span class="ct-num">（4）</span>用不超过100字<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-009-V5-R400</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">国家统计局 新闻发布会
+发布时间：2025年07月16日
+标题：2025年上半年国民经济运行情况
+
+初步核算，2025年上半年国内生产总值(GDP)616832亿元，按不变价格计算，同比增长5.2%。分季度看，一季度国内生产总值296573亿元，同比增长5.4%；二季度国内生产总值320259亿元，同比增长5.0%。
+
+分产业看，2025年上半年：
+第一产业增加值33856亿元，同比增长3.8%，...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取上半年GDP、三次产业、主要经济指标的全部数据
+2. 计算贸易顺差和二季度GDP环比增量
+3. 分别展示产业结构、主要指标、地区增速
+4. 综合各项数据，概述上半年国民经济运行的总体特征</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>先给出结论，再展开分析过程<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>用不超过100字<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-010-V3</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 个股资金流向
+永泰能源(600157.SH) 近5日主力资金流向数据
+数据截至：2025年07月18日
+
+日期 | 收盘价 | 涨跌幅 | 主力流入(万元) | 主力流出(万元) | 主力净流入(万元)
+07月14日 | 3.58 | +2.28% | 5823.45 | 4967.38 | +856.07
+07月15日 | 3.65 | +1.96% | 6412.83 | 5128...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以如下格式整理永泰能源的资金流向数据：
+1. 制作近5日资金流向表格（日期/收盘价/涨跌幅/主力流入/主力流出/主力净流入）
+2. 在表格末行汇总5日合计数据
+3. 制作一张永泰能源vs上证指数的涨跌幅对比表
+4. 标注主力净流入为正的交易日和为负的交易日</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>第一人称叙事<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>至少2个独立章节<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-011-V2-R100</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 个股行情
+鼎信通讯(603421.SH) 近期行情回顾
+数据日期：2025年07月01日至2025年07月11日
+
+日期 | 开盘 | 最高 | 最低 | 收盘 | 涨跌幅 | 成交额(亿元)
+07月01日 | 15.20 | 15.68 | 15.05 | 15.52 | +2.11% | 3.85
+07月02日 | 15.60 | 16.23 | 15.45 | 16.08 | +...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算：
+1. 计算鼎信通讯的区间累计涨幅（从07月01日收盘价到07月11日收盘价）
+2. 计算区间振幅（(区间最高价-区间最低价)/起始收盘价×100%）
+3. 计算鼎信通讯区间累计涨幅相对同期行业指数的超额收益率
+4. 找出区间内涨幅最大的单日和跌幅最大的单日
+5. 计算9个交易日中上涨天数和下跌天数</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>必须包含&quot;优势&quot;和&quot;劣势&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>第一人称叙事<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-011-V3</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 个股行情
+鼎信通讯(603421.SH) 近期行情回顾
+数据日期：2025年07月01日至2025年07月11日
+
+日期 | 开盘 | 最高 | 最低 | 收盘 | 涨跌幅 | 成交额(亿元)
+07月01日 | 15.20 | 15.68 | 15.05 | 15.52 | +2.11% | 3.85
+07月02日 | 15.60 | 16.23 | 15.45 | 16.08 | +...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以如下格式整理鼎信通讯的行情数据：
+1. 制作完整的K线数据表格（日期/开盘/最高/最低/收盘/涨跌幅/成交额）
+2. 在表格末尾添加汇总行（区间最高价/最低价/累计涨幅/成交额合计/日均成交额）
+3. 单独列出成交额超过5亿元的交易日及其涨跌幅</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>金额统一使用亿元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>分为3到6个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>3到4条有序列表<span class="ct-tag">F2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-011-V4-R500</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 个股行情
+鼎信通讯(603421.SH) 近期行情回顾
+数据日期：2025年07月01日至2025年07月11日
+
+日期 | 开盘 | 最高 | 最低 | 收盘 | 涨跌幅 | 成交额(亿元)
+07月01日 | 15.20 | 15.68 | 15.05 | 15.52 | +2.11% | 3.85
+07月02日 | 15.60 | 16.23 | 15.45 | 16.08 | +...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从量价配合角度分析鼎信通讯的走势：
+1. 观察涨幅较大的交易日（如07月04日+4.08%）成交额是否同步放大
+2. 分析07月10日下跌-2.73%当日的成交额是否异常
+3. 对比区间累计涨幅与行业指数涨幅，判断个股是否跑赢行业
+4. 从成交额变化趋势判断资金参与意愿的变化</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>3个2级标题<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-011-V5-R100</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 个股行情
+鼎信通讯(603421.SH) 近期行情回顾
+数据日期：2025年07月01日至2025年07月11日
+
+日期 | 开盘 | 最高 | 最低 | 收盘 | 涨跌幅 | 成交额(亿元)
+07月01日 | 15.20 | 15.68 | 15.05 | 15.52 | +2.11% | 3.85
+07月02日 | 15.60 | 16.23 | 15.45 | 16.08 | +...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取鼎信通讯9个交易日的完整行情数据
+2. 计算区间累计涨幅、振幅和相对行业指数的超额收益率
+3. 制作完整K线数据表格
+4. 标记成交额最高和最低的交易日
+5. 用不超过80字总结区间走势特征</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少3处引用块<span class="ct-tag">F5</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>数值保留1位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>第一人称叙事<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-012-V1-R500</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 板块行情
+日期：2025年06月30日（上半年收官日）
+标题：2025年上半年A股主要行业板块涨跌幅排行
+
+排名 | 行业板块 | 上半年涨跌幅 | 最新指数点位 | 年初点位 | PE(TTM)
+1 | 半导体 | +38.52% | 5826.35 | 4206.82 | 62.38
+2 | 人工智能 | +31.27% | 3215.68 | 2449.75 | 85.62
+3 ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取以下信息：
+1. 2025年上半年涨幅排名前5的行业板块及其涨跌幅
+2. 涨幅排名后3的行业板块（房地产/建筑材料/银行）及其涨跌幅
+3. 上证指数、深证成指、创业板指、科创50的上半年涨幅
+4. 各行业板块的PE(TTM)估值</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>首行包含&quot;概要&quot;，末行包含&quot;---&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>若提到收益必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-012-V3</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 板块行情
+日期：2025年06月30日（上半年收官日）
+标题：2025年上半年A股主要行业板块涨跌幅排行
+
+排名 | 行业板块 | 上半年涨跌幅 | 最新指数点位 | 年初点位 | PE(TTM)
+1 | 半导体 | +38.52% | 5826.35 | 4206.82 | 62.38
+2 | 人工智能 | +31.27% | 3215.68 | 2449.75 | 85.62
+3 ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以下列格式整理板块排行数据：
+1. 制作完整的行业板块排行表，包含排名、板块名称、涨跌幅、最新点位、年初点位、PE(TTM)
+2. 制作主要指数对比表（上证/深证/创业板/科创50，含涨幅和收盘点位）
+3. 将行业按涨跌幅分为三组：涨幅超过20%、涨幅0-20%、下跌行业，分别列出</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少2个独立章节<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>金额统一使用元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>若提到收益必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>首行用加粗文字<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.1-012-V5-R100</span>
+    <span class="badge l2">T1.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东方财富网 板块行情
+日期：2025年06月30日（上半年收官日）
+标题：2025年上半年A股主要行业板块涨跌幅排行
+
+排名 | 行业板块 | 上半年涨跌幅 | 最新指数点位 | 年初点位 | PE(TTM)
+1 | 半导体 | +38.52% | 5826.35 | 4206.82 | 62.38
+2 | 人工智能 | +31.27% | 3215.68 | 2449.75 | 85.62
+3 ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取全部行业板块的涨跌幅和估值数据
+2. 计算半导体涨幅验证值、行业间涨幅差距、指数超额涨幅
+3. 分别展示涨幅前5行业和跌幅行业
+4. 对比四大指数表现
+5. 总结上半年A股行业轮动和市场风格特征</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>金额统一使用元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>数值保留3位小数<span class="ct-tag">N3</span></div><div class="ct-item moved"><span class="ct-num">（6）</span>用不超过100字<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-001-V4</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 公告
+公告编号：2025-038
+证券代码：688512 证券简称：星辰半导体
+标题：关于持股5%以上股东减持股份的预披露公告
+
+星辰半导体科技股份有限公司（以下简称“公司”）于2025年06月28日收到公司持股5%以上股东深圳市创新投资集团有限公司（以下简称“创新投资”）的《股份减持计划告知函》。现将有关情况公告如下：
+
+一、股东基本情况
+股东名称：深圳市创新投资集团有限公司
+持股数...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上公告，从信息披露合规性角度分析：
+1. 确认减持比例不超过5%是否符合法规要求（持股超过5%股东每6个月减持不超过5%）
+2. 分析&quot;自本公告披露之日起15个交易日后&quot;的时间窗口要求
+3. 判断减持完成后持股比例降至3.72%，是否仍需继续履行信息披露义务
+4. 评估减持金额（按当前价约11.13亿元）对公司股价可能产生的影响</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>回答末尾必须包含一段总结<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行包含&quot;摘要&quot;<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-001-V4-R200</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 公告
+公告编号：2025-038
+证券代码：688512 证券简称：星辰半导体
+标题：关于持股5%以上股东减持股份的预披露公告
+
+星辰半导体科技股份有限公司（以下简称“公司”）于2025年06月28日收到公司持股5%以上股东深圳市创新投资集团有限公司（以下简称“创新投资”）的《股份减持计划告知函》。现将有关情况公告如下：
+
+一、股东基本情况
+股东名称：深圳市创新投资集团有限公司
+持股数...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上公告，从信息披露合规性角度分析：
+1. 确认减持比例不超过5%是否符合法规要求（持股超过5%股东每6个月减持不超过5%）
+2. 分析&quot;自本公告披露之日起15个交易日后&quot;的时间窗口要求
+3. 判断减持完成后持股比例降至3.72%，是否仍需继续履行信息披露义务
+4. 评估减持金额（按当前价约11.13亿元）对公司股价可能产生的影响</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行包含&quot;概要&quot;，末行包含&quot;---&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-002-V1-R200</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 定期报告
+证券代码：301385 证券简称：中联环保
+标题：中联环保科技股份有限公司2024年年度报告摘要
+
+一、主要财务数据（单位：万元）
+
+项目 | 2024年 | 2023年 | 同比增减
+营业收入 | 185,623.45 | 162,387.12 | +14.31%
+营业成本 | 128,935.28 | 115,246.83 | +11.88%
+毛利润 | 56,688.1...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取中联环保(301385)以下信息：
+1. 2024年和2023年的营业收入、营业成本和归母净利润
+2. 各项费用（销售/管理/研发/财务）的2024年金额和同比增减
+3. 基本每股收益和加权平均净资产收益率（两年对比）
+4. 分业务收入构成及各业务占比</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>先给出结论，再展开分析过程<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>金额统一使用亿元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>4到8条有序列表<span class="ct-tag">F2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-003-V4</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺iFinD 财务分析
+蓝威新能(300856.SZ) 2024年度主要财务指标
+
+一、盈利能力指标
+归母净利润：32,568.75万元
+归属于上市公司股东的净资产（期初）：168,523.42万元
+归属于上市公司股东的净资产（期末）：195,862.17万元
+总资产（期初）：425,836.28万元
+总资产（期末）：486,572.93万元
+营业收入：312,856.48万元
+营业成本：23...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从杜邦分析框架角度分析蓝威新能：
+1. 进行杜邦分解：ROE = 净利率 × 总资产周转率 × 权益乘数
+2. 分析哪个因素对ROE 17.87%的贡献最大
+3. 从流动比率1.52和速动比率1.08的差距，分析存货占用对流动性的影响
+4. 对比经营现金流净额与归母净利润的关系，判断盈利质量</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>必须包含&quot;短期&quot;和&quot;长期&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>控制在350到650字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>至少3个独立章节<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-004-V1-R500</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺 个股估值分析
+锐明技术(002992.SZ) | 智能交通视频监控
+数据日期：2025年07月20日
+
+一、基本估值数据
+最新股价：35.62元
+总股本：3.2500亿股
+流通股本：2.8600亿股
+总市值：115.77亿元
+流通市值：101.87亿元
+
+2024年度财务数据：
+归母净利润：4.8523亿元
+每股收益(EPS)：1.4930元
+每股净资产(BPS)：8.6520元
+每股未分...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取锐明技术(002992.SZ)以下信息：
+1. 最新股价、总股本、流通股本、总市值和流通市值
+2. 每股收益、每股净资产和每股未分配利润
+3. 当前PE、PB、PS、PEG和EV/EBITDA估值指标
+4. 近三年PE和PB的最高值、最低值、中位数
+5. 2025年和2026年的盈利预测数据</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>4到5条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>控制在400到550字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-004-V2-R400</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺 个股估值分析
+锐明技术(002992.SZ) | 智能交通视频监控
+数据日期：2025年07月20日
+
+一、基本估值数据
+最新股价：35.62元
+总股本：3.2500亿股
+流通股本：2.8600亿股
+总市值：115.77亿元
+流通市值：101.87亿元
+
+2024年度财务数据：
+归母净利润：4.8523亿元
+每股收益(EPS)：1.4930元
+每股净资产(BPS)：8.6520元
+每股未分...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算：
+1. 验证PE(TTM)：最新股价/每股收益=35.62/1.4930
+2. 验证PB：最新股价/每股净资产=35.62/8.6520
+3. 计算2025年预期PE（前瞻PE）：最新股价/2025E每股收益
+4. 计算2026年预期PE：最新股价/2026E每股收益
+5. 计算当前PE相对行业平均PE的折价率</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数值保留3位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用“投资建议”、“建议买入”、“建议卖出”、“建议持有”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用至少3层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行用加粗文字<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-004-V3-R500</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺 个股估值分析
+锐明技术(002992.SZ) | 智能交通视频监控
+数据日期：2025年07月20日
+
+一、基本估值数据
+最新股价：35.62元
+总股本：3.2500亿股
+流通股本：2.8600亿股
+总市值：115.77亿元
+流通市值：101.87亿元
+
+2024年度财务数据：
+归母净利润：4.8523亿元
+每股收益(EPS)：1.4930元
+每股净资产(BPS)：8.6520元
+每股未分...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以下列格式整理锐明技术的估值信息：
+1. 制作当前估值指标表（PE/PB/PS/PEG/EV/EBITDA）
+2. 制作估值与行业对比表（指标/锐明技术/行业平均/溢价或折价）
+3. 制作历史估值区间表（PE/PB的最高/最低/中位数/当前值/当前百分位）
+4. 制作盈利预测表（年度/预测净利润/预测EPS/前瞻PE）</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>控制在350到500字<span class="ct-tag">N1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-006-V1-R200</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺iFinD 运营效率分析
+博创科技(300548.SZ) 2024年度运营效率指标
+
+一、应收账款分析
+期初应收账款余额：18,235.67万元
+期末应收账款余额：22,568.43万元
+平均应收账款余额：20,402.05万元
+营业收入：152,836.72万元
+应收账款周转率：7.49次
+应收账款周转天数：48.73天
+
+应收账款账龄分布（期末）：
+1年以内：16,825.36万元，占比...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取博创科技(300548.SZ)以下信息：
+1. 应收账款相关数据：期初/期末余额、周转率、周转天数
+2. 应收账款账龄分布（1年以内/1-2年/2-3年/3年以上的金额和占比）
+3. 各账龄段的坏账计提比例和计提金额
+4. 存货构成明细（原材料/在产品/库存商品/发出商品的金额和占比）</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>控制在350到550字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>先给出结论，再展开分析过程<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>必须包含&quot;机会&quot;和&quot;挑战&quot;<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-006-V1-R300</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">同花顺iFinD 运营效率分析
+博创科技(300548.SZ) 2024年度运营效率指标
+
+一、应收账款分析
+期初应收账款余额：18,235.67万元
+期末应收账款余额：22,568.43万元
+平均应收账款余额：20,402.05万元
+营业收入：152,836.72万元
+应收账款周转率：7.49次
+应收账款周转天数：48.73天
+
+应收账款账龄分布（期末）：
+1年以内：16,825.36万元，占比...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取博创科技(300548.SZ)以下信息：
+1. 应收账款相关数据：期初/期末余额、周转率、周转天数
+2. 应收账款账龄分布（1年以内/1-2年/2-3年/3年以上的金额和占比）
+3. 各账龄段的坏账计提比例和计提金额
+4. 存货构成明细（原材料/在产品/库存商品/发出商品的金额和占比）</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>分为5到7个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>金额统一使用亿元为单位<span class="ct-tag">L4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-007-V1-R500</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 公告
+公告编号：2025-052
+证券代码：601877 证券简称：正泰电器
+标题：关于控股股东增持公司股份的公告
+
+正泰电器股份有限公司（以下简称“公司”）于2025年07月15日收到公司控股股东正泰集团股份有限公司（以下简称“正泰集团”）的通知，正泰集团通过上海证券交易所交易系统以集中竞价方式增持了公司部分股份。现将有关情况公告如下：
+
+一、增持情况
+增持主体：正泰集团股份有限公司...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上公告，提取正泰电器(601877)以下信息：
+1. 增持主体名称和增持方式
+2. 四次增持的日期、增持数量和均价
+3. 增持前后的持股数量和持股比例
+4. 公司总股本和后续增持计划的金额范围</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数值保留1位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少2个独立章节<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.2-007-V5-R200</span>
+    <span class="badge l2">T1.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 公告
+公告编号：2025-052
+证券代码：601877 证券简称：正泰电器
+标题：关于控股股东增持公司股份的公告
+
+正泰电器股份有限公司（以下简称“公司”）于2025年07月15日收到公司控股股东正泰集团股份有限公司（以下简称“正泰集团”）的通知，正泰集团通过上海证券交易所交易系统以集中竞价方式增持了公司部分股份。现将有关情况公告如下：
+
+一、增持情况
+增持主体：正泰集团股份有限公司...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上公告，完成以下综合任务：
+1. 提取正泰集团增持的全部明细数据
+2. 计算每次增持金额和合计增持总金额、加权均价
+3. 制作增持明细表和持股变动对比表
+4. 验证增持后持股比例
+5. 结合后续增持计划，用不超过80字概括本次增持公告的要点</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>必须包含&quot;优势&quot;和&quot;劣势&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>5到7条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>控制在200到500字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-001-V3-R100</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国证券监督管理委员会行政处罚决定书
+〔2025〕42号
+
+当事人：张某某，男，1978年6月出生，住址：上海市浦东新区XX路XX号。
+当事人：李某某，女，1982年3月出生，住址：上海市黄浦区XX路XX号。
+
+依据《中华人民共和国证券法》（以下简称《证券法》）的有关规定，我会对张某某、李某某内幕交易“华创信息科技股份有限公司”（以下简称华创信息，股票代码：300XXX）股票行为进行了立案调查、审...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上处罚决定书，以下列格式整理案件信息：
+1. 制作当事人违法事实对比表（姓名/买入时间/买入股数/成交金额/获利金额）
+2. 制作处罚决定汇总表（姓名/没收金额/罚款金额/市场禁入年限/罚款倍数）
+3. 制作案件时间线表（关键日期/事件），从内幕信息形成到处罚决定
+4. 用列表形式列出内幕信息的形成、传递和交易链条</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>第一人称叙事<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>若提到涨幅必须说明回调<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少3处引用块<span class="ct-tag">F5</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-001-V3-R400</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国证券监督管理委员会行政处罚决定书
+〔2025〕42号
+
+当事人：张某某，男，1978年6月出生，住址：上海市浦东新区XX路XX号。
+当事人：李某某，女，1982年3月出生，住址：上海市黄浦区XX路XX号。
+
+依据《中华人民共和国证券法》（以下简称《证券法》）的有关规定，我会对张某某、李某某内幕交易“华创信息科技股份有限公司”（以下简称华创信息，股票代码：300XXX）股票行为进行了立案调查、审...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上处罚决定书，以下列格式整理案件信息：
+1. 制作当事人违法事实对比表（姓名/买入时间/买入股数/成交金额/获利金额）
+2. 制作处罚决定汇总表（姓名/没收金额/罚款金额/市场禁入年限/罚款倍数）
+3. 制作案件时间线表（关键日期/事件），从内幕信息形成到处罚决定
+4. 用列表形式列出内幕信息的形成、传递和交易链条</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少1处引用块<span class="ct-tag">F5</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用“（注”、“（备注”、“注：”、“备注：”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少3个独立章节<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>数值保留1位小数<span class="ct-tag">N3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-001-V5-R100</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国证券监督管理委员会行政处罚决定书
+〔2025〕42号
+
+当事人：张某某，男，1978年6月出生，住址：上海市浦东新区XX路XX号。
+当事人：李某某，女，1982年3月出生，住址：上海市黄浦区XX路XX号。
+
+依据《中华人民共和国证券法》（以下简称《证券法》）的有关规定，我会对张某某、李某某内幕交易“华创信息科技股份有限公司”（以下简称华创信息，股票代码：300XXX）股票行为进行了立案调查、审...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上处罚决定书，完成以下综合任务：
+1. 提取案件全部关键事实和处罚决定
+2. 计算两人各自的罚款倍数、合计获利和合计罚没金额
+3. 制作当事人违法事实对比表和处罚决定汇总表
+4. 整理案件时间线（从内幕信息形成到处罚决定）
+5. 用不超过100字概括本案的核心违法事实和处罚结果</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>回答末尾必须包含一段总结<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用“！”、“!”<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-001-V5-R300</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国证券监督管理委员会行政处罚决定书
+〔2025〕42号
+
+当事人：张某某，男，1978年6月出生，住址：上海市浦东新区XX路XX号。
+当事人：李某某，女，1982年3月出生，住址：上海市黄浦区XX路XX号。
+
+依据《中华人民共和国证券法》（以下简称《证券法》）的有关规定，我会对张某某、李某某内幕交易“华创信息科技股份有限公司”（以下简称华创信息，股票代码：300XXX）股票行为进行了立案调查、审...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上处罚决定书，完成以下综合任务：
+1. 提取案件全部关键事实和处罚决定
+2. 计算两人各自的罚款倍数、合计获利和合计罚没金额
+3. 制作当事人违法事实对比表和处罚决定汇总表
+4. 整理案件时间线（从内幕信息形成到处罚决定）
+5. 用不超过100字概括本案的核心违法事实和处罚结果</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>必须包含&quot;短期&quot;和&quot;长期&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>金额统一使用亿元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>控制在350到500字<span class="ct-tag">N1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-002-V3-R100</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 财务报表
+凯盛科技(600552.SH) 2024年12月31日合并资产负债表（摘要）
+单位：万元
+
+═══ 资产 ═══
+流动资产：
+  货币资金：45,236.85
+  交易性金融资产：3,528.62
+  应收票据：8,652.38
+  应收账款：32,856.74
+  预付款项：5,123.47
+  存货：28,365.92
+  其他流动资产：6,852.17
+  流动资产合计...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以下列格式整理凯盛科技的资产负债表：
+1. 制作资产结构表（科目/金额/占总资产比例），分流动资产和非流动资产两部分
+2. 制作负债结构表（科目/金额/占总负债比例），分流动和非流动负债
+3. 制作所有者权益构成表
+4. 用JSON格式输出关键偿债指标（资产负债率/流动比率/速动比率）</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少9个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>分为3到5个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>第一人称叙事<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>2个3级标题<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-002-V5-R400</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 财务报表
+凯盛科技(600552.SH) 2024年12月31日合并资产负债表（摘要）
+单位：万元
+
+═══ 资产 ═══
+流动资产：
+  货币资金：45,236.85
+  交易性金融资产：3,528.62
+  应收票据：8,652.38
+  应收账款：32,856.74
+  预付款项：5,123.47
+  存货：28,365.92
+  其他流动资产：6,852.17
+  流动资产合计...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取凯盛科技资产负债表的全部科目数据
+2. 计算资产负债率、流动比率和速动比率
+3. 分别制作资产结构表、负债结构表和所有者权益表
+4. 计算各主要科目占总资产或总负债的比例
+5. 用不超过100字总结凯盛科技的资产负债结构特征</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;总结&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不超过300字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>回答末尾必须包含一段总结<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-003-V5-R600</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">巨潮资讯网 重大事项公告
+证券代码：002856 证券简称：美芝股份
+标题：关于签署重大资产购买协议的公告
+
+美芝股份有限公司（以下简称“公司”或“收购方”）于2025年06月30日召开第五届董事会第十二次会议，审议通过了《关于公司收购苏州启明半导体科技有限公司80%股权的议案》。现将交易条款摘要公告如下：
+
+一、交易基本情况
+收购方：美芝股份有限公司
+转让方：苏州创达投资管理有限公司（持有标的公...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上公告，完成以下综合任务：
+1. 提取交易方案的全部关键条款
+2. 验证增值率和发行数量的计算
+3. 制作交易方案表、估值表和业绩承诺表
+4. 计算假设2025年业绩不达标时的补偿金额示例
+5. 用不超过100字概括本次交易的核心方案和估值情况</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>至少7个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数值保留1位小数<span class="ct-tag">N3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-004-V4-R100</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国债券信息网
+债券基本信息
+
+债券名称：国电电力2025年度第三期中期票据
+债券简称：25国电电力MTN003
+债券代码：102502835
+发行人：国电电力发展股份有限公司
+主承销商：中信证券股份有限公司
+
+发行条款：
+发行总额：30.00亿元
+票面利率：2.98%
+发行价格：100.00元
+债券期限：3年（2025年07月08日至2028年07月08日）
+付息方式：每年付息一次，到期一次还本...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从债券投资角度分析：
+1. 分析票面利率2.98%与国债利差113BP的合理性
+2. 发行人资产负债率74.01%对信用风险的影响
+3. 商业银行认购62%为最大投资者群体，分析投资者结构特征
+4. 募集资金用途中&quot;偿还到期债务20亿元&quot;占比67%，分析发行人的再融资需求</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>必须包含&quot;短期&quot;和&quot;长期&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-004-V4-R500</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国债券信息网
+债券基本信息
+
+债券名称：国电电力2025年度第三期中期票据
+债券简称：25国电电力MTN003
+债券代码：102502835
+发行人：国电电力发展股份有限公司
+主承销商：中信证券股份有限公司
+
+发行条款：
+发行总额：30.00亿元
+票面利率：2.98%
+发行价格：100.00元
+债券期限：3年（2025年07月08日至2028年07月08日）
+付息方式：每年付息一次，到期一次还本...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从债券投资角度分析：
+1. 分析票面利率2.98%与国债利差113BP的合理性
+2. 发行人资产负债率74.01%对信用风险的影响
+3. 商业银行认购62%为最大投资者群体，分析投资者结构特征
+4. 募集资金用途中&quot;偿还到期债务20亿元&quot;占比67%，分析发行人的再融资需求</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>必须包含&quot;收入&quot;和&quot;支出&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-004-V5-R400</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中国债券信息网
+债券基本信息
+
+债券名称：国电电力2025年度第三期中期票据
+债券简称：25国电电力MTN003
+债券代码：102502835
+发行人：国电电力发展股份有限公司
+主承销商：中信证券股份有限公司
+
+发行条款：
+发行总额：30.00亿元
+票面利率：2.98%
+发行价格：100.00元
+债券期限：3年（2025年07月08日至2028年07月08日）
+付息方式：每年付息一次，到期一次还本...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下综合任务：
+1. 提取债券发行的全部要素信息
+2. 计算每年利息、总利息和各利差指标
+3. 制作债券要素表、投资者分布表和利率对比表
+4. 整理发行人财务摘要
+5. 用不超过80字概括本期债券的发行特征</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>JSON格式输出<span class="ct-tag">F4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用百分号，用文字表达百分比<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-005-V1-R400</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">互动易 投资者问答平台
+公司：安恒信息(688023.SH) | 行业：网络安全
+以下为近期投资者提问及公司回复摘要：
+
+══ 问答1 ══
+投资者提问（2025年06月20日）：
+请问公司2024年度的研发投入情况如何？研发人员占比是多少？
+
+公司回复（2025年06月22日）：
+尊敬的投资者您好。公司2024年度研发费用为52,836.72万元，占营业收入比重为21.35%。其中，费用化研发支...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，提取安恒信息(688023.SH)以下信息：
+1. 2024年度研发费用总额及占营收比重
+2. 费用化和资本化研发支出的金额及资本化比率
+3. 截至2025年5月31日的在手订单金额及分领域明细
+4. 2025年上半年业绩预告的净利润范围和同比增长率范围
+5. 前五大客户的销售集中度数据</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;总结&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少1处引用块<span class="ct-tag">F5</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T1.3-005-V3</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">互动易 投资者问答平台
+公司：安恒信息(688023.SH) | 行业：网络安全
+以下为近期投资者提问及公司回复摘要：
+
+══ 问答1 ══
+投资者提问（2025年06月20日）：
+请问公司2024年度的研发投入情况如何？研发人员占比是多少？
+
+公司回复（2025年06月22日）：
+尊敬的投资者您好。公司2024年度研发费用为52,836.72万元，占营业收入比重为21.35%。其中，费用化研发支...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，以下列格式整理安恒信息的信息：
+1. 制作研发投入分析表（总研发费用/费用化/资本化/资本化比率/研发费用率/研发人员数/占比）
+2. 制作在手订单分布表（领域/金额/占比）
+3. 制作业绩预告要素表（预计净利润区间/同比增速区间/去年同期值）
+4. 制作前五大客户集中度表（合计金额/占比/第一大客户金额/占比）</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>金额统一使用元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.1-001-V2-R300</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东信智能科技股份有限公司（股票代码：301587.SZ）2024年第三季度报告
+
+一、公司概况
+
+东信智能科技股份有限公司成立于2010年，总部位于深圳市南山区，是国内领先的智能制造解决方案提供商。公司主营业务包括智能终端设备、工业软件服务及系统集成三大板块，客户涵盖制造业、能源、交通等多个领域。公司于2022年5月在创业板上市，目前员工总数约8,500人。
+
+二、主要财务数据
+
+报告期内，公司实...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证公司综合毛利率（营业收入48.52亿元、营业成本31.16亿元），并计算各项费用率的同比变化方向；
+2. 根据经营活动现金流净额6.85亿元与净利润4.62亿元，计算经营现金流净额/净利润比率，并评估盈利质量；
+3. 计算公司四项费用（销售、管理、研发、财务）的综合费用率，分析研发费用率9.01%同比增长22.3%对未来竞争力的影响；
+4. 基于应收账款余额32.18亿元和周转天数59.8天（同比增加2.1天），分析公司回款效率变化的潜在风险。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不超过600字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.1-001-V3-R100</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东信智能科技股份有限公司（股票代码：301587.SZ）2024年第三季度报告
+
+一、公司概况
+
+东信智能科技股份有限公司成立于2010年，总部位于深圳市南山区，是国内领先的智能制造解决方案提供商。公司主营业务包括智能终端设备、工业软件服务及系统集成三大板块，客户涵盖制造业、能源、交通等多个领域。公司于2022年5月在创业板上市，目前员工总数约8,500人。
+
+二、主要财务数据
+
+报告期内，公司实...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下分析：
+1. 撰写东信智能科技（301587.SZ）的投资摘要，包含核心结论和关键数据支撑；
+2. 从盈利能力、成长性、现金流质量、资产质量四个维度分别给出评分（1-5分）并说明依据；
+3. 列出公司2024Q3的三个核心亮点和两个需关注的风险点；
+4. 基于全年营收185-195亿元的指引和三季度48.52亿元的数据，评估全年业绩达标概率。</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>开头第一个词必须是&quot;基于&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>正反两面对比论述（优势vs劣势/机会vs风险）<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>分为7到11个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.1-003-V2</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">博创新材料科技股份有限公司（股票代码：002893.SZ）2024年第二季度主要经营数据
+
+一、季度经营概述
+
+2024年第二季度，公司实现营业收入35.78亿元，较第一季度的32.14亿元环比增长11.33%，较上年同期的30.52亿元同比增长17.23%。公司主要产品为高性能复合材料、特种工程塑料及改性材料，广泛应用于新能源汽车、消费电子及航空航天领域。本季度公司完成了年产3万吨高性能碳纤维复...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证毛利率计算：营业收入35.78亿元 - 营业成本22.85亿元 = 毛利润12.93亿元，对应毛利率是否为36.14%；
+2. 计算速动比率：（流动资产72.35亿 - 存货9.43亿）/ 流动负债39.12亿，验证是否为1.61；
+3. 计算货币资金对短期借款的覆盖倍数（15.82亿/6.35亿），评估短期偿债安全边际；
+4. 基于经营现金流净额5.12亿元与净利润4.76亿元的比率1.08，分析盈利变现能力；
+5. 计算应收账款周转天数47.2天对应的年化周转率，与同行业水平进行合理性判断。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.1-003-V4-R200</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">博创新材料科技股份有限公司（股票代码：002893.SZ）2024年第二季度主要经营数据
+
+一、季度经营概述
+
+2024年第二季度，公司实现营业收入35.78亿元，较第一季度的32.14亿元环比增长11.33%，较上年同期的30.52亿元同比增长17.23%。公司主要产品为高性能复合材料、特种工程塑料及改性材料，广泛应用于新能源汽车、消费电子及航空航天领域。本季度公司完成了年产3万吨高性能碳纤维复...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦博创新材料的成本控制与盈利改善，完成以下分析：
+1. 拆解毛利率提升2.42个百分点（同比）的三大因素：新能源汽车材料占比提升（毛利率&gt;45%）、原材料降价约3.2%、产线良率从85%提升至92%，分析各因素的贡献权重；
+2. 期间费用率18.00%较上年同期下降0.8个百分点，具体分析管理费用率和财务费用率下降的原因；
+3. 对比营业利润5.82亿元与利润总额5.95亿元（含投资收益0.13亿），评估核心经营利润的占比和质量；
+4. 分析扣非净利润4.38亿元与净利润4.76亿元的差异，判断非经常性损益对利润的影响程度。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>控制在400到800字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用至少3层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>开头第一个词必须是&quot;总结&quot;<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.1" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.1-003-V5-R400</span>
+    <span class="badge l2">T2.1</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">博创新材料科技股份有限公司（股票代码：002893.SZ）2024年第二季度主要经营数据
+
+一、季度经营概述
+
+2024年第二季度，公司实现营业收入35.78亿元，较第一季度的32.14亿元环比增长11.33%，较上年同期的30.52亿元同比增长17.23%。公司主要产品为高性能复合材料、特种工程塑料及改性材料，广泛应用于新能源汽车、消费电子及航空航天领域。本季度公司完成了年产3万吨高性能碳纤维复...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，对博创新材料（002893.SZ）2024年第二季度经营状况进行全面评估：
+1. 增长维度：综合分析同比增速17.23%和环比增速11.33%，判断公司所处的增长阶段；
+2. 盈利维度：从毛利率36.14%、净利率13.30%、扣非净利率12.24%三个层次评价盈利能力；
+3. 运营维度：分析应收账款周转天数（47.2天，缩短3.5天）和存货周转天数（37.3天，缩短4.5天）反映的运营效率变化；
+4. 财务安全维度：从资产负债率42.15%、流动比率1.85、速动比率1.61评估财务稳健性；
+5. 前瞻维度：结合新产能爬坡计划和新能源汽车客户认证进展，评估下半年增长预期。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>分为5到8个段落<span class="ct-tag">N2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.2-001-V5-R600</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">康瑞生物科技股份有限公司首次公开发行股票招股说明书（摘要）
+
+一、发行人基本情况
+
+康瑞生物科技股份有限公司成立于2012年，总部位于江苏省苏州市工业园区，是国内领先的体外诊断（IVD）产品及服务提供商。公司主要从事生物试剂、检测设备及技术服务三大业务板块的研发、生产和销售。截至2023年末，公司员工总数3,856人，其中研发人员1,128人，占比29.3%。公司在苏州和武汉设有两大生产基地，年产...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，对康瑞生物的IPO进行综合评估：
+1. 成长性分析：2023年营收20.34亿元同比增长23.56%，2020-2023年CAGR 28.3%，评估增长动能的可持续性；
+2. 盈利质量分析：综合毛利率56.68%、净利率18.29%、经营现金流/净利润=1.12，判断盈利质量是否优于同行；
+3. 财务安全分析：资产负债率37.47%、ROE 12.99%（同比+2.1pp），评估财务结构是否支持公司持续扩张；
+4. 竞争格局分析：行业CR5 28%、外资占45%、公司免疫诊断市占率4.2%，分析国产替代和集采政策对公司的机遇与挑战；
+5. 募投项目分析：12.80亿元募资中高端试剂产业化占43.75%，评估项目建成后对公司收入和利润的增量贡献。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以信用评级分析师的视角撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>首行包含&quot;摘要&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.2-002-V1-R600</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">华鑫通信技术集团股份有限公司2023年年度报告（节选）
+
+一、公司业务概述
+
+华鑫通信是一家综合性通信技术企业，主营业务涵盖移动通信设备、光纤光缆、网络优化服务和智慧城市解决方案四大板块。公司在国内通信设备制造领域排名前十，是三大运营商及中国铁塔的核心供应商。公司成立于2003年，总部位于武汉市，在南京、成都、西安设有分支机构，业务覆盖全国及东南亚部分地区。
+
+二、分业务板块经营分析
+
+2023年...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从业务板块竞争力角度完成以下分析：
+1. 对比华鑫通信四大板块（移动通信41.84%、光纤光缆29.23%、网络优化17.03%、智慧城市11.90%）的增速差异，识别未来核心增长引擎；
+2. 网络优化服务板块增速18.3%且毛利率41.60%为最高，分析该板块成为利润引擎的原因及可持续性；
+3. 移动通信设备板块毛利率下降1.3个百分点至28.50%，受5G设备价格竞争影响，评估该板块的竞争态势恶化风险；
+4. 分析光纤预制棒自供率从62%提升至75%对光纤光缆板块毛利率提升2.1个百分点的贡献，评估进一步提升空间。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>若提到涨幅必须说明回调<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>至少17个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行包含&quot;摘要&quot;，末行包含&quot;以上内容仅供参考&quot;<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.2-003-V1</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">盛达食品集团股份有限公司2023年度报告——经营分析（节选）
+
+一、行业与公司概况
+
+盛达食品集团是一家全国性食品饮料企业，旗下拥有&quot;盛味坊&quot;&quot;鲜乐多&quot;&quot;优品源&quot;等多个知名品牌，产品线覆盖休闲零食、烘焙产品、乳制品及调味品等多个品类。公司在全国设有12个生产基地，销售网络覆盖31个省份。公司成立于2008年，2016年在深交所主板上市，员工总数约15,800人。
+
+二、产品结构分析
+
+2023年度...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从渠道战略角度完成以下分析：
+1. 对比盛达食品三大渠道（线上电商37.01%、线下经销46.93%、直营门店16.06%）的收入占比和增速差异，判断渠道权重正在如何演变；
+2. 线上电商渠道中，抖音电商增速52.3%远超天猫京东的8.2%，分析渠道迁移趋势及对公司毛利率和品牌建设的影响；
+3. 经销商数量4,682家（净增356家）但留存率82%，计算当年流失经销商数量并评估经销体系的稳定性；
+4. 直营门店386家单店年均收入282万元、坪效1.8万元/㎡·年，评估门店经济模型的可持续性和扩张空间。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>4个3级标题<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.2-003-V3</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">盛达食品集团股份有限公司2023年度报告——经营分析（节选）
+
+一、行业与公司概况
+
+盛达食品集团是一家全国性食品饮料企业，旗下拥有&quot;盛味坊&quot;&quot;鲜乐多&quot;&quot;优品源&quot;等多个知名品牌，产品线覆盖休闲零食、烘焙产品、乳制品及调味品等多个品类。公司在全国设有12个生产基地，销售网络覆盖31个省份。公司成立于2008年，2016年在深交所主板上市，员工总数约15,800人。
+
+二、产品结构分析
+
+2023年度...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下内容：
+1. 品牌矩阵评估：分析&quot;盛味坊&quot;（坚果线上前三）、&quot;优品源&quot;（短保面包）、&quot;鲜乐多&quot;三个品牌的市场定位和竞争力；
+2. 产品组合分析：按&quot;营收占比-增速&quot;制作四大品类的战略定位（休闲零食42.07%/+8.5%、烘焙29.28%/+16.2%、乳制品18.39%/+9.8%、其他10.26%/+5.2%）；
+3. 渠道效率对比：线上、线下、直营三个渠道的增长效率和投入产出分析；
+4. 2024年战略重点（健康零食、线上+25%、抖音直播、下沉市场、新增500经销商、新开60-80门店）的可行性评估。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以信用评级分析师的视角撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>以消费品行业投资分析报告的格式<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.2-003-V5-R100</span>
+    <span class="badge l2">T2.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">盛达食品集团股份有限公司2023年度报告——经营分析（节选）
+
+一、行业与公司概况
+
+盛达食品集团是一家全国性食品饮料企业，旗下拥有&quot;盛味坊&quot;&quot;鲜乐多&quot;&quot;优品源&quot;等多个知名品牌，产品线覆盖休闲零食、烘焙产品、乳制品及调味品等多个品类。公司在全国设有12个生产基地，销售网络覆盖31个省份。公司成立于2008年，2016年在深交所主板上市，员工总数约15,800人。
+
+二、产品结构分析
+
+2023年度...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，对盛达食品2023年度经营情况进行综合评估：
+1. 增长质量评估：营收67.82亿元同比增长11.25%，分析四大品类和三大渠道的增长贡献及质量差异；
+2. 盈利能力评估：综合毛利率35.62%同比提升0.8个百分点，净利率8.64%，现金流/净利润=1.25，判断盈利质量和可持续性；
+3. 渠道效率评估：线上占比37%但增速18.5%远超线下6.2%，分析渠道结构变化对利润率的正负面影响；
+4. 竞争格局评估：前十大客户集中度27.50%，4,682家经销商，386家直营门店，评估销售网络的覆盖深度和抗风险能力；
+5. 战略匹配度评估：2024年&quot;健康零食+下沉市场+抖音发力&quot;三大战略方向与当前经营数据的匹配程度。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;鉴于&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>若提到利好必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.3-001-V2-R300</span>
+    <span class="badge l2">T2.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">新能源汽车行业市场竞争格局分析报告（2021-2023年）
+
+一、行业总体情况
+
+2021年至2023年，我国新能源汽车市场经历了高速增长阶段。2021年行业总销量130.0万辆，为新能源汽车补贴政策退坡前的最后一个完整年度。2022年行业总销量达到190.0万辆，同比增长46.15%，受益于购置税减免政策延续和产品力提升。2023年行业总销量进一步增至270.0万辆，同比增长42.11%，增速虽...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 计算2021-2023年行业销量的三年复合增长率，验证是否接近44.11%（从130万辆增至270万辆）；
+2. 计算2023年各企业的市场份额（远景71.3/270、创领58.6/270、嘉和45.2/270、鸿途29.7/270），验证CR4=75.85%；
+3. 分析嘉和电动连续两年增速远超行业（2022年71.79% vs 行业46.15%，2023年68.66% vs 行业42.11%），计算其超额增速倍数；
+4. 基于2024年行业预测销量340-360万辆，假设远景汽车维持27%份额，计算其2024年预期销量区间；
+5. 计算新能源渗透率从2021年15.2%到2023年31.5%的年均提升幅度。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从宏观经济的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以信用评级分析师的视角撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.3" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.3-002-V1-R100</span>
+    <span class="badge l2">T2.3</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天域云计算股份有限公司（股票代码：688915.SH）季度经营数据跟踪报告
+
+一、公司简介
+
+天域云计算是国内领先的云基础设施与企业级SaaS服务提供商，主要业务包括公有云IaaS服务、私有云解决方案、企业协作SaaS平台及数据安全服务。公司客户覆盖金融、政务、制造、医疗等多个垂直行业，累计服务企业客户超过5.8万家。公司成立于2015年，2022年在科创板上市，目前在北京、上海、广州、成都部署了...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从增长持续性与季节性规律角度完成以下分析：
+1. 分析天域云计算2023Q1-2024Q2的营收季节性规律（Q4高点→Q1低点），2024Q1环比下降4.63%是否符合历史模式；
+2. 同比增速呈加速趋势（Q1约35%→Q2约38%→Q3约42%→Q4约45%→2024Q1 44.86%→2024Q2 47.89%），分析增速加速的驱动力是否可持续；
+3. 剔除Q1季节性后平均环比增速约15.6%，按此增速推算2024年Q3和Q4的营收水平，评估全年营收预期；
+4. 对比2024上半年58.30亿元与2023全年92.60亿元，分析下半年是否有望超越上半年并给出增长逻辑。</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>至少13个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.3-002-V1-R200</span>
+    <span class="badge l2">T2.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天域云计算股份有限公司（股票代码：688915.SH）季度经营数据跟踪报告
+
+一、公司简介
+
+天域云计算是国内领先的云基础设施与企业级SaaS服务提供商，主要业务包括公有云IaaS服务、私有云解决方案、企业协作SaaS平台及数据安全服务。公司客户覆盖金融、政务、制造、医疗等多个垂直行业，累计服务企业客户超过5.8万家。公司成立于2015年，2022年在科创板上市，目前在北京、上海、广州、成都部署了...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从增长持续性与季节性规律角度完成以下分析：
+1. 分析天域云计算2023Q1-2024Q2的营收季节性规律（Q4高点→Q1低点），2024Q1环比下降4.63%是否符合历史模式；
+2. 同比增速呈加速趋势（Q1约35%→Q2约38%→Q3约42%→Q4约45%→2024Q1 44.86%→2024Q2 47.89%），分析增速加速的驱动力是否可持续；
+3. 剔除Q1季节性后平均环比增速约15.6%，按此增速推算2024年Q3和Q4的营收水平，评估全年营收预期；
+4. 对比2024上半年58.30亿元与2023全年92.60亿元，分析下半年是否有望超越上半年并给出增长逻辑。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用表格<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少12个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>数值保留1位小数<span class="ct-tag">N3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.3-002-V2-R500</span>
+    <span class="badge l2">T2.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">天域云计算股份有限公司（股票代码：688915.SH）季度经营数据跟踪报告
+
+一、公司简介
+
+天域云计算是国内领先的云基础设施与企业级SaaS服务提供商，主要业务包括公有云IaaS服务、私有云解决方案、企业协作SaaS平台及数据安全服务。公司客户覆盖金融、政务、制造、医疗等多个垂直行业，累计服务企业客户超过5.8万家。公司成立于2015年，2022年在科创板上市，目前在北京、上海、广州、成都部署了...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证2024H1同比增速：(58.30-39.80)/39.80=46.48%；
+2. 计算五个环比增速（15.14%、15.96%、13.77%、-4.63%、17.54%）的算术平均值，验证是否为11.56%；
+3. 基于2024Q2各业务收入（公有云15.12亿/48%、SaaS 9.45亿/30%、私有云6.93亿/22%），计算全年化后的各业务年化收入规模；
+4. 对比2023全年ARPU 15.97万元与2024H1年化ARPU 18.52万元的增长率（15.97%），分析客单价提升的驱动因素；
+5. 净利率从上年同期11.36%提升至12.49%，计算2024H1多贡献了多少净利润。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>段落间逻辑连贯，有明确过渡<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>若提到杠杆必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.3-003-V4-R300</span>
+    <span class="badge l2">T2.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">半导体封测行业竞争格局与对标分析报告（2023年度）
+
+一、行业概况
+
+2023年度，我国半导体封装测试行业实现总营收约2,150亿元，同比增长8.6%。随着国产替代进程加速、先进封装技术需求增长以及AI芯片带来的封测需求增量，行业内企业分化加剧。传统封装（QFP、SOP等）增速趋缓，而先进封装（FC-BGA、Chiplet、2.5D/3D封装）增速超过25%，占行业总营收比重提升至约35%。本报...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦五家企业的运营效率差异，完成以下分析：
+1. 对比应收账款周转率（锐芯6.35次最高 vs 宏达4.56次最低），分析差异背后的客户结构和议价能力因素；
+2. 存货周转率从锐芯的5.12次到宏达的3.45次，排列效率排名，分析高效存货管理对盈利能力的传导机制；
+3. 总资产周转率从锐芯的0.71次到宏达的0.55次，结合各企业的资产规模和产能利用情况分析差异原因；
+4. 综合运营效率三项指标，评估哪家企业的资产运营能力最需要改善，并提出可能的优化方向。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>首行包含&quot;概要&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>开头第一个词必须是&quot;从&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.4" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.4-002-V1-R400</span>
+    <span class="badge l2">T2.4</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">宏盛控股集团有限公司主体信用评级报告（跟踪评级）
+
+评级机构：东方评级有限公司
+评级时间：2024年6月
+主体信用等级：AA（维持）
+评级展望：稳定
+
+一、公司概况
+
+宏盛控股集团有限公司（以下简称&quot;宏盛控股&quot;或&quot;公司&quot;）成立于2005年，总部位于浙江省杭州市，是一家以房地产开发为主业，同时涉足商业运营管理、物业服务和酒店管理的综合性企业集团。公司在长三角及中西部重点城市累计开发项目超过120个，...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从偿债能力角度完成以下分析：
+1. 分析宏盛控股有息负债168.72亿元的期限结构（短期44.48亿/26.37% vs 长期124.24亿/73.63%），评估短长期匹配是否合理；
+2. EBIT利息保障倍数2.54倍仅略高于2.0倍安全线，分析安全边际是否充足，若利息费用增加10%将降至多少倍；
+3. 有息负债/EBITDA为4.42倍，较上年4.85倍改善，但绝对值仍偏高，评估公司去杠杆进展；
+4. 加权平均融资成本5.85%（同比-27BP），分析融资成本下降的渠道来源和持续性。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>至少12个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>正反两面对比论述（优势vs劣势/机会vs风险）<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>不超过950字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不使用“首先”、“其次”、“最后”<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.4" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.4-002-V2-R200</span>
+    <span class="badge l2">T2.4</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">宏盛控股集团有限公司主体信用评级报告（跟踪评级）
+
+评级机构：东方评级有限公司
+评级时间：2024年6月
+主体信用等级：AA（维持）
+评级展望：稳定
+
+一、公司概况
+
+宏盛控股集团有限公司（以下简称&quot;宏盛控股&quot;或&quot;公司&quot;）成立于2005年，总部位于浙江省杭州市，是一家以房地产开发为主业，同时涉足商业运营管理、物业服务和酒店管理的综合性企业集团。公司在长三角及中西部重点城市累计开发项目超过120个，...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证资产负债率：236.74亿/345.60亿=68.53%，确认与报告数据一致；
+2. 验证流动比率（158.30/112.50=1.41）和速动比率（(158.30-85.67)/112.50=0.65），分析存货85.67亿元对流动性指标的拖累程度；
+3. 验证现金短债比：32.56亿/18.56亿=1.75，对比一年内到期有息负债44.48亿元，计算含一年内到期非流动负债的广义现金短债比（32.56/44.48）；
+4. 验证有息负债率：168.72/345.60=48.83%，分析有息负债占总资产近半的风险含义；
+5. EBIT利息保障倍数=32.50/12.80=2.54倍，计算若利息费用中资本化部分（4.85亿）全部费用化后的调整倍数。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>至少2处引用块<span class="ct-tag">F5</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少4个独立章节<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不使用列表<span class="ct-tag">F2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.4" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.4-002-V3-R400</span>
+    <span class="badge l2">T2.4</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">宏盛控股集团有限公司主体信用评级报告（跟踪评级）
+
+评级机构：东方评级有限公司
+评级时间：2024年6月
+主体信用等级：AA（维持）
+评级展望：稳定
+
+一、公司概况
+
+宏盛控股集团有限公司（以下简称&quot;宏盛控股&quot;或&quot;公司&quot;）成立于2005年，总部位于浙江省杭州市，是一家以房地产开发为主业，同时涉足商业运营管理、物业服务和酒店管理的综合性企业集团。公司在长三角及中西部重点城市累计开发项目超过120个，...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下内容：
+1. 信用等级概览：当前AA/稳定，列出维持评级的支撑因素和可能触发降级的风险因素；
+2. 偿债能力指标看板：流动比率1.41、速动比率0.65、现金短债比1.75、EBIT保障倍数2.54、有息负债/EBITDA 4.42，逐项标注风险等级；
+3. 流动性缺口分析：一年内到期有息负债44.48亿 vs 货币资金32.56亿，缺口11.92亿的补偿方案（未使用授信65.30亿+抵押物112.58亿）评估；
+4. 风险清单：行业风险、流动性风险、土地储备风险（三四线35%）、关联交易风险（12.85亿关联方款项），逐项给出关注等级；
+5. 评级展望：维持AA/稳定展望的核心假设和需持续跟踪的指标。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以专业分析师的口吻撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>8到9条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>以信用监测报告的格式<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-001-V2-R200</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">翰宇科技股份有限公司（300892.SZ）2024年8月15日市场交易数据汇总
+
+一、基本行情数据
+
+开盘价：34.52元
+最高价：36.15元
+最低价：34.28元
+收盘价：35.68元
+前收盘价：34.86元
+涨跌额：+0.82元
+涨跌幅：+2.35%
+成交量：1,856.00万股
+成交额：65,197.28万元（6.52亿元）
+成交均价：35.13元
+换手率：3.28%（按总股本计算）
+
+总...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证涨跌幅：(35.68-34.86)/34.86=2.35%，确认涨跌额+0.82元的一致性；
+2. 验证成交均价：成交额65,197.28万元/成交量1,856万股=35.13元/股，分析均价低于收盘价35.68元的含义；
+3. 验证总市值和流通市值：5.66亿股×35.68元=201.95亿元，4.85亿股×35.68元=173.05亿元；
+4. 计算近5日主力净流入合计：-2,358.67+1,285.43+3,892.15+(-856.32)+5,131.48=7,094.07万元；
+5. 验证市盈率TTM：收盘价35.68/每股收益1.28=27.88倍，对比行业中位数32.5倍分析估值水平。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用表格<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>开头第一个词必须是&quot;总结&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>控制在500到750字<span class="ct-tag">N1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-001-V3-R300</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">翰宇科技股份有限公司（300892.SZ）2024年8月15日市场交易数据汇总
+
+一、基本行情数据
+
+开盘价：34.52元
+最高价：36.15元
+最低价：34.28元
+收盘价：35.68元
+前收盘价：34.86元
+涨跌额：+0.82元
+涨跌幅：+2.35%
+成交量：1,856.00万股
+成交额：65,197.28万元（6.52亿元）
+成交均价：35.13元
+换手率：3.28%（按总股本计算）
+
+总...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下内容：
+1. 行情概况：收盘35.68元/+2.35%，成交6.52亿元/换手3.28%，跑赢行业1.07pp，给出行情强度评价；
+2. 技术面分析：股价高于全部均线（MA5-MA60），MACD红柱放大、RSI 62.35、KDJ中J值86.02，综合判断技术趋势和超买信号；
+3. 资金面分析：主力净流入5,131万、融资净买入269万，结合近5日趋势判断多空力量对比；
+4. 估值快照：PE 27.88倍（低于行业32.5倍）、PB 3.52倍、ROE 12.63%、股息率1.12%，给出估值吸引力评级；
+5. 综合交易建议方向（看多/中性/看空）和主要依据。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从宏观经济的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>正反两面对比论述（优势vs劣势/机会vs风险）<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item moved"><span class="ct-num">（5）</span>以日度交易分析报告的格式<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-001-V4-R200</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">翰宇科技股份有限公司（300892.SZ）2024年8月15日市场交易数据汇总
+
+一、基本行情数据
+
+开盘价：34.52元
+最高价：36.15元
+最低价：34.28元
+收盘价：35.68元
+前收盘价：34.86元
+涨跌额：+0.82元
+涨跌幅：+2.35%
+成交量：1,856.00万股
+成交额：65,197.28万元（6.52亿元）
+成交均价：35.13元
+换手率：3.28%（按总股本计算）
+
+总...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦翰宇科技的估值合理性分析，完成以下评估：
+1. PE（TTM）27.88倍 vs 行业中位数32.5倍，折价约14.2%，分析折价原因和合理性；
+2. PB 3.52倍对应每股净资产10.14元，ROE 12.63%，运用PB-ROE框架评估估值水平；
+3. 每股经营现金流1.56元超过每股收益1.28元（比率1.22），分析现金流角度的估值支撑；
+4. 营收52.35亿元（TTM）对应总市值201.95亿元，PS约3.86倍，分析在计算机设备行业中的相对水平；
+5. 综合PE、PB、PS、股息率（1.12%）四个维度，给出估值吸引力的综合评价。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-002-V4-R300</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">嘉禾稳健配置混合型证券投资基金2024年第二季度报告
+
+基金代码：008756
+基金类型：混合型-偏股混合
+基金经理：李文博、陈雅琳
+报告期：2024年4月1日至2024年6月30日
+托管银行：中国工商银行
+管理人：嘉禾基金管理有限公司
+
+一、基金资产组合情况
+
+期末基金资产净值：42.50亿元
+期末基金份额净值：1.3856元
+本季度份额净值增长率：+3.28%
+同期业绩比较基准收益率：+2.1...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦重仓股和行业配置，完成以下分析：
+1. 前三大重仓股（恒信科技8.28%、明泰电子6.73%、长宏新材5.76%）合计占净值20.78%，评估单票风险暴露是否过大；
+2. 电子行业占比29%较上季度提升约3pp，新能源占比下降约2pp，分析行业调仓的逻辑和时机选择；
+3. 基金经理展望提到计划增配港股通5%-8%，分析跨境配置对组合风险收益特征的潜在改变；
+4. 三季度计划保持65%-70%股票仓位，对比当前67.51%，分析仓位策略是否偏保守及对业绩的影响。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>第一人称叙事<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>开头第一个词必须是&quot;从&quot;<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-004-V2-R600</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">光伏产业链2023年度上市公司对标研究报告
+
+一、研究范围与方法
+
+本报告选取A股光伏产业链五家代表性上市企业进行对标分析，涵盖硅料、硅片、电池片、组件及逆变器等产业链核心环节。五家企业均为各自细分领域的头部企业，具有较强的代表性。数据截至2023年12月31日，来源于各公司年报及公开披露数据。
+
+二、核心财务指标对比
+
+（一）营收与利润规模（单位：亿元）
+
+企业名称    | 营业收入 | 营业...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下计算与分析任务：
+1. 验证各公司毛利润：阳辉（285.60-213.38=72.22）、晶澜（167.50-119.57=47.93）等，确认毛利率计算的一致性；
+2. 计算五家企业的加权平均PE：2,067.85亿/107.47亿=19.24倍，分析各企业PE偏离均值的程度和原因；
+3. 验证人均营收和人均净利：如明德新材89.40亿/3,856人=231.79万元/人，36.17万元/人，与报告数据是否一致；
+4. 计算五家企业的ROE（净利润/净资产）：如阳辉36.56/225.38=16.22%，排列ROE排名；
+5. 分析研发费率与净利率的相关性：明德（7.29%→15.61%）vs 华耀（5.91%→9.30%），高研发投入是否带来高盈利。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>使用至少2层标题层级<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>必须包含&quot;利好&quot;和&quot;利空&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以信用评级分析师的视角撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-004-V4</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">光伏产业链2023年度上市公司对标研究报告
+
+一、研究范围与方法
+
+本报告选取A股光伏产业链五家代表性上市企业进行对标分析，涵盖硅料、硅片、电池片、组件及逆变器等产业链核心环节。五家企业均为各自细分领域的头部企业，具有较强的代表性。数据截至2023年12月31日，来源于各公司年报及公开披露数据。
+
+二、核心财务指标对比
+
+（一）营收与利润规模（单位：亿元）
+
+企业名称    | 营业收入 | 营业...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦研发投入与创新效率，完成以下分析：
+1. 对比五家企业的研发费率（明德7.29%&gt;晶澜6.72%&gt;旭日6.32%&gt;华耀5.91%&gt;阳辉5.49%），分析研发投入强度与公司规模的关系；
+2. 从研发费用绝对值看（阳辉15.68亿&gt;旭日12.53亿&gt;晶澜11.25亿&gt;锐芯9.95亿&gt;明德6.52亿），规模最大的企业研发投入最多，但费率反而最低，分析原因；
+3. 人均研发费用对比：明德6.52亿/3,856人=169万元/人 vs 华耀7.85亿/6,892人=114万元/人，分析人均研发效率的差异；
+4. 评估各企业研发投入对毛利率和净利率的转化效果，判断哪家企业的研发产出效率最高。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用阿拉伯数字，用中文大写<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T2.5" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T2.5-004-V4-R500</span>
+    <span class="badge l2">T2.5</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">光伏产业链2023年度上市公司对标研究报告
+
+一、研究范围与方法
+
+本报告选取A股光伏产业链五家代表性上市企业进行对标分析，涵盖硅料、硅片、电池片、组件及逆变器等产业链核心环节。五家企业均为各自细分领域的头部企业，具有较强的代表性。数据截至2023年12月31日，来源于各公司年报及公开披露数据。
+
+二、核心财务指标对比
+
+（一）营收与利润规模（单位：亿元）
+
+企业名称    | 营业收入 | 营业...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，聚焦研发投入与创新效率，完成以下分析：
+1. 对比五家企业的研发费率（明德7.29%&gt;晶澜6.72%&gt;旭日6.32%&gt;华耀5.91%&gt;阳辉5.49%），分析研发投入强度与公司规模的关系；
+2. 从研发费用绝对值看（阳辉15.68亿&gt;旭日12.53亿&gt;晶澜11.25亿&gt;锐芯9.95亿&gt;明德6.52亿），规模最大的企业研发投入最多，但费率反而最低，分析原因；
+3. 人均研发费用对比：明德6.52亿/3,856人=169万元/人 vs 华耀7.85亿/6,892人=114万元/人，分析人均研发效率的差异；
+4. 评估各企业研发投入对毛利率和净利率的转化效果，判断哪家企业的研发产出效率最高。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用表格<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>必须包含&quot;机会&quot;和&quot;挑战&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.1-002-V1-R200</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">证券代码：688256  证券简称：宏图信息  公告编号：2024-078
+
+宏图信息技术股份有限公司
+关于控股股东及一致行动人股份变动的详式权益变动报告书
+
+本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。
+
+一、公司基本情况
+
+公司总股本：500,000,000股（截至2024年1月1日）。公司控股股东赵明先生及其一致行动人刘洋女士合计持有公司股份...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，追踪赵明先生的持股变动过程：
+1. 列出赵明先生四次股权变动（大宗交易减持、资本公积金转增、协议转让受让、竞价交易减持）前后的持股数量和持股比例；
+2. 计算每次变动涉及的股份数量及金额（若有）；
+3. 分析资本公积金转增（每10股转增5股）后赵明先生持股数从110,000,000变为165,000,000的计算逻辑，验证持股比例为何保持22.00%不变。</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用Markdown表格展示数据<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>按重要性/影响程度从大到小排列<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>必须包含&quot;短期&quot;和&quot;长期&quot;<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.1-002-V2-R300</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">证券代码：688256  证券简称：宏图信息  公告编号：2024-078
+
+宏图信息技术股份有限公司
+关于控股股东及一致行动人股份变动的详式权益变动报告书
+
+本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。
+
+一、公司基本情况
+
+公司总股本：500,000,000股（截至2024年1月1日）。公司控股股东赵明先生及其一致行动人刘洋女士合计持有公司股份...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，核验以下关键数据的一致性：
+1. 验证期初赵明与刘洋合计持股比例33.00%的计算：(125,000,000+40,000,000)/500,000,000；
+2. 验证第一次减持金额277,500,000元是否等于15,000,000股×18.50元/股；
+3. 验证第三次受让后赵明持股比例26.00%：195,000,000/750,000,000；
+4. 验证期末合计持股比例33.00%：(187,500,000+60,000,000)/750,000,000；
+5. 检查报告声明&quot;合计持股比例始终保持在33.00%&quot;是否有误——计算第一次减持后、转增前的合计持股比例是否也是33.00%。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用“投资建议”、“建议买入”、“建议卖出”、“建议持有”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>若提到杠杆必须说明风险<span class="ct-tag">C5</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.1-002-V4-R600</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">证券代码：688256  证券简称：宏图信息  公告编号：2024-078
+
+宏图信息技术股份有限公司
+关于控股股东及一致行动人股份变动的详式权益变动报告书
+
+本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。
+
+一、公司基本情况
+
+公司总股本：500,000,000股（截至2024年1月1日）。公司控股股东赵明先生及其一致行动人刘洋女士合计持有公司股份...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从证券合规角度进行分析：
+1. 根据《上市公司收购管理办法》，投资者持股达到5%时须披露权益变动报告，赵明先生四次变动是否触发该披露义务；
+2. 赵明先生通过竞价交易减持7,500,000股，根据减持新规&quot;大股东三个月内通过竞价交易减持不超过总股本1%&quot;的规定，计算其减持比例是否合规；
+3. 报告声称合计持股比例&quot;始终保持在33.00%&quot;，但赵明第一次减持后合计比例是否发生了变化？请推算该阶段的实际合计比例。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>3个3级标题<span class="ct-tag">F1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>分为6到9个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.1-003-V4-R500</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">锐科智造股份有限公司
+2024年度主营业务成本结构分析（内部管理报告）
+
+报告编制部门：财务管理部
+报告日期：2025年2月20日
+
+一、营业收入概况
+
+2024年度，公司主营产品工业级激光切割设备实现营业收入28,000.00万元，全年销售设备400台，产品单台平均售价70.00万元。
+
+二、成本结构概况
+
+公司2024年度综合毛利率为38.00%。根据成本核算体系，营业成本由以下三部分构成：
+...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从高新技术企业认定和税务合规角度分析：
+1. 高新技术企业认定要求研发费用占营业收入比例不低于3%（收入2亿元以上），计算锐科智造的研发费用率是否满足要求；
+2. 报告显示所得税按15%优惠税率计算，验证净利润3,570万元=利润总额4,200万元×(1-15%)是否成立；
+3. 前五大供应商采购总额占直接材料成本的比例是多少？若供应商集中度过高，分析对持续经营的潜在风险。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>不使用“首先”、“其次”、“最后”<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.1" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.1-004-V4-R200</span>
+    <span class="badge l2">T3.1</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">润和小额贷款股份有限公司
+2024年度贷款质量分类与拨备充足性分析报告
+
+编制部门：风险管理部
+审核日期：2025年1月25日
+
+一、贷款五级分类概况
+
+截至2024年12月31日，公司贷款余额按照《贷款风险分类指引》进行五级分类，分类结果如下：
+
+| 分类等级 | 贷款余额(万元) | 占比 | 预期损失率 |
+|---------|-------------|------|----------...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从监管合规角度进行分析：
+1. 根据《商业银行贷款损失准备管理办法》，拨备覆盖率不低于150%、拨贷比不低于2.5%，分别计算润和公司这两项指标并判断是否达标；
+2. 关注类贷款中2,100万元为房地产相关贷款，占关注类贷款的比例是否为报告所称的33.87%？若该部分全部迁徙至次级类，重新计算不良贷款率和拨备覆盖率；
+3. 分析不良贷款率5%是否超出小额贷款公司的行业监管警戒线（一般为5%），提出合规建议。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少25个完整句子<span class="ct-tag">N2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-001-V3-R300</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">东信证券有限责任公司
+融资融券业务合规检查报告
+
+检查期间：2024年1月1日至2024年6月30日
+检查部门：合规管理部
+报告编号：DX-COMP-2024-015
+
+一、业务概况
+
+检查期间，公司融资融券业务整体经营数据如下：
+- 期末融资融券客户总数：2,856户
+- 期末融资余额：128,000.00万元
+- 期末融券余额：32,000.00万元
+- 融资融券业务总规模：160,000.0...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，按合规检查标准格式编制整改要求清单：
+1. 将五项发现按风险等级（高/中/低）分组，每项列出：问题编号、问题描述、涉及金额、违反的具体法规条款；
+2. 汇总各风险等级的发现数量和涉及金额，编制风险等级分布表；
+3. 对每项发现提出对应的整改措施建议和整改期限。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>先给出结论，再展开分析过程<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-002-V1-R200</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中诚信息服务集团有限公司
+2024年度内部审计报告
+
+审计项目编号：IA-2024-008
+审计期间：2024年1月1日至2024年12月31日
+审计部门：内部审计部
+报告日期：2025年2月10日
+
+一、审计概述
+
+根据2024年度审计计划，内部审计部对公司财务管理、采购管理、资产管理及费用报销等领域进行了全面审计。本次审计共发现5项问题，按风险等级分类如下。
+
+二、审计发现
+
+【发现一】应收账...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，分析审计发现的风险分布特征：
+1. 按风险等级（高/中/低）汇总各等级的发现数量和涉及金额；
+2. 计算高风险发现涉及的金额占全部可量化审计发现金额的比重；
+3. 分析差旅费违规的三种类型（住宿超标6.80万元、未附行程单5.20万元、餐费超标6.40万元）占差旅违规总额18.40万元的各自比重，指出最突出的违规类型。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>末尾风险提示声明<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>分为7到11个段落<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>至少16个完整句子<span class="ct-tag">N2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-002-V4</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中诚信息服务集团有限公司
+2024年度内部审计报告
+
+审计项目编号：IA-2024-008
+审计期间：2024年1月1日至2024年12月31日
+审计部门：内部审计部
+报告日期：2025年2月10日
+
+一、审计概述
+
+根据2024年度审计计划，内部审计部对公司财务管理、采购管理、资产管理及费用报销等领域进行了全面审计。本次审计共发现5项问题，按风险等级分类如下。
+
+二、审计发现
+
+【发现一】应收账...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，从内部控制规范角度分析：
+1. 5笔超过100万元的采购订单未经三级审批即执行，涉及835万元，分析这是否构成《企业内部控制基本规范》中&quot;授权审批控制&quot;的重大缺陷；
+2. 差旅费报销违规率15.33%（23/150），判断该违规率水平是否反映费用报销内控存在系统性风险；
+3. 印章管理中27次使用未登记，占全年580次的4.66%，评估该问题对法律风险和公司治理的影响；
+4. 综合五项发现，评判中诚公司内部控制整体有效性等级。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>站在监管机构的立场回答<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>回答末尾必须包含一段总结<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>段落间逻辑连贯，有明确过渡<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>数据驱动论述，每个论点用数据佐证<span class="ct-tag">S3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-002-V5-R200</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中诚信息服务集团有限公司
+2024年度内部审计报告
+
+审计项目编号：IA-2024-008
+审计期间：2024年1月1日至2024年12月31日
+审计部门：内部审计部
+报告日期：2025年2月10日
+
+一、审计概述
+
+根据2024年度审计计划，内部审计部对公司财务管理、采购管理、资产管理及费用报销等领域进行了全面审计。本次审计共发现5项问题，按风险等级分类如下。
+
+二、审计发现
+
+【发现一】应收账...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成内部审计综合评估：
+1. 逐项核验五项审计发现中的关键数据（占比、违规率等）计算是否正确；
+2. 验证综合审计评分72分的扣分逻辑是否合理；
+3. 量化分析：将全部审计发现涉及的可量化金额汇总（应收账款风险敞口、采购违规金额、资产盘亏净值、差旅违规金额），计算总风险暴露金额；
+4. 按风险等级和涉及金额双维度对五项发现进行优先级排序；
+5. 对排名前两位的高风险发现提出具体的整改方案和内控改进建议。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>Checkbox格式标记事项<span class="ct-tag">F7</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>正反两面对比论述（优势vs劣势/机会vs风险）<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>3个2级标题<span class="ct-tag">F1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-002-V5-R500</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">中诚信息服务集团有限公司
+2024年度内部审计报告
+
+审计项目编号：IA-2024-008
+审计期间：2024年1月1日至2024年12月31日
+审计部门：内部审计部
+报告日期：2025年2月10日
+
+一、审计概述
+
+根据2024年度审计计划，内部审计部对公司财务管理、采购管理、资产管理及费用报销等领域进行了全面审计。本次审计共发现5项问题，按风险等级分类如下。
+
+二、审计发现
+
+【发现一】应收账...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成内部审计综合评估：
+1. 逐项核验五项审计发现中的关键数据（占比、违规率等）计算是否正确；
+2. 验证综合审计评分72分的扣分逻辑是否合理；
+3. 量化分析：将全部审计发现涉及的可量化金额汇总（应收账款风险敞口、采购违规金额、资产盘亏净值、差旅违规金额），计算总风险暴露金额；
+4. 按风险等级和涉及金额双维度对五项发现进行优先级排序；
+5. 对排名前两位的高风险发现提出具体的整改方案和内控改进建议。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>以普通投资者能理解的方式撰写<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>Checkbox格式标记事项<span class="ct-tag">F7</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>首行包含&quot;摘要&quot;，末行包含&quot;以上内容仅供参考&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>专业术语英文缩写需给出中文全称<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-003-V5</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">丰华银行股份有限公司
+2024年度反洗钱工作报告
+
+报告编制部门：反洗钱中心
+报告日期：2025年1月30日
+
+一、反洗钱工作整体情况
+
+2024年度，我行严格按照《中华人民共和国反洗钱法》《金融机构大额交易和可疑交易报告管理办法》等法律法规要求，持续加强反洗钱体系建设。全年反洗钱工作核心指标如下：
+
+| 指标 | 2024年 | 2023年 | 同比变动 |
+|------|--------|-...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成丰华银行反洗钱工作效能综合评估：
+1. 核验报告中所有同比变动数据的计算正确性（大额交易+14.35%、可疑交易初筛+20.90%、最终报送+15.09%、客户尽调+19.37%）；
+2. 计算可疑交易全流程转化率：大额交易报告→初筛→最终报送各环节的转化率及笔均金额；
+3. 评估系统监测有效性：准确率67.49%、漏报15笔/2,340万元、误报158笔，综合判断系统需提升的方面；
+4. 分析客户身份识别不合格的地域集中度，指出最需重点整改的地区；
+5. 从合规角度判断丰华银行反洗钱工作整体合规水平。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从宏观经济的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>3到6条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>简洁干练，避免冗余修饰<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>分为8到11个段落<span class="ct-tag">N2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-004-V2</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">明达精密仪器股份有限公司
+2024年度信息披露合规性自查报告
+
+证券代码：603XXX
+报告期间：2024年1月1日至2024年12月31日
+编制部门：董事会秘书办公室
+报告日期：2025年3月5日
+
+一、定期报告披露情况
+
+2024年度公司按照《上市公司信息披露管理办法》要求，共完成4份定期报告的编制和披露工作：
+
+| 报告类型 | 法定截止日 | 实际披露日 | 是否按时 |
+|-------...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，核验信息披露自查报告的数据一致性：
+1. 验证临时公告各类别数量合计：12+8+5+3+6+4+29是否等于67份，各类别占比是否正确；
+2. 核验违规关联交易金额合计：1,200+860+540是否等于2,600万元；
+3. 验证关联交易公告违规率：3/12是否等于25.00%；
+4. 将各季度单季收入加总（34,200+44,300+42,800+35,500），验证是否等于年报全年收入156,800万元。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>以谨慎保守的语气撰写<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>至少18个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>Checkbox格式标记事项<span class="ct-tag">F7</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>回答末尾必须包含一段总结<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.2" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.2-004-V5-R200</span>
+    <span class="badge l2">T3.2</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">明达精密仪器股份有限公司
+2024年度信息披露合规性自查报告
+
+证券代码：603XXX
+报告期间：2024年1月1日至2024年12月31日
+编制部门：董事会秘书办公室
+报告日期：2025年3月5日
+
+一、定期报告披露情况
+
+2024年度公司按照《上市公司信息披露管理办法》要求，共完成4份定期报告的编制和披露工作：
+
+| 报告类型 | 法定截止日 | 实际披露日 | 是否按时 |
+|-------...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成明达精密仪器信息披露合规性综合评估：
+1. 核验定期报告是否全部按时披露，列出各报告的法定截止日与实际披露日之间的余量天数；
+2. 核验临时公告分类数量及各项占比的计算正确性；
+3. 逐条评估三项自查发现的严重程度，引用对应的法规条款；
+4. 对各季度单季收入进行交叉验证，分析第四季度收入35,500万元较第二季度44,300万元和第三季度42,800万元明显下降的原因是否需要关注；
+5. 综合评判明达公司信息披露合规总体水平，提出改进建议。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从零售投资者的视角分析<span class="ct-tag">S2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>先给出结论，再展开分析过程<span class="ct-tag">F6</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-001-V1-R400</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">诚信达科技股份有限公司
+2024年度分季度主要财务数据交叉验证工作底稿
+
+编制人：李明（注册会计师）
+复核人：王建国（审计项目经理）
+日期：2025年3月15日
+
+一、利润表主要科目分季度数据
+
+单位：万元
+
+| 项目 | Q1 | Q2 | Q3 | Q4 | 全年合计 |
+|------|--------|--------|--------|--------|----------|
+| 营业收...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成以下交叉验证计算：
+1. 按季度验证：营业利润=毛利-销售费用-管理费用-研发费用-财务费用，逐一检查Q1至Q4四个季度的营业利润是否正确；
+2. 计算各季度营业利润率（营业利润/营业收入），分析是否呈现逐季上升趋势；
+3. 验证全年营业利润8,710万元是否等于Q1至Q4营业利润之和（1,325+1,945+2,410+3,030）。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>正反两面对比论述（优势vs劣势/机会vs风险）<span class="ct-tag">S4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>语气客观中立，不包含主观投资建议<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>以机构投资者为目标读者撰写<span class="ct-tag">S2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-001-V2-R500</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">诚信达科技股份有限公司
+2024年度分季度主要财务数据交叉验证工作底稿
+
+编制人：李明（注册会计师）
+复核人：王建国（审计项目经理）
+日期：2025年3月15日
+
+一、利润表主要科目分季度数据
+
+单位：万元
+
+| 项目 | Q1 | Q2 | Q3 | Q4 | 全年合计 |
+|------|--------|--------|--------|--------|----------|
+| 营业收...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，对费用率数据进行交叉验证：
+1. 逐季验证管理费用率：Q1=1,880/23,500=8.00%，Q2=1,975/28,200=7.00%，Q3=2,070/31,800=6.51%，Q4=2,165/36,500=5.93%，确认报告所列百分比是否准确；
+2. 验证全年管理费用率6.74%=8,090/120,000的计算；
+3. 检查管理费用的季度环比增幅是否均为95万元（1,975-1,880、2,070-1,975、2,165-2,070），验证&quot;增长较为均匀&quot;的表述；
+4. 验证各季度所得税率是否均为15%：分别用所得税费用/利润总额计算。</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>Checkbox格式标记事项<span class="ct-tag">F7</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不超过1000字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>末尾风险提示声明<span class="ct-tag">L1</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-002-V3-R300</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">盛远集团股份有限公司
+2024年12月31日资产负债表（经审计）
+
+单位：万元
+
+一、资产
+
+| 项目 | 期末余额 | 期初余额 |
+|------|---------|---------|
+| 货币资金 | 15,200.00 | 12,800.00 |
+| 应收账款 | 28,500.00 | 24,600.00 |
+| 存货 | 22,300.00 | 19,500.00 |
+| 其他流动...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，编制期末与期初对比分析报告：
+1. 逐项计算资产各科目的期末较期初变动金额和变动率，找出变动幅度最大的三个科目；
+2. 逐项计算负债各科目的期末较期初变动金额和变动率；
+3. 分析所有者权益的期末较期初变动构成：盈余公积增加多少、未分配利润增加多少，验证与净利润、分红、提取公积金的勾稽关系。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>7到10条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>至少23个完整句子<span class="ct-tag">N2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>数值保留2位小数<span class="ct-tag">N3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>从风险管理的角度分析<span class="ct-tag">C3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-002-V3-R600</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">盛远集团股份有限公司
+2024年12月31日资产负债表（经审计）
+
+单位：万元
+
+一、资产
+
+| 项目 | 期末余额 | 期初余额 |
+|------|---------|---------|
+| 货币资金 | 15,200.00 | 12,800.00 |
+| 应收账款 | 28,500.00 | 24,600.00 |
+| 存货 | 22,300.00 | 19,500.00 |
+| 其他流动...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，编制期末与期初对比分析报告：
+1. 逐项计算资产各科目的期末较期初变动金额和变动率，找出变动幅度最大的三个科目；
+2. 逐项计算负债各科目的期末较期初变动金额和变动率；
+3. 分析所有者权益的期末较期初变动构成：盈余公积增加多少、未分配利润增加多少，验证与净利润、分红、提取公积金的勾稽关系。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>4到7条有序列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>段落间逻辑连贯，有明确过渡<span class="ct-tag">S3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不使用“！”、“!”<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>使用通俗语言，避免专业术语和行话<span class="ct-tag">L3</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>使用类比或举例来辅助解释<span class="ct-tag">S4</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="5">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-003-V5-R200</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=5</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">恒创新材料股份有限公司
+IPO募集资金使用效益对比分析报告
+
+证券代码：688XXX
+上市日期：2022年3月15日（科创板）
+报告编制部门：战略规划部
+报告日期：2025年4月10日
+
+一、IPO承诺业绩
+
+根据公司《首次公开发行股票并在科创板上市招股说明书》（2022年2月），公司在募集说明书中对上市后三年（2022-2024年）的经营业绩作出如下预测：
+
+| 年度 | 承诺营业收入(万元) ...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，完成恒创新材料IPO业绩达成综合评估：
+1. 逐年验证营业收入和净利润完成率的计算过程，确认报告数据准确；
+2. 分析利润偏差为何大于收入偏差：从毛利率下降（42.50%→41.80%→40.20%）和费用率角度进行拆解；
+3. 计算承诺的年均复合增长率与实际的年均复合增长率，量化增速缺口；
+4. 评估2025年目标（收入118,000万元、净利润15,000万元）的可实现性——相对2024年实际值需要多大增幅；
+5. 从合规角度判断三年累计利润完成率79.55%是否可能触发监管关注或投资者诉讼风险。</div></div>
+    <div class="section"><div class="section-label">约束 (5条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>不使用列表<span class="ct-tag">F2</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从ESG（环境、社会、治理）角度进行评价<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>使用正式书面语，不得口语化<span class="ct-tag">S1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>首行用加粗文字<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="3">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-004-V2-R100</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=3</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">凯瑞智联科技股份有限公司
+2023-2024年度杜邦分析法财务综合评价
+
+编制部门：财务分析部
+报告日期：2025年4月15日
+
+一、核心财务数据
+
+| 指标 | 2023年 | 2024年 | 同比变动 |
+|------|--------|--------|---------|
+| 营业收入(万元) | 180,000.00 | 200,000.00 | +11.11% |
+| 营业成本(万元...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，核验利润表各科目之间的勾稽关系：
+1. 验证2024年毛利52,000=营业收入200,000-营业成本148,000；
+2. 验证四项费用合计38,000=销售费用12,000+管理费用10,000+研发费用14,000+财务费用2,000；
+3. 验证营业利润20,000=毛利52,000-四项费用38,000+其他收益6,000；
+4. 验证净利润15,000=利润总额20,000-所得税5,000；
+5. 核验所有费用和收入的同比变动率是否均为报告所述的+11.11%（即200,000/180,000-1）。</div></div>
+    <div class="section"><div class="section-label">约束 (3条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>金额统一使用万元为单位<span class="ct-tag">L4</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>从宏观经济的角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不得使用金融术语英文缩写（如ROE/PE/EBITDA等）<span class="ct-tag">L3</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T3.3" data-n="6">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-SYN-T3.3-004-V3-R500</span>
+    <span class="badge l2">T3.3</span>
+    <span class="badge n">N=6</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">凯瑞智联科技股份有限公司
+2023-2024年度杜邦分析法财务综合评价
+
+编制部门：财务分析部
+报告日期：2025年4月15日
+
+一、核心财务数据
+
+| 指标 | 2023年 | 2024年 | 同比变动 |
+|------|--------|--------|---------|
+| 营业收入(万元) | 180,000.00 | 200,000.00 | +11.11% |
+| 营业成本(万元...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上数据，用连环替代法完成ROE变动的因素分析：
+1. 先分别计算2023年和2024年的销售净利率、总资产周转率和权益乘数三个指标；
+2. 以2023年ROE为基准，按照&quot;先替代销售净利率→再替代总资产周转率→最后替代权益乘数&quot;的顺序，逐步计算每一步替代后的ROE值；
+3. 量化三个因素各自对ROE变动的贡献（百分点），并判断哪个因素是ROE变动的主要驱动力。</div></div>
+    <div class="section"><div class="section-label">约束 (6条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>从产业链/供应链角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>不使用表格<span class="ct-tag">F3</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>不超过800字<span class="ct-tag">N1</span></div><div class="ct-item sampled"><span class="ct-num">（4）</span>开头第一个词必须是&quot;根据&quot;<span class="ct-tag">F6</span></div><div class="ct-item sampled"><span class="ct-num">（5）</span>从估值与定价角度分析<span class="ct-tag">C3</span></div><div class="ct-item sampled"><span class="ct-num">（6）</span>不使用“然而”、“但是”、“不过”<span class="ct-tag">L2</span></div></div>
+  </div>
+</div>
+<div class="card" data-l2="T1.3" data-n="4">
+  <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+    <span class="sid">S-Q-T1.3-007-V1</span>
+    <span class="badge l2">T1.3</span>
+    <span class="badge n">N=4</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="card-body">
+    <div class="section"><div class="section-label">Context</div><div class="context">北京市第二中级人民法院
+民事判决书
+
+（2025）京02民初1287号
+
+原告：深圳前海瑞和资产管理有限公司（以下简称&quot;瑞和资管&quot;）
+住所地：深圳市前海深港合作区
+法定代表人：刘新宇
+
+被告一：上海融汇金融信息服务有限公司（以下简称&quot;融汇金融&quot;）
+住所地：上海市浦东新区陆家嘴金融贸易区
+法定代表人：周建华
+
+被告二：周建华，男，1975年6月12日出生
+身份证号：310XXXXXXXXXX7819...</div></div>
+    <div class="section"><div class="section-label">Query</div><div class="query">请基于以上民事判决书，完成以下分析：
+
+1. 提取被告一的三项违约行为及各自造成的损失金额
+2. 提取合同的关键条款（投资范围、持仓上限、管理费率、业绩报酬比例）
+3. 提取被告二承担连带责任的法律依据（人格混同）
+4. 提取原告诉讼请求的完整内容</div></div>
+    <div class="section"><div class="section-label">约束 (4条)</div><div class="ct-item sampled"><span class="ct-num">（1）</span>必须包含&quot;机会&quot;和&quot;挑战&quot;<span class="ct-tag">L1</span></div><div class="ct-item sampled"><span class="ct-num">（2）</span>第一人称叙事<span class="ct-tag">L2</span></div><div class="ct-item sampled"><span class="ct-num">（3）</span>分为5到9个段落<span class="ct-tag">N2</span></div><div class="ct-item moved"><span class="ct-num">（4）</span>输出要求：使用Markdown表格格式。<span class="ct-tag">格式</span></div></div>
+  </div>
+</div>
+</div>
+<script>
+const cards=document.querySelectorAll('.card');
+const l2s=[...new Set([...cards].map(c=>c.dataset.l2))].sort();
+const ns=[...new Set([...cards].map(c=>c.dataset.n))].sort((a,b)=>a-b);
+const l2Sel=document.getElementById('filterL2');
+const nSel=document.getElementById('filterN');
+l2s.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;l2Sel.appendChild(o);});
+ns.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent='N='+v;nSel.appendChild(o);});
+function filterCards(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const l2=l2Sel.value;
+  const n=nSel.value;
+  let shown=0;
+  cards.forEach(c=>{
+    const text=c.textContent.toLowerCase();
+    const match=(!q||text.includes(q))&&(!l2||c.dataset.l2===l2)&&(!n||c.dataset.n===n);
+    c.style.display=match?'':'none';
+    if(match)shown++;
+  });
+  document.getElementById('countLabel').textContent=shown+'/'+cards.length;
+}
+function expandAll(){cards.forEach(c=>{if(c.style.display!=='none')c.classList.add('open')})}
+function collapseAll(){cards.forEach(c=>c.classList.remove('open'))}
+filterCards();
+</script>
+</body>
+</html>

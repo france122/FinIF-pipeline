@@ -585,6 +585,227 @@ def check_has_calculation(output, params=None):
 
 
 # ============================================================
+# IF-specific Checkers (format/structure constraints)
+# ============================================================
+
+def check_forbidden_pattern(output, params=None):
+    """Check that forbidden characters/words/patterns are absent."""
+    params = params or {}
+    forbidden = params.get('forbidden', [])
+    for item in forbidden:
+        if len(item) <= 2:
+            if item in output:
+                return False
+        else:
+            if re.search(re.escape(item), output):
+                return False
+    return True
+
+
+def check_first_line_format(output, params=None):
+    """Check first non-empty line format (bold, heading, etc.)."""
+    params = params or {}
+    fmt = params.get('format', 'bold')
+    lines = [l.strip() for l in output.strip().splitlines() if l.strip()]
+    if not lines:
+        return False
+    first = lines[0]
+    if fmt == 'bold':
+        return bool(re.match(r'^\*\*.+\*\*', first))
+    elif fmt == 'heading':
+        return bool(re.match(r'^#{1,4}\s', first))
+    elif fmt == 'numbered':
+        return bool(re.match(r'^1[.、)）]\s', first))
+    return False
+
+
+def check_blockquote_count(output, params=None):
+    """Check minimum number of blockquote lines (> prefix)."""
+    params = params or {}
+    min_count = params.get('min_count', 1)
+    quotes = re.findall(r'^>\s', output, re.MULTILINE)
+    return len(quotes) >= min_count
+
+
+def check_heading_level(output, params=None):
+    """Check specific heading level count (e.g., exactly N ## headings)."""
+    params = params or {}
+    level = params.get('level', 2)
+    min_count = params.get('min_count', 1)
+    max_count = params.get('max_count', None)
+    pattern = r'^' + '#' * level + r'\s+\S'
+    headings = re.findall(pattern, output, re.MULTILINE)
+    count = len(headings)
+    if max_count is not None:
+        return min_count <= count <= max_count
+    return count >= min_count
+
+
+def check_sentence_count(output, params=None):
+    """GH-2: Check minimum sentence count."""
+    params = params or {}
+    min_count = params.get('min_count', 1)
+    sentences = re.split(r'[。！？!?]+', output)
+    sentences = [s.strip() for s in sentences if s.strip() and len(s.strip()) > 5]
+    return len(sentences) >= min_count
+
+
+def check_paragraph_count(output, params=None):
+    """GH-3: Check paragraph count."""
+    params = params or {}
+    min_count = params.get('min_count', 1)
+    max_count = params.get('max_count', None)
+    paragraphs = re.split(r'\n\s*\n', output.strip())
+    paragraphs = [p for p in paragraphs if p.strip()]
+    count = len(paragraphs)
+    if max_count is not None:
+        return min_count <= count <= max_count
+    return count >= min_count
+
+
+def check_heading_depth(output, params=None):
+    """GH-5: Check that output uses at least N distinct heading levels."""
+    params = params or {}
+    min_depth = params.get('min_depth', 2)
+    levels_found = set()
+    for line in output.strip().splitlines():
+        m = re.match(r'^(#{1,6})\s', line.strip())
+        if m:
+            levels_found.add(len(m.group(1)))
+    if re.search(r'^[一二三四五六七八九十]+[、.]\s', output, re.MULTILINE):
+        levels_found.add(10)
+    return len(levels_found) >= min_depth
+
+
+def check_first_word(output, params=None):
+    """GH-11: Check that output starts with a specific word/phrase."""
+    params = params or {}
+    word = params.get('word', '')
+    text = re.sub(r'^(?:\*{1,2}|#{1,6}\s*)', '', output.strip())
+    return text.startswith(word)
+
+
+def check_code_block(output, params=None):
+    """GH-13: Check output contains code/formula blocks (``` markers)."""
+    params = params or {}
+    min_count = params.get('min_count', 1)
+    blocks = re.findall(r'```', output)
+    return len(blocks) >= min_count * 2
+
+
+def check_first_last_line(output, params=None):
+    """GH-14: Check first and/or last line contains specific text."""
+    params = params or {}
+    first_text = params.get('first_line', None)
+    last_text = params.get('last_line', None)
+    lines = [l.strip() for l in output.strip().splitlines() if l.strip()]
+    if not lines:
+        return False
+    if first_text and first_text not in lines[0]:
+        return False
+    if last_text and last_text not in lines[-1]:
+        return False
+    return True
+
+
+def check_no_table(output, params=None):
+    """GH-18: No markdown tables allowed (inverse constraint)."""
+    return not check_markdown_table(output)
+
+
+def check_no_list(output, params=None):
+    """GH-19: No lists (ordered or unordered) allowed (inverse constraint)."""
+    for line in output.strip().splitlines():
+        line = line.strip()
+        if re.match(r'^(\d+[.、)）]|-|\*|•)\s', line):
+            return False
+    return True
+
+
+def check_first_person(output, params=None):
+    """GH-20: First person narrative, no third-person report language."""
+    params = params or {}
+    forbidden = params.get('forbidden_phrases',
+        ['本报告', '本文', '本分析', '本研究', '报告认为', '分析认为'])
+    return not any(phrase in output for phrase in forbidden)
+
+
+def check_risk_disclaimer(output, params=None):
+    """FH-1: Risk disclaimer must appear near the end."""
+    params = params or {}
+    risk_line = params.get('risk_line', '以上内容仅供参考，不构成投资建议')
+    lines = [l.strip() for l in output.strip().splitlines() if l.strip()]
+    if not lines:
+        return False
+    last_block = '\n'.join(lines[-5:])
+    if risk_line in last_block:
+        return True
+    return any(p in last_block for p in ['风险提示', '免责声明', '仅供参考', '不构成投资建议'])
+
+
+def check_conditional_trigger(output, params=None):
+    """FH-3: If trigger word appears, followup must also appear."""
+    params = params or {}
+    trigger = params.get('trigger', '')
+    followup = params.get('followup', '')
+    if trigger and trigger in output:
+        return followup in output
+    return True
+
+
+def check_decimal_places(output, params=None):
+    """FH-4: Numeric values should have exactly N decimal places."""
+    params = params or {}
+    n = params.get('places', 2)
+    skip_units = r'[年月日号期季届次个条只家人份款项批组套件篇章节段点步]'
+    violations = 0
+    total_checked = 0
+    for m in re.finditer(r'(\d[\d,]*\.\d+)\s*(%|％|[^\d\s,.;:!?。，；：！？\n])?', output):
+        num_str = m.group(1)
+        unit = m.group(2) or ''
+        if re.match(skip_units, unit):
+            continue
+        line_start = output.rfind('\n', 0, m.start()) + 1
+        line_prefix = output[line_start:m.start()]
+        if re.match(r'^\s*#{1,6}\s', line_prefix):
+            continue
+        dec_part = num_str.split('.')[1]
+        total_checked += 1
+        if len(dec_part) != n:
+            violations += 1
+    if total_checked < 3:
+        return True
+    return violations == 0
+
+
+def check_currency_format(output, params=None):
+    """FH-5: Currency values must use specified unit (万元/亿元)."""
+    params = params or {}
+    required_unit = params.get('unit', '万元')
+    forbidden_units = params.get('forbidden_units', [])
+    currency_units = ['万元', '亿元', '百万元', '千万元', '元', '万亿元',
+                      '万亿', '百万', '千万']
+    has_any_currency = any(u in output for u in currency_units)
+    if not has_any_currency:
+        return True
+    if required_unit not in output:
+        return False
+    return not any(u in output for u in forbidden_units)
+
+
+def check_no_percent(output, params=None):
+    """FH-8: No percent symbol allowed (inverse constraint)."""
+    return '%' not in output and '％' not in output
+
+
+def check_no_arabic_numerals(output, params=None):
+    """FH-9: No Arabic numerals allowed (inverse constraint)."""
+    text = re.sub(r'^#{1,6}\s.*$', '', output, flags=re.MULTILINE)
+    text = re.sub(r'^\|.*\|$', '', text, flags=re.MULTILINE)
+    return not bool(re.search(r'[0-9]', text))
+
+
+# ============================================================
 # Evidence-based Verification Checkers
 # ============================================================
 

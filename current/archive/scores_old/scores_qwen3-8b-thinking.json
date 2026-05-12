@@ -1,0 +1,3489 @@
+{
+  "model": "qwen3-8b-thinking",
+  "results": {
+    "T1.1-001": {
+      "T1.1-001#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-001#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-001#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T1.1-002": {
+      "T1.1-002#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-002#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-002#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-002#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-003": {
+      "T1.1-003#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-003#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.1-003#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-003#C4": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.1-003#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-004": {
+      "T1.1-004#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-004#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-004#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-004#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-004#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-005": {
+      "T1.1-005#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-005#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-005#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-005#C4": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      }
+    },
+    "T1.1-006": {
+      "T1.1-006#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-006#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-006#C3": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-007": {
+      "T1.1-007#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-007#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-007#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-007#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-008": {
+      "T1.1-008#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-008#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-008#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-008#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-009": {
+      "T1.1-009#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-009#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.1-009#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-009#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-009#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-010": {
+      "T1.1-010#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-010#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-010#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-010#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-011": {
+      "T1.1-011#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-011#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-011#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-011#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-011#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-012": {
+      "T1.1-012#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-012#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.1-012#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-012#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-012#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-012#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-013": {
+      "T1.1-013#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-013#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-013#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-013#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.1-013#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-014": {
+      "T1.1-014#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-014#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-014#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-014#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-015": {
+      "T1.1-015#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-015#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-015#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-015#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-016": {
+      "T1.1-016#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-016#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-016#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-016#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-017": {
+      "T1.1-017#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-017#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-017#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-017#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.1-020": {
+      "T1.1-020#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-020#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-020#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-020#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.1-021": {
+      "T1.1-021#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-021#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.1-021#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.1-021#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-001": {
+      "T1.2-001#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.2-001#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.2-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_ranking"
+      },
+      "T1.2-001#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T1.2-002": {
+      "T1.2-002#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.2-002#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-002#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.2-003": {
+      "T1.2-003#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-003#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-003#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-003#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-003#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-004": {
+      "T1.2-004#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-004#C3": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.2-004#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-004#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-004#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-005": {
+      "T1.2-005#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-005#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-005#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-005#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-005#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-006": {
+      "T1.2-006#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-006#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-006#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-006#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.2-007": {
+      "T1.2-007#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-007#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.2-007#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.2-007#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-007#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-008": {
+      "T1.2-008#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-008#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.2-008#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.2-008#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.2-012": {
+      "T1.2-012#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-012#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-012#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-012#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.2-013": {
+      "T1.2-013#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-013#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-013#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-013#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T1.2-014": {
+      "T1.2-014#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-014#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-014#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.2-014#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.2-015": {
+      "T1.2-015#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T1.2-015#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T1.2-015#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.2-015#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-001": {
+      "T1.3-001#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-001#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.3-001#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-001#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-002": {
+      "T1.3-002#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-002#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-002#C4": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.3-002#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.3-003": {
+      "T1.3-003#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-003#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-003#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-003#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-004": {
+      "T1.3-004#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-004#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-004#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-005": {
+      "T1.3-005#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-005#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-005#C3": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-006": {
+      "T1.3-006#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_qa_format"
+      },
+      "T1.3-006#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-006#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-006#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-006#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.3-007": {
+      "T1.3-007#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T1.3-007#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-007#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-007#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-008": {
+      "T1.3-008#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-008#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-008#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-008#C4": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T1.3-009": {
+      "T1.3-009#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T1.3-009#C2": {
+        "pass": null,
+        "type": "soft"
+      },
+      "T1.3-009#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-009#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-010": {
+      "T1.3-010#C1": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T1.3-010#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-010#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-010#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-011": {
+      "T1.3-011#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-011#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-011#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-011#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-012": {
+      "T1.3-012#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-012#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T1.3-012#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-012#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-013": {
+      "T1.3-013#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-013#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-013#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-013#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T1.3-014": {
+      "T1.3-014#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T1.3-014#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T1.3-014#C3": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.1-001": {
+      "T2.1-001#C1": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.1-001#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T2.1-001#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-001#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-001#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-001#C6": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.1-002": {
+      "T2.1-002#C1": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.1-002#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.1-002#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.1-002#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.1-002#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-002#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.1-003": {
+      "T2.1-003#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-003#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.1-003#C3": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.1-003#C4": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.1-003#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.1-004": {
+      "T2.1-004#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T2.1-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-004#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-004#C4": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      }
+    },
+    "T2.1-005": {
+      "T2.1-005#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T2.1-005#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-005#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-005#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T2.1-008": {
+      "T2.1-008#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T2.1-008#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-008#C3": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.1-009": {
+      "T2.1-009#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T2.1-009#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.1-009#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.1-009#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.1-010": {
+      "T2.1-010#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T2.1-010#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T2.1-010#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.1-010#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.2-001": {
+      "T2.2-001#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-001#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-001#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.2-002": {
+      "T2.2-002#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-002#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-002#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-002#C4": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_ordered_list_count"
+      }
+    },
+    "T2.2-003": {
+      "T2.2-003#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T2.2-003#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-003#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-003#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T2.2-004": {
+      "T2.2-004#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.2-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-004#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-004#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.2-005": {
+      "T2.2-005#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-005#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-005#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.2-005#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.2-006": {
+      "T2.2-006#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.2-006#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-006#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.2-006#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.2-006#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.3-001": {
+      "T2.3-001#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-001#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.3-001#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.3-002": {
+      "T2.3-002#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-002#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-002#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.3-003": {
+      "T2.3-003#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.3-003#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.3-003#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-003#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-003#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.3-004": {
+      "T2.3-004#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-004#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.3-004#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.3-005": {
+      "T2.3-005#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.3-005#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.3-005#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.3-005#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.3-006": {
+      "T2.3-006#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-006#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-006#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.3-006#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.4-001": {
+      "T2.4-001#C1": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.4-001#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-001#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-001#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-001#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.4-002": {
+      "T2.4-002#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-002#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.4-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-002#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-002#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.4-002#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.4-003": {
+      "T2.4-003#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-003#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.4-003#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.4-003#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.4-004": {
+      "T2.4-004#C1": {
+        "pass": null,
+        "type": "soft"
+      },
+      "T2.4-004#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.4-004#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-004#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T2.4-005": {
+      "T2.4-005#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-005#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.4-005#C3": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.4-008": {
+      "T2.4-008#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.4-008#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T2.4-008#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.4-008#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.4-009": {
+      "T2.4-009#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T2.4-009#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.4-009#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T2.4-009#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.5-001": {
+      "T2.5-001#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.5-001#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-001#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-001#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.5-002": {
+      "T2.5-002#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_limit"
+      },
+      "T2.5-002#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T2.5-002#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-002#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-002#C5": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T2.5-003": {
+      "T2.5-003#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T2.5-003#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-003#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-003#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T2.5-004": {
+      "T2.5-004#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T2.5-004#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-004#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T2.5-004#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.5-006": {
+      "T2.5-006#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-006#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-006#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-006#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T2.5-007": {
+      "T2.5-007#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-007#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-007#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T2.5-007#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T3.1-001": {
+      "T3.1-001#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-001#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-001#C3": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.1-001#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-001#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-001#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.1-002": {
+      "T3.1-002#C1": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.1-002#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-002#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.1-002#C4": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.1-002#C5": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T3.1-003": {
+      "T3.1-003#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.1-003#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.1-003#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.1-003#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-003#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-003#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.1-004": {
+      "T3.1-004#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-004#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.1-004#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.1-004#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-004#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.1-004#C6": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.1-009": {
+      "T3.1-009#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.1-009#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.1-009#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.1-009#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.1-010": {
+      "T3.1-010#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.1-010#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T3.1-010#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.1-010#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.1-011": {
+      "T3.1-011#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.1-011#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T3.1-011#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.1-011#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-001": {
+      "T3.2-001#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_section_count"
+      },
+      "T3.2-001#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.2-001#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-001#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-001#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-002": {
+      "T3.2-002#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-002#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_table_sort_alpha"
+      },
+      "T3.2-002#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.2-002#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-002#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-003": {
+      "T3.2-003#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-003#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-003#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-003#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-003#C5": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.2-004": {
+      "T3.2-004#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.2-004#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-004#C3": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.2-004#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-004#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-004#C6": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.2-008": {
+      "T3.2-008#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.2-008#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.2-008#C3": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.2-008#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-009": {
+      "T3.2-009#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.2-009#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.2-009#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_word_range"
+      },
+      "T3.2-009#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T3.2-009#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-010": {
+      "T3.2-010#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.2-010#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.2-010#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T3.2-010#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.2-011": {
+      "T3.2-011#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_json_format"
+      },
+      "T3.2-011#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_exact"
+      },
+      "T3.2-011#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.2-011#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.3-001": {
+      "T3.3-001#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-001#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.3-001#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_value_derivation"
+      },
+      "T3.3-001#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.3-002": {
+      "T3.3-002#C1": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-002#C2": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-002#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-002#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-002#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-002#C6": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      }
+    },
+    "T3.3-003": {
+      "T3.3-003#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.3-003#C2": {
+        "pass": null,
+        "type": "soft",
+        "error": "max retries"
+      },
+      "T3.3-003#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-003#C4": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-003#C5": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.3-004": {
+      "T3.3-004#C1": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.3-004#C2": {
+        "pass": false,
+        "type": "soft"
+      },
+      "T3.3-004#C3": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-004#C4": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-004#C5": {
+        "pass": true,
+        "type": "soft"
+      },
+      "T3.3-004#C6": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.3-005": {
+      "T3.3-005#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-005#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-005#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-005#C4": {
+        "pass": false,
+        "type": "soft"
+      }
+    },
+    "T3.3-006": {
+      "T3.3-006#C1": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-006#C2": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-006#C3": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-006#C4": {
+        "pass": true,
+        "type": "soft"
+      }
+    },
+    "T3.3-007": {
+      "T3.3-007#C1": {
+        "pass": true,
+        "type": "hard",
+        "checker": "check_markdown_table"
+      },
+      "T3.3-007#C2": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-007#C3": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-007#C4": {
+        "pass": false,
+        "type": "hard",
+        "checker": "check_computation_result"
+      },
+      "T3.3-007#C5": {
+        "pass": false,
+        "type": "soft"
+      }
+    }
+  },
+  "scores": {
+    "T1.1-001": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T1.1-002": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-003": {
+      "total": 5,
+      "passed": 1,
+      "score": 0.2,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 1
+      }
+    },
+    "T1.1-004": {
+      "total": 5,
+      "passed": 1,
+      "score": 0.2,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 0
+      }
+    },
+    "T1.1-005": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T1.1-006": {
+      "total": 3,
+      "passed": 3,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-007": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.1-008": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-009": {
+      "total": 5,
+      "passed": 3,
+      "score": 0.6,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T1.1-010": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.1-011": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.1-012": {
+      "total": 6,
+      "passed": 3,
+      "score": 0.5,
+      "hard": {
+        "total": 4,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T1.1-013": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T1.1-014": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-015": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-016": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-017": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.1-020": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 4,
+        "passed": 3
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.1-021": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-001": {
+      "total": 4,
+      "passed": 1,
+      "score": 0.25,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 0
+      }
+    },
+    "T1.2-002": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.2-003": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T1.2-004": {
+      "total": 6,
+      "passed": 4,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T1.2-005": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T1.2-006": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T1.2-007": {
+      "total": 5,
+      "passed": 3,
+      "score": 0.6,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T1.2-008": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T1.2-012": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 4,
+        "passed": 4
+      },
+      "soft": {
+        "total": 0,
+        "passed": 0
+      }
+    },
+    "T1.2-013": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T1.2-014": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.2-015": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 3,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-001": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T1.3-002": {
+      "total": 5,
+      "passed": 2,
+      "score": 0.4,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T1.3-003": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-004": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.3-005": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T1.3-006": {
+      "total": 5,
+      "passed": 2,
+      "score": 0.4,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 1
+      }
+    },
+    "T1.3-007": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T1.3-008": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T1.3-009": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T1.3-010": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T1.3-011": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T1.3-012": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T1.3-013": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T1.3-014": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T2.1-001": {
+      "total": 6,
+      "passed": 5,
+      "score": 0.8333333333333334,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T2.1-002": {
+      "total": 6,
+      "passed": 2,
+      "score": 0.3333333333333333,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 1
+      }
+    },
+    "T2.1-003": {
+      "total": 5,
+      "passed": 1,
+      "score": 0.2,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 1
+      }
+    },
+    "T2.1-004": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T2.1-005": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T2.1-008": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.1-009": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.1-010": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.2-001": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.2-002": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.2-003": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T2.2-004": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T2.2-005": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T2.2-006": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.3-001": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T2.3-002": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T2.3-003": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.3-004": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T2.3-005": {
+      "total": 4,
+      "passed": 1,
+      "score": 0.25,
+      "hard": {
+        "total": 2,
+        "passed": 0
+      },
+      "soft": {
+        "total": 2,
+        "passed": 1
+      }
+    },
+    "T2.3-006": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T2.4-001": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T2.4-002": {
+      "total": 6,
+      "passed": 3,
+      "score": 0.5,
+      "hard": {
+        "total": 2,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T2.4-003": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T2.4-004": {
+      "total": 4,
+      "passed": 1,
+      "score": 0.25,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 1
+      }
+    },
+    "T2.4-005": {
+      "total": 3,
+      "passed": 2,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T2.4-008": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T2.4-009": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 3,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.5-001": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 2,
+        "passed": 2
+      }
+    },
+    "T2.5-002": {
+      "total": 5,
+      "passed": 3,
+      "score": 0.6,
+      "hard": {
+        "total": 4,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T2.5-003": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T2.5-004": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T2.5-006": {
+      "total": 4,
+      "passed": 4,
+      "score": 1.0,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T2.5-007": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T3.1-001": {
+      "total": 6,
+      "passed": 4,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 5,
+        "passed": 4
+      }
+    },
+    "T3.1-002": {
+      "total": 5,
+      "passed": 2,
+      "score": 0.4,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 1
+      }
+    },
+    "T3.1-003": {
+      "total": 6,
+      "passed": 3,
+      "score": 0.5,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 2
+      }
+    },
+    "T3.1-004": {
+      "total": 6,
+      "passed": 6,
+      "score": 1.0,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T3.1-009": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.1-010": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.1-011": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.2-001": {
+      "total": 5,
+      "passed": 5,
+      "score": 1.0,
+      "hard": {
+        "total": 2,
+        "passed": 2
+      },
+      "soft": {
+        "total": 3,
+        "passed": 3
+      }
+    },
+    "T3.2-002": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T3.2-003": {
+      "total": 5,
+      "passed": 4,
+      "score": 0.8,
+      "hard": {
+        "total": 1,
+        "passed": 0
+      },
+      "soft": {
+        "total": 4,
+        "passed": 4
+      }
+    },
+    "T3.2-004": {
+      "total": 6,
+      "passed": 4,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 2,
+        "passed": 1
+      },
+      "soft": {
+        "total": 4,
+        "passed": 3
+      }
+    },
+    "T3.2-008": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T3.2-009": {
+      "total": 5,
+      "passed": 3,
+      "score": 0.6,
+      "hard": {
+        "total": 4,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.2-010": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.2-011": {
+      "total": 4,
+      "passed": 2,
+      "score": 0.5,
+      "hard": {
+        "total": 3,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-001": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 3,
+        "passed": 2
+      }
+    },
+    "T3.3-002": {
+      "total": 6,
+      "passed": 6,
+      "score": 1.0,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 5,
+        "passed": 5
+      }
+    },
+    "T3.3-003": {
+      "total": 5,
+      "passed": 3,
+      "score": 0.6,
+      "hard": {
+        "total": 0,
+        "passed": 0
+      },
+      "soft": {
+        "total": 5,
+        "passed": 3
+      }
+    },
+    "T3.3-004": {
+      "total": 6,
+      "passed": 4,
+      "score": 0.6666666666666666,
+      "hard": {
+        "total": 1,
+        "passed": 1
+      },
+      "soft": {
+        "total": 5,
+        "passed": 3
+      }
+    },
+    "T3.3-005": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 3
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "T3.3-006": {
+      "total": 4,
+      "passed": 3,
+      "score": 0.75,
+      "hard": {
+        "total": 3,
+        "passed": 2
+      },
+      "soft": {
+        "total": 1,
+        "passed": 1
+      }
+    },
+    "T3.3-007": {
+      "total": 5,
+      "passed": 1,
+      "score": 0.2,
+      "hard": {
+        "total": 4,
+        "passed": 1
+      },
+      "soft": {
+        "total": 1,
+        "passed": 0
+      }
+    }
+  },
+  "tier_scores": {
+    "T1": 0.7566666666666667,
+    "T2": 0.7030303030303031,
+    "T3": 0.6999999999999998,
+    "overall": 0.7264999999999999
+  },
+  "hard_tier_scores": {
+    "T1": 0.7944444444444444,
+    "T2": 0.7702020202020202,
+    "T3": 0.7007575757575757,
+    "overall": 0.7658333333333335
+  }
+}
