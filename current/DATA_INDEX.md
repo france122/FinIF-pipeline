@@ -120,6 +120,8 @@
 | `html/benchmark_stats.html` | 10 模型对比 dashboard |
 | `html/data_review.html` | 100 case 数据审查页面 |
 | `html/review_responses.html` | 模型回复详情查看 |
+| `html/constraint_count_chart.py` | 约束数量 vs prompt-level 准确率出图脚本 |
+| `html/task_taxonomy_chart.py` | FinIF 任务分类体系旭日图出图脚本 |
 | `sft_data/manual_repair_review.html` | 15 条手动修复审查 |
 | `sft_data/sft_stats.html` | SFT 数据约束分布统计 |
 
@@ -134,7 +136,7 @@
 | `docs/sft_train.md` | SFT 训练实验报告 |
 | `docs/sft_findings.md` | SFT 训练效果分析 |
 | `docs/项目总结.md` | 项目总结 |
-| `docs/todo.md` | 待办事项 |
+| `docs/todo.md` | 会议论文改造与流程优化 TODO |
 | `docs/毕设项目.docx` | 毕设项目文档 |
 
 ### 流程图

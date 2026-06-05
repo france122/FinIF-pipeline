@@ -25,3 +25,7 @@ data/scores/soft_scores_raw.jsonl
 
 # History (archived old files, local only)
 history/
+
+# drawio editor backup
+.$*.drawio.bkp
+current/.$*.drawio.bkp

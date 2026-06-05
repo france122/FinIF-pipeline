@@ -1,81 +1,60 @@
-# SFT 数据修复 & 导出 TODO
+# 会议论文改造 & 流程优化 TODO
 
-## 现状
-- 2132 条 GPT-5.4 回复已评测（`sft_data/sft_scores.json`）
-- 1737 条全过（81.5%），395 条有约束不过
-- 修复任务已提取：`sft_data/repair_v2.json`（395 条，含 judge reason）
-- 修复脚本已写好：`sft_data/async_repair.py`
+## 当前状态
 
-## 待办
+- FinIF Benchmark、SFT 数据构造、训练与评测已经完成。
+- 毕设/完整论文初稿已经写完。
+- 当前目标是把完整论文改造成会议论文版本，并把实验与出图流程整理到更容易复现的状态。
 
-### Step 1: 试跑 100 条修复
-```bash
-cd /Users/minimax/Desktop/FinIF/current
-python3 -u sft_data/async_repair.py --limit 100
-```
-- 输出：`sft_data/flash_repair_v2.json`（100 条）
-- 30 并发 async 调 ds-v4-flash
-- 每条输入：原始回复 + 未通过约束 + judge reason + 所有约束列表
-- 脚本末尾自动跑 hard checker 验证
+## 当前优先级
 
-### Step 2: 评测这 100 条修复结果
-```bash
-python3 -u sft_data/verify_repairs.py
-```
-- 对 `flash_repair_v2.json` 中的 100 条跑**所有约束**（hard + soft）
-- Hard：本地 `checkers.py`（秒级）
-- Soft：async 调 ds-v4-flash judge
-- 输出：`sft_data/repair_scores.json` + 打印统计
-- **看修复质量如何，确认链路没问题**
+- [ ] 写下会议论文标题与大纲。
+- [ ] 写下 abstract。
+- [ ] 确定任务分类体系、约束分类体系与合成数据方案。
+- [ ] 迭代 FinIF，让大模型的评分在 20 以下。
 
-**脚本需要新写**（`sft_data/verify_repairs.py`），逻辑：
-1. 加载 `flash_repair_v2.json` 和 `constraint_gen_output_v3.jsonl`
-2. 对每条修复后的回复，跑该 sample 的所有约束（不只是之前失败的）
-3. Hard：调 `checkers.py` 函数
-4. Soft：async 调 ds-v4-flash judge（复用 `score_sft_responses.py` 的 judge prompt）
-5. 输出每条 pass/fail 详情 + 整体统计
+## 会议论文改造
 
-### Step 3: 质量 OK → 全量修复剩余 295 条
-```bash
-python3 -u sft_data/async_repair.py              # 全量 395 条
-# 或者只跑剩余 295 条（跳过已修的 100 条），需要加 --skip-existing 逻辑
-```
+- [ ] 明确投稿目标与页数限制，反推正文、图表和附录预算。
+- [ ] 标题与大纲：确定论文主线、章节结构、每节核心论点和图表位置。
+- [ ] Abstract：聚焦中文金融指令遵循、FinIF benchmark、自动化数据构造、Qwen3-8B-SFT 提升和迭代后的难度控制。
+- [ ] 压缩引言与相关工作：保留问题动机、现有 benchmark 缺口和本文贡献，删去毕设式铺陈。
+- [ ] 收束方法章节：用 `context + query + constraints` 解耦框架讲清 pipeline，减少脚本级细节。
+- [ ] 强化实验章节：主表保留 10 模型 FinIF 结果，补充按约束数量、任务类型、约束类别的分析图。
+- [ ] 单列 limitation/future work：说明 correctness、Office/Agent 场景、LLM judge 一致性和数据合成边界。
+- [ ] 整理论文图表：统一编号、标题、字体和配色；优先使用可脚本复现的图。
 
-### Step 4: 评测剩余 295 条
-```bash
-python3 -u sft_data/verify_repairs.py             # 自动只评新增的 295 条
-```
+## 体系与数据定稿
 
-### Step 5: 生成 review HTML
-- 行级 diff 高亮（红删绿增），不是简单左右对比
-- 按 tag 过滤
-- 显示约束 + judge reason
+- [ ] 任务分类体系：确认 T1/T2/T3 及 L2 子类是否适合会议论文叙事，必要时合并或重命名。
+- [ ] 约束分类体系：确认 5 大类 20 子标签是否保留，明确 hard/soft checker 边界。
+- [ ] 合成数据方案：明确 context 来源、query 合成方式、constraint 采样策略、冲突检测与人工/模型审核流程。
+- [ ] 数据规模与分布：重新确认 benchmark / SFT 的样本数、约束数、任务分布、约束分布，并生成论文表格。
 
-### Step 6: 导出 LLaMA-Factory 格式
-```bash
-python3 score_sft_responses.py export --threshold 1.0
-```
-- 合并 1737 条原始通过 + 修复通过的样本
-- ShareGPT 格式 + 空 think 标签
-- 输出 `finif_sft_train.json` + `dataset_info.json`
+## FinIF 迭代
 
-## 注意事项
-- 1737 条全过数据在 `sft_data.jsonl` 里，用 `sft_scores.json` 的 `all_pass=true` 过滤
-- 之前 sub-agent 修复质量差（只做表面修改），已弃用
-- `async_repair.py` 的 prompt 包含 judge reason，指导 ds-v4-flash 精准修改
-- 修复后必须重新评测验证，不能直接用
-- 仍不通过的样本丢弃
+- [ ] 定义“评分在 20 以下”的具体指标口径：prompt-level、instruction-level、错误数或综合分。
+- [ ] 定位当前大模型高分 case：按模型、任务类型、约束数量、约束类别统计易通过样本。
+- [ ] 提升 benchmark 难度：增加更复杂的约束组合、跨段落依赖、格式密度和软约束判定难度。
+- [ ] 控制公平性：保证难度提升来自指令遵循复杂度，而不是金融事实正确性或歧义表述。
+- [ ] 重新生成/修订 eval_config，确保 prompt 中附加要求与 checker 完全对齐。
+- [ ] 重新评测主力大模型，直到目标大模型评分降到 20 以下。
 
-## 数据位置
-| 文件 | 说明 |
-|------|------|
-| `sft_data/sft_data.jsonl` | 2132 条 GPT-5.4 原始回复（全量，Vulcan 格式，`trace_id` 为 sample_id，回复在 `vulcan_output.llm_response`） |
-| `sft_data/sft_scores.json` | 2132 条评测结果，每条有 `all_pass` 字段标记是否全过，`checks` 里有各约束 pass/fail + judge reason |
-| `sft_data/constraint_gen_output_v3.jsonl` | 2134 条约束配置（`sampled_constraints` 数组） |
-| `sft_data/repair_v2.json` | 395 条不合格样本的修复任务（含原始回复 + 失败约束 + judge reason + 所有约束列表） |
-| `sft_data/async_repair.py` | async 修复脚本（AsyncOpenAI, 30 并发，`--limit N` 控制数量） |
-| `sft_data/verify_repairs.py` | **待写** — 只对修复后的回复跑评测 |
-| `score_sft_responses.py` | 评测 + 导出脚本（`score` / `export` 子命令） |
-| `checkers.py` | hard checker 函数 |
+## 流程优化
 
-**注意**：1737 条全过的数据没有单独导出过，目前混在 `sft_data.jsonl` 全量文件里，通过 `sft_scores.json` 的 `all_pass=true` 过滤。最终导出时 `score_sft_responses.py export` 会自动合并。
+- [ ] 去掉脚本中的本机绝对路径，统一改为基于项目根目录或脚本位置的相对路径。
+- [ ] 增加环境说明：Python 版本、核心依赖、API key 环境变量、可选字体依赖。
+- [ ] 增加一键/半自动命令入口：生成 benchmark dashboard、约束雷达图、约束数量曲线、任务体系图。
+- [ ] 整理评测入口：明确 `gen_async.py`、`gen_responses_ds.py eval`、`build_stats.py` 的输入输出关系。
+- [ ] 区分最终产物与历史中间文件：把旧清洗、旧修复和废弃 TODO 移入 archive 或在索引中标注。
+- [ ] 清理工作区临时文件：确认 `.$pipeline_design.drawio.bkp` 是否需要保留。
+
+## 已完成的历史事项
+
+- [x] 100 case / 300 constraint FinIF Benchmark 构建完成。
+- [x] 10 个模型完成 FinIF 评测。
+- [x] 2134 条 SFT prompt 构建完成。
+- [x] GPT-5.4 teacher 回复生成完成，得到 2132 条原始回复。
+- [x] SFT 回复约束打分、多轮自动修复和 15 条人工修复完成。
+- [x] 最终 `sft_sharegpt_2132.json` 导出完成。
+- [x] Qwen3-8B-SFT 训练与 FinIF / IFEval 评测完成。

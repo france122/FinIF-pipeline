@@ -181,14 +181,14 @@ Full Prompt (context + query + 约束块)
 - **Benchmark**: 8/100 case 有修改，15 个格式指令从正文移到约束块
   - 1 条冲突（T1.1-010 "用markdown列出" vs "禁止列表"）已删除
   - 5 条移入约束补了 eval checker
-- **SFT**: 2134 条已组装输入（`clean_input_sft.jsonl`, 12.9 MB），待跑模型
+- **SFT**: 2134 条已完成清洗与输入组装，最终产物见 `sft_data/sft_input_2134.jsonl`
 
 **关键文件**:
 - 输入组装: `assemble_clean_input.py`
 - Benchmark 应用: `apply_clean_bench.py`
 - Benchmark 清洗输入: `clean_input_bench.jsonl`
 - Benchmark 清洗输出: `clean_output_bench_v2.jsonl`
-- SFT 清洗输入: `clean_input_sft.jsonl` (待跑模型)
+- SFT 清洗后最终输入: `sft_data/sft_input_2134.jsonl`
 
 ### 数据构建产出
 
