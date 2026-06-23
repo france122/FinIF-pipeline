@@ -71,10 +71,12 @@ FinIF-pipeline/
     │   ├── pdf/                           # Output PDFs
     │   └── analysis/                      # Analysis figures (PNG + PDF)
     │
-    └── raw_contexts/                      # Source financial documents
-        ├── *.pdf                           # 证监会处罚书、上市公司年报/公告、问询函
-        ├── *.png                           # Statistical bureau data screenshots
-        └── *.md                            # Court case documents
+    └── raw_contexts/                      # Source financial documents (English)
+        ├── intake_profiling/               # KYC, tax forms (SEC, FinCEN, IRS, FINRA)
+        ├── research_due_diligence/         # 10-K, 10-Q filings (SEC EDGAR)
+        ├── decision_structuring/           # Loan, credit, trade regulations (SBA, FDIC)
+        ├── risk_compliance/                # AML, suitability, disclosure rules (SEC, FINRA, PCAOB)
+        └── execution_monitoring_reporting_operations/  # Confirmation, records, portfolio rules
 ```
 
 ## Pipeline Flow
@@ -84,11 +86,11 @@ The complete FinIF pipeline consists of 4 major phases:
 ### Phase 1: Data Construction
 
 ```
-Real Financial Documents (证监会处罚书, 上市公司年报, 问询函, 国家统计局数据)
+Real Financial Documents (SEC, FINRA, FDIC, FinCEN, PCAOB, SBA, IRS, Federal Reserve)
   │
   ▼
-Context Sourcing ── Extract text fragments from raw financial PDFs/docs
-  │                  (ingest_external_contexts.py)
+Context Sourcing ── Extract text fragments from regulatory filings, rules,
+  │                  and public company disclosures (PDF/HTML/XML)
   ▼
 Query Synthesis ── Generate task instructions per context, organized by
   │                 5 workflows × 38 task types (金融全生命周期)
@@ -294,13 +296,15 @@ pip install datasets
 
 ## Raw Context Sources
 
-The `FinIF/raw_contexts/` directory contains the original financial documents used to construct benchmark instructions, including:
-- 中国证监会 administrative penalty decisions and market ban orders
-- Listed company annual report summaries (年度报告摘要)
-- Stock trading risk warning announcements
-- Exchange inquiry letters (问询函)
-- National Bureau of Statistics data releases
-- Supreme Court case compilations
+The `FinIF/raw_contexts/` directory contains the original financial documents used to construct benchmark instructions, organized by workflow:
+
+| Workflow Directory | Sources | Examples |
+|-------------------|---------|----------|
+| `intake_profiling/` | SEC, FinCEN, FINRA, IRS, SBA | KYC/CDD rules, AML source tool, W-9 form, borrower info |
+| `research_due_diligence/` | SEC EDGAR | Apple 10-K/10-Q filings, Microsoft 10-K, XBRL company facts |
+| `decision_structuring/` | FDIC, SBA, SEC, GovInfo | Loan underwriting SOPs, credit risk manual, trade ticket regs |
+| `risk_compliance/` | SEC, FINRA, FDIC, FinCEN, PCAOB, Fed | AML advisories, suitability rules, Reg BI, stress test scenarios |
+| `execution_monitoring_reporting_operations/` | FINRA, GovInfo | Trade confirmation rules, recordkeeping regs, N-PORT filings |
 
 ## License
 
