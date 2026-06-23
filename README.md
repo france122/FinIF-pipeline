@@ -9,8 +9,8 @@
 Key features:
 - **307 test instructions** with **3,282 IF constraints** (avg. 10.7 per instruction)
 - **38 task types** across **5 financial workflows** covering the full financial service lifecycle
-- **4-family constraint taxonomy** (Format & Presentation, Decision & Boundary, Evidence & Grounding, Quantitative Verification)
-- **Hybrid evaluation engine**: deterministic rule checkers + calibrated LLM judges
+- **4-family constraint taxonomy**: Format & Presentation, Decision & Boundary, Evidence & Grounding, Quantitative Verification
+- **Hybrid evaluation engine**: deterministic rule checkers (~50 Python functions) + calibrated LLM judges
 - **SFT training pipeline**: 621 teacher-generated training samples for instruction-tuning
 - **8-model leaderboard**: GPT-5.5, GPT-5, DeepSeek-V4, GLM-5.1, Qwen3.5 series
 
@@ -18,59 +18,67 @@ Key features:
 
 ```
 FinIF-pipeline/
-│
 ├── README.md
-├── FinIF/                             # Benchmark package (data + evaluator)
-│   ├── data/
-│   │   ├── finif_test.jsonl           # 307 test instructions with constraints
-│   │   ├── finif_train.json           # 621 SFT training samples (ShareGPT)
-│   │   └── constraint_taxonomy.md     # 4-family constraint taxonomy
-│   ├── evaluation/
-│   │   ├── evaluate.py                # Main evaluation script
-│   │   └── rule_checkers.py           # ~50 deterministic rule checkers
-│   └── examples/
-│       └── run_evaluation.sh
-│
-├── evaluation/                        # Full evaluation pipeline
-│   ├── checkers.py                    # Extended rule-checker library (~1400 lines)
-│   ├── evaluate_responses.py          # Item-level evaluator (rule + LLM judge)
-│   ├── evaluator_spec.json            # Evaluation spec with judge prompts
-│   ├── run_gpt5_*.py                  # GPT-5/5.5 evaluation runners
-│   ├── run_deepseek_*.py              # DeepSeek-V4 evaluation runners
-│   ├── run_siliconflow_*.py           # Qwen/GLM evaluation via SiliconFlow
-│   ├── build_model_results_table.py   # Leaderboard table generation
-│   ├── build_paper_figure1.py         # Paper Figure 1 (case study)
-│   ├── plot_finif_test_data_statistics.py
-│   ├── analyze_benchmark307_vs_ifeval.py
-│   └── ...
-│
-├── current/                           # Data construction & SFT pipeline
-│   ├── sft_pipeline/                  # Full data construction pipeline
-│   │   ├── step1_prepare_contexts.py
-│   │   ├── step3_assemble_constraints.py
-│   │   ├── step4_scale_to_2000.py
-│   │   ├── step5_export.py
-│   │   ├── step6_expand_benchmark.py
-│   │   ├── step8_redistribute.py
-│   │   ├── step9_gen_sft_responses.py
-│   │   └── gen_constraint_text.py
-│   ├── sft_data/                      # SFT data repair pipeline
-│   │   ├── iterative_repair.py
-│   │   ├── verify_repairs.py
-│   │   └── convert_sharegpt.py
-│   ├── checkers.py                    # Constraint checker library
-│   ├── gen_responses_ds.py            # Multi-model response generation
-│   ├── gen_async.py                   # Async parallel generation
-│   ├── score_sft_responses.py         # SFT quality scoring
-│   ├── plot_radar.py                  # Radar chart visualization
-│   └── build_stats.py                 # Statistics dashboard
-│
-└── outputs/                           # Generated figures
-    ├── paper_figures/
-    │   ├── scripts/                   # Figure generation scripts
-    │   └── pdf/                       # Output PDFs
-    ├── figures/                       # Analysis figures (PNG + PDF)
-    └── analysis/                      # Comparative analysis outputs
+└── FinIF/
+    ├── data/                              # Benchmark data
+    │   ├── finif_test.jsonl               # 307 test instructions with constraints
+    │   ├── finif_train.json               # 621 SFT training samples (ShareGPT)
+    │   └── constraint_taxonomy.md         # 4-family constraint taxonomy (26 tags)
+    │
+    ├── evaluation/                        # Evaluation engine
+    │   ├── evaluate.py                    # Main evaluation entry point
+    │   ├── rule_checkers.py               # ~50 deterministic rule checkers (1391 lines)
+    │   ├── checkers.py                    # Alias of rule_checkers (for import compat)
+    │   ├── evaluator_spec.json            # Evaluation spec with judge prompts
+    │   ├── checker_probe.py               # Checker coverage analysis
+    │   ├── routing_audit.py               # Constraint → checker routing audit
+    │   ├── build_model_results_table.py   # Leaderboard table generation
+    │   ├── build_paper_figure1.py         # Paper Figure 1 (case study)
+    │   ├── build_dashboard.py             # HTML evaluation dashboard
+    │   ├── plot_finif_test_data_statistics.py
+    │   ├── analyze_benchmark307_vs_ifeval.py
+    │   ├── run_gpt5_*.py                  # GPT-5/5.5 evaluation runners
+    │   ├── run_deepseek_*.py              # DeepSeek-V4 evaluation runners
+    │   ├── run_siliconflow_*.py           # Qwen/GLM evaluation via SiliconFlow
+    │   └── ...                            # SFT repair & export utilities
+    │
+    ├── pipeline/                          # Data construction & SFT pipeline
+    │   ├── step1_prepare_contexts.py      # Extract & normalize financial contexts
+    │   ├── step3_assemble_constraints.py  # Sample IF constraints per query
+    │   ├── step4_scale_to_2000.py         # Scale to 2000+ training samples
+    │   ├── step5_export.py                # Export to messages format
+    │   ├── step6_expand_benchmark.py      # Expand benchmark with regulatory docs
+    │   ├── step8_redistribute.py          # Redistribute train/test split
+    │   ├── step9_gen_sft_responses.py     # Generate teacher responses (GPT-5)
+    │   ├── gen_responses_ds.py            # Multi-model response generation
+    │   ├── gen_async.py                   # Async parallel generation
+    │   ├── score_sft_responses.py         # SFT quality scoring + LLaMA-Factory export
+    │   ├── plot_radar.py                  # Radar chart visualization
+    │   ├── build_stats.py                 # Statistics dashboard
+    │   ├── trim_constraints.py            # Constraint trimming utility
+    │   ├── dashboard.py                   # HTTP server-based dashboard
+    │   ├── sft_data/                      # SFT data repair pipeline
+    │   │   ├── iterative_repair.py        # Iterative constraint repair
+    │   │   ├── async_repair.py            # Async batch repair
+    │   │   ├── repair_round3.py           # Round 3 repair
+    │   │   ├── verify_repairs.py          # Verify repair quality
+    │   │   └── convert_sharegpt.py        # Export to ShareGPT format
+    │   ├── scripts/                       # Parameterization scripts
+    │   ├── visualization/                 # HTML chart generators
+    │   └── *.drawio                       # Pipeline architecture diagrams
+    │
+    ├── figures/                           # Paper figures & analysis
+    │   ├── fig_finif_constraint_taxonomy.py
+    │   ├── fig_finif_prompt_length.py
+    │   ├── fig_response_length_boxplot.py
+    │   ├── fig_sft_isr_by_workflow.py
+    │   ├── pdf/                           # Output PDFs
+    │   └── analysis/                      # Analysis figures (PNG + PDF)
+    │
+    └── raw_contexts/                      # Source financial documents
+        ├── *.pdf                           # SEC, FDIC, FinCEN, 证监会, 上市公司公告
+        ├── *.png                           # Statistical bureau data screenshots
+        └── *.md                            # Court case documents
 ```
 
 ## Pipeline Flow
@@ -95,8 +103,8 @@ step4_scale_to_2000.py ── Scale to 2000+ training samples
 step5_export.py ── Export to messages format
   │
   ▼
-step6_expand_benchmark.py ── Expand benchmark (54 → ~100 items)
-  │                           using real regulatory documents
+step6_expand_benchmark.py ── Expand benchmark using real regulatory documents
+  │
   ▼
 step8_redistribute.py ── Redistribute contexts (train/test split)
 ```
@@ -125,9 +133,9 @@ convert_sharegpt.py ── Export to LLaMA-Factory ShareGPT format
 Model Response (any LLM)
   │
   ▼
-evaluate_responses.py ── Item-level hybrid evaluation
+evaluate.py ── Item-level hybrid evaluation
   │
-  ├── Rule Checkers (checkers.py)
+  ├── Rule Checkers (rule_checkers.py)
   │   └── ~50 deterministic Python functions
   │       (JSON validity, keyword presence, table structure,
   │        word count, numeric precision, section headings, ...)
@@ -151,9 +159,7 @@ Metrics: ISR / CSR / Quality Score
 | `build_paper_figure1.py` | Paper Figure 1: case study of GPT-5.5 IF failures |
 | `plot_finif_test_data_statistics.py` | Test data statistics (prompt length + constraint count) |
 | `plot_radar.py` | Radar chart: model performance by constraint type |
-| `build_stats.py` | Interactive HTML benchmark statistics dashboard |
 | `analyze_benchmark307_vs_ifeval.py` | FinIF vs IFEval comparative analysis |
-| `build_model_results_table.py` | Markdown leaderboard table generation |
 
 ## Evaluation Metrics
 
@@ -218,16 +224,15 @@ See [`FinIF/data/constraint_taxonomy.md`](FinIF/data/constraint_taxonomy.md) for
 #    Each id must match an instruction id in finif_test.jsonl
 
 # 2. Rule-only evaluation (no LLM API needed)
-cd FinIF
-python evaluation/evaluate.py \
-  --dataset data/finif_test.jsonl \
+python FinIF/evaluation/evaluate.py \
+  --dataset FinIF/data/finif_test.jsonl \
   --responses your_responses.jsonl \
   --output results.json \
   --hard-only
 
 # 3. Full evaluation with LLM judge
-python evaluation/evaluate.py \
-  --dataset data/finif_test.jsonl \
+python FinIF/evaluation/evaluate.py \
+  --dataset FinIF/data/finif_test.jsonl \
   --responses your_responses.jsonl \
   --output results.json \
   --judge-provider your_judge_module:YourJudgeClass
@@ -241,59 +246,31 @@ export DEEPSEEK_API_KEY="your-deepseek-key"
 export SILICONFLOW_API_KEY="your-siliconflow-key"
 export OPENAI_API_KEY="your-openai-key"
 
-# Step 1: Prepare contexts
-python current/sft_pipeline/step1_prepare_contexts.py
+# Phase 1: Data Construction
+python FinIF/pipeline/step1_prepare_contexts.py
+python FinIF/pipeline/step3_assemble_constraints.py
+python FinIF/pipeline/step4_scale_to_2000.py
+python FinIF/pipeline/step5_export.py
+python FinIF/pipeline/step6_expand_benchmark.py
+python FinIF/pipeline/step8_redistribute.py
 
-# Step 3: Assemble constraints
-python current/sft_pipeline/step3_assemble_constraints.py
+# Phase 2: Teacher Response Generation
+python FinIF/pipeline/step9_gen_sft_responses.py --mode training --model gpt-5 --n 3
+python FinIF/pipeline/score_sft_responses.py score --judge-workers 20
+python FinIF/pipeline/sft_data/iterative_repair.py
+python FinIF/pipeline/sft_data/convert_sharegpt.py
 
-# Step 4: Scale to 2000+ samples
-python current/sft_pipeline/step4_scale_to_2000.py
-
-# Step 5: Export training format
-python current/sft_pipeline/step5_export.py
-
-# Step 9: Generate teacher responses
-python current/sft_pipeline/step9_gen_sft_responses.py \
-  --mode training --model gpt-5 --n 3
-
-# Score and repair
-python current/score_sft_responses.py score --judge-workers 20
-python current/sft_data/iterative_repair.py
-python current/sft_data/convert_sharegpt.py
+# Phase 4: Generate Figures
+python FinIF/figures/fig_finif_constraint_taxonomy.py
+python FinIF/figures/fig_finif_prompt_length.py
+python FinIF/figures/fig_response_length_boxplot.py
+python FinIF/figures/fig_sft_isr_by_workflow.py
 ```
-
-### Generate Paper Figures
-
-```bash
-# All figure scripts output to outputs/paper_figures/pdf/
-python outputs/paper_figures/scripts/fig_finif_constraint_taxonomy.py
-python outputs/paper_figures/scripts/fig_finif_prompt_length.py
-python outputs/paper_figures/scripts/fig_response_length_boxplot.py
-python outputs/paper_figures/scripts/fig_sft_isr_by_workflow.py
-
-# Additional analysis figures
-python evaluation/build_paper_figure1.py
-python evaluation/plot_finif_test_data_statistics.py
-python current/plot_radar.py
-```
-
-## Paper Figures
-
-| Figure | Script | Description |
-|--------|--------|-------------|
-| Constraint Taxonomy | `fig_finif_constraint_taxonomy.py` | Donut chart of 4-family constraint distribution |
-| Prompt Length Distribution | `fig_finif_prompt_length.py` | FinIF vs IFEval prompt length comparison (log-log) |
-| Response Length | `fig_response_length_boxplot.py` | Boxplot of response word counts across 8 models |
-| SFT Improvement | `fig_sft_isr_by_workflow.py` | Before/after SFT ISR by workflow + quality score |
-| Case Study (Figure 1) | `build_paper_figure1.py` | GPT-5.5 IF failure case study |
-| Test Data Statistics | `plot_finif_test_data_statistics.py` | Prompt length + constraint count distributions |
-| Radar Chart | `plot_radar.py` | Model pass rate by constraint sub-category |
 
 ## Dependencies
 
 ```bash
-pip install openai matplotlib numpy
+pip install openai matplotlib numpy aiofiles
 # Optional: for IFEval comparison
 pip install datasets
 ```
@@ -323,6 +300,16 @@ pip install datasets
 | `task` | Task type |
 | `work_product` | Deliverable type |
 | `repair_status` | Whether the teacher response was repaired |
+
+## Raw Context Sources
+
+The `FinIF/raw_contexts/` directory contains the original financial documents used to construct benchmark instructions, including:
+- 中国证监会 administrative penalty decisions and market ban orders
+- Listed company annual report summaries (年度报告摘要)
+- Stock trading risk warning announcements
+- Exchange inquiry letters (问询函)
+- National Bureau of Statistics data releases
+- Supreme Court case compilations
 
 ## License
 

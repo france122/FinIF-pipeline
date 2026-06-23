@@ -48,36 +48,12 @@ paper_packet.md
 毕业论文_最终版.pdf
 项目介绍.docx
 
-# current/ data files (only keep code)
-current/archive/
-current/benchmark/
-current/docs/
-current/html/*.html
-current/html/*.png
-current/sft_data/*.jsonl
-current/sft_data/*.json
-current/sft_data/*.html
-current/sft_pipeline/config/
-current/sft_pipeline/data/
-current/AGENT.md
-current/DATA_INDEX.md
-
-# outputs/ intermediate data
-outputs/model_runs/
-outputs/tmp/
-outputs/context_text_cache/
-outputs/context_raw_en/
-outputs/query_constraints_shards/
-outputs/query_constraints/
-outputs/reports/
-outputs/training/
-outputs/benchmark/
-outputs/full_prompts/
+# Old directories (consolidated into FinIF/)
+current/
+evaluation/
+outputs/
 raw_contexts_batch1/
+history/
 
 # drawio editor backup
 .$*.drawio.bkp
-
-# History
-history/
-evaluation/qa_reports/
