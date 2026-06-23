@@ -43,13 +43,9 @@ FinIF-pipeline/
     │   └── ...                            # SFT repair & export utilities
     │
     ├── pipeline/                          # Data construction & SFT pipeline
-    │   ├── step1_prepare_contexts.py      # Extract & normalize context pool
-    │   ├── step3_assemble_constraints.py  # Constraint sampling engine (G1-G10 + F1-F12)
-    │   ├── step4_scale_to_2000.py         # Synthesize queries + sample constraints + assemble prompts
-    │   ├── step5_export.py                # Export to messages + metadata format
-    │   ├── step6_expand_benchmark.py      # Expand benchmark (54→307) with real docs + hand-authored queries
-    │   ├── step8_redistribute.py          # Redistribute train/test context partition
-    │   ├── step9_gen_sft_responses.py     # Generate teacher responses (GPT-5, 1Q多A)
+    │   ├── ingest_external_contexts.py    # Context sourcing: extract text from raw financial docs
+    │   ├── gen_constraint_text.py         # Constraint annotation: sample from constraint_taxonomy
+    │   ├── step9_gen_sft_responses.py     # Teacher response generation (GPT-5, 1Q多A)
     │   ├── gen_responses_ds.py            # Multi-model response generation
     │   ├── gen_async.py                   # Async parallel generation
     │   ├── score_sft_responses.py         # SFT quality scoring + LLaMA-Factory export
@@ -91,35 +87,30 @@ The complete FinIF pipeline consists of 4 major phases:
 Real Financial Documents (证监会处罚书, 上市公司年报, 问询函, 国家统计局数据)
   │
   ▼
-step1_prepare_contexts.py ── Extract & normalize context pool
-  │
+Context Sourcing ── Extract text fragments from raw financial PDFs/docs
+  │                  (ingest_external_contexts.py)
   ▼
-step4_scale_to_2000.py ── Synthesize queries from contexts (template + variant)
-  │                        → Sample visible constraints + hidden checkers per query
-  │                        → Assemble full prompt (context + query + constraint block)
-  │                        → Strict context partition: A=benchmark, B=training
+Query Synthesis ── Generate task instructions per context, organized by
+  │                 5 workflows × 38 task types (金融全生命周期)
   ▼
-step3_assemble_constraints.py ── Constraint sampling engine
-  │                               (G1-G10 general + F6-F12 financial soft
-  │                                + F1-F5 hidden hard checkers)
+Constraint Annotation ── Annotate IF constraints per query
+  │                       (constraint_taxonomy.json: 26 hard checkers + 18 soft)
+  │                       → visible constraint block + hidden checkers
   ▼
-step5_export.py ── Export to messages + metadata format
-  │
+Assemble ── context + cleaned query + constraint block → full prompt
+  │          (307 benchmark items / ~1000 SFT training items)
   ▼
-step6_expand_benchmark.py ── Expand benchmark (54 → 307 items) using
-  │                           real regulatory & statistical documents
-  │                           (hand-authored queries + constraints)
-  ▼
-step8_redistribute.py ── Redistribute contexts (train/test split)
+Query Cleaning ── Strip formatting directives from query body,
+                   move to constraint block (clean_query_constraints.py)
 ```
 
 ### Phase 2: Teacher Response Generation & SFT Data
 
 ```
-step9_gen_sft_responses.py ── Generate N candidate responses per query
-  │                            via teacher model (GPT-5)
+gen_sft_responses / gen_async ── Generate N candidate responses per query
+  │                               via teacher model (GPT-5)
   ▼
-score_sft_responses.py ── Score with rule checkers + LLM judge
+score (rule_checkers + LLM judge) ── Score each response
   │
   ▼
 iterative_repair.py ── Repair failed constraints iteratively
@@ -251,12 +242,8 @@ export SILICONFLOW_API_KEY="your-siliconflow-key"
 export OPENAI_API_KEY="your-openai-key"
 
 # Phase 1: Data Construction
-python FinIF/pipeline/step1_prepare_contexts.py        # extract context pool
-python FinIF/pipeline/step3_assemble_constraints.py    # constraint sampling engine
-python FinIF/pipeline/step4_scale_to_2000.py           # synthesize queries + assemble prompts
-python FinIF/pipeline/step5_export.py                  # export messages format
-python FinIF/pipeline/step6_expand_benchmark.py        # expand benchmark with real docs
-python FinIF/pipeline/step8_redistribute.py            # redistribute train/test split
+python FinIF/pipeline/ingest_external_contexts.py      # extract context from raw docs
+python FinIF/pipeline/gen_constraint_text.py prepare    # sample constraints per query
 
 # Phase 2: Teacher Response Generation
 python FinIF/pipeline/step9_gen_sft_responses.py --mode training --model gpt-5 --n 3
