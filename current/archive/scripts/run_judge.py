@@ -13,7 +13,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "..", "..", "..", "..",
 sys.path.insert(0, PROJECT_ROOT)
 
 from openai import OpenAI
-client = OpenAI(api_key="sk-504da47d1abd45aca3a64f2d4430d011", base_url="https://api.deepseek.com")
+client = OpenAI(api_key=os.environ.get("DEEPSEEK_API_KEY", ""), base_url="https://api.deepseek.com")
 JUDGE_MODEL = "deepseek-v4-flash"
 
 JUDGE_SYSTEM_PROMPT = """你是一个金融文档评测专家。你的任务是判断模型输出是否满足给定的约束条件。

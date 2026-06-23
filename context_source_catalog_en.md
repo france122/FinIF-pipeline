@@ -45,7 +45,7 @@ This first sourcing pass covers 8 context bundles across the 5 workflow stages:
 
 ## Bundle 1
 
-**Workflow:** Intake & Profiling  
+**Workflow:** Intake and Profiling  
 **Task:** KYC onboarding  
 **Work product:** KYC review note  
 **Source mode:** Mixed
@@ -86,7 +86,7 @@ This bundle supports tasks where the model must determine whether account openin
 
 ## Bundle 2
 
-**Workflow:** Intake & Profiling  
+**Workflow:** Intake and Profiling  
 **Task:** Loan application intake  
 **Work product:** missing-document checklist  
 **Source mode:** Mixed
@@ -123,7 +123,7 @@ This bundle supports tasks where the model must review an incoming loan package 
 
 ## Bundle 3
 
-**Workflow:** Research & Due Diligence  
+**Workflow:** Research and Due Diligence  
 **Task:** Financial statement analysis  
 **Work product:** financial analysis summary  
 **Source mode:** Public
@@ -160,7 +160,7 @@ This bundle supports research tasks that require extracting trends from public f
 
 ## Bundle 4
 
-**Workflow:** Research & Due Diligence  
+**Workflow:** Research and Due Diligence  
 **Task:** Credit due diligence / underwriting support  
 **Work product:** due diligence checklist or underwriting note  
 **Source mode:** Mixed
@@ -200,7 +200,7 @@ This bundle supports realistic underwriting tasks while keeping borrower-specifi
 
 ## Bundle 5
 
-**Workflow:** Decision & Structuring  
+**Workflow:** Decision and Structuring  
 **Task:** Investment memo / valuation  
 **Work product:** investment memo or valuation summary  
 **Source mode:** Public + Synthetic
@@ -236,7 +236,7 @@ The public materials provide the factual base, while synthetic modeling sheets p
 
 ## Bundle 6
 
-**Workflow:** Risk & Compliance Review  
+**Workflow:** Risk and Compliance Review  
 **Task:** Suitability review  
 **Work product:** suitability review note  
 **Source mode:** Mixed
@@ -279,7 +279,7 @@ This bundle supports cases where the model must decide whether a recommendation 
 
 ## Bundle 7
 
-**Workflow:** Risk & Compliance Review  
+**Workflow:** Risk and Compliance Review  
 **Task:** AML red-flag review  
 **Work product:** compliance escalation report  
 **Source mode:** Mixed
@@ -322,7 +322,7 @@ The public materials define the reporting and documentation environment, while t
 
 ## Bundle 8
 
-**Workflow:** Execution, Monitoring, Reporting & Operations  
+**Workflow:** Execution, Monitoring, Reporting, and Operations  
 **Task:** Trade confirmation / reconciliation  
 **Work product:** reconciliation exception report  
 **Source mode:** Mixed

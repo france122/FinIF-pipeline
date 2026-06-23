@@ -1,0 +1,3919 @@
+{
+  "date": "2026-06-16",
+  "scope": "train757 items with existing GPT-5 train764 teacher response/judge coverage",
+  "counts": {
+    "covered_train764_like_items": 639,
+    "exact_passed_now": 406,
+    "failed_items_now": 233
+  },
+  "candidate_buckets": {
+    "single_EG2": {
+      "count": 127,
+      "items": [
+        {
+          "id": "risk_disclosure_review_repaired_002",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_015",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_017",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_016",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_019",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_022",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_027",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_credit_memo_drafting_repaired_005",
+          "workflow": "Decision and Structuring",
+          "task": "Credit memo drafting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_credit_memo_drafting_repaired_015",
+          "workflow": "Decision and Structuring",
+          "task": "Credit memo drafting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_004",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_012",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_017",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_022",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_024",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_027",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_011",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_016",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_021",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_003",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_007",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_012",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_024",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_025",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_portfolio_proposal_009",
+          "workflow": "Decision and Structuring",
+          "task": "Portfolio proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_portfolio_proposal_015",
+          "workflow": "Decision and Structuring",
+          "task": "Portfolio proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_trade_order_ticket_preparation_005",
+          "workflow": "Decision and Structuring",
+          "task": "Trade order ticket preparation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_trade_order_ticket_preparation_017",
+          "workflow": "Decision and Structuring",
+          "task": "Trade order ticket preparation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_underwriting_memo_repaired_001",
+          "workflow": "Decision and Structuring",
+          "task": "Underwriting memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_underwriting_memo_repaired_026",
+          "workflow": "Decision and Structuring",
+          "task": "Underwriting memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_005",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_006",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_013",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_024",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_012",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_016",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_month_end_close_financial_reporting_support_repaired_13",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Month-end close / financial reporting support",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_month_end_close_financial_reporting_support_repaired_20",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Month-end close / financial reporting support",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_007",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_009",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_018",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_04",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not next to all material facts and calculations."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_09",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_14",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_17",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_014",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_022",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_028",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_003",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_005",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_006",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_010",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_013",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_017",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_025",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_risk_alert_generation_repaired_009",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Risk alert generation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_007",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_015",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_017",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_019",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_025",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack inline source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_005",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_009",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_012",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_021",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_022",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_026",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_002",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_005",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Source labels are not consistently next to all material facts and decision points."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_012",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_013",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts and decisions."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_017",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_021",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_023",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Material facts and decision points lack active source labels next to where they are used."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_025",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts and decisions."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_019",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_025",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_001",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_008",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_024",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_background_screening_repaired_004",
+          "workflow": "Research and Due Diligence",
+          "task": "Background screening",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_background_screening_repaired_014",
+          "workflow": "Research and Due Diligence",
+          "task": "Background screening",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_credit_due_diligence_repaired_011",
+          "workflow": "Research and Due Diligence",
+          "task": "Credit due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_checklist_completion_repaired_011",
+          "workflow": "Research and Due Diligence",
+          "task": "Due diligence checklist completion",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_checklist_completion_repaired_019",
+          "workflow": "Research and Due Diligence",
+          "task": "Due diligence checklist completion",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_earnings_review_repaired_010",
+          "workflow": "Research and Due Diligence",
+          "task": "Earnings review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_financial_statement_analysis_repaired_009",
+          "workflow": "Research and Due Diligence",
+          "task": "Financial statement analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_001",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_008",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_021",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_028",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_investment_due_diligence_repaired_25",
+          "workflow": "Research and Due Diligence",
+          "task": "Investment due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_investment_due_diligence_repaired_27",
+          "workflow": "Research and Due Diligence",
+          "task": "Investment due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_004",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_007",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_018",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_022",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_024",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_012",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_019",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_internal_control_review_repaired_028",
+          "workflow": "Risk and Compliance Review",
+          "task": "Internal control review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_regulatory_issue_escalation_repaired_019",
+          "workflow": "Risk and Compliance Review",
+          "task": "Regulatory issue escalation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and figures have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_008",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_021",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_025",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_007",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_012",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_015",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_017",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_022",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_025",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_026",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_027",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        }
+      ]
+    },
+    "easy_surface_like": {
+      "count": 144,
+      "items": [
+        {
+          "id": "risk_disclosure_review_repaired_002",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_015",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_017",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_025",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Material facts and decisions lack active source labels next to them.",
+            "Number(s) do not use exactly 2 decimal place(s): 9%, 9%."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "Every percentage value in the response, including values written with percent or percentage points, must use exactly two decimal places."
+          ]
+        },
+        {
+          "id": "risk_disclosure_review_repaired_028",
+          "workflow": "Risk and Compliance Review",
+          "task": "Risk disclosure review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them.",
+            "Response has 632 mixed word/character unit(s); expected at most 520."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must be between 220 and 520 words."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_016",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_019",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_022",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_capital_structure_financing_proposal_027",
+          "workflow": "Decision and Structuring",
+          "task": "Capital structure / financing proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_credit_memo_drafting_repaired_005",
+          "workflow": "Decision and Structuring",
+          "task": "Credit memo drafting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_credit_memo_drafting_repaired_015",
+          "workflow": "Decision and Structuring",
+          "task": "Credit memo drafting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_004",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_009",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them.",
+            "Number(s) do not use exactly 2 decimal place(s): 12%, 18%, 22%, 25%, 12%."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "Every percentage value in the response, including values written with percent or percentage points, must use exactly two decimal places."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_012",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_017",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_022",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_024",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_dcf_pricing_repaired_027",
+          "workflow": "Decision and Structuring",
+          "task": "DCF valuation / pricing analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_011",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_016",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_021",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_investment_memo_024",
+          "workflow": "Decision and Structuring",
+          "task": "Investment memo",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and figures have active source labels next to them.",
+            "Number(s) do not use exactly 2 decimal place(s): 0%."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "Every percentage value in the response, including values written with percent or percentage points, must use exactly two decimal places."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_003",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_007",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_012",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_024",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_025",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_portfolio_proposal_009",
+          "workflow": "Decision and Structuring",
+          "task": "Portfolio proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_portfolio_proposal_015",
+          "workflow": "Decision and Structuring",
+          "task": "Portfolio proposal",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_portfolio_proposal_028",
+          "workflow": "Decision and Structuring",
+          "task": "Portfolio proposal",
+          "failed_tags": [
+            "EG2",
+            "FP2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them.",
+            "Missing required table column(s): Evidence, Test, Result, Action."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must include a Markdown table with columns Evidence, Test, Result, and Action."
+          ]
+        },
+        {
+          "id": "decision_structuring_trade_order_ticket_preparation_005",
+          "workflow": "Decision and Structuring",
+          "task": "Trade order ticket preparation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_structuring_trade_order_ticket_preparation_017",
+          "workflow": "Decision and Structuring",
+          "task": "Trade order ticket preparation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_underwriting_memo_repaired_001",
+          "workflow": "Decision and Structuring",
+          "task": "Underwriting memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "decision_underwriting_memo_repaired_026",
+          "workflow": "Decision and Structuring",
+          "task": "Underwriting memo",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_005",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_006",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_013",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_board_regulatory_reporting_repaired_024",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Board / regulatory reporting",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_012",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_016",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_client_review_report_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Client review report",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_month_end_close_financial_reporting_support_repaired_13",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Month-end close / financial reporting support",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_month_end_close_financial_reporting_support_repaired_20",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Month-end close / financial reporting support",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_007",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_009",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_portfolio_monitoring_repaired_018",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Portfolio monitoring",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_04",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not next to all material facts and calculations."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_09",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_14",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_post_investment_post_loan_review_repaired_17",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Post-investment / post-loan review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_014",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_022",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_reconciliation_repaired_028",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Reconciliation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_003",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_005",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_006",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_009",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them.",
+            "Response has 6 sentence(s); expected at least 8."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must contain at least eight complete sentences."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_010",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_013",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_017",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_023",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_025",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_remediation_tracking_repaired_026",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Remediation tracking",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_risk_alert_generation_repaired_009",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Risk alert generation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_007",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_015",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_017",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_019",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_021",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "execution_trade_loan_investment_execution_check_repaired_025",
+          "workflow": "Execution, Monitoring, Reporting, and Operations",
+          "task": "Trade / loan / investment execution check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack inline source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_003",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them.",
+            "Number(s) do not use exactly 2 decimal place(s): 5%, 8%, 5%, 8%, 5%."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "Every percentage value in the response, including values written with percent or percentage points, must use exactly two decimal places."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_005",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_009",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_012",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_021",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_022",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_client_risk_profiling_repaired_026",
+          "workflow": "Intake and Profiling",
+          "task": "Client risk profiling",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_002",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_005",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Source labels are not consistently next to all material facts and decision points."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_012",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_013",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts and decisions."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_017",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_021",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_023",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Material facts and decision points lack active source labels next to where they are used."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_kyc_onboarding_repaired_025",
+          "workflow": "Intake and Profiling",
+          "task": "KYC onboarding",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Active source labels are not consistently next to all material facts and decisions."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_019",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_missing_information_checklist_repaired_025",
+          "workflow": "Intake and Profiling",
+          "task": "Missing information checklist",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_001",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_007",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_008",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "intake_service_scope_repaired_024",
+          "workflow": "Intake and Profiling",
+          "task": "Service scope explanation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_background_screening_repaired_004",
+          "workflow": "Research and Due Diligence",
+          "task": "Background screening",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_background_screening_repaired_014",
+          "workflow": "Research and Due Diligence",
+          "task": "Background screening",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_credit_due_diligence_repaired_011",
+          "workflow": "Research and Due Diligence",
+          "task": "Credit due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_checklist_completion_repaired_011",
+          "workflow": "Research and Due Diligence",
+          "task": "Due diligence checklist completion",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_checklist_completion_repaired_019",
+          "workflow": "Research and Due Diligence",
+          "task": "Due diligence checklist completion",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_checklist_completion_repaired_028",
+          "workflow": "Research and Due Diligence",
+          "task": "Due diligence checklist completion",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all decision points have active source labels next to them.",
+            "Response has 450 mixed word/character unit(s); expected at most 430."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must be between 180 and 430 words."
+          ]
+        },
+        {
+          "id": "research_due_diligence_earnings_review_repaired_001",
+          "workflow": "Research and Due Diligence",
+          "task": "Earnings review",
+          "failed_tags": [
+            "FP1",
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Missing required heading(s): Apple benchmark read-across.",
+            "Some facts and calculations lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Use sections titled Driver snapshot, Recalculations, Apple benchmark read-across, and Watch items.",
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_earnings_review_repaired_010",
+          "workflow": "Research and Due Diligence",
+          "task": "Earnings review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_financial_statement_analysis_repaired_009",
+          "workflow": "Research and Due Diligence",
+          "task": "Financial statement analysis",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_001",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_008",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_021",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_industry_market_research_repaired_028",
+          "workflow": "Research and Due Diligence",
+          "task": "Industry and market research",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_investment_due_diligence_repaired_25",
+          "workflow": "Research and Due Diligence",
+          "task": "Investment due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "research_due_diligence_investment_due_diligence_repaired_26",
+          "workflow": "Research and Due Diligence",
+          "task": "Investment due diligence",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some material facts lack immediate source labels.",
+            "Response has 577 mixed word/character unit(s); expected at most 430."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must be between 180 and 430 words."
+          ]
+        },
+        {
+          "id": "research_due_diligence_investment_due_diligence_repaired_27",
+          "workflow": "Research and Due Diligence",
+          "task": "Investment due diligence",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_004",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_007",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_011",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels.",
+            "Response has 6 sentence(s); expected at least 8."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must contain at least eight complete sentences."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_016",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them.",
+            "Response has 2 sentence(s); expected at least 8."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must contain at least eight complete sentences."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_018",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them.",
+            "Response has 579 mixed word/character unit(s); expected at most 520."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must be between 220 and 520 words."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_022",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_aml_red_flag_review_repaired_024",
+          "workflow": "Risk and Compliance Review",
+          "task": "AML red-flag review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_012",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_019",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_covenant_check_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Covenant check",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decision points have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_compliance_internal_control_review_repaired_028",
+          "workflow": "Risk and Compliance Review",
+          "task": "Internal control review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_regulatory_issue_escalation_repaired_019",
+          "workflow": "Risk and Compliance Review",
+          "task": "Regulatory issue escalation",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and figures have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_008",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_009",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some decision points lack nearby source labels.",
+            "Response has 6 sentence(s); expected at least 8."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must contain at least eight complete sentences."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_014",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some decision points lack nearby source labels.",
+            "Response has 6 sentence(s); expected at least 8."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must contain at least eight complete sentences."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_021",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_sales_script_communication_compliance_repaired_025",
+          "workflow": "Risk and Compliance Review",
+          "task": "Sales-script / communication compliance",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some decision points lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_002",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2",
+            "FP3"
+          ],
+          "failed_reasons": [
+            "Some facts lack immediate source labels.",
+            "Response has 547 mixed word/character unit(s); expected at most 520."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",
+            "The response must be between 220 and 520 words."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_007",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_009",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "FP2",
+            "EG2"
+          ],
+          "failed_reasons": [
+            "The table is not formatted as a two-column table.",
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "The memo must compare the selected and available share classes in a two-column table.",
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_012",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_015",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and decisions have active source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_017",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and decisions lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_020",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_022",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Not all material facts and calculations have active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_025",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts lack active source labels next to them."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_026",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some facts lack nearby source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        },
+        {
+          "id": "risk_suitability_review_repaired_027",
+          "workflow": "Risk and Compliance Review",
+          "task": "Suitability review",
+          "failed_tags": [
+            "EG2"
+          ],
+          "failed_reasons": [
+            "Some material facts and calculations lack immediate source labels."
+          ],
+          "failed_constraints": [
+            "Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient."
+          ]
+        }
+      ]
+    },
+    "single_DB7": {
+      "count": 3,
+      "items": [
+        {
+          "id": "decision_structuring_loan_approval_package_repaired_017",
+          "workflow": "Decision and Structuring",
+          "task": "Loan approval package",
+          "failed_tags": [
+            "DB7"
+          ],
+          "failed_reasons": [
+            "Required approver or prerequisite is not named."
+          ],
+          "failed_constraints": [
+            "If approval, authorization, authority evidence, or a review prerequisite controls the outcome, the response must name the required approver or prerequisite and must not imply approval while that prerequisite is missing."
+          ]
+        },
+        {
+          "id": "decision_structuring_trade_order_ticket_preparation_009",
+          "workflow": "Decision and Structuring",
+          "task": "Trade order ticket preparation",
+          "failed_tags": [
+            "DB7"
+          ],
+          "failed_reasons": [
+            "The response implies approval without naming the required approver."
+          ],
+          "failed_constraints": [
+            "If approval, authorization, authority evidence, or a review prerequisite controls the outcome, the response must name the required approver or prerequisite and must not imply approval while that prerequisite is missing."
+          ]
+        },
+        {
+          "id": "research_background_screening_repaired_019",
+          "workflow": "Research and Due Diligence",
+          "task": "Background screening",
+          "failed_tags": [
+            "DB7"
+          ],
+          "failed_reasons": [
+            "Not all decisions name the controlling trigger and why softer outcomes are unsupported."
+          ],
+          "failed_constraints": [
+            "Every approval, rejection, hold, escalation, exception, classification, recommendation, or boundary must name the controlling active-case trigger and state why a softer or opposite outcome is not supported."
+          ]
+        }
+      ]
+    }
+  },
+  "repair_math": {
+    "current_exact_pass": 406,
+    "if_all_single_EG2_fixed": 533,
+    "if_all_easy_surface_like_fixed": 550,
+    "theoretical_ceiling_with_this_679_pool_only": 639
+  }
+}

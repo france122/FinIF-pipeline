@@ -1,0 +1,36 @@
+\clearpage
+\appendix
+\section*{Appendix}
+
+\section{Dataset Details}
+\label{appendix:dataset}
+
+FinIF-Train contains 1,064 workflow-grounded examples across 38 task types.
+Each task type contains 28 examples.
+FinIF-Test is selected as a 300-item hard benchmark from the same workflow design.
+The current FinIF-Test split contains 3,134 instruction-following constraints and 1,904 auxiliary diagnostic constraints.
+Auxiliary diagnostics are used for answer quality, finance-validity, and coverage analysis, but they are not included in the primary Micro IF, Macro IF, or Strict item pass metrics.
+
+\section{Evaluation Details}
+\label{appendix:evaluation}
+
+The evaluator first applies deterministic rule checkers when a constraint is mechanically checkable.
+Rule checks cover length ranges, required labels, table schema, ordered-list counts, first-line formats, decimal precision, and related surface constraints.
+If a constraint cannot be decided reliably by local rules, it is sent to an item-batched LLM judge.
+The judge receives the source context, user query, model response, and a JSON schema listing all semantic constraints for the item.
+The judge must return a pass/fail decision and a short reason for each constraint.
+Outputs that do not parse as valid JSON are retried under the same schema.
+The reported experiments have 100\% decision coverage on FinIF-Test.
+
+\section{Training Data and Adaptation}
+\label{appendix:sft}
+
+FinIF-Train is intended for supervised fine-tuning and for constructing preference or verifier data.
+To keep future adaptation results comparable, models should be trained only on FinIF-Train and evaluated on the fixed 300-item FinIF-Test split.
+Legacy pilot results from earlier dataset versions are intentionally excluded from the main paper.
+
+\section{Anonymized Release}
+\label{appendix:release}
+
+For double-blind review, code and data should be released through an anonymized repository or anonymous sharing service.
+The camera-ready version can replace this with the public project URL after acceptance.

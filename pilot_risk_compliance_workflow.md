@@ -1,4 +1,4 @@
-# Pilot Workflow Chain: Risk & Compliance Review
+# Pilot Workflow Chain: Risk and Compliance Review
 
 Date: 2026-06-04
 
@@ -8,7 +8,7 @@ This file is the first depth-first execution pass for FinIF.
 
 Instead of broadening across all workflows, it focuses on one workflow only:
 
-- `Risk & Compliance Review`
+- `Risk and Compliance Review`
 
 Within this workflow, it selects 3 tasks and pushes each one through the same chain:
 
@@ -20,7 +20,7 @@ The purpose is to prove that the pipeline is executable before we scale coverage
 
 ## Chosen Workflow
 
-`Risk & Compliance Review`
+`Risk and Compliance Review`
 
 Why this workflow first:
 

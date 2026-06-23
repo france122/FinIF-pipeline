@@ -1,0 +1,36 @@
+{
+  "date": "2026-06-16",
+  "source_train764": "/Users/minimax/Desktop/lunwen/outputs/full_prompts/repaired_final_v3/finif_v2_repaired_v3_train764_excluding_hard300_ifclean.jsonl",
+  "source_old300": "/Users/minimax/Desktop/lunwen/outputs/benchmark/finif_v2_tonight_hard300_ifclean.jsonl",
+  "source_new125": "/Users/minimax/Desktop/lunwen/outputs/benchmark/finif_v2_tonight_hard325_swapin125_only.jsonl",
+  "benchmark307": "/Users/minimax/Desktop/lunwen/outputs/benchmark/finif_v2_gpt55_targeted_benchmark307_20260616.jsonl",
+  "leftover118": "/Users/minimax/Desktop/lunwen/outputs/benchmark/finif_v2_gpt55_targeted_benchmark307_leftover118_20260616.jsonl",
+  "train757": "/Users/minimax/Desktop/lunwen/outputs/full_prompts/repaired_final_v3/finif_v2_train757_after_gpt55_targeted_benchmark307_20260616.jsonl",
+  "counts": {
+    "original_train764": 764,
+    "removed_swapin125_from_train": 125,
+    "conceptual_train639": 639,
+    "current_benchmark_pool425": 425,
+    "selected_benchmark307": 307,
+    "leftover118_recycled_to_train": 118,
+    "final_train757": 757
+  },
+  "leftover118_source_counts": {
+    "old300": 78,
+    "new125": 40
+  },
+  "benchmark307_workflow_counts": {
+    "Execution, Monitoring, Reporting, and Operations": 62,
+    "Risk and Compliance Review": 62,
+    "Intake and Profiling": 61,
+    "Research and Due Diligence": 61,
+    "Decision and Structuring": 61
+  },
+  "train757_workflow_counts": {
+    "Risk and Compliance Review": 162,
+    "Decision and Structuring": 163,
+    "Execution, Monitoring, Reporting, and Operations": 190,
+    "Intake and Profiling": 107,
+    "Research and Due Diligence": 135
+  }
+}

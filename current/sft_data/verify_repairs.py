@@ -8,7 +8,7 @@ import checkers
 from openai import AsyncOpenAI
 
 client = AsyncOpenAI(
-    api_key="sk-07ddf2d18dbd4cd4a98640d03c4b3643",
+    api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
     base_url="https://api.deepseek.com",
 )
 

@@ -1,0 +1,59 @@
+\section{Introduction}
+
+Large language models (LLMs) are increasingly used for financial analysis, compliance review, investment due diligence, reporting, and operations support.
+In these settings, a user usually provides source materials, asks for a specific work product, and states delivery requirements that determine whether the output can be reviewed or used downstream.
+For example, a model may need to prepare a credit memo, suitability review, reconciliation exception report, or compliance escalation note while citing active source labels, separating facts from assumptions, showing calculation inputs, preserving thresholds, and avoiding unsupported approval or legal conclusions.
+
+This setting exposes a gap in current evaluation.
+A model can be financially plausible yet operationally unusable if it ignores delivery constraints.
+A response that reaches the right high-level recommendation may still fail because citations appear only at the end, a calculation lacks source inputs, a risk label is softened, or an approval boundary is omitted.
+In high-stakes workflows, such failures are not cosmetic.
+They break audit trails, weaken reviewability, and can create compliance risk.
+
+Existing benchmarks only partially cover this problem.
+General instruction-following benchmarks evaluate whether models obey verifiable or fine-grained constraints, but their tasks are usually not grounded in financial work products \citep{zhou2023ifeval,jiang2024followbench,qin2024infobench}.
+Financial benchmarks evaluate financial knowledge, numerical reasoning, question answering, or business-domain task quality \citep{islam2023financebench,shah2022flue,guo2025fineval,nie2025cfinbench,xie2024finben,lu2025bizfinbench}.
+However, they do not isolate whether the model follows explicit finance-specific delivery instructions.
+FinIF targets this missing axis: whether an LLM can produce a usable financial deliverable under stated workflow constraints.
+
+Figure~\ref{fig:case} illustrates the distinction.
+In one FinIF-Test item, GPT-5.5 produced an accurate and well-grounded regulatory-dependency benchmark note and received a quality score of 10/10.
+Nevertheless, it failed the item because the response exceeded the specified word range.
+This is a small example of the central issue: high output quality and instruction compliance are related but not interchangeable, especially when the output is expected to be audit-ready.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox{0.92\linewidth}{
+  \small
+  \textbf{Example FinIF-Test failure.}
+  A strong model writes a high-quality financial note, cites the supplied materials, and gives a useful next action.
+  The evaluator still marks the item as not strictly passed because one explicit delivery requirement is violated: the response contains 539 words where the prompt requires 180--430 words.
+  }}
+  \caption{A high-quality answer can still fail as a financial work product when an explicit delivery constraint is violated.}
+  \label{fig:case}
+\end{figure}
+
+We present \textbf{FinIF}, a finance instruction-following benchmark suite.
+FinIF has two components.
+\textbf{FinIF-Test} is a 300-item hard benchmark selected from workflow-grounded finance tasks.
+It contains 3,134 instruction-following constraints, all evaluated with 100\% coverage in our experiments.
+\textbf{FinIF-Train} contains 1,064 workflow-grounded examples with 7,851 annotated constraints, intended for supervised training, preference-data construction, and further benchmark expansion.
+
+FinIF differs from prior work in three ways.
+First, each item is built from a concrete financial workflow node and work product, rather than from a generic prompt template.
+Second, the benchmark separates instruction-following constraints from auxiliary diagnostic axes such as answer quality and finance validity.
+Third, the evaluator combines rule-based checking for mechanical constraints with LLM-as-a-judge scoring for semantic constraints, while reporting strict item-level compliance in addition to micro constraint pass rate.
+
+Our experiments reveal that current models remain far from fully reliable on financial instruction following.
+GPT-5.5 passes 93.30\% of individual constraints but strictly passes only 58.67\% of items.
+GPT-5 passes 91.35\% of individual constraints but only 47.33\% of complete items.
+Smaller or cheaper models show a larger gap, with DS-V4-Pro, DS-V4-Flash, and Qwen3.5-9B reaching strict item pass rates of 16.00\%, 9.00\%, and 4.00\%, respectively.
+These results suggest that ``mostly compliant'' outputs are common, but complete compliant work products remain difficult.
+
+Our main contributions are:
+\begin{itemize}
+    \item We introduce FinIF-Test, a 300-item hard benchmark for evaluating instruction following in financial workflow tasks.
+    \item We construct FinIF-Train, a 1,064-example workflow-grounded training pool with 7,851 annotated constraints.
+    \item We propose a scalable construction pipeline and a hybrid evaluator that combines deterministic rule checks with item-batched LLM judging.
+    \item We show that strong models still fail strict financial delivery requirements, especially evidence placement, quantitative verification, and decision-boundary reasoning.
+\end{itemize}

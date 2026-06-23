@@ -1,0 +1,131 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Guo et~al.(2025)Guo, Xia, Liu, Cao, Yang, Liu, Wang, Niu, Wang, Wang,
+  Liang, Huang, Zhu, Wei, Chen, Shen, and Zhang}]{guo2025fineval}
+Xin Guo, Haotian Xia, Zhaowei Liu, Hanyang Cao, Zhi Yang, Zhiqiang Liu, Sizhe
+  Wang, Jinyi Niu, Chuqi Wang, Yanhui Wang, Xiaolong Liang, Xiaoming Huang,
+  Bing Zhu, Zhongyu Wei, Yun Chen, Weining Shen, and Liwen Zhang. 2025.
+\newblock Fineval: A chinese financial domain knowledge evaluation benchmark
+  for large language models.
+\newblock In \emph{Proceedings of the 2025 Conference of the Nations of the
+  Americas Chapter of the Association for Computational Linguistics: Human
+  Language Technologies}, pages 6258--6292. Association for Computational
+  Linguistics.
+
+\bibitem[{Islam et~al.(2023)Islam, Kannappan, Kiela, Qian, Scherrer, and
+  Vidgen}]{islam2023financebench}
+Pranab Islam, Anand Kannappan, Douwe Kiela, Rebecca Qian, Nino Scherrer, and
+  Bertie Vidgen. 2023.
+\newblock Financebench: A new benchmark for financial question answering.
+\newblock \emph{arXiv preprint arXiv:2311.11944}.
+
+\bibitem[{Jiang et~al.(2024)Jiang, Wang, Zeng, Zhong, Li, Mi, Shang, Jiang,
+  Liu, and Wang}]{jiang2024followbench}
+Yuxin Jiang, Yufei Wang, Xingshan Zeng, Wanjun Zhong, Liangyou Li, Fei Mi,
+  Lifeng Shang, Xin Jiang, Qun Liu, and Wei Wang. 2024.
+\newblock Followbench: A multi-level fine-grained constraints following
+  benchmark for large language models.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics}, pages 4667--4688. Association for
+  Computational Linguistics.
+
+\bibitem[{Liu et~al.(2023)Liu, Iter, Xu, Wang, Xu, and Zhu}]{liu2023geval}
+Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu.
+  2023.
+\newblock G-eval: Nlg evaluation using gpt-4 with better human alignment.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing}, pages 2511--2522. Association for Computational
+  Linguistics.
+
+\bibitem[{Lu et~al.(2025)Lu, Guo, Zhang, Zhu, and Liu}]{lu2025bizfinbench}
+Guilong Lu, Xuntao Guo, Rongjunchen Zhang, Wenqiao Zhu, and Ji~Liu. 2025.
+\newblock Bizfinbench: A business-driven real-world financial benchmark for
+  evaluating llms.
+\newblock \emph{arXiv preprint arXiv:2505.19457}.
+
+\bibitem[{Matlin et~al.(2025)Matlin, Siddharth, Anirudh, Shukla, Hassan, and
+  Chava}]{matlin2025fife}
+Glenn Matlin, Siddharth, JM~Anirudh, Aditya Shukla, Yahya Hassan, and Sudheer
+  Chava. 2025.
+\newblock Financial instruction following evaluation (fife).
+\newblock \emph{arXiv preprint arXiv:2512.08965}.
+
+\bibitem[{Nie et~al.(2025)Nie, Yan, Guo, Liu, Wang, He, Zheng, Wang, Li, Sun,
+  Wang, and Tao}]{nie2025cfinbench}
+Ying Nie, Binwei Yan, Tianyu Guo, Hao Liu, Haoyu Wang, Wei He, Binfan Zheng,
+  Weihao Wang, Qiang Li, Weijian Sun, Yunhe Wang, and Dacheng Tao. 2025.
+\newblock Cfinbench: A comprehensive chinese financial benchmark for large
+  language models.
+\newblock In \emph{Proceedings of the 2025 Conference of the Nations of the
+  Americas Chapter of the Association for Computational Linguistics: Human
+  Language Technologies}, pages 876--891. Association for Computational
+  Linguistics.
+
+\bibitem[{Qi et~al.(2025)Qi, Peng, Wang, Xin, Liu, Xu, Hou, and
+  Li}]{qi2025agentif}
+Yunjia Qi, Hao Peng, Xiaozhi Wang, Amy Xin, Youfeng Liu, Bin Xu, Lei Hou, and
+  Juanzi Li. 2025.
+\newblock Agentif: Benchmarking instruction following of large language models
+  in agentic scenarios.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Qin et~al.(2024)Qin, Song, Hu, Yao, Cho, Wang, Wu, Liu, Liu, and
+  Yu}]{qin2024infobench}
+Yiwei Qin, Kaiqiang Song, Yebowen Hu, Wenlin Yao, Sangwoo Cho, Xiaoyang Wang,
+  Xuansheng Wu, Fei Liu, Pengfei Liu, and Dong Yu. 2024.
+\newblock Infobench: Evaluating instruction following ability in large language
+  models.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2024}. Association for Computational Linguistics.
+
+\bibitem[{Shah et~al.(2022)Shah, Chawla, Eidnani, Shah, Du, Chava, Raman,
+  Smiley, Chen, and Yang}]{shah2022flue}
+Raj~Sanjay Shah, Kunal Chawla, Dheeraj Eidnani, Agam Shah, Wendi Du, Sudheer
+  Chava, Natraj Raman, Charese Smiley, Jiaao Chen, and Diyi Yang. 2022.
+\newblock When flue meets flang: Benchmarks and large pretrained language model
+  for financial domain.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing}, pages 2322--2335. Association for Computational
+  Linguistics.
+
+\bibitem[{Su et~al.(2026)Su, Wu, Tang, Wang, Li, Wang, Zhang, Wang, Meng, Ma,
+  Tang, and Li}]{su2026sciif}
+Encheng Su, Jianyu Wu, Chen Tang, Lintao Wang, Pengze Li, Aoran Wang, Jinouwen
+  Zhang, Yizhou Wang, Yuan Meng, Xinzhu Ma, Shixiang Tang, and Houqiang Li.
+  2026.
+\newblock Sciif: Benchmarking scientific instruction following towards rigorous
+  scientific intelligence.
+\newblock \emph{arXiv preprint arXiv:2601.04770}.
+
+\bibitem[{Wu et~al.(2025)Wu, Wang, Liu, Shi, Yan, Xiangju, Zhu, and
+  Zhang}]{wu2025lifbench}
+Xiaodong Wu, Minhao Wang, Yichen Liu, Xiaoming Shi, He~Yan, Lu~Xiangju, Junmin
+  Zhu, and Wei Zhang. 2025.
+\newblock Lifbench: Evaluating the instruction following performance and
+  stability of large language models in long-context scenarios.
+\newblock In \emph{Proceedings of the 63rd Annual Meeting of the Association
+  for Computational Linguistics}, pages 16445--16468. Association for
+  Computational Linguistics.
+
+\bibitem[{Xie et~al.(2024)Xie, Han, Chen et~al.}]{xie2024finben}
+Qianqian Xie, Weiguang Han, Zhengyu Chen, and 1 others. 2024.
+\newblock Finben: A holistic financial benchmark for large language models.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li,
+  Li, Xing, Zhang, Gonzalez, and Stoica}]{zheng2023mtbench}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+  Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, Hao Zhang, Joseph~E.
+  Gonzalez, and Ion Stoica. 2023.
+\newblock Judging llm-as-a-judge with mt-bench and chatbot arena.
+\newblock \emph{arXiv preprint arXiv:2306.05685}.
+
+\bibitem[{Zhou et~al.(2023)Zhou, Lu, Mishra, Brahma, Basu, Luan, Zhou, and
+  Hou}]{zhou2023ifeval}
+Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu,
+  Yi~Luan, Denny Zhou, and Le~Hou. 2023.
+\newblock Instruction-following evaluation for large language models.
+\newblock \emph{arXiv preprint arXiv:2311.07911}.
+
+\end{thebibliography}

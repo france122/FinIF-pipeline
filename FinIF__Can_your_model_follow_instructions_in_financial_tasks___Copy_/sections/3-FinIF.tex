@@ -1,0 +1,116 @@
+\section{Proposed Benchmark: FinIF}
+
+FinIF evaluates whether an LLM can turn supplied financial materials into an instruction-compliant work product.
+Each item consists of a context pack, a workflow-specific query, a set of instruction-following constraints, and an evaluation protocol.
+The response is assessed along two separate axes: whether it follows the requested constraints, and whether it is a useful financial answer.
+The first axis is the main target of FinIF; the second is kept as an auxiliary diagnostic.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lcccl}
+\toprule
+Benchmark & Domain & Test & Train & Main evaluation \\
+\midrule
+IFEval \citep{zhou2023ifeval} & General & 541 & -- & Rule-based IF checks \\
+AgentIF \citep{qi2025agentif} & Agentic & 707 & -- & Code, LLM, hybrid checks \\
+SciIF \citep{su2026sciif} & Science & 334 & 910 & Correctness + constraint compliance \\
+FIFE \citep{matlin2025fife} & Finance & 88 & -- & Chainable financial verifiers \\
+FinIF & Finance & 300 & 1,064 & Rule + LLM audit for workflows \\
+\bottomrule
+\end{tabular}
+}
+\caption{Comparison with representative instruction-following benchmarks. FinIF focuses on financial workflow deliverables and provides both a hard test set and training data.}
+\label{tab:benchmark_compare}
+\end{table}
+
+\subsection{Task Taxonomy}
+
+FinIF uses five workflow stages that cover a broad finance task lifecycle: Intake and Profiling; Research and Due Diligence; Decision and Structuring; Risk and Compliance Review; and Execution, Monitoring, Reporting, and Operations.
+These workflows are decomposed into 38 task types.
+Examples include KYC onboarding, loan application intake, financial statement analysis, credit due diligence, investment memo drafting, DCF valuation, suitability review, AML red-flag review, reconciliation, board or regulatory reporting, and remediation tracking.
+This workflow-first design keeps each prompt tied to a plausible financial deliverable rather than an isolated instruction template.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lrr}
+\toprule
+Workflow & Train & Test \\
+\midrule
+Intake and Profiling & 168 & 54 \\
+Research and Due Diligence & 196 & 45 \\
+Decision and Structuring & 224 & 63 \\
+Risk and Compliance Review & 224 & 64 \\
+Execution, Monitoring, Reporting, and Operations & 252 & 74 \\
+\midrule
+Total & 1,064 & 300 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Workflow coverage of FinIF-Train and FinIF-Test.}
+\label{tab:workflow}
+\end{table}
+
+\subsection{Data Construction}
+
+The FinIF construction pipeline follows a workflow-first sequence:
+\begin{quote}
+\small
+workflow $\rightarrow$ task $\rightarrow$ work product $\rightarrow$ context $\rightarrow$ query $\rightarrow$ constraints $\rightarrow$ evaluation.
+\end{quote}
+
+\paragraph{Context acquisition.}
+We construct context packs from public primary sources, synthetic private records, or mixed packs.
+Public sources include regulatory guidance, public filings, financial statements, and similar primary materials.
+Private customer, borrower, account, and internal-policy records are synthetic to avoid exposing sensitive data while preserving realistic workflow triggers.
+
+\paragraph{Query synthesis.}
+Each item starts from a target work product, such as a KYC review note, credit memo, investment committee memo, suitability review note, compliance escalation report, reconciliation exception report, or board report.
+The query asks the model to produce this deliverable under explicit requirements about format, evidence, quantitative reasoning, decision boundaries, and missing-information handling.
+
+\paragraph{Constraint annotation.}
+FinIF evaluates explicit, checkable requirements rather than implicit best practices.
+Each constraint receives a fine-grained tag, a family label, an evaluation axis, and a checker route.
+The paper-facing taxonomy contains five families: Format and Presentation, Evidence and Grounding, Decision and Boundary, Quantitative Verification, and Required Content Coverage.
+For evaluation, content-coverage constraints that primarily diagnose answer completeness are kept separate from instruction-following constraints when computing the main IF metrics.
+
+\paragraph{Evaluation generation.}
+For each constraint, we generate an evaluation protocol that routes mechanically checkable requirements to rule checkers and semantic requirements to an LLM judge.
+Rule-checked constraints include word ranges, decimal places, table columns, required labels, first-line formats, and ordered-list counts.
+LLM-judged constraints include source-label placement, fact-inference separation, evidence-rule-action chains, and boundary reasoning.
+
+\paragraph{Quality control.}
+Before inclusion, each item is validated for schema consistency, train/test separation, context availability, checker coverage, and parseable evaluator output.
+The reported FinIF-Test runs reach 100\% decision coverage, meaning every instruction-following constraint is assigned a pass/fail decision.
+
+\subsection{Data Statistics}
+
+FinIF-Train contains 1,064 workflow-grounded examples across all 38 task types, with 28 examples per task and 7,851 annotated constraints.
+FinIF-Test contains 300 hard items, 3,134 instruction-following constraints, and 1,904 additional diagnostic constraints used for coverage, quality, and finance-validity analysis.
+The test set has an average of 10.45 instruction-following constraints per item, with a minimum of 7 and a maximum of 16.
+Among the 3,134 test IF constraints, 1,346 are rule-checked and 1,788 are LLM-judged.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lrr}
+\toprule
+Constraint family & Test IF & Share \\
+\midrule
+Format and Presentation & 1,391 & 44.38\% \\
+Evidence and Grounding & 1,085 & 34.62\% \\
+Decision and Boundary & 280 & 8.93\% \\
+Quantitative Verification & 377 & 12.03\% \\
+Required Content Coverage & 1 & 0.03\% \\
+\midrule
+Total & 3,134 & 100.00\% \\
+\bottomrule
+\end{tabular}
+}
+\caption{Instruction-following constraint distribution in FinIF-Test. Content coverage is mainly used as an auxiliary diagnostic rather than the primary IF target.}
+\label{tab:constraints}
+\end{table}

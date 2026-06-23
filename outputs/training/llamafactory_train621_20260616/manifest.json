@@ -1,0 +1,12 @@
+{
+  "source_dataset": "/Users/minimax/Desktop/lunwen/outputs/model_runs/gpt5_train757_local_repair_subset_20260616/selected_dataset.jsonl",
+  "source_responses": "/Users/minimax/Desktop/lunwen/outputs/model_runs/gpt5_train757_local_repair_subset_20260616/responses_gpt5_local_repair.jsonl",
+  "output_dir": "/Users/minimax/Desktop/lunwen/outputs/training/llamafactory_train621_20260616",
+  "samples": 621,
+  "system_prompt": "You are a careful financial workflow assistant. Use only the provided materials, follow every explicit instruction in the prompt, and produce an audit-ready final answer.",
+  "files": {
+    "sharegpt": "/Users/minimax/Desktop/lunwen/outputs/training/llamafactory_train621_20260616/finif_train621_sharegpt.json",
+    "alpaca": "/Users/minimax/Desktop/lunwen/outputs/training/llamafactory_train621_20260616/finif_train621_alpaca.json",
+    "dataset_info": "/Users/minimax/Desktop/lunwen/outputs/training/llamafactory_train621_20260616/dataset_info.json"
+  }
+}

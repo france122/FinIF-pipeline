@@ -1,0 +1,38 @@
+\begin{table*}[!t]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccccccccccc}
+\toprule
+\multirow{2}{*}{\textbf{Method}} & \multicolumn{4}{c}{\textbf{AIME'25}} & \multicolumn{4}{c}{\textbf{IFEval}} & \multicolumn{4}{c}{\textbf{GPQA-Diamond}} \\
+\cmidrule(lr){2-5}
+\cmidrule(lr){6-9}
+\cmidrule(lr){10-13}
+ % & Mean@64 & Pass@64 & Token \#N & Think \#R & Mean@8 & Pass@8 & Token \#N & Think \#R & Mean@8 & Vote@8 & Token \#N & Think \#R \\
+ & M@64 & P@64 & T\#N & T\#R & M@8 & P@8 & T\#N & T\#R & M@8 & V@8 & T\#N & T\#R \\
+  % & \rot{Mean@64} & \rot{Pass@64} & \rot{Token \#N} & \rot{Think \#R} 
+ % & \rot{Mean@8} & \rot{Pass@8} & \rot{Token \#N} & \rot{Think \#R} 
+ % & \rot{Mean@8} & \rot{Vote@8} & \rot{Token \#N} & \rot{Think \#R} \\
+\midrule
+Instruct     & 46.6 & 76.7 & 15097 & 0.0   & 83.5 & 89.5 & 1174  & 0.0   & 41.3 & 39.4 & 570   & 0.0   \\
+Thinking     & 80.4 & 90.0 & 22813 & 99.9  & 86.6 & 94.5 & 2091  & 100.0 & 65.8 & 67.2 & 9114  & 99.9  
+\\
+\midrule
+TA           & 61.7 & 86.7 & 16594 & 0.5   & 39.0 & 60.8 & 8116  & 7.6   & 57.4 & 59.6 & 22042 & 0.2   \\
+TA-Base      & 69.6 & 86.7 & 18339 & 43.0  & 76.3 & 91.9 & 2810  & 76.5  & 60.7 & 66.2 & 12450 & 32.9  \\
+TIES         & 61.5 & 93.3 & 11159 & 65.4  & 66.5 & 90.8 & 3224  & 71.2  & 63.8 & 68.2 & 7369  & 72.2  \\
+TIES-Base    & 62.7 & 90.0 & 12024 & 15.6  & 57.0 & 87.8 & 6234  & 21.6  & 63.7 & 66.7 & 8309  & 21.8
+\\
+\midrule 
+MI-02        & 52.2 & 86.7 & 16794 & 0.0   & 79.7 & 87.1 & 4933  & 0.0   & 48.9 & 50.0 & 1107  & 0.0   \\
+MI-04        & 55.8 & 90.0 & 12448 & 1.4   & 70.2 & 84.3 & 6492  & 1.6   & 61.3 & 60.6 & 5634  & 4.0   \\
+MI-045       & 58.5 & 93.3 & 11290 & 14.4  & 62.6 & 86.5 & 5623  & 19.2  & 62.8 & 63.1 & 7227  & 26.6  \\
+MI-05        & 62.5 & 90.0 & 11189 & 59.6  & 68.8 & 93.0 & 2932  & 69.9  & 64.5 & 66.7 & 7548  & 66.4  \\
+MI-055       & 67.6 & 90.0 & 11634 & 91.6  & 82.4 & 92.6 & 1602  & 97.1  & 65.1 & 67.7 & 8284  & 93.8  \\
+MI-06        & 71.0 & 90.0 & 12681 & 100.0 & 85.9 & 93.7 & 1445  & 99.6  & 66.2 & 68.2 & 8769  & 99.7  \\
+MI-08        & 80.5 & 93.3 & 17574 & 99.9  & 86.9 & 94.6 & 1556  & 99.9  & 66.2 & 70.2 & 8427  & 99.9  \\
+\bottomrule
+\end{tabular}
+}
+\caption{Performance comparison across three benchmarks when merging Qwen3-4B-Instruct-2507 and Qwen3-4B-Thinking-2507.}
+\label{tab:main_res}
+\end{table*}

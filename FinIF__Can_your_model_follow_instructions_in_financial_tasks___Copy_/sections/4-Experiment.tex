@@ -1,0 +1,92 @@
+\section{Capability Evaluation}
+
+\subsection{Experimental Setup}
+
+\paragraph{Models.}
+We evaluate eight advanced LLMs on FinIF-Test, spanning two categories.
+\textit{Closed-source models}: GPT-5.5 and GPT-5~\cite{openai2025gpt5}.
+\textit{Open-weighted models}: GLM-5.1~\cite{glm2025chatglm}, DeepSeek-V4-Pro and DeepSeek-V4-Flash~\cite{deepseek2025v4}, Qwen3.5-27B, Qwen3.5-9B, and Qwen3.5-4B~\cite{qwen2025qwen3}.
+For all models, we set the sampling temperature to 0 to ensure deterministic outputs.
+
+\paragraph{Metrics.}
+We adopt two primary evaluation metrics.
+\textbf{Instruction-level Success Rate (ISR)} measures the fraction of test instructions whose \emph{every} annotated constraint is satisfied:
+\begin{equation}
+\text{ISR} = \frac{1}{N}\sum_{i=1}^{N} \mathbb{1}\!\left[\,\forall\, c \in \mathcal{C}_i,\ \text{pass}(c) = 1\right]
+\label{eq:isr}
+\end{equation}
+where $N$ is the number of test instructions and $\mathcal{C}_i$ is the constraint set for instruction $i$.
+ISR captures whether a model's output can serve as a complete, audit-ready work product: even a single violated constraint renders the entire instruction unsuccessful.
+\textbf{Quality Score} is a holistic 0--10 score assigned by a calibrated LLM judge, assessing the financial validity, reasoning soundness, and professional completeness of each response as an auxiliary diagnostic.
+
+\paragraph{Hybrid Verification Engine.}
+FinIF-Test contains 3,282 fine-grained constraints, comprising 1,401 structural constraints evaluated by deterministic Python rule checkers and 1,881 semantic constraints judged by GPT-4o.
+The evaluator follows a \emph{rule-first} protocol: mechanically checkable constraints (e.g., word counts, decimal-place precision, table column presence, required headings, ordered-list formats) are routed to deterministic checkers, while semantic constraints (e.g., evidence grounding, decision boundary reasoning, calculation lineage) are batched per item and judged by GPT-4o with fixed prompts, temperature 0, and strict JSON output parsing.
+This hybrid design ensures reproducibility for structural checks while preserving coverage for constraints requiring semantic interpretation.
+
+\subsection{Main Results}
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lrrrr}
+\toprule
+Model & Micro IF & Macro IF & Strict & Quality \\
+\midrule
+GPT-5.5 & 93.30 & 93.10 & 58.67 & 7.40 \\
+GPT-5 & 91.35 & 91.20 & 47.33 & 7.05 \\
+DS-V4-Pro & 81.24 & 80.72 & 16.00 & 4.68 \\
+DS-V4-Flash & 77.92 & 77.25 & 9.00 & 4.27 \\
+Qwen3.5-9B & 72.08 & 71.45 & 4.00 & 3.60 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Main results on FinIF-Test. IF metrics are percentages. Quality is a 0--10 auxiliary judge score. Strict pass requires satisfying every IF constraint in an item.}
+\label{tab:main_results}
+\end{table}
+
+Table~\ref{tab:main_results} shows a consistent gap between local constraint compliance and complete work-product compliance.
+GPT-5.5 passes 2,924 of 3,134 IF constraints, but strictly passes only 176 of 300 items.
+GPT-5 passes 2,863 constraints but strictly passes only 142 items.
+The gap is larger for cheaper and smaller models: DS-V4-Pro strictly passes 48 items, DS-V4-Flash 27 items, and Qwen3.5-9B only 12 items.
+
+This gap is the central empirical finding of FinIF.
+Micro IF captures whether a model follows many local requirements, while strict item pass rate captures whether the response can be accepted as a complete financial work product.
+In production-like workflows, a response that violates one critical evidence, calculation, or boundary instruction may still require human repair even if most local constraints pass.
+
+\subsection{Further Analysis}
+
+\paragraph{Evidence placement is the dominant failure mode.}
+Across the evaluated models, the most frequent failed tag is EG2, which requires active source labels next to material facts, figures, thresholds, missing-evidence triggers, and decision points.
+GPT-5 fails 119 EG2 constraints, and GPT-5.5 fails 107.
+This indicates that even strong models often cite sources globally but fail to place evidence exactly where an audit trail requires it.
+
+\paragraph{Quantitative verification remains fragile.}
+The second recurring weakness is QV2, which requires source inputs, formula or comparison, result, and business implication for calculations and reconciliations.
+GPT-5 fails 42 QV2 constraints, while DS-V4-Pro and Qwen3.5-9B fail 113 and 162, respectively.
+These failures are not necessarily arithmetic mistakes; many are lineage failures where the response gives a number without the required verification trail.
+
+\paragraph{Decision-boundary reasoning is hard to keep connected.}
+DB9 asks the response to connect active evidence, governing rule or task standard, and final action in a single reasoning chain.
+GPT-5.5 and GPT-5 still fail 27 and 22 DB9 constraints, respectively.
+Smaller models fail this tag much more often.
+This suggests that models can list facts and recommendations, but often struggle to maintain an auditable evidence-rule-action chain.
+
+\paragraph{Format constraints are not solved.}
+Although many format checks are mechanically simple, they continue to cause item failures.
+GPT-5.5 fails 19 FP3 constraints, and GPT-5 fails 58.
+These include length, decimal-place, count, and ordering requirements.
+The Figure~\ref{fig:case} example shows why this matters: an otherwise high-quality response can be rejected because it fails a concrete delivery constraint.
+
+\section{FinIF-Train for Model Adaptation}
+\label{sec:sft_experiment}
+
+FinIF-Train provides the training component of FinIF.
+It contains 1,064 workflow-grounded examples across 38 task types and 7,851 annotated constraints.
+Unlike generic instruction-tuning data, each example is tied to a finance workflow, a concrete work product, and explicit delivery constraints.
+The intended use is supervised fine-tuning or preference-data construction for financial instruction following.
+
+To avoid conflating dataset versions, we do not report legacy pilot SFT numbers in this draft.
+The same-split adaptation protocol is straightforward: train on FinIF-Train, evaluate both the base model and the adapted model on the 300-item FinIF-Test split, and report Micro IF, Macro item IF, Strict item pass rate, and auxiliary quality.
+This keeps model adaptation results directly comparable with the capability evaluation above.

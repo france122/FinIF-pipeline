@@ -1,0 +1,45 @@
+{
+  "benchmark_before": {
+    "items": 300,
+    "gpt5_exact_pass": 142,
+    "pass_rate": 0.47333333333333333
+  },
+  "train_before": {
+    "items": 764,
+    "gpt5_exact_pass": 406,
+    "pass_rate": 0.5314136125654451
+  },
+  "benchmark_after": {
+    "items": 325,
+    "gpt5_exact_pass": 42,
+    "pass_rate": 0.12923076923076923
+  },
+  "train_after": {
+    "items": 739,
+    "gpt5_exact_pass": 506,
+    "pass_rate": 0.6847090663058186
+  },
+  "swap_in_count": 125,
+  "swap_out_count": 100,
+  "swap_in_workflow_counts": {
+    "Decision and Structuring": 25,
+    "Execution, Monitoring, Reporting, and Operations": 22,
+    "Intake and Profiling": 22,
+    "Research and Due Diligence": 31,
+    "Risk and Compliance Review": 25
+  },
+  "swap_out_workflow_counts": {
+    "Decision and Structuring": 22,
+    "Execution, Monitoring, Reporting, and Operations": 20,
+    "Intake and Profiling": 20,
+    "Research and Due Diligence": 20,
+    "Risk and Compliance Review": 18
+  },
+  "artifacts": {
+    "benchmark_jsonl": "outputs/benchmark/finif_v2_tonight_hard325_ifclean_swap_in125_out100.jsonl",
+    "benchmark_summary": "outputs/benchmark/finif_v2_tonight_hard325_ifclean_swap_in125_out100_summary.json",
+    "benchmark_dashboard": "outputs/benchmark/_dashboard_data_swap_in125_out100.json",
+    "train_jsonl": "outputs/full_prompts/repaired_final_v3/finif_v2_repaired_v3_train739_after_hardswap_in125_out100_ifclean.jsonl",
+    "train_summary": "outputs/full_prompts/repaired_final_v3/finif_v2_repaired_v3_train739_after_hardswap_in125_out100_ifclean_summary.json"
+  }
+}

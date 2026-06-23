@@ -1,0 +1,24 @@
+\section{Conclusion}
+
+We introduced FinIF, a benchmark suite and data construction framework for evaluating whether LLMs can produce usable financial work products under explicit delivery constraints.
+FinIF-Test provides a 300-item hard benchmark with 3,134 instruction-following constraints, while FinIF-Train provides 1,064 workflow-grounded examples for training and expansion.
+Experiments show that strong models satisfy most individual constraints but frequently fail strict item-level compliance.
+The largest weaknesses involve evidence placement, quantitative verification, and decision-boundary reasoning.
+These findings suggest that financial LLM evaluation should measure not only answer quality, but also whether the answer follows the operational instructions needed for auditability and downstream use.
+
+\section*{Limitations}
+
+FinIF has several limitations.
+First, semantic evaluation depends on an LLM judge, so further human calibration and judge-sensitivity analysis are needed before treating scores as definitive.
+Second, some private financial records are synthetic, which protects privacy and improves controllability but may not capture all institution-specific policies and data distributions.
+Third, the current reported experiments cover five completed model runs; broader evaluation over open-weight, finance-tuned, multilingual, and newly released models should be added.
+Fourth, FinIF-Test emphasizes hard instruction-following cases, so its strict pass rates should not be interpreted as general financial task success rates.
+Finally, same-split supervised fine-tuning experiments on the new 300-item test split remain future work for the next version of this draft.
+
+\section*{Ethical Considerations}
+
+FinIF is designed for evaluating and improving instruction adherence in financial workflows, not for providing investment, legal, tax, or compliance advice.
+The benchmark should therefore be used as an offline evaluation and research resource rather than as an automated decision system.
+Synthetic private records are used to avoid exposing real customer or institutional data.
+For public-source contexts, users of the dataset should respect the licenses and terms of the underlying materials.
+Because higher instruction-following ability could make financial outputs appear more authoritative, deployed systems should still include human review, source verification, and institution-specific compliance controls.

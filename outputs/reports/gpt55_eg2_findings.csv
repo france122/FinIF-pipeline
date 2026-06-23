@@ -1,0 +1,976 @@
+item_id,workflow,task,if_score,quality_raw,failed_tags,eg2_only,query_explicit,full_prompt_explicit,constraint_present,eg2_constraint,judge_reason,response_excerpt
+tonight_hard_line_191,Intake and Profiling,Service scope explanation,0.9230769230769231,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Third-Party Dependency Explanation — Maple Junction Fitness LLC**
+
+Maple Junction Fitness LLC’s $480,000 franchise equipment loan request cannot move to a commitment-letter position today because the intake file is incomplete and the governing service note states that a commitment letter “cannot be issued at intake” and “cannot be discussed as available until underwriting and required approvals are complete” [country exposure note]. This is not an underwriting decision or approval indication.
+
+Borrower-provided items currently reflected in the packet are: draft borrower information form, franchise disclosure document excerpt, bank statements, and owner list showing Tara Singh at 80.00% and Paul Singh at 20.00% [EDD threshold rule]. Ownership reconciliation: 80.00% + 20.00% = 100.00%; business implication: the packet identifies all listed ownership interests, but Paul Singh’s required personal financial statement remains missing [EDD threshold rule].
+
+Third-party or external dependency items still needed are: final vendor quotes and the franchisor consent letter [EDD threshold rule]. Additional borrower authorization/intake items still missing are: signed credit authorization and..."
+tonight_hard_line_028,Decision and Structuring,Portfolio proposal,0.9166666666666666,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Employer Stock Transition Proposal — Vista Executive Account**
+
+## Concentration
+
+Client objective: transition Vista Executive Account toward the stated policy allocation of 46.00% equities, 39.00% fixed income, and 10.00% cash or reserve assets [confirmation draft]. Current total portfolio value is $8.20 million, and the scenario-specific exposure requiring this employer-stock transition proposal is 45.00% current equity or risk exposure [order ticket].
+
+Required employer-stock limit reconciliation:  
+- Source inputs: $8.20 million portfolio value; 45.00% current exposure; 15.00% employer-stock limit [order ticket; correction procedure].  
+- Current exposure value: $8.20 million × 45.00% = $3.69 million.  
+- Permitted value at 15.00% limit: $8.20 million × 15.00% = $1.23 million.  
+- Excess: 45.00% − 15.00% = 30.00 percentage points; $3.69 million − $1.23 million = $2.46 million.
+
+Business implication: the active-case exposure is above the 15.00% employer-stock limit by $2.46 million and 30.00 percentage points, triggering a transition recommendation and approval or exception review rather than cleared trading [confirmation draft; correction procedure].
+
+## Liquidity
+
+Current r..."
+tonight_hard_line_109,Risk and Compliance Review,Risk disclosure review,0.9166666666666666,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Control Ticket 109 — Forepart Risk-Summary Trigger Review for Lakeside Community Bankshares**
+
+> “If the discussion is longer than 15 pages, include in the forepart of the prospectus or annual report … concise, bulleted or numbered statements that [are] no more than two pages summarizing the principal factors…” [performance presentation facts]
+
+> “The presentation of risks that could apply generically to any registrant or any offering is discouraged, but to the extent generic risk factors are presented, disclose them at the end … under the caption ‘General Risk Factors.’” [performance presentation facts]
+
+## Organization Finding
+
+Lakeside Community Bankshares has an active Item 105 structure and forepart-summary deficiency because the draft Risk Factors section is 22 pages, while the forepart currently includes only a 650-word dense paragraph labeled “Principal Risks” and no bulleted or numbered principal-risk summary. [exception review guide] The severity is **High** because the packet’s review guide classifies Item 105 structure or summary-trigger problems as High, and legal has requested remediation by adding a concise bulleted or numbered principal-risk summary. [exception r..."
+tonight_hard_line_338,Decision and Structuring,Loan approval package,0.9166666666666666,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some facts lack active source labels next to them.,"**Approval Authority Routing Summary — Cedar Rail Logistics Inc.**
+
+Routing decision: Cedar Rail Logistics Inc.’s $6.2 million revolving credit facility package may not proceed to Credit Committee now because the requested 88.00% temporary advance rate is a policy exception requiring Senior Credit Officer concurrence first, and the omitted current UCC search must be routed to Legal Documentation.  
+
+1. **Requested action and amount.** The borrower requests a **$6.2 million revolving credit facility** to finance seasonal receivables, with a temporary borrowing base advance rate of **88.00% for 90 days** against eligible receivables of **$7.0 million** [rollover recommendation file]. Because facilities **over $5.0 million require Credit Committee action**, this request is within Credit Committee authority after prerequisites are satisfied [plan cost comparison (Delegated Lending Authority Matrix)].
+
+2. **Advance-rate policy exception calculation.** Source inputs: requested advance rate = **88.00%** [rollover recommendation file]; policy limit = **80.00%** [plan cost comparison (Delegated Lending Authority Matrix)]. Formula/comparison: **88.00% − 80.00% = 8.00 percentage points above..."
+tonight_hard_line_034,Risk and Compliance Review,AML red-flag review,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Low-Priced Securities AML Escalation Report — Securities Activity Alert AML-RF-017**
+
+> “Customer: Sagebrush Ventures. Deposited 2.4 million shares of microcap issuer ZQNT acquired through a private certificate.” [measurability standard (Securities Activity Alert AML-RF-017)]
+
+> “Unresolved low-priced securities concerns require AML escalation.” [owner field note]
+
+## 1. Alert identity and governing escalation posture
+
+This report addresses Securities Activity Alert AML-RF-017 for customer Sagebrush Ventures involving a deposit, liquidation, and outbound proceeds movement in microcap issuer ZQNT. [measurability standard (Securities Activity Alert AML-RF-017)] The active-case trigger requires review of the deposit source, liquidation timing, proceeds movement, missing acquisition support, issuer relationship, and whether the proceeds movement is consistent with the customer profile. [owner field note] The governing AML standard is that broker-dealers must maintain reasonably designed AML procedures and internal controls to identify and report suspicious activity, including activity in low-priced securities. [corrective action draft] The packet also states that firms must not igno..."
+tonight_hard_line_038,Intake and Profiling,Counterparty / issuer profile construction,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some facts lack active source labels next to them.,"**Green Bond Issuer Use-of-Proceeds Profile — Prairie Loop Transit Authority**
+
+1. **Issuer identity and proposed issuance.** Issuer is **Prairie Loop Transit Authority**; proposed bond amount is **$210 million** [board minutes excerpt; action item rule]. This profile is prepared under the **Synthetic Green Bond Issuer Intake Standard**, which requires coverage of issuer identity, proposed bond amount, eligible categories, allocations, unallocated proceeds, governance, reporting, external review, and missing evidence [board minutes excerpt].
+
+2. **Eligible project categories and allocation reconciliation.** Issuer-listed eligible categories are: electric bus fleet **$120 million**, depot charging infrastructure **$46 million**, and maintenance facility energy retrofit **$18 million** [board minutes excerpt; action item rule]. Category allocations total **$184 million**. Unallocated contingency is **$26 million** [board minutes excerpt; action item rule]. Reconciliation: **$120 million + $46 million + $18 million + $26 million = $210 million**, matching the proposed bond amount; no dollar-allocation shortfall is indicated by the packet.
+
+3. **Unallocated proceeds calculation and im..."
+tonight_hard_line_049,Intake and Profiling,Client risk profiling,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Lacks active source labels next to all material facts.,"**Sofia Reed Risk-Profile Clarification Call Agenda**
+
+> “Every member shall use reasonable diligence…to know and retain the essential facts concerning every customer.” [IPS restriction note]
+
+> “Most blocking factors for scoring are liquidity need and time horizon…Clarification calls must not discuss model portfolios, securities, or trade ideas before the profile is complete.” [suitability review file]
+
+**Audit-ready control posture and call boundary.**  
+The active-case trigger is that Sofia Reed’s current profile score cannot be calculated because the liquidity field is blank and the time-horizon entry says only “retirement,” with no year or range. [fund mandate description] The governing review standard requires the call to address blocking profile factors before nonblocking preferences. [suitability review file] The call must stay limited to profile clarification and must not include model portfolios, securities, trade ideas, or sales/performance language before the profile is complete. [suitability review file] Required review prerequisite: the advisor or registered representative must obtain and retain essential customer facts before moving beyond the clarification stage, c..."
+tonight_hard_line_112,Research and Due Diligence,Earnings review,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**KPI surprise table — PrairieBank Digital, quarter ended March 31, 2026**
+
+## Audit basis and evidence-bound controls
+
+| Final action / decision point | Active evidence used | Governing task standard or trigger | Audit decision |
+|---|---|---|---|
+| Calculate PrairieBank actual-versus-consensus surprise and year-over-year change for revenue, active accounts, net revenue retention, gross margin, and diluted EPS. | PrairieBank actuals, consensus, and prior-year figures are provided in the `client profile sheet`. | `product term sheet` requires a KPI surprise table with actual-versus-consensus surprise and year-over-year change where available. | Calculated using only stated inputs from the `client profile sheet`. |
+| Distinguish PrairieBank company KPIs from public-company benchmark/comparable rows. | PrairieBank figures are in the `client profile sheet`; Apple-requested comparable source is labeled `suitability rule card`. | `product term sheet` requires distinguishing company KPIs from public-company benchmark metrics. | PrairieBank rows and Apple comparable rows are separated. |
+| Include Apple comparable rows only for revenue growth, gross-margin movement, and EPS growth. | The..."
+tonight_hard_line_169,"Execution, Monitoring, Reporting, and Operations",Risk alert generation,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Regulatory Filing Deadline Risk Alert — Fund Complex A Form PF**
+
+> Filing due date: 2026-06-15; current date: 2026-06-12; status: draft not started. [trade ticket draft]  
+> Generate a deadline risk alert when a required filing draft is not ready within the preparation service-level window. [approval control]
+
+A deadline risk alert is required for the Form PF quarterly update for Fund Complex A. The filing due date is 2026-06-15, and the current date in the calendar extract is 2026-06-12. [trade ticket draft] The current filing status is “draft not started.” [trade ticket draft] The applicable preparation service-level standard requires the draft to be ready at least 2 business days before the due date. [trade ticket draft] The governing control requires a deadline risk alert when a required filing draft is not ready within that preparation service-level window. [approval control]
+
+**Deadline calculation and timing status:** Source inputs are current date 2026-06-12 and due date 2026-06-15. [trade ticket draft] Formula: 2026-06-15 minus 2026-06-12 equals 3 calendar days until due. The due date is Monday 2026-06-15, so the 2-business-day readiness point was Thursday 2026-06-11,..."
+tonight_hard_line_213,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to material facts and decision points.,"**RC-52 Root-Cause Remediation Mapping**
+
+1. **Active source and governing standard.** This mapping uses only the active evidence labeled **“adverse-media packet”** for **Issue RC-52: late regulatory report sign-off** and the governing **Root-Cause Coverage Standard**. The standard requires remediation actions to address **every documented root cause** and to show each root cause, mapped corrective action, owner, due date if available, and any uncovered root cause. It also states that a tracker entry with uncovered root causes **must not be described as fully remediated**.
+
+2. **Coverage reconciliation.** Source inputs: **three documented root causes** in the adverse-media packet: “unclear ownership between Finance Reporting and Compliance”; “no automated reminder”; and “backup approver not defined.” Current tracker input: **one action only — “update calendar.”** Comparison rule: each root cause must have a mapped corrective action and owner under the **Root-Cause Coverage Standard**. Result: the current tracker does not evidence full coverage of all three root causes. Business implication: RC-52 cannot be represented as fully remediated.
+
+| Documented root cause | Mapped correcti..."
+tonight_hard_line_244,Intake and Profiling,Client risk profiling,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Liquidity/Concentration Override Rationale — Jae Kim**
+
+Requested final classification: Growth. [customer profile] The base risk score is reconciled as objective 4 + horizon 3 + tolerance 4 + experience 3 + liquidity 1 + concentration 5 = 20. [customer profile] Under the policy score bands, a score of 20 maps to Growth because the Growth band is 18-23. [rapid movement rule]
+
+> “Every member shall use reasonable diligence…to know…the essential facts concerning every customer.” [AML transfer alert -- Know Your Customer | FINRA.org]  
+> “Liquidity need greater than 25.00% of account value within 12 months lowers the final classification by one band.” [rapid movement rule]  
+> “Single-issuer exposure greater than 35.00% of account value requires a concentration flag.” [rapid movement rule]
+
+Liquidity override reconciliation: the client has a USD 310,000 cash need expected in 10 months for business acquisition funding, against an account value of USD 920,000. [customer profile] Formula: USD 310,000 ÷ USD 920,000 = 33.70%. Because 33.70% is greater than the 25.00% threshold and the need occurs within 12 months, the liquidity override is triggered. [rapid movement rule] Business implic..."
+tonight_hard_line_298,Intake and Profiling,KYC onboarding,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some facts lack active source labels next to them.,"**Submit to operations — Ember Street Retail LLC pre-submission KYC QA note**
+
+1. **Open-item tracker / blocker check:** Verified open tracker status is “none” per the active packet. Evidence: “Open item in tracker: none” [line increase policy (Synthetic Final QA Packet - Ember Street Retail LLC)]. Governing task standard requires QA to confirm no open tracker items before operations handoff [borrowing history note]. Result: no tracker blocker, remediation return not triggered.
+
+2. **CIP / legal-entity identity check:** Legal existence articles received, EIN/W-9 complete, and physical address/store lease received [line increase policy (Synthetic Final QA Packet - Ember Street Retail LLC)]. This supports customer identification and verification under the CDD framework requiring covered institutions to identify and verify customers [seasonal borrowing request]. Result: CIP condition verified.
+
+3. **Beneficial ownership reconciliation:** Source inputs: Nora Fields owns 51.00%; Eli Grant owns 49.00%; owner IDs complete [line increase policy (Synthetic Final QA Packet - Ember Street Retail LLC)]. Rule threshold: identify and verify any individual owning 25.00% or more, plus an individu..."
+tonight_hard_line_308,Risk and Compliance Review,Regulatory issue escalation,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Short-Sale Compliance Escalation Brief — ESC-2024**
+
+**Matter:** Missing short-sale locate evidence requiring escalation review.  
+**Scope date:** 2026-05-06.  
+**Security scope:** one microcap security. [order ticket]
+
+1. **Active-case trigger and threshold reconciliation**  
+   Source inputs: 83 short-sale orders with missing locate records in one microcap security on 2026-05-06. [order ticket] Governing trigger: missing locate evidence for more than 25 short-sale orders in a security must be escalated to Trading Supervision, Compliance, and Legal. [correction procedure]  
+   Calculation/comparison: 83 orders − 25-order threshold = 58 orders above threshold; 83 ÷ 25 = 3.32x threshold, or 232.00% above threshold.  
+   Business implication: ESC-2024 meets the mandatory escalation trigger and cannot be treated as cleared at intake. [correction procedure]
+
+2. **Manual override status and stated reason**  
+   The order management system shows locate status as “manual override.” [order ticket] The trading desk states that locates were obtained by phone. [order ticket] However, the documented override reason is not substantiated in the packet because no call logs or lender confirmati..."
+tonight_hard_line_309,Decision and Structuring,Trade order ticket preparation,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels next to them.,"**Account Restriction Decline Ticket — Kilo Energy Request**
+
+> [conditional hold matrix] Client Fiona Patel asks to buy 200 shares of Kilo Energy (KENG) at market in account FP-3131.  
+> [trigger policy — Account Restriction Record] Account FP-3131 has a do-not-trade restriction effective 2026-06-01 pending estate documentation. No purchases or sales may be entered until Operations removes the restriction.
+
+## Ticket classification and disposition
+
+This ticket is classified as **Not Enterable** for execution. The requested transaction is a purchase, and the governing restriction states that **no purchases or sales may be entered** for account FP-3131 until Operations removes the restriction. The issue is routed to **Operations** because the active trigger policy identifies Operations as the authority required to remove the restriction. No substitute trade instructions are provided.
+
+## Requested trade captured
+
+| Field | Captured value | Source |
+|---|---:|---|
+| Client | Fiona Patel | [conditional hold matrix] |
+| Account | FP-3131 | [conditional hold matrix]; [trigger policy — Account Restriction Record] |
+| Side | Buy | [conditional hold matrix] |
+| Security | Kilo Energy | [c..."
+tonight_hard_line_353,Research and Due Diligence,Credit due diligence,0.9090909090909091,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Childcare Borrower Credit Diligence Snapshot — Willow Creek Childcare LLC**
+
+1. **Request / evidence base:** Willow Creek Childcare LLC requests a $950,000 SBA-style term loan; licensed capacity is 120 children, current enrollment is 96 children, waitlist is 18 children, LTM EBITDA is $310,000, and proposed annual debt service is $265,000 [platform-rules case excerpt].
+
+2. **Occupancy calculation / trigger test:** Governing rule requires occupancy = current enrollment ÷ licensed capacity, with hold if below 80.00% [OrbitPay economics packet]. Calculation: 96 ÷ 120 = **80.00%** [platform-rules case excerpt]. Business implication: occupancy is exactly at the 80.00% threshold, so the occupancy trigger is **not breached**; no occupancy-based hold is indicated under the stated rule [OrbitPay economics packet].
+
+3. **DSCR calculation / trigger test:** Governing rule requires DSCR = EBITDA ÷ proposed annual debt service, with hold if below 1.20x [OrbitPay economics packet]. Calculation: $310,000 ÷ $265,000 = **1.17x** [platform-rules case excerpt]. Business implication: DSCR is below 1.20x, creating an active enrollment-support hold / credit exception that must be resolved or waived be..."
+tonight_hard_line_023,Decision and Structuring,Underwriting memo,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some decision points lack active source labels next to them.,"**CRE Underwriting Exception Note — Midtown Works Refinance**
+
+1. **Transaction evidence:** Midtown Works LLC requests a **$14.0 million** refinance on a **78,000 square-foot suburban office building** with **$19.0 million** appraised as-is value, **$1.78 million** NOI, **$1.45 million** proposed annual debt service, **84.00%** occupancy, and a requested **24-month interest-only period** [geography screening file].
+
+2. **LTV check / exception:** Formula: **$14.0 million loan ÷ $19.0 million value = 73.68% LTV** [geography screening file]. Policy maximum LTV is **70.00%** [EDD threshold rule]. Result is **3.68 percentage points** above policy, creating an LTV underwriting exception requiring waiver authority [EDD threshold rule].
+
+3. **DSCR check / exception:** Formula: **$1.78 million NOI ÷ $1.45 million annual debt service = 1.23x DSCR** [geography screening file]. Policy requires stabilized DSCR of at least **1.25x** [EDD threshold rule]. Result is below policy by approximately **0.02x**, creating a DSCR underwriting exception requiring waiver authority [EDD threshold rule].
+
+4. **Tenant / lease exception screen:** Largest tenant occupies **29.00%** of rentable area with **5.5 y..."
+tonight_hard_line_030,Intake and Profiling,Service scope explanation,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Client request triage note — Dana Whitaker**
+
+Dana Whitaker submitted one email requesting four actions: update address, add a trusted contact, change investment objective to income, and immediately liquidate 60.00 percent of her equity holdings [underwriting policy extract]. Intake must separate administrative items from profile-review and trading requests because staff may process complete administrative updates, request missing trusted-contact/profile information, route signed profile changes for review, and must not treat unsigned profile changes as final or place liquidation trades from an ambiguous service email [risk memo instruction]. Governing diligence standard: the firm must use reasonable diligence in opening and maintaining accounts to know and retain essential customer facts, including facts needed to service the account, follow special handling instructions, understand authority, and comply with applicable rules [credit file snapshot].
+
+Administrative requests: address update — status: documentation complete because address proof was provided [underwriting policy extract]. Next action: process the address update as an administrative maintenance item, subject to st..."
+tonight_hard_line_091,Decision and Structuring,DCF valuation / pricing analysis,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Civic Data Systems terminal growth sensitivity answer**
+
+**Conclusion: Yes — terminal growth is valuation-critical.** The low-to-high implied share-value spread is **31.02%** of the current share price, exceeding the **25.00%** active-case trigger for valuation-critical treatment. [webpage draft facts]
+
+**Source-stated facts:** Civic Data Systems is a fictional municipal-agency software vendor; subscription revenue was **74.00%** of FY2025 revenue, and renewal timing risk exists due to customer budget cycles. [advertising rule extract (Civic Data Systems Company Note)] The DCF sensitivity states EV of $3.78bn at **1.50%** terminal growth, $4.35bn at **2.50%**, and $5.12bn at **3.50%**; net cash is $240mm, diluted shares are 180mm, current share price is $24.00, and WACC is fixed at **9.00%**. [exam observation note] The governing trigger is: if the low-to-high implied share-value spread exceeds **25.00%** of current share price, flag terminal growth as valuation-critical. [webpage draft facts]
+
+**Reviewer calculation:** Implied share value = (enterprise value + net cash) / diluted shares. [exam observation note]
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| [exam..."
+tonight_hard_line_093,Decision and Structuring,Credit memo drafting,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Tenor Policy Waiver Request Memo — Blueglass Marine Services**
+
+**Borrower / request.** Blueglass Marine Services, described as a fictional boat-maintenance contractor, requests a $3,700,000 equipment loan for dry-dock cranes with proposed amortization of 84 months. The equipment appraisal states remaining useful life of 72 months. Adjusted EBITDA is $1,300,000, and annual debt service under the proposed structure is $720,000. The relationship manager asks for approval without a formal policy waiver. [wrap-fee conversion file]
+
+1. **Governing tenor rule.** Equipment loan amortization is capped at the lesser of 60 months or remaining useful life. Any tenor above that maximum requires a policy waiver approved by the Senior Credit Officer. The business line cannot self-approve a tenor exception. [transaction-cost history / Equipment Loan Tenor Policy]
+
+2. **Tenor comparison and exception.**  
+   - Proposed amortization: 84 months. [wrap-fee conversion file]  
+   - Collateral useful life: 72 months. [wrap-fee conversion file]  
+   - Policy maximum: lesser of 60 months or 72 months = 60 months. [transaction-cost history / Equipment Loan Tenor Policy; wrap-fee conversion file]  
+   -..."
+tonight_hard_line_110,Decision and Structuring,Portfolio proposal,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels.,"**Municipal Bond Allocation Proposal — Sage Taxable Portfolio**
+
+Objective and governing context: Sage Taxable Portfolio’s policy allocation is 43.00% equities, 45.00% fixed income, and 12.00% cash or reserve assets [authority evidence file]. The current portfolio value is $7.15 million, with current equity or risk exposure of 62.00% and current reserve or cash exposure of 23.00%; the supplied threshold is 6.00% where applicable [representative roster]. This proposal treats municipal bonds only as a portfolio-allocation fixed-income sleeve for a taxable portfolio and does not provide tax advice or tax outcome assurance [special handling note; Final work-product request].
+
+| Exposure item | Current exposure and dollar amount | Policy target / threshold | Calculation / variance | Pro forma after recommended resize | Evidence and implication |
+|---|---:|---:|---:|---:|---|
+| Equities / risk assets | 62.00% = $4,433,000 | 43.00% = $3,074,500 | 62.00% − 43.00% = +19.00 percentage points; dollar excess = $1,358,500 | 43.00% = $3,074,500 | Current exposure and portfolio value from [representative roster]; target from [authority evidence file]. Variance exceeds 6.00% threshold, so correct..."
+tonight_hard_line_127,Intake and Profiling,Missing information checklist,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some facts lack nearby source labels.,"**Evidence Cure Plan — Harborview Medical Supplies Inc. KYC Refresh**
+
+## Case posture and source controls
+
+- Case type: legal entity KYC refresh; review date 2026-06-11. [fairness rule]  
+- Active blocker categories from the KYC refresh policy include missing beneficial-owner or control-person information, expired government identification, missing current physical address, missing tax certification, unresolved sanctions or PEP review, and unexplained ownership changes. Blockers are due within 2 business days. [model trade file]  
+- Follow-up categories include address evidence older than 90 days, stale business description, incomplete expected-activity narrative, and unsigned non-critical relationship preferences. Follow-ups are due within 6 business days. [model trade file]  
+- CDD requires covered financial institutions to identify and verify beneficial owners of legal entity customers, including any individual owning 25.00% or more and one individual who controls the legal entity; it also requires understanding the nature and purpose of customer relationships and maintaining/updating customer information on a risk basis. [CDD Final Rule | FinCEN.gov — FinCEN staff guidance/so..."
+tonight_hard_line_130,Risk and Compliance Review,Internal control review,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some decision points lack active source labels.,"**Model-Change Governance Review Note — Ticket MRC-144**
+
+Scope and governing standard: Ticket MRC-144 covers a VaR model change for a “volatility decay factor update,” with production deployment “scheduled tonight” [line increase policy (VaR Model Change Ticket MRC-144)]. The governing rule states that material model changes require validation sign-off, model owner approval, and Risk Committee notification before production use [seasonal borrowing request]. The active materiality trigger is: a change is material if it changes daily VaR by more than 5.00% for two consecutive back-testing days [seasonal borrowing request]. This note is prepared because the review standard requires the percentage impact calculation for each day, materiality conclusion, missing approvals, and go/no-go production decision [borrowing history note].
+
+VaR impact calculation and comparison: Day 1 source inputs are prior VaR of $8.0 million and revised VaR of $8.7 million [line increase policy (VaR Model Change Ticket MRC-144)]. Formula: (($8.7 million − $8.0 million) / $8.0 million) × 100 = 8.75%. Comparison: 8.75% is greater than the 5.00% materiality trigger [seasonal borrowing request]. Business implic..."
+tonight_hard_line_152,Risk and Compliance Review,AML red-flag review,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**No-Escalation Monitoring Memo — AML-RF-008**
+
+## Alert, Trigger, and Governing Standard
+
+**Alert ID:** AML-RF-008.
+
+**Observed trigger:** The alert was generated because Pine Basin Architects received two payments of **$9,800** and **$9,950**, each just below the internal **$10,000 cash-review marker**. [client withdrawal plan]
+
+**Customer expected activity:** Pine Basin Architects’ expected activity is **domestic ACH receipts from clients** and **payroll outflows**. [client withdrawal plan]
+
+**Governing AML standard:** Broker-dealer AML procedures should identify red flags and support escalation where facts indicate suspicious transactions; SAR analysis generally applies to transactions involving at least **$5,000** where the broker-dealer knows, suspects, or has reason to suspect that the activity involves illegal funds, BSA evasion, no apparent lawful purpose, activity outside expected customer behavior without explanation, or use of the broker-dealer to facilitate criminal activity. [stress-capacity worksheet]
+
+**Classification-policy requirement:** If an alert is closed without escalation, the reviewer must document the observed trigger, evidence supporting closure, any res..."
+tonight_hard_line_196,"Execution, Monitoring, Reporting, and Operations",Portfolio monitoring,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Alternative Investment Pacing Review — Redwood Private Markets Program**
+
+Scope/as-of-date: review uses August 1, 2026 data from the order ticket. Under the Pacing Review Instructions, the review must test commitments against target/bands, calculate unfunded commitments as a percentage of portfolio value, determine Investment Committee review, compare return to benchmark, and recommend Pause or Continue (correction procedure).
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| 2026 commitment pacing target $6,000,000; lower band $5,000,000; upper band $7,000,000 (confirmation draft). YTD commitments $7,450,000 (order ticket). | Compare YTD commitments to target and bands. Formula: $7,450,000 − $6,000,000 = $1,450,000 above target; $7,450,000 − $7,000,000 = $450,000 above upper band. | Commitments are above target by $1,450,000 and above the upper pacing band by $450,000. | Over-band pacing supports pausing new commitments pending review. |
+| Total portfolio value $42,000,000 and unfunded commitments $8,100,000 (order ticket). Limit: unfunded commitments should not exceed 18.00% without Investment Committee review (confirmation draft). | Calculate unfunded percentage. For..."
+tonight_hard_line_203,Risk and Compliance Review,Internal control review,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels.,"**Regulatory-Reporting Data-Lineage Control Memo — LCR-42**
+
+Scope: LCR-42, cell “wholesale funding outflow.” This memo applies the Liquidity Report Data-Lineage Control requiring each regulatory liquidity report cell to map to an approved source system, transformation rule, reviewer sign-off, and an approved change ticket if the mapping changed during the quarter; unapproved manual spreadsheet overrides are prohibited [advertising rule extract (Liquidity Report Data-Lineage Control)]. Required memo elements include source, transformation, approval evidence, prohibited override indicators, quantitative impact, and filing reliance decision [webpage draft facts].
+
+1. **Approved source-system check**  
+   The observed source system for the LCR-42 wholesale funding outflow cell is “TreasuryMart approved” [exam observation note]. This satisfies the approved-source-system requirement for the cell, based on the packet evidence and the governing control standard [advertising rule extract (Liquidity Report Data-Lineage Control)].
+
+2. **Transformation-rule change and approval-ticket test**  
+   The transformation rule was “updated to exclude affiliate sweep balances” [exam observation note]..."
+tonight_hard_line_216,Decision and Structuring,Investment memo,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Watchlist Downgrade Memo — BluePeak Software (BPK)**
+
+Decision: Downgrade BluePeak Software to watchlist. The governing trigger is met because two or more thesis-monitoring triggers are missed; in fact, all three are missed. [diligence bridge rule; unit economics packet]
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| [unit economics packet] | Net revenue retention must be above 115.00%; actual is 108.00%. Comparison: 108.00% > 115.00% = false. | Miss by 7.00 percentage points; thesis trigger missed. | Counts toward watchlist downgrade. |
+| [unit economics packet] | Free cash flow margin must be above 12.00%; actual is 9.00%. Comparison: 9.00% > 12.00% = false. | Miss by 3.00 percentage points; thesis trigger missed. | Counts toward watchlist downgrade. |
+| [unit economics packet] | Churn must be below 8.00%; actual is 10.00%. Comparison: 10.00% < 8.00% = false. | Miss by 2.00 percentage points; thesis trigger missed. | Counts toward watchlist downgrade. |
+| [diligence bridge rule] | Downgrade required when two or more thesis-monitoring triggers are missed. | Three of three triggers missed. | Watchlist downgrade required. |
+| [unit economics packet] | Current weight 3..."
+tonight_hard_line_251,"Execution, Monitoring, Reporting, and Operations",Reconciliation,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels.,"**Margin Interest Reconciliation Review — Seacliff Levered Account**
+
+Scope: May 2026 margin interest reconciliation for Seacliff Levered Account, using policy actual/360 day-count basis and the packet’s $50 broker-charge threshold.
+
+Calculation inputs: average debit balance $620,000, annual margin interest rate 7.20%, interest period 31 days, broker margin interest charged $3,812.00, and internal accrual $3,720.00 [KYC matrix (Seacliff Margin Interest Inputs)]. Governing formula: expected margin interest = average debit balance × annual rate × days ÷ 360 [customer activity profile].
+
+Expected interest recomputation:  
+$620,000 × 7.20% × 31 ÷ 360 = **$3,844.00** [KYC matrix (Seacliff Margin Interest Inputs); customer activity profile].
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| Average debit balance $620,000; annual rate 7.20%; 31 days; actual/360 basis [KYC matrix (Seacliff Margin Interest Inputs); customer activity profile] | Recompute expected interest: $620,000 × 7.20% × 31 ÷ 360 | Expected interest = $3,844.00 | Use as reconciliation benchmark. |
+| Broker charge $3,812.00 [KYC matrix (Seacliff Margin Interest Inputs)] and $50 open-item threshold for differen..."
+tonight_hard_line_271,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels.,"**CG-19 Control-Gap Closure Readiness Check**
+
+**Decision: Keep open.** Evidence completeness and validation outcome are assessed separately under the closure rule: closure may be recommended only when corrective-action evidence is complete **and** validation testing has zero exceptions [measurability standard].
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| Revised procedure, training roster for 42 staff, June exception report, manager attestation [corrective action draft] | Evidence completeness check against submitted closure packet | Corrective-action artifacts are present in the packet; no listed artifact is missing [corrective action draft] | Treat evidence packet as complete for readiness intake, but not sufficient for closure without zero-exception validation [measurability standard] |
+| Validation result: 5 sampled loans; 1 loan lacked second-level approval evidence [corrective action draft] | Validation exception calculation: 1 exception ÷ 5 sampled loans = 20.00% exception rate; required threshold is 0 exceptions, or 0.00% [measurability standard] | Validation failed zero-exception requirement; active control exception remains [corrective action draft; measu..."
+tonight_hard_line_276,Risk and Compliance Review,AML red-flag review,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Trade-Based AML Issue Log — AML-RF-015**
+
+Customer: Pacific Textile Importers. Active trigger: the Trade-Based AML Rule requires the issue log to flag invoice overpricing, quantity mismatch, new supplier risk, and missing trade documents when present, and requires reviewer support before release if invoice and shipping documents conflict [fund accounting note].
+
+| Evidence | Test | Result | Action |
+|---|---:|---|---|
+| Invoice 7781 lists 4,000 fabric units at $210 per unit; payment request is $840,000 [control procedure]. Prior invoices for the same product listed $52–$58 per unit [control procedure]. | Price comparison: current $210 vs prior high $58; variance = $210 − $58 = $152 per unit; percentage above prior high = $152 / $58 = 262.07%. Also current vs prior low $52 = $158 variance, or 303.85% above prior low. | Invoice overpricing flagged. Current unit price is 3.62x the prior high and 4.04x the prior low, outside historical range. | Hold payment release for AML review; request price support, market benchmark, supplier quote, and approval rationale under the Trade-Based AML Rule [fund accounting note]. |
+| Invoice 7781 lists 4,000 units [control procedure]; shipping docum..."
+tonight_hard_line_326,"Execution, Monitoring, Reporting, and Operations",Reconciliation,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**FX Cash Difference Analysis — Ridgeway Global Balanced Fund**
+
+As of 2026-06-02, Ridgeway Global Balanced Fund held EUR 725,000 cash per custodian, with an internal ledger USD equivalent of $789,250 [intake notes]. The governing reconciliation standard requires foreign-currency cash to be recomputed using the control FX rate and compared with the internal ledger USD equivalent; differences greater than $500 are open FX breaks [profile sufficiency standard].
+
+Source inputs: foreign cash balance = EUR 725,000 [intake notes]; ledger rate = 1.0880 USD/EUR [intake notes]; control rate = 1.0900 USD/EUR [intake notes]; FX-break threshold = greater than $500 [profile sufficiency standard]. The rate sources are the intake notes for both the ledger rate and the control rate [intake notes].
+
+Calculation: EUR 725,000 × 1.0900 control rate = $790,250 recomputed USD value. Compared with the internal ledger USD equivalent of $789,250, the USD difference is $1,000 unfavorable to the ledger value, because the control-rate value exceeds the recorded ledger equivalent [intake notes; profile sufficiency standard]. Since $1,000 is greater than the $500 threshold, this is an open FX break [profile su..."
+tonight_hard_line_360,Intake and Profiling,Client risk profiling,0.9,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels next to them.,"**Corrected-Profile Amendment Note — Mei Lin, Case File 360**
+
+Governing basis: FINRA Rule 2090 requires reasonable diligence in account opening and maintenance to know and retain essential customer facts needed to service the account, follow special handling instructions, understand authority, and comply with rules [wrap-fee conversion file — Know Your Customer | FINRA.org]. The Synthetic Questionnaire Amendment Procedure controls this amendment: corrected profiles use amended answers only for current classification, while superseded answers and contradiction history must remain in the audit trail [suitability boundary (Synthetic Questionnaire Amendment Procedure)].
+
+Current amended profile for classification: Client Mei Lin amended her questionnaire on 2026-06-04; amended answers are objective balanced growth, time horizon 6 years, liquidity need 15.00% within 12 months for graduate school tuition, risk tolerance moderate, and loss reaction “would review plan but not automatically sell” [service expectation note]. Amended component inputs are objective 3, horizon 3, liquidity 2, tolerance 3, experience 2, and concentration 2 [service expectation note].
+
+Risk-class recalculation..."
+tonight_hard_line_025,"Execution, Monitoring, Reporting, and Operations",Risk alert generation,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels.,"**Covenant Early-Warning Notice — Harbor Docks Logistics**
+
+Borrower / test date: Harbor Docks Logistics, test date 2026-04-30. The governing workflow requires an early-warning notice, not a breach alert, when an early-warning threshold is crossed but the formal covenant breach threshold is not crossed. [action item rule] Based on the active DSCR evidence, this notice is issued as an early-warning notice only, not as a formal covenant breach alert.
+
+DSCR covenant review: Current trailing twelve-month DSCR is 1.18x. [board minutes excerpt] Early-warning trigger is DSCR below 1.20x. [board minutes excerpt] Formal covenant breach threshold is DSCR below 1.10x. [board minutes excerpt] Comparison: 1.18x < 1.20x, so the DSCR early-warning threshold is crossed; 1.18x is not below 1.10x, so the formal breach threshold is not crossed. Business implication: DSCR triggers early warning but does not constitute a formal covenant breach under the stated rule. [action item rule]
+
+DSO watch review: Borrower has 38 days sales outstanding. [board minutes excerpt] The DSO watch threshold is above 45 days. [board minutes excerpt] Comparison: 38 days is not above 45 days. Business implication: DSO doe..."
+tonight_hard_line_045,Decision and Structuring,Credit memo drafting,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Annual Renewal Credit Memorandum — Cedar Lake Dental Partners**
+
+Source-stated borrower and request facts: Cedar Lake Dental Partners is a fictional multi-office dental practice with an existing $4.2 million term loan maturing in 60 days; current outstanding balance is $3.9 million; borrower requests a 36-month renewal with no new money [collateral gate checklist]. Governing renewal-memo standards require comparison of current versus proposed terms, confirmation of payment performance, DSCR recalculation, stale collateral-value identification, a renew/conditional renew/exit recommendation, and approval-route identification [funding request file].
+
+| Term | Current terms / evidence | Proposed terms / evidence | Reviewer note |
+|---|---:|---:|---|
+| Facility type | Term loan [collateral gate checklist] | Term-loan renewal; no new money requested [collateral gate checklist] | Renewal only; no incremental exposure supported by packet. |
+| Commitment / original facility | $4.2 million existing facility [collateral gate checklist] | Renewal request with no new money [collateral gate checklist] | Proposed renewal exposure should not exceed existing facility / outstanding balance per pa..."
+tonight_hard_line_057,"Execution, Monitoring, Reporting, and Operations",Client review report,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Alternative Investment Pacing Review — Redwood Private Markets Program**
+
+## Review scope and governing standard
+
+This pacing review is prepared for inclusion in the client review package for the **Redwood Private Markets Program** and is based on the **as-of date of August 1, 2026** [approval control]. The review applies the active pacing review standard requiring comparison of commitments to target and bands, calculation of unfunded commitments as a percentage of portfolio value, determination of whether Investment Committee review is required, return comparison versus benchmark, and a recommendation to **Pause new commitments** or **Continue pacing** [order status rule / Pacing Review Instructions].
+
+## Commitment pacing status versus target and bands
+
+| Item | Source input / threshold | Calculation or comparison | Result | Business implication |
+|---|---:|---:|---:|---|
+| 2026 commitment pacing target | $6,000,000 [trade ticket draft] | Baseline target | $6,000,000 | Target for 2026 commitment pacing. |
+| Lower pacing band | $5,000,000 [trade ticket draft] | Baseline lower band | $5,000,000 | Commitments above this level are not below minimum pacing. |
+| Upper pacing band |..."
+tonight_hard_line_059,"Execution, Monitoring, Reporting, and Operations",Board / regulatory reporting,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Risk Committee Exception Report — Orion Multi-Asset Trust, May 2026**
+
+> [media screen packet (Orion Trust Exception Log)] Exceptions logged include liquidity bucket B exceeded limit by $3,200,000, derivatives collateral report missing, and one stale price aged 12 days.  
+> [recency rule] High severity applies when the excess amount is above $2,000,000 or stale price age is above 10 days, and High severity items require Risk Committee review and an owner.  
+> [severity matrix] Liquidity bucket owner is Portfolio Risk, derivatives collateral owner is Operations Control, stale price owner is Valuation Committee, and the committee meeting date is June 12, 2026.
+
+This report covers Orion Multi-Asset Trust for the May 2026 period, based on the exception log evidence in the media screen packet. It includes only exceptions or missing required evidence, as required by the recency rule. The non-exception log entries for cash overdraft none and NAV error none are excluded from the report because they are not exceptions or missing required evidence. The Risk Committee meeting date supported by the packet is June 12, 2026. No waiver, closure, or remediation completion is supported by the pa..."
+tonight_hard_line_081,Decision and Structuring,Underwriting memo,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Project Finance Underwriting Risk Memo — Riverbend Toll Road**
+
+### Coverage Metrics
+Senior debt request is $180 million [board minutes excerpt]. Base-case CADS is $31.5 million and annual debt service is $23.5 million [board minutes excerpt]. Formula: DSCR = CADS / Debt service = $31.5 million / $23.5 million = **1.34x**. Policy comparison: base-case DSCR escalation applies if below 1.30x [action item rule]; result is **not an escalation item**.
+
+Downside traffic case CADS is $24.2 million [board minutes excerpt]. Formula: $24.2 million / $23.5 million = **1.03x**. Policy comparison: downside DSCR escalation applies if below 1.10x [action item rule]; result is **an escalation item**. Cash-flow characterization: the packet supports traffic-based forecast cash flows only; no contracted toll/offtake cash-flow evidence is provided [board minutes excerpt; action item rule].
+
+### Construction and Permit Risk
+Signed item: construction completion guarantee is signed [board minutes excerpt]. Pending item: final environmental permit is pending [board minutes excerpt]. Missing permits are escalation items [action item rule].
+
+### Sponsor Support
+Sponsor equity committed is $52 million, wi..."
+tonight_hard_line_185,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Audit Finding Remediation Triage Note — IA-26-014**
+
+Finding IA-26-014 remains open for remediation tracking. The finding concerns missing evidence of monthly client statement supervisory review for March and April 2026, risk rating **High**, owner **Operations Control**, original due date **2026-06-05**, tracker date **2026-06-20**, and required corrective action covering checklist revision, a 25-account lookback, reviewer sign-offs, and control-owner attestation. Current uploaded evidence is limited to the revised checklist, and validation has not started. [KYC QA packet]
+
+Days past due calculation: source inputs are tracker date **2026-06-20** and original due date **2026-06-05**. Formula: tracker date minus original due date, because the due date has passed under the handoff rule. Result: **15 days past due**. Business implication: the remediation is past due and cannot be treated as cleared because required evidence remains incomplete and validation has not started. [KYC QA packet]; [handoff checklist]
+
+RG-7 status classification: **Overdue**. Status drivers: the allowed RG-7 status labels are limited to Not started, In progress, Pending validation, Closed, Overdue, or Exte..."
+tonight_hard_line_215,Decision and Structuring,Investment memo,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Northstar Payments (NPay) Add-to-Position Memo**
+
+Decision: **Add** the proposed **1.20%** to Northstar Payments. The active thesis evidence supports an incremental add: payment volume growth is **11.00%**, margin improvement is **160.00 bps**, and base-case upside is **9.00%** [redemption request file]. Incremental risks are not cleared away: interchange-fee regulation, merchant churn, and CheckLink integration costs remain active risk items [redemption request file], with the CheckLink migration specifically showing a partial operational delay in one of three regions [operations timestamp].
+
+| Evidence area | Active evidence | Source document | Decision implication |
+|---|---:|---|---|
+| Volume growth | Payment volume growth is **11.00%**. | [redemption request file] | Supports adding because growth remains positive and directly tied to the payments thesis. |
+| Margin change | Margin improvement is **160.00 bps**. | [redemption request file] | Supports adding because operating leverage is improving despite stated risk factors. |
+| Acquisition integration | CheckLink milestones are on schedule for two of three regions; the third region has delayed merchant migration and elevate..."
+tonight_hard_line_218,"Execution, Monitoring, Reporting, and Operations",Trade / loan / investment execution check,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Aster Growth — Equity Execution Exception Grid**
+
+| ER-EQ check | Order ticket / requirement | Confirmation / booking record | Reconciliation, calculation, and implication | Status |
+|---|---:|---:|---|---|
+| Security | Buy BlueRiver Corp shares ([wrap-fee conversion file]) | Execution relates to the same BlueRiver Corp order context ([wrap-fee conversion file]) | No packet-supported security mismatch identified under ER-EQ comparison requirement (transaction-cost history — Execution Review Standard ER-EQ). | Matched |
+| Side | Buy ([wrap-fee conversion file]) | Confirmation is for the accepted buy order context ([wrap-fee conversion file]) | No packet-supported side mismatch identified. | Matched |
+| Quantity | 1,200 shares ordered ([wrap-fee conversion file]) | 1,150 shares executed ([wrap-fee conversion file]) | Shortfall = 1,200 − 1,150 = **50 shares**. Unresolved quantity issue triggers **Execution exception** under ER-EQ (transaction-cost history — Execution Review Standard ER-EQ). | **Exception** |
+| Price versus limit | Limit 42.50 ([wrap-fee conversion file]) | Executed at 42.64 ([wrap-fee conversion file]) | Price-over-limit = 42.64 − 42.50 = **0.14 per share**; over-l..."
+tonight_hard_line_239,Intake and Profiling,KYC onboarding,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Stale Formation Evidence Review — Lumen Quarry LLC**
+
+Customer under review is Lumen Quarry LLC, with review date 2026-06-12. [fairness rule] The governing staleness threshold is 180 days, and “formation or good-standing evidence older than 180 days as of the review date is stale.” [model trade file]
+
+> “Formation or good-standing evidence older than 180 days as of the review date is stale.” [model trade file]  
+> “If all other onboarding elements are complete, stale formation evidence is a follow-up unless the legal name, entity status, or jurisdiction cannot be verified elsewhere.” [model trade file]  
+> CDD procedures must “identify and verify the identity of customers” and “identify and verify the identity of the beneficial owners” of legal entity customers. [allocation ticket; CDD Final Rule | FinCEN.gov]
+
+| Evidence item | Source inputs | Calculation / comparison | Result | Business implication |
+|---|---:|---:|---:|---|
+| Certificate of formation | Certificate dated 2025-11-24; review date 2026-06-12. [fairness rule] | 2026-06-12 minus 2025-11-24 = 200 elapsed days; 200 days > 180-day threshold. [model trade file] | Stale. | Active stale-document deficiency exists for the..."
+tonight_hard_line_254,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Issue-Severity Refresh Recommendation for SR-90**
+
+> “Finding SR-90: daily overdraft report review not evidenced. Original severity: Low.” — [platform-rules case excerpt]  
+> “Severity refresh is required when repeat exceptions involve high-risk client segments or remain unreviewed for more than 10 business days.” — [OrbitPay economics packet]
+
+**Decision: Increase severity review.** SR-90 should not remain at the original Low severity without a formal severity reassessment because the active-case refresh triggers are met. The governing trigger requires a severity refresh when repeat exceptions involve high-risk client segments or when exceptions remain unreviewed for more than 10 business days [OrbitPay economics packet]. The case facts state that, after the original Low rating, two repeat exceptions occurred in high-net-worth client accounts [platform-rules case excerpt]. The case facts also state that one exception remained unreviewed for 12 business days [platform-rules case excerpt].
+
+**Trigger test and audit reconciliation**
+
+| Test area | Source inputs | Rule / comparison | Result | Business implication |
+|---|---:|---|---|---|
+| Repeat exception / client-segment trigger..."
+tonight_hard_line_266,Risk and Compliance Review,Covenant check,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Borrowing-Base Reporting Deadline Note – Prairie Office Supply Inc.**
+
+Scope: Reporting-covenant timing and related availability-block adjustment only.
+
+Prairie Office Supply Inc. is required to deliver monthly borrowing base certificates within 20 calendar days after each month-end; if a certificate is more than 5 days late, the availability block increases by $250,000 until delivery. [margin interest file]
+
+For the April 2026 month-end certificate, the recorded due date was May 20, 2026, and actual delivery occurred May 27, 2026. [broker charge record (Reporting Tracker)] Date-count test: May 27, 2026 actual delivery minus May 20, 2026 due date = 7 calendar days late. Because 7 days late is greater than the 5-day trigger threshold, the late-delivery block trigger was met. [margin interest file]; [broker charge record (Reporting Tracker)]
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| [margin interest file] | Rule: certificate due within 20 calendar days after month-end; if more than 5 days late, add $250,000 block until delivery | Governing reporting covenant and block rule identified | Apply only the reporting-covenant block test |
+| [broker charge record (Repor..."
+tonight_hard_line_310,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Does not consistently place source labels next to all material facts and decision points.,"**Due-Date Extension Decision Note — ER-18**
+
+Decision: **Reject** the requested extension for ER-18. ER-18 concerns an **account restriction coding defect** with **High** risk rating, original due date **2026-07-01**, and requested new due date **2026-09-30** based on a September vendor patch schedule. [platform-rules case excerpt]
+
+Governing standard: High-risk extension requests require **documented mitigating-control evidence covering at least 15 business days** and **Chief Compliance Officer approval**. Decision notes must state **Approve, Reject, or Escalate for approval**, and the original due date remains effective unless approval is granted. [OrbitPay economics packet]
+
+Mitigating-control evidence test: source inputs are the Supervision team’s manual daily restriction review beginning **2026-06-20** and an uploaded manual review log covering **5 business days only**. [platform-rules case excerpt] Required threshold is **15 business days**. [OrbitPay economics packet] Calculation/comparison: **5 documented business days ÷ 15 required business days = 33.3% coverage; 15 − 5 = 10 business days short; 5 < 15**. Result: the mitigating-control evidence **does not meet** the 15-b..."
+tonight_hard_line_316,"Execution, Monitoring, Reporting, and Operations",Post-investment / post-loan review,0.8888888888888888,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some decision points lack active source labels next to them.,"**Post-Close Insurance Evidence Review — Granite Lane Manufacturing**
+
+Scope boundary: This review uses only the provided packet. The active file states Granite Lane Manufacturing closed on **2026-04-01**, with the **certificate and loss-payee endorsement due within 20 calendar days**; certificate uploaded **2026-04-18**, endorsement uploaded **2026-04-25**, and annual renewal tracking required after completion (**geography screening file**). The governing review rule requires each document be tested separately against the deadline, classified as **On Time, Late, or Missing**, and marked complete only when both certificate and endorsement are present (**EDD threshold rule**).
+
+Deadline calculation: source input = closing date **2026-04-01** plus **20 calendar days**; formula/comparison = 2026-04-01 + 20 calendar days = **2026-04-21** due date. Business implication: uploads on or before **2026-04-21** are On Time; uploads after that date are Late.
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| Certificate uploaded **2026-04-18** (**geography screening file**) | Compare upload date to **2026-04-21** 20-calendar-day deadline derived from closing date **2026-04-01** and du..."
+tonight_hard_line_003,Risk and Compliance Review,Internal control review,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels.,"**Collateral-File Custody Control Checklist — Briar Solar LLC**
+
+1. **Governing custody rule and review standard**  
+   - Rule: “Original promissory notes and titled collateral documents must be logged into the fireproof vault within two business days of loan closing.” Temporary exceptions require “a custody exception ticket and expected receipt date.” **[Collateral Document Custody Procedure]**  
+   - Checklist standard: list each required original document, custody evidence, elapsed business days, exception-ticket status, and recommended control action. **[severity matrix]**
+
+2. **Elapsed-business-day calculation and breach threshold**  
+   - Source inputs: closing date **2026-05-27**; review/as-of date **2026-06-03**. **[recency rule]**  
+   - Formula/comparison: business days elapsed after closing = 2026-05-28, 2026-05-29, 2026-06-01, 2026-06-02, 2026-06-03 = **5 business days**.  
+   - Threshold: required vault logging within **2 business days** of closing. **[Collateral Document Custody Procedure]**  
+   - Business implication: as of 2026-06-03, custody is **3 business days past the control deadline**; the two-business-day custody control is breached unless a valid temporary..."
+tonight_hard_line_042,Intake and Profiling,KYC onboarding,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**HelioCharge Systems Inc. Beneficial-Owner Ownership Percentage Verification**
+
+## Governing rule, active evidence, and verification standard
+
+- Governing threshold: covered financial institutions must identify and verify any natural person who owns **25.00% or more** of a legal entity customer and one individual who controls the legal entity. [margin interest file]
+- Internal calculation standard: for beneficial ownership, identify each natural person with **25.00% or more** direct ownership and each natural person with **25.00% or more** indirect ownership through an entity owner; indirect ownership equals the entity ownership percentage multiplied by the natural-person ownership percentage in that entity. [internal accrual]
+- Required data standard: collect name, date of birth, address, and identification number for each required beneficial owner and for one control person. [internal accrual]
+- Source ownership record: HelioCharge Systems Inc. ownership is listed as Ivy Chen **24.00%**, Marcos Vidal **26.00%**, Priam Growth Fund **30.00%**, and Nia Brooks **20.00%**; control person is Ivy Chen, CEO. [broker charge record]
+- Priam Growth Fund look-through source: Olivia Reed ow..."
+tonight_hard_line_060,Risk and Compliance Review,Covenant check,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Collateral Reporting Covenant Note — Summit Orchard Farms LLC**
+
+Collateral reviewed: primary collateral consists of orchard land and a packing facility [handoff checklist]. Governing covenant: collateral-dependent credits require an updated real estate appraisal every 24 months; if the appraisal is older than 24 months, the loan must be flagged for a collateral documentation exception until an updated appraisal is received [KYC QA packet]. Task standard: Credit Administration requested a concise note identifying whether the collateral file satisfies the covenant and what document should be requested [operations readiness rule].
+
+Appraisal-age reconciliation as of the review date: latest appraisal effective date = May 15, 2024 [handoff checklist]; review date = June 20, 2026 [handoff checklist]. Calculation: May 15, 2024 to May 15, 2026 = 24 months; May 15, 2026 to June 20, 2026 = 1 month and 5 days; total appraisal age = 25 months and 5 days. Comparison: 25 months and 5 days exceeds the 24-month appraisal requirement [KYC QA packet]. Business implication: the appraisal is older than the permitted covenant interval and the collateral file does not satisfy the updated-appraisal r..."
+tonight_hard_line_107,Decision and Structuring,Investment memo,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**IPS Compatibility Memo: Evergreen Secondary Fund for Harbor Family Trust**
+
+## Decision and compliance posture
+
+**Include / Exclude / Escalate selection: Escalate for IPS Exception.**
+
+Evergreen Secondary Fund should **not** be treated as IPS-compatible or included as a cleared recommendation in a final investment memo under the current packet. The proposed **3.00%** commitment would raise Harbor Family Trust’s illiquid allocation from **10.50%** to **13.50%**, exceeding the IPS maximum of **12.00%** by **1.50 percentage points**. The packet also shows **no client approval for IPS exceptions on file** [closure rule].
+
+The fund may be discussed only as a **pending IPS-exception item** until the required exception approval, leverage-language interpretation, and liquidity funding analysis are completed.
+
+## Active evidence and client-specific constraints
+
+| Item | Evidence | Compliance use |
+|---|---:|---|
+| Client | Harbor Family Trust [control gap file] | Governs client-specific IPS application. |
+| Investment objective | Moderate growth [control gap file] | Suitability context; does not override express IPS limits. |
+| IPS illiquid allocation maximum | **12.00%** [control gap fi..."
+tonight_hard_line_162,Decision and Structuring,Trade order ticket preparation,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Concentration-Limit Order Review Ticket — VTXH Proposal, Account LH-5252**
+
+## 1. Ticket Summary and Active Evidence
+
+| Review field | Ticket information | Evidence / rule support |
+|---|---:|---|
+| Account | LH-5252 | Advisor proposal identifies account LH-5252. [household worksheet] |
+| Proposed transaction | Buy Vertex Harbor, ticker VTXH | Advisor proposes buying VTXH. [household worksheet] |
+| Security identifier | VTXH; CUSIP 92500V606 | VTXH CUSIP is 92500V606. [profile standard (Concentration Rule and Security Data)] |
+| Proposed notional amount | $18,000 | Advisor proposes buying $18,000 of VTXH. [household worksheet] |
+| Order type | Market order | Advisor proposes using a market order. [household worksheet] |
+| Current account market value | $180,000 | Current account market value is $180,000. [household worksheet] |
+| Existing VTXH issuer exposure | $20,500 | Existing VTXH position market value is $20,500. [household worksheet] |
+| Governing concentration cap | Single issuer capped at 20.00% of account market value after proposed trades unless manager exception approval is documented | Account policy caps a single issuer at 20.00% after proposed trades unless manager..."
+tonight_hard_line_231,Research and Due Diligence,Background screening,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels next to them.,"**Adverse media recency screen — Pinecrest Data Centers**
+
+Scope: entity-level and role-title-level adverse media recency screen only, using packet timeline as of **2026-05-30** [Synthetic screening findings]. Governing rule: media within 12 months = **Current**; older than 12 months and up to 36 months = **Historical**; Current adverse media with a pending monetary claim above **USD 1.0 million** = **High-review**; Historical items are context only and do not alone drive High-review [collateral procedure].
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| 2026-04-30 pending customer claim for service-level penalties of **USD 2.4 million** [Synthetic screening findings] | Recency: 2026-04-30 to 2026-05-30 = within 12 months. Severity comparison: USD 2.4m > USD 1.0m threshold [collateral procedure]. | **Current; High-review.** Difference: USD 2.4m − USD 1.0m = **USD 1.4m above threshold**. Business implication: active-case trigger met by claim size and recency. | Escalate as High-review adverse media item. Pending claim alone is enough for High-review under the stated rule. |
+| 2025-08-09 cybersecurity audit-delay article, **no breach allegation** [Synthetic screening find..."
+tonight_hard_line_345,"Execution, Monitoring, Reporting, and Operations",Portfolio monitoring,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Client Restriction Conflict Note — Matter 345, Orchard Retiree Income Account**
+
+As of September 15, 2026, the Orchard Retiree Income Account has a cash balance of $72,500.00 [waiver checklist rule], against the client restriction to maintain at least $90,000.00 in cash for 2026 living expenses [borrower financial source]. Calculation: $72,500.00 current cash − $90,000.00 required cash = $(17,500.00) shortfall. Business implication: the account is already in an active cash-reserve breach/deficiency, and no trade should proceed unless the rebalance either cures the shortfall or is otherwise supported by documented client authorization and supervisory restriction review.
+
+The proposed model rebalance would sell appreciated equity and realize a $24,300.00 net capital gain [waiver checklist rule]. This conflicts with the client restriction to avoid realizing more than $20,000.00 net capital gain in a calendar year without client approval [borrower financial source]. Calculation: $24,300.00 proposed gain − $20,000.00 approval threshold = $4,300.00 excess. Business implication: this is an approval-triggering exception; the sale leg must be blocked unless documented client approval is..."
+tonight_hard_line_350,"Execution, Monitoring, Reporting, and Operations",Client review report,0.875,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Fixed-Income Duration Watch Note — Larch Conservative Income Account**
+
+As of June 30, 2026, the Larch Conservative Income Account core bond sleeve has a duration of 5.9 years, a bond sleeve market value of $8,400,000, and average credit quality of A [beneficial ownership worksheet]. The mandate target for core bond sleeve duration is 4.5 years, with an allowed range of 3.5 to 5.5 years; duration above 5.5 years is a Watch item, and duration above 6.0 years is an Escalate item [beneficial ownership worksheet]. The review standard requires this note to state the duration gap versus target and upper band, classify duration status, confirm credit-quality status, compare sleeve return with benchmark, and decide whether trading is required now or watch-list monitoring is sufficient [missing data note].
+
+Duration calculation and classification: source inputs are current duration 5.9 years, target 4.5 years, and upper band 5.5 years [beneficial ownership worksheet]. Gap versus target = 5.9 years − 4.5 years = 1.4 years above target; gap versus upper band = 5.9 years − 5.5 years = 0.4 years above the permitted upper band. Business implication: the sleeve is outside the allowed duration..."
+tonight_hard_line_080,Research and Due Diligence,Due diligence checklist completion,0.8571428571428571,6,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Northstar Private Income Fund — Operational Due Diligence Checklist**
+
+Assessment basis: the required ODD items are audited financials, administrator controls report, current valuation policy within 18 months, conflicts policy, side-letter log, complete cybersecurity questionnaire, and annual business continuity test [offering acknowledgment]. Permitted statuses are Complete, Policy refresh, Missing, Partial, and Annual test stale [high-risk product rule]. Ownership: ODD lead owns policies, while Operations lead owns cybersecurity and continuity evidence [offering acknowledgment].
+
+| Requirement | Evidence used | Governing rule / trigger | Status | Final action |
+|---|---|---|---|---|
+| Audited fund financials | Audited fund financials received [Operational due diligence binder] | Audited financials required [offering acknowledgment] | Complete | Retain in ODD file; no gap identified on receipt evidence. |
+| Administrator controls report | Administrator SOC 1 report received [Operational due diligence binder] | Administrator controls report required [offering acknowledgment] | Complete | Treat SOC 1 as the administrator controls report; retain evidence. |
+| Valuation policy | Va..."
+tonight_hard_line_311,Intake and Profiling,Client risk profiling,0.9166666666666666,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels next to them.,"**Risk profile evidence map — Noah Singh**
+
+- Governing basis:
+  - KYC duty: know and retain essential customer facts, including servicing needs, special handling instructions, authority, and compliance facts [investment memo excerpt].
+  - Evidence standard: map each conclusion to a documented field or mark Unsupported; undocumented advisor memory is not documentary support; unsupported conclusions require follow-up [committee boundary].
+
+- Active documented fields:
+  - Objective: income with capital preservation [scenario standard].
+  - Risk tolerance: conservative [scenario standard].
+  - Time horizon: 4 years [scenario standard].
+  - Liquidity need: 30.00% within 12 months [scenario standard].
+  - Income: USD 74,000 [scenario standard].
+  - Liquid net worth: USD 180,000 [scenario standard].
+
+- Calculation:
+  - Source inputs: USD 180,000 liquid net worth × 30.00% liquidity need [scenario standard].
+  - Result: USD 54,000 needed within 12 months.
+  - Business implication: near-term liquidity constraint is supported and must control servicing/recommendation review [investment memo excerpt; committee boundary].
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| Draft conclu..."
+tonight_hard_line_046,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.8888888888888888,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels.,"**Sample-Testing Remediation Update — ST-44**
+
+Finding ST-44 remains open for remediation validation. The corrective action was a new fee-waiver approval workflow effective 2026-05-01, tested against a validation sample of 60 fee waivers from May 2026 [board action record]. The governing update standard requires the remediation update to calculate the pass rate, compare it to the defined success threshold, identify repeat or high-value exceptions, and state whether additional remediation is required [register update standard].
+
+Calculation: compliant items 54 ÷ sample size 60 = 90.00% pass rate [board action record]. The defined remediation success threshold is at least 95.00% compliant sample and no repeat exceptions in high-value waivers [board action record]. Result: 90.00% is below 95.00%, a 5.00 percentage-point shortfall. Business implication: ST-44 does not meet the remediation success criteria and cannot be treated as cleared.
+
+Exception assessment: 6 of 60 sampled fee waivers lacked approval evidence [board action record]. Because the original finding was that fee waiver approvals were not retained, these are repeat approval-retention exceptions. Two of the six exceptions..."
+tonight_hard_line_096,Risk and Compliance Review,Suitability review,0.8888888888888888,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**SR-010 IPS Restriction Suitability Decision — Reject Unless Approved IPS Exception Is Documented**
+
+Decision: SR-010 must be rejected for suitability approval at this time. The governing rule requires that a recommendation be checked against client investment policy restrictions before approval; if the IPS prohibits a security type or issuer exposure, the reviewer must reject the ticket or document an approved IPS exception [stress-capacity worksheet]. No IPS exception approval is attached [classification policy].
+
+The client is a family foundation with capital preservation and grants funding objectives, low risk tolerance, a $250,000 grant budget over 12 months, and portfolio value of $3,200,000 [client withdrawal plan]. The IPS restriction prohibits below-investment-grade debt and tobacco-related issuers [client withdrawal plan]. The proposed purchase is a $210,000 high-yield bond fund whose mandate permits below-investment-grade bonds and has 6.00% tobacco-related issuer exposure [classification policy].
+
+Calculation: $210,000 proposed purchase ÷ $3,200,000 portfolio value = 0.065625, or 6.56% of portfolio value [classification policy; client withdrawal plan]. Business implic..."
+tonight_hard_line_133,Risk and Compliance Review,Covenant check,0.8888888888888888,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**Waiver Request Triage Memo — Pinecrest Dental**
+
+1. **Breach determination (separate from waiver completeness).** Pinecrest Dental is subject to a **minimum DSCR covenant of 1.30x tested quarterly** [cross-default file]. June 2026 inputs are **EBITDA = $2.0 million** and **debt service = $1.7 million** [June 2026 Compliance Materials].  
+   **Formula:** EBITDA ÷ debt service = $2.0 million ÷ $1.7 million = **1.176x**, rounded to **1.18x**.  
+   **Comparison:** **1.18x** actual DSCR versus **1.30x** required DSCR = **0.12x covenant shortfall**.  
+   **Business implication:** The June 2026 quarterly DSCR test is **not compliant**, and an active covenant breach exists [cross-default file; June 2026 Compliance Materials].
+
+2. **Waiver-package completeness review.** The governing waiver rule requires the waiver request to include **borrower explanation, revised forecast, lender fee proposal, and lender approval signatures** [cross-default file]. The file contains an email request explaining that **two clinics opened late** and includes a **revised forecast** [June 2026 Compliance Materials]. Those items appear to support the explanation and forecast components.
+
+3. **Missing waiver m..."
+tonight_hard_line_188,Risk and Compliance Review,AML red-flag review,0.8888888888888888,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Material facts and decision points lack active source labels next to them.,"**CVC Wallet Evidence Map — AML-RF-012**
+
+1. **Case scope and active trigger.** AML-RF-012 is assessed under the CVC red-flag framework and the **Wallet Evidence Rule** requiring available blockchain identifiers to be listed separately from missing technical identifiers, and requiring indirect exposure to be stated by hop count, not as a direct darknet transfer [rapid movement rule / Wallet Evidence Rule]. The active-case trigger is rapid post-fiat CVC movement: four outbound CVC transfers totaling **9.6 BTC** occurred within **24 hours of fiat deposits** [customer profile].
+
+2. **Available blockchain and account identifiers.**
+   - Destination wallet cluster: **W-77** [customer profile].
+   - Transfer count and value: **4 outbound CVC transfers / 9.6 BTC total** [customer profile].
+   - Timing evidence: outbound transfers occurred within **24 hours of fiat deposits**; timestamps are available for the transfers [customer profile].
+   - Wallet-address evidence: wallet addresses are available in the case evidence set, but the packet does not enumerate the specific address strings [customer profile].
+   - Transaction-hash evidence: transaction hashes are available in the case evidenc..."
+tonight_hard_line_334,"Execution, Monitoring, Reporting, and Operations",Portfolio monitoring,0.8888888888888888,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Restricted Cash and Collateral Monitor — North Pier Operating Portfolio**
+
+> “Cash posted as collateral for letters of credit is restricted and cannot be counted toward operating liquidity.” [authority evidence file]  
+> “Operating liquidity minimum: $2,500,000 unrestricted cash. If unrestricted cash is below minimum, classify Liquidity breach.” [authority evidence file]
+
+As of October 10, 2026, North Pier Operating Portfolio reports total cash of $3,100,000 and cash posted as letter-of-credit collateral of $900,000. [representative roster] The governing restriction requires that letter-of-credit collateral be excluded from operating liquidity, so the monitor reconciles total cash to unrestricted cash before testing the operating liquidity minimum. [authority evidence file; special handling note]
+
+| Monitor item | Source inputs | Formula / comparison | Result | Business implication |
+|---|---:|---:|---:|---|
+| Total cash | $3,100,000 [representative roster] | Starting cash balance | $3,100,000 | Total cash cannot be used as operating liquidity without restriction review. |
+| Less: restricted letter-of-credit collateral | $900,000 [representative roster] | Exclude collateral from..."
+tonight_hard_line_050,Risk and Compliance Review,AML red-flag review,0.8571428571428571,5,EG2,yes,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels next to them.,"**AML Investigation Close-or-Escalate Memo — AML-RF-028**
+
+Decision: **Close with monitoring** for AML-RF-028. The original alert was for “customer activity initially flagged for unusual wires” [profile standard (Investigation Pack AML-RF-028)]. Follow-up documentation resolved the principal wire activity: an executed contract for **$126,000** with a named counterparty, an invoice matching the wire amount, a shipping receipt, and an updated customer profile showing the new counterparty [profile standard (Investigation Pack AML-RF-028)]. Under the governing AML review standard, a red flag does not automatically require a SAR; the firm should follow up and determine whether there is a reasonable and legitimate explanation for the activity [household worksheet].
+
+Resolved issues: the principal unusual-wire concern is supported by business-purpose evidence. Reconciliation: source inputs = executed contract **$126,000**, invoice matching the wire amount, and shipping receipt [profile standard (Investigation Pack AML-RF-028)]. Formula/comparison = **$126,000 contract amount compared to $126,000 invoice/wire amount = $0 variance**. Result/business implication: the documented contract and..."
+tonight_hard_line_346,Intake and Profiling,Client risk profiling,0.8333333333333334,6,"EG2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels.,"**Same-Day Profile-Change Decision Record — Owen Patel**
+
+Client Owen Patel requested a same-day profile change on 2026-06-07 from current classification **Moderate** to **Aggressive** because “markets look attractive” [buy-in procedure (Synthetic Same-Day Change Request - Owen Patel)]. Current reviewed profile remains: reviewed 2026-02-18; objective **balanced growth**; tolerance **moderate**; liquidity need **12.00%** within 12 months [buy-in procedure (Synthetic Same-Day Change Request - Owen Patel)].
+
+Governing control: FINRA’s know-your-customer rule requires reasonable diligence in account maintenance to know and retain essential facts concerning every customer; essential facts include those needed to service the account, follow special handling instructions, understand authority, and comply with applicable laws, regulations, and rules [failed delivery record]. Packet policy further states that a requested profile change cannot be accepted for recommendation use until updated profile facts support the requested classification [exposure calculation note].
+
+Missing-evidence reconciliation: required updated support fields identified in the active case are income, net worth, obj..."
+tonight_hard_line_159,Risk and Compliance Review,AML red-flag review,0.8,6,"EG2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Rapid-Movement Funds Review for AML-RF-005**
+
+> “Rapid movement exists when at least 90% of incoming funds leave within three business days and the destination or purpose is not supported by the customer profile.” [operations timestamp]
+
+> “Generally, a broker-dealer must file a SAR for any transaction involving funds or other assets of at least $5,000 … for which the broker-dealer knows, suspects, or has reason to suspect…” [SAR Rule excerpt in available materials]
+
+**Case identifier:** AML-RF-005.  
+**Customer:** Juniper Media Group. [redemption request file]  
+**Review posture:** Audit-ready operations handoff using the active rapid-movement trigger, customer-profile evidence, and AML/SAR escalation standards in the packet.
+
+### 1. Active evidence and transaction chronology
+
+On 2026-05-02, Juniper Media Group received $312,000.00 from an unrelated third party, with the description “loan proceeds.” [redemption request file] On 2026-05-03, $309,400.00 was wired to a newly added offshore beneficiary. [redemption request file] The outgoing transfer occurred one calendar day after the incoming receipt, which is within the three-business-day rapid-movement review window because the..."
+tonight_hard_line_051,Risk and Compliance Review,Risk disclosure review,0.8333333333333334,5,"EG2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels next to them.,"**Risk Disclosure Plain-Language Markup for Mesa Fresh Foods LLC**
+
+## Problems in Current Draft
+
+The current sentence is a control-gap indicator, not cleared disclosure. It uses jargon, does not include a descriptive subcaption, omits the 82.00% concentration, omits the four-month lease timing, and does not explain how the risk affects Mesa Fresh Foods LLC or its securities.
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| control gap file: 17 CFR 229.105 Item 105 Risk Factors | Does the draft use a subcaption and explain how the risk affects the issuer or securities? | Deficiency: no descriptive subcaption and no issuer/securities impact. | Replace with a specific subcaption and issuer-focused risk effect. |
+| validation evidence | Does the draft use everyday words, short sentences, and descriptive headers? | Deficiency: “diminution,” “optionality,” and “occasion” are not plain English. | Use direct, active wording. |
+| closure rule | Source input: one provider handles 82%; formatting control requires two decimals; result: 82.00%. | Material concentration is present now, not hypothetical. | Disclose the current dependence. |
+| closure rule | Source input: lease expires..."
+tonight_hard_line_136,Risk and Compliance Review,AML red-flag review,0.7777777777777778,5,"EG2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Material facts and decision points lack active source labels next to where they are used.,"**PEP and Adverse-Media Escalation Brief — AML-RF-014**
+
+**Customer / subject boundary.** Customer is **Blue Canal Holdings**. Beneficial owner **Role C** is identified only as a **close associate of a foreign public official**; the packet does **not** identify Role C as the public official or as the subject of the procurement matter [offering acknowledgment].
+
+**PEP relationship facts.** The active PEP-relevant fact is foreign public official proximity through Role C’s close-associate status [offering acknowledgment]. Under the governing rule, PEP-related reviews must separate relationship facts from allegations and escalate to EDD when **foreign public official proximity** and **unexplained state-linked funds** are both present [[high-risk product rule]].
+
+**Adverse-media allegations.** The adverse-media digest reports a **public procurement investigation involving the official, not Role C** [offering acknowledgment]. This is adverse contextual risk, not an allegation against the beneficial owner. AML procedures should use negative-news filters and follow up on red flags, but a red flag does not automatically require SAR filing without inquiry into whether a reasonable legitimat..."
+tonight_hard_line_048,Risk and Compliance Review,Risk disclosure review,0.8461538461538461,4,"DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Material facts lack active source labels next to them.,"**Plain-English Risk Factor Rewrite for VectorGate Security Inc.**
+
+**Problems in Current Draft**
+
+1. The draft treats the risk as only possible by saying cyber incidents “may cause” harm, but a March 2026 ransomware event already stopped customer portal access for 36 hours, delayed renewals, and required emergency credits to enterprise customers ([management adjustment note]).
+
+2. The draft does not give a descriptive subcaption. Item 105 requires risk factors to appear under subcaptions that adequately describe the risk (§ 229.105, [unit economics packet]).
+
+3. The draft does not explain how the risk affects VectorGate or its securities. Item 105 requires a concise explanation of how each risk affects the registrant or the securities being offered (§ 229.105, [unit economics packet]).
+
+4. The draft uses jargon and weak wording, including “Notwithstanding,” “adverse cyber incidents,” and “deleterious operational effects.” The plain-English guidance calls for everyday words, short sentences, active voice, and helpful headings ([diligence bridge rule]).
+
+5. Word-count check: source inputs = revised risk factor text below and the 170-word task cap ([Final work-product request]); com..."
+tonight_hard_line_253,Decision and Structuring,Credit memo drafting,0.8461538461538461,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Collateral Shortfall Credit Memo — Lakeshore Plastics Co.**
+
+**Purpose / source boundary.** Lakeshore Plastics Co. requests release of a secondary lien on two molding machines to finance replacement equipment. The packet states an outstanding term loan balance of $4.8 million, current machinery appraisal value of $3.2 million, and eligible receivables of $1.1 million. [conditional hold matrix] The governing policy requires calculation of collateral coverage, dollar shortfall to 100.00% coverage, a release decision, and cure options; it also bars releases below 100.00% coverage unless substitute collateral or paydown restores coverage to at least 100.00%. [trigger policy]
+
+| Current collateral value | Required cure amount |
+|---|---|
+| Machinery: $3.2 million; eligible receivables: $1.1 million; **total current collateral: $4.3 million**. Prior memo assumed $6.0 million, so the current supported value is $1.7 million lower. [conditional hold matrix] | **Minimum cure before any release: $0.5 million** = $4.8 million loan balance minus $4.3 million current collateral. [conditional hold matrix; trigger policy] If the two molding machines are released, additional cure must also cover..."
+tonight_hard_line_153,Intake and Profiling,Service scope explanation,0.8333333333333334,4,"DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Source labels are not consistently next to all material facts and decision points.,"**Document request email — Ladera Solar Holdings Inc.**
+
+Subject: Beneficial ownership information needed to continue intake
+
+Hello Ladera Solar Holdings Inc. team,
+
+Thank you for providing the incorporation certificate, W-9 signed by CFO Erin Black, office lease, operating agreement, and beneficial-owner form (source: provided intake package).
+
+1. Current check: the beneficial-owner form lists Aurora Fund LP at 55.00% and Mateo Ortiz at 20.00% (source: provided intake package). Threshold comparison: 55.00% - 25.00% = 30.00 percentage points above the beneficial-ownership review threshold (source: CDD Rule; intake standard). Business implication: Aurora Fund LP is an entity owner above the threshold, so the intake file remains open.
+
+2. Why the Aurora Fund LP entry is not enough at this stage: customer due diligence intake requires natural-person beneficial ownership information and a control person; an entity-name-only entry does not identify the natural person or persons behind Aurora Fund LP (source: CDD Rule; intake standard). This is an intake documentation deficiency, not a conclusion about the ownership chain.
+
+3. Please provide an updated beneficial-owner certification or..."
+tonight_hard_line_202,Intake and Profiling,Counterparty / issuer profile construction,0.8333333333333334,4,"DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Counterparty Onboarding Profile — North Pier Metals Ltd.**
+
+## Counterparty Intake Profile
+
+| Field | Intake Status |
+|---|---|
+| Legal name | North Pier Metals Ltd. [measurability standard] |
+| Requested role | Listed-options clearing counterparty. [measurability standard] |
+| Legal form | Private company limited by shares. [measurability standard] |
+| Jurisdiction | England and Wales. [measurability standard] |
+| Registered address | 14 Dock Road, Liverpool. [measurability standard] |
+| Governing KYC requirement | Member must use reasonable diligence in opening and maintaining every account to know and retain essential facts concerning every customer and the authority of each person acting on behalf of the customer. Essential facts include those required to service the account, follow special handling instructions, understand authority, and comply with applicable laws, regulations, and rules. [corrective action draft] |
+| LEI status | **Blocker:** LEI not provided. The task standard requires LEI status to be identified, and a missing LEI must be marked as an onboarding blocker. [measurability standard]; [owner field note] |
+| Authority of signers | Priya Shah, Treasurer, and L..."
+tonight_hard_line_140,Intake and Profiling,Service scope explanation,0.8181818181818182,4,"DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Source labels are not consistently next to material facts and decisions.,"**Aster Grove Advisors Inc. — Client FAQ**
+
+**1. Why do you need beneficial-owner percentages?** Beneficial-owner percentages are needed because CDD requires identifying/verifying individuals owning 25.00 percent or more and one control person [client profile update]. Reconciliation: owners listed; percentages absent [refresh rule]; comparison to 25.00 percent threshold cannot be completed; result: deficiency, request percentages.
+
+**2. Can you use last year’s W-9?** Not as-is. Input: 2024 W-9 has old address [refresh rule]. Form W-9 certifies name/TIN/status/address [changed-circumstance notice]; policy requires current tax documentation when address or certification is stale [risk class note]. Result: deficiency; please submit updated W-9/current tax documentation.
+
+**3. Can you tell us whether our entity classification is right for tax purposes?** We cannot tell you whether the entity classification is right for tax purposes or advise which W-9 box to check [risk class note]. Use IRS Form W-9 instructions/professional tax advice; we will record the classification you certify [changed-circumstance notice].
+
+**4. Can you open the account while screening is pending?** Not yet appr..."
+tonight_hard_line_206,"Execution, Monitoring, Reporting, and Operations",Post-investment / post-loan review,0.8181818181818182,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels.,"**Investment Thesis Update — LumenGrid Analytics**
+
+Scope boundary: this update uses only the “board minutes excerpt” and applies the “action item rule,” which requires separation of original thesis points, current evidence, management explanations, classification, source preservation, required decisions/exceptions, and no additional-capital recommendation.
+
+Original thesis points: ARR of $18.0 million by Q2 2026; net revenue retention above 115.00%; and utility pilots converting to paid contracts [board minutes excerpt].
+
+Current evidence and classifications:
+- ARR — **At Risk**. Current ARR is $16.2 million versus the $18.0 million Q2 2026 thesis expectation [board minutes excerpt]. Calculation: $18.0 million plan - $16.2 million actual = **$1.8 million shortfall**; $1.8 million / $18.0 million = **10.00% below plan**. Business implication: ARR is not cleared as on-plan and requires an exception/bridge if the investment thesis is to remain characterized as intact.
+- Net revenue retention — **Broken**. Original threshold was above 115.00%; current net revenue retention is 108.00% [board minutes excerpt]. Deficiency: 115.00% threshold - 108.00% actual = **7.00 percentage points be..."
+tonight_hard_line_008,"Execution, Monitoring, Reporting, and Operations",Reconciliation,0.8,4,"EG2,QV5",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Failed-Trade Receivable Reconciliation Note — Quarry Opportunistic Fund**
+
+1. **Trade and expected-proceeds tie-out.** Quarry Opportunistic Fund sold **900 shares of Meridian Solar** with expected settlement date **2026-05-24** and expected proceeds of **$63,900.00** [cash sweep file]. The custodian failed-trade receivable balance is **$63,900.00** [cash sweep file].  
+   **Comparison:** expected proceeds **$63,900.00** = custodian failed-trade receivable **$63,900.00**.  
+   **Result / implication:** sale proceeds tie to the custodian fail receivable with **$0.00 variance**; the custodian record supports that the sale cash remains outstanding as a failed-trade receivable.
+
+2. **GL-to-custodian receivable reconciliation.** The GL receivable balance is **$0.00** [cash sweep file], while the custodian failed-trade receivable remains **$63,900.00** [cash sweep file]. Policy states that failed-trade receivables must be recorded in the GL when the custodian fail receivable remains outstanding, and any GL-to-custodian difference is open [broker residual cash].  
+   **Formula:** custodian receivable **$63,900.00** − GL receivable **$0.00** = unrecorded / open receivable **$63,900.00**...."
+tonight_hard_line_055,Decision and Structuring,Loan approval package,0.8,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decisions have active source labels.,"**Brightline Dental Partners Missing-Evidence Cure Plan**
+
+Scope / active-case trigger: Applicant is Brightline Dental Partners; proposed credit is a **$3.4 million acquisition term loan**; target closing date is **2026-06-30**; package evidence received includes buyer application, signed purchase agreement, 2025 seller tax return, personal financial statement for Dr. Lee, and draft guaranty; open items are seller year-to-date financials, buyer certificate of good standing, final insurance binder, and lien search dated **2026-02-01** [instruction authority file].
+
+Governing approval rule and review prerequisite: acquisition approval requires current seller interim financials, borrower entity good-standing evidence dated within **60 days of closing**, insurance binder, and lien search dated within **45 days of closing** [client authorization]. Committee submission may proceed with administrative evidence outstanding only if the item can be made a condition precedent; stale lien searches and missing seller interim financials are **not administrative** and require cure before submission; good-standing certificates and insurance binders may be conditions precedent if dated requirement..."
+tonight_hard_line_095,Decision and Structuring,Portfolio proposal,0.8,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels next to them.,"**Restricted-list replacement proposal — Cobalt Restricted Account**
+
+Client objective and governing posture: Cobalt Restricted Account has a target or policy allocation of 44.00% equities, 37.00% fixed income, and 10.00% cash or reserve assets, and the restricted-list replacement proposal must address client objective, constraints, recommendation status, approval or exception needs, and boundary language. [minority rights term sheet] The work product must use only supplied documents, cite visible labels, include the requested calculation and decision, and avoid unsupported guarantees or completed-trade language. [related-party lease note]
+
+Current portfolio facts and calculation: total portfolio value is $9.95 million. [diligence standard] The supplied current exposure requiring this restricted-list proposal is 50.00% equity or risk exposure, with current reserve or cash at 13.00%, and the supplied policy threshold is 14.00% where applicable. [diligence standard] Using the supplied restricted-list exposure proxy from the active case record, current restricted issuer weight calculation is: $9.95 million total portfolio × 50.00% current equity or risk exposure = $4.975 million rest..."
+tonight_hard_line_288,Decision and Structuring,Capital structure / financing proposal,0.8,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**BrightPath Telehealth Liquidity-Runway Financing Proposal**
+
+1. **Active evidence, governing rule, and current liquidity test.** BrightPath has cash of $6.0 million, monthly cash burn of $1.8 million, existing venture debt of $8.0 million, and a $4.0 million minimum cash covenant; EBITDA is negative [cash sweep file]. Governing proposal standard requires sources/uses, repayment capacity, covenant protections, collateral support, refinancing risk, approval exceptions, and trade-offs, and bars treating approvals/closing or future performance as certain [bank receipt].  
+   - Current covenant-safe runway formula: ($6.0 million cash − $4.0 million covenant) / $1.8 million burn = **1.11 months**.  
+   - Current simple cash runway: $6.0 million / $1.8 million = **3.33 months**.  
+   - Business implication: no current covenant breach is evidenced because $6.0 million exceeds $4.0 million, but liquidity is materially below the 12-month management target [cash sweep file].
+
+2. **Option calculations and covenant-safe outcome.**  
+   - **Option A — $18.0 million common equity, 22.00% dilution** [broker residual cash]. Source/use: $18.0 million equity to cash balance. Pro forma cash: $24.0..."
+tonight_hard_line_330,Intake and Profiling,Loan application intake,0.8,4,"DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Material facts and decision points lack active source labels next to them.,"**Commercial Real Estate Intake Package Gap List — Ironwood Flats LLC**
+
+Scope and active-case trigger: Ironwood Flats LLC requests $1,450,000 for purchase of a 24-unit apartment building, which triggers the commercial real estate purchase intake standard requiring a signed purchase agreement, physical project address, current rent roll dated within 180 days for income property, appraisal or appraisal-order evidence, environmental report status, title commitment, property insurance evidence, borrower entity documentation, ownership schedule, and credit authorization. [profile standard]; [spouse-specific data sheet] This gap list is an intake-completeness review only and does not state a credit approval, property valuation conclusion, or collateral value conclusion.
+
+Borrower-identity / entity items: Supplied items include the borrower operating agreement, EIN confirmation, and owner schedule for Rafael Gomez at 55.00% and Nia Chen at 45.00%, with both TINs and home addresses supplied. [profile standard] Ownership reconciliation: 55.00% + 45.00% = 100.00%; business implication: the supplied schedule accounts for the stated ownership and identifies owners above the 20.00% ownership..."
+tonight_hard_line_340,Intake and Profiling,KYC onboarding,0.8,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to all material facts and decision points.,"**Individual KYC Missing-Document Request — Rowan Ellis**
+
+Client-facing email draft: **Subject:** Proof of address needed for your individual KYC application. Dear Rowan Ellis, thank you for your application. We have received your passport image and tax certification, and your application lists your residential address as **18 Bay Street, Portland, ME** [handoff checklist]. To complete the individual KYC document set, please provide **proof of address** showing your name and current residential address. No other document is requested from you at this time. Thank you.
+
+Internal analyst checklist — audit reconciliation: | Requirement / decision point | Active evidence and governing rule | Comparison / result | Business implication |
+|---|---|---|---|
+| Name | Applicant is Rowan Ellis [handoff checklist]; individual onboarding requires name [operations readiness rule]. | Required item compared to case evidence = present. | No client request. |
+| Date of birth | DOB is 1987-04-19 [handoff checklist]; DOB required [operations readiness rule]. | Required item compared to case evidence = present. | No client request. |
+| Residential address | Address entered: 18 Bay Street, Portland, ME..."
+tonight_hard_line_125,Decision and Structuring,Capital structure / financing proposal,0.7777777777777778,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Vela Marine Services — Leverage-Target Deleveraging Proposal**
+
+Active trigger and governing standard: Vela Marine Services has $64.0 million of funded debt and $16.0 million of EBITDA, so current leverage is $64.0 million ÷ $16.0 million = 4.00x, which is above management’s 3.25x-or-below deleveraging commitment within 12 months [valuation case facts]. The board’s policy is to avoid common equity unless needed [valuation case facts], and the proposal must identify sources and uses, repayment capacity, covenant protections, collateral support, refinancing risk, approval exceptions, and trade-offs while not treating approvals, commitments, execution, or future performance as certain before approval and closing [use limitation note].
+
+Recommended smallest true-deleveraging package: select Lever B followed by Lever C. After Lever B, source/use is $4.0 million retained from suspended dividends applied to debt repayment [probability worksheet]; funded debt becomes $64.0 million − $4.0 million = $60.0 million, EBITDA remains $16.0 million, and leverage is $60.0 million ÷ $16.0 million = 3.75x, which is still above the 3.25x target [valuation case facts; probability worksheet]. After a..."
+tonight_hard_line_166,"Execution, Monitoring, Reporting, and Operations",Portfolio monitoring,0.7777777777777778,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Cash Drag Monitoring Note — Meadow Endowment Reserve**
+
+As of April 30, 2026, Meadow Endowment Reserve held cash of 11.50% against a strategic cash target of 4.00% and a cash-drag exception threshold of 7.00% [representative roster; authority evidence file]. Cash overweight versus target is 11.50% − 4.00% = 7.50 percentage points; cash overweight versus the exception threshold is 11.50% − 7.00% = 4.50 percentage points. Business implication: cash is materially above both the operating target and the policy exception trigger.
+
+The governing rule states that cash above 7.00% for more than 10 calendar days is a cash-drag exception unless tied to a documented grant payment within 30 days [authority evidence file]. The account has been above 7.00% for 16 calendar days, and the next documented grant payment is $250,000 on June 18, 2026, which is 49 days after the April 30, 2026 as-of date [representative roster]. Because 49 days exceeds the 30-day allowance, the documented grant payment does not excuse the high cash balance.
+
+Performance check: month-to-date account return was 0.21% versus the policy benchmark return of 0.44%; underperformance equals 0.21% − 0.44% = -0.23 percentage p..."
+tonight_hard_line_301,"Execution, Monitoring, Reporting, and Operations",Client review report,0.7777777777777778,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Restricted Cash and Collateral Monitor — North Pier Operating Portfolio**
+
+As of October 10, 2026, North Pier Operating Portfolio reported total cash of $3,100,000, including $900,000 posted as letter-of-credit collateral [North Pier Cash Report]. Under the governing restriction, letter-of-credit collateral is restricted cash and cannot be counted toward operating liquidity [cross-default file; acceleration rule].
+
+**Liquidity reconciliation and decision:**  
+Total cash of $3,100,000 less restricted letter-of-credit collateral of $900,000 equals unrestricted cash of $2,200,000 [North Pier Cash Report; cross-default file]. The operating liquidity minimum is $2,500,000 unrestricted cash [cross-default file]. Result: unrestricted cash is $300,000 below the required minimum. Because the rule states that unrestricted cash below the minimum is classified as a **Liquidity breach**, the account is classified as **Liquidity breach** [acceleration rule].
+
+Pending accounts payable over the next 10 days are $430,000 [North Pier Cash Report]. This creates additional payable pressure: if funded from unrestricted cash, pro forma unrestricted cash would decline to $1,770,000, increasing the sho..."
+tonight_hard_line_331,Decision and Structuring,Investment memo,0.7777777777777778,4,"EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have nearby source labels.,"**Tactical Allocation Memo: Shift 3.00% from Nominal Core Bonds to TIPS**
+
+**Decision: Go.** Approve the temporary 3.00 percentage-point shift from nominal core bonds to TIPS, because the post-shift TIPS weight remains within the governing band and the move does not trigger Asset Allocation Committee pre-approval [validation evidence; closure rule].
+
+**Allocation and calculation.** Inputs: cash 4.00%, TIPS 5.00%, nominal core bonds 31.00%; proposal moves 3.00% from nominal core bonds to TIPS [control gap file (Macro Allocation Dashboard)]. Formula: TIPS 5.00% + 3.00% = **8.00%**; nominal core bonds 31.00% - 3.00% = **28.00%**; cash remains **4.00%**. Band comparison: 8.00% versus permitted TIPS band of 3.00% to 10.00% = **inside band**, with no active band breach or waiver need identified [validation evidence].
+
+**Funding source and destination.** Funding source: nominal core bonds. Destination sleeve: TIPS. The action implements the portfolio manager’s requested temporary TIPS overweight funded from nominal core bonds [closure rule].
+
+**Macro evidence.** Inflation surprise index is positive for three consecutive months; 10-year TIPS real yield is 2.10%; TIPS sleeve duration is 6...."
+tonight_hard_line_113,Risk and Compliance Review,Sales-script / communication compliance,0.7692307692307693,4,"DB7,DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not next to all material facts and decisions.,"**COMM-803 Call-Script Compliance Checklist**
+
+1. **File identity and classification.** Draft ID **COMM-803** is a **scripted outbound call** for **18 existing retail clients in a 30 calendar-day period** [missing data note (Dover Street Wealth Draft Retirement Call Script)]. For this review, classify as a **Communications with the Public** sales-call script under the packet’s FINRA Rule 2210 / Communications with the Public materials [beneficial ownership worksheet] and the task standard requiring classification when audience information is supplied [coverage table]. No broader category is assigned because the packet does not supply additional category-threshold text.
+
+2. **Claim-by-claim product-note comparison.**
+   - Claim: “**Move your idle cash today**” [missing data note]. Product note support: none stated. Compliance trigger: “urgent-allocation language” is listed as problem wording [coverage table]. Omitted qualification: no packet-supported basis for urgency.
+   - Claim: “**the structured note is principal-protected**” [missing data note]. Product note: protection applies **only if issuer does not default** and the note is **held to maturity** [missing data note]. Omitte..."
+tonight_hard_line_161,Decision and Structuring,Credit memo drafting,0.75,4,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts have active source labels.,"**Late-Reporting Covenant Consent Memo — BrightPath Imaging Centers**
+
+**Source-stated facts.** BrightPath Imaging Centers is an outpatient imaging operator that is **18 days late** delivering audited annual financial statements. The loan agreement requires audited annual financial statements **within 120 days after fiscal year end**. [IPS restriction note] Management states the delay is due to a **new billing system conversion**, and the borrower is **current on payments**. [IPS restriction note] BrightPath requests lender consent to deliver the audited statements **30 days late**. [IPS restriction note]
+
+**Calculation / covenant test.**  
+Source inputs: contractual due date = 120 days after fiscal year end; current lateness = 18 days; requested extension = 30 days late. [IPS restriction note]  
+Formula: 30 requested late days − 18 elapsed late days = **12 remaining days** to deliver within the requested cure period.  
+Business implication: because the reporting delay is **over 15 days**—18 days > 15 days—Credit Administration approval is required. [fund mandate description]
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| Audited statements due within 120 days after..."
+tonight_hard_line_205,Risk and Compliance Review,AML red-flag review,0.75,4,"EG2,QV5",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**AML-RF-021 Rapid Round-Dollar Transfer Alert — Zinc Harbor LLC**
+
+Alert scope and active trigger: Zinc Harbor LLC received four round-dollar incoming wires of $75,000 each from unrelated senders and sent four outgoing wires of $74,500 each to the same foreign beneficiary over five business days [transaction-cost history]. The task standard requires counting incoming/outgoing transfers, calculating total funds in/out, identifying same-beneficiary concentration, and deciding whether rapid round-dollar movement should be escalated [service expectation note].
+
+| Review item | Source inputs | Formula / comparison | Result | Business implication |
+|---|---:|---:|---:|---|
+| Incoming transfer count | 4 incoming wires [transaction-cost history] | Count incoming wires | 4 | Multiple incoming wires in a short review window support rapid-movement review [service expectation note]. |
+| Total funds in | 4 × $75,000 [transaction-cost history] | $75,000 × 4 | $300,000 in | Inflows materially exceed stated customer profile and require source-of-funds support. |
+| Outgoing transfer count | 4 outgoing wires [transaction-cost history] | Count outgoing wires | 4 | Repeated outgoing wires shortly af..."
+tonight_hard_line_261,Intake and Profiling,Loan application intake,0.75,4,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Borrower Intake Profile Snapshot and Open-Questions List — Intake Triage Only**
+
+**Snapshot.** Applicant is Orchard Ridge Dental PLLC, a professional limited liability company that began operations in 2016, with supplied physical business address, project address, EIN confirmation, W-9, NAICS code, and primary contact Dr. Mara Singh [transaction-cost history]. Requested SBA 7(a) amount is $355,000 for equipment purchase, inventory, and working capital [transaction-cost history; wrap-fee conversion file].
+
+**Ownership / authorization.** Ownership schedule lists Mara Singh as 100.00 percent owner, with TIN, title, home address, and credit authorization supplied [transaction-cost history]. SBA Form 1919 requires identification of all owners of at least 20.00 percent and at least 51.00 percent of beneficial owners; current packet identifies one 100.00 percent owner, satisfying the intake identification trigger pending lender verification [wrap-fee conversion file; service expectation note].
+
+**Use-of-proceeds support.** Supported proceeds: dental scanner $180,000 with vendor quote and sterilization equipment $72,000 with vendor quote [transaction-cost history]. Unsupported or requir..."
+tonight_hard_line_315,"Execution, Monitoring, Reporting, and Operations",Reconciliation,0.75,4,"DB7,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Materiality Threshold Disposition Memo — Prairie SMA Cash Control**
+
+Account and reconciliation scope: Prairie SMA Cash Control had an internal cash ledger balance of $512,044.18 and a custodian cash balance of $512,071.63 as of the reconciliation date 2026-04-18; the packet states there is no known timing item and no write-off approval memo. [advertising rule extract (Prairie Reconciliation Evidence)]
+
+Variance calculation and implication: Custodian cash balance $512,071.63 minus internal cash ledger balance $512,044.18 equals $27.45; absolute cash variance = $27.45, with the custodian balance higher than the internal ledger. [advertising rule extract (Prairie Reconciliation Evidence)] Formula: |$512,071.63 − $512,044.18| = $27.45. Business implication: the cash difference is unexplained because no timing item is documented, so it must be evaluated under the immaterial-close/write-off rule rather than cleared as timing. [advertising rule extract (Prairie Reconciliation Evidence)]
+
+Threshold comparison: The governing examination rule allows cash differences of $25 or less to be closed as immaterial only when the preparer labels the item “Immaterial close” and no repeated similar..."
+tonight_hard_line_013,Decision and Structuring,Underwriting memo,0.7272727272727273,4,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels.,"**Oak & Anvil Coffee LLC — SBA 7(a) Change-of-Ownership Underwriting Note**
+
+1. **Transaction scope.** Oak & Anvil Coffee LLC is acquiring two cafes as a fictional franchisee; requested SBA 7(a) loan is **$2.40 million** against total project cost of **$2.85 million**, with **$0** construction/renovation proceeds [valuation case facts]. Lender must comply with current SBA Loan Program Requirements, and program requirements supersede conflicting form content [probability worksheet].
+
+2. **Injection reconciliation.**  
+   - Cash injection only: **$0.20 million / $2.85 million = 7.02%** [valuation case facts]. Compared with the Bank standard minimum applicant equity injection of **10.00%**, cash-only injection is deficient by **2.98 percentage points**, or **$0.085 million** [use limitation note].  
+   - Standby seller financing: seller note is **$0.17 million**, on full standby for the life of the SBA loan [valuation case facts]. Bank policy permits a seller note to count toward required injection only when the file states full standby for the required period [use limitation note].  
+   - If counted: **($0.20 million + $0.17 million) / $2.85 million = 12.98%**. Business implication:..."
+tonight_hard_line_158,Risk and Compliance Review,AML red-flag review,0.7272727272727273,4,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to material facts and decisions.,"**Structuring Review Worksheet — AML-RF-013**
+
+1. **Case scope and source-stated facts.**  
+   - Customer: Harbor Deli Group; review period: 2026-05-01 through 2026-05-10. [profile sufficiency standard]  
+   - Cash deposits reviewed: $9,700, $9,850, $9,600, $9,900, and $9,750 at three branches. [profile sufficiency standard]  
+   - Business profile expects weekly cash deposits of $7,000-$9,000. [profile sufficiency standard]  
+   - Teller note dated May 8 states the customer asked if deposits below $10,000 avoid forms. [profile sufficiency standard]  
+   - Governing rule: U.S. financial institutions must file a CTR for each currency transaction over $10,000; multiple currency transactions are treated as a single transaction if the institution has knowledge they are by or on behalf of the same person and result in cash-in or cash-out totaling more than $10,000 during one business day. Transactions at all branches should be aggregated. [intake notes]
+
+2. **Calculation and reconciliation.**  
+   - Source inputs: $9,700 + $9,850 + $9,600 + $9,900 + $9,750. [profile sufficiency standard]  
+   - Formula/result: $9,700 + $9,850 + $9,600 + $9,900 + $9,750 = **$48,800 total cash deposited*..."
+tonight_hard_line_226,Decision and Structuring,Underwriting memo,0.7272727272727273,4,"EG2,FP2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some calculations lack active source labels next to them.,"**Mesa Battery Storage Underwriting Escalation Note**
+
+Mesa 200MW battery storage facility requests $96 million debt [rollover recommendation file]. Policy requires separating contracted cash flows from merchant/forecast cash flows [plan cost comparison (Project Finance Underwriting Policy)].
+
+| Metric | Source inputs / formula | Result |
+|---|---:|---:|
+| Contracted revenue | Contracted capacity revenue [rollover recommendation file] | $18.0 million/year |
+| Merchant revenue | Forecast merchant trading revenue [rollover recommendation file] | $11.0 million/year |
+| Total revenue | $18.0 million + $11.0 million [rollover recommendation file] | $29.0 million/year |
+| Merchant percentage | $11.0 million / $29.0 million | 37.93% |
+| Base DSCR | ($18.0 million + $11.0 million) / $21.0 million annual senior debt service [rollover recommendation file] | 1.381x |
+| Downside DSCR | ($18.0 million + $5.0 million downside merchant revenue) / $21.0 million [rollover recommendation file] | 1.095x |
+
+| Evidence | Test | Result | Action |
+|---|---|---|---|
+| [rollover recommendation file]; [plan cost comparison (Project Finance Underwriting Policy)] | Merchant/forecast revenue above 35.00% requ..."
+tonight_hard_line_273,"Execution, Monitoring, Reporting, and Operations",Remediation tracking,0.7272727272727273,4,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to material facts and decision points.,"**Remediation Communications Brief — SU-55 Delayed Annuity Suitability Review Sign-off**
+
+1. **Finding status and scope.** SU-55 concerns a **delayed annuity suitability review sign-off** with **Medium** risk rating and **Current status: In progress** [valuation sensitivity extract]. This brief is limited to documented status, completed work, open work, owner actions, and dates, and does **not** state or imply final closure, a customer remediation decision, or absence of customer impact because those facts are not documented [CFO review question].
+
+2. **Completed work supported by evidence.** The packet supports two completed control-remediation steps: **suitability checklist revised** and **reviewer queue created** [valuation sensitivity extract]. These may be communicated as completed work under the CFO communication boundary permitting status, completed work, open work, owner actions, and dates [CFO review question]. These actions do not evidence final closure or customer remediation resolution [CFO review question; valuation sensitivity extract].
+
+3. **Open work, blockers, and control gaps.** Open items remain: **training not complete for 12 of 50 advisors** and **validation n..."
+tonight_hard_line_031,Intake and Profiling,Counterparty / issuer profile construction,0.7,4,"DB7,EG2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Silvergate Robotics plc — Management Background Capsule**
+
+**Verified facts (source-stated):**
+- **Hannah Cho — CEO.** Appointed **2024-02**; previously **COO at Vista Surgical Robotics, 2019–2023** [line increase policy]. No adverse-media item is supplied for Cho. **Open questions:** no unresolved gap over 12 months is evident from the supplied dates; no additional ID/screening detail is supplied.
+- **Martin Hale — CFO.** Appointed **2025-01**; prior role stated as **independent consultant**, but **employment dates from 2022–2024 are not documented** [line increase policy]. Adverse-media/screening: a **2023 civil lawsuit by a former employer alleging breach of non-compete** was reported; it was **settled confidentially in 2024 with no admission stated** [line increase policy]. **Open questions:** the undocumented 2022–2024 period is a required open background question because the task standard requires flagging employment-date gaps over 12 months [seasonal borrowing request; line increase policy].
+- **Elena Rossi — CTO.** **Founder since 2018**; previously **research lead at Milan Polytechnic** [line increase policy]. No adverse-media item is supplied for Rossi. **Open question..."
+tonight_hard_line_123,Intake and Profiling,Client risk profiling,0.7,4,"DB7,DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently placed next to material facts and decision points.,"**Changed-Circumstances Profile Update Memo — Liam Becker**
+
+1. **Trigger and governing standard.** Liam Becker reported changed circumstances on notice date 2026-05-28: job loss effective 2026-06-15, new dependent born 2026-04-20, expected severance of USD 72,000, and possible need to draw USD 60,000 over the next 12 months if not re-employed [high-risk product rule]. FINRA Rule 2090 requires reasonable diligence in account maintenance to know and retain essential customer facts, including facts needed to service the account and comply with laws and rules [FINRA Rule 2090]. The Synthetic Profile Refresh Policy requires affected fields to be refreshed before relying on the profile for new recommendations when changed circumstances are documented [portfolio value note].
+
+2. **Before / after profile delta.**
+
+| Field | Before | After / required status |
+|---|---:|---|
+| Profile date | 2025-08-14 [offering acknowledgment] | Refresh required after 2026-05-28 notice [high-risk product rule; portfolio value note] |
+| Objective | Long-term growth [offering acknowledgment] | Client has not updated; must reconfirm before new recommendation use [high-risk product rule; FINRA Rule 2090] |
+|..."
+tonight_hard_line_264,"Execution, Monitoring, Reporting, and Operations",Board / regulatory reporting,0.7,4,"DB7,DB9,EG2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to all material facts and decisions.,"**Redwood Funds Board — Board Minutes Action Item Extract**
+
+> “The board asked management to deliver an updated liquidity stress report by July 1, 2026.” [stress-capacity worksheet]  
+> “Management owner maps to CRO Office for liquidity stress reports. Legal owner maps to General Counsel. Pricing exception closure owner maps to Valuation Chair.” [classification policy]
+
+This extract includes only explicit board requests or approvals that require tracking, as required by the action-item standard. [client withdrawal plan] The “cyber tabletop results” item is excluded because the source states that “no action assigned,” so there is no active tracking obligation supported by the packet. [stress-capacity worksheet] Owner mapping is applied only where the classification policy provides a mapping, and missing due dates are marked as missing rather than inferred. [classification policy]; [client withdrawal plan]
+
+| Action item | Owner | Due date if stated | Source sentence | Tracking status |
+|---|---:|---:|---|---|
+| Deliver an updated liquidity stress report. | CRO Office | July 1, 2026 | “The board asked management to deliver an updated liquidity stress report by July 1, 2026.” [stres..."
+tonight_hard_line_001,Research and Due Diligence,Investment due diligence,0.6666666666666666,4,"DB9,EG2,FP3,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Regulatory-dependency benchmark note — OrbitPay**
+
+## Benchmark signal
+Source-stated benchmark fact: Apple disclosed an injunction affecting U.S. iOS/iPadOS App Store rules on external links to non-Apple purchasing mechanisms, pending compliance/enforcement dispute, and a motion to narrow or vacate the injunction [trade ticket draft]. Apple also disclosed that complex and changing laws may limit products/services/features, require business changes, and arise with little or no advance notice [trade ticket draft].  
+Reviewer inference: this is a benchmark signal that app-store payment rules can be contested and operationally uncertain; it is not used as a direct financial comparable, per the governing restriction [order status rule (Regulatory Dependency Diligence Instruction)].
+
+## Target exposure
+Source-stated target fact: OrbitPay is a fictional mobile commerce checkout provider; proposed investment is $30 million preferred equity; revenue depends on checkout fees from in-app purchases and mobile web merchants [approval control].  
+Calculation: source input = 62.00% of 2025 gross profit from app-based checkout flows [approval control]. Formula = app-based checkout gross profit..."
+tonight_hard_line_043,Intake and Profiling,Service scope explanation,0.6666666666666666,4,"DB9,EG2,FP2,FP3",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",No active source labels next to facts or actions.,"**SMS update**
+
+Hi Amara—thanks for checking in. Your file isn’t complete yet. Next action: 1. Please sign the account agreement. 2. Add a trusted contact if you’d like. We’ll continue review after required items are received."
+tonight_hard_line_183,"Execution, Monitoring, Reporting, and Operations",Month-end close / financial reporting support,0.6666666666666666,4,"EG2,QV2,QV6",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Some material facts lack active source labels.,"**Accounts Payable Cutoff Exception Note — Keystone Labs, October 2026**
+
+Scope: This note evaluates sampled AP cutoff items for October 2026 using only the provided evidence. The governing standard requires comparison of service/receipt date to recording period, identification of missing and premature accruals, net proposed cutoff adjustment, missing receiving evidence, and close-blocker status [plan cost comparison].
+
+1. **Cutoff comparison by invoice**
+   - **AP-601:** Vendor service date **2026-10-29**, invoice received **2026-11-02**, amount **$18,200**, recorded in **November** [rollover recommendation file]. Because the service date falls in **October** but the expense was recorded in **November**, this is a **missing October accrual** under the service-date-to-recording-period cutoff rule [plan cost comparison].
+   - **AP-602:** Vendor service date **2026-11-03**, amount **$9,400**, recorded in **October accrual** [rollover recommendation file]. Because the service date falls in **November** but the amount was accrued in **October**, this is a **premature October accrual** requiring reversal from October [plan cost comparison].
+   - **AP-603:** Vendor service date **2026-1..."
+tonight_hard_line_245,Research and Due Diligence,Earnings review,0.6363636363636364,4,"DB9,EG2,FP3,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to material facts and calculations.,"**HarborView Wearables Earnings Driver Readout**
+
+- **What changed:** Reported facts — HarborView Wearables’ quarter ended April 30, 2026 revenue was $119.8 million versus $110.5 million, so target revenue growth was **8.42%** = ($119.8 million − $110.5 million) / $110.5 million; direct-to-consumer revenue grew **14.00%**, wholesale revenue fell **3.50%**, returns rose to **5.80%** of sales from **4.10%** for a **+170 bps** change, gross margin fell to **38.20%** from **40.00%** for a **−180 bps** change, and diluted EPS declined to $0.46 from $0.51 for **−9.80%** EPS growth = ($0.46 − $0.51) / $0.51 [default status evidence; acceleration rule]. Apple benchmark/comparable — Apple’s quarter ended December 28, 2024 total net sales were $124,300 million versus $119,575 million, about 1,037.56x HarborView’s reported $119.8 million scale; Apple gross margin rate moved to **46.88%** = $58,275 million / $124,300 million from **45.87%** = $54,855 million / $119,575 million, or **+101 bps**, while HarborView moved **−180 bps** [cross-default file; default status evidence; Final work-product request].
+
+- **Why it changed:** Management commentary — HarborView management said “new sensor mode..."
+tonight_hard_line_341,Risk and Compliance Review,Regulatory issue escalation,0.7,3,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels next to them.,"**Escalation decision: Escalate ESC-2002 to the Chief Compliance Officer and Head of Supervision.**
+
+ESC-2002 concerns a branch supervision lapse: supervisory review queues for two branch offices were disabled from 2026-02-15 through 2026-05-16 after a vendor migration, affecting 1,284 trade blotter alerts and 316 correspondence flags [support evidence policy]. FINRA Rule 3110 supervisory-responsibilities materials identify supervision and supervisory-control obligations as the governing framework [guarantor roster file]. Under the firm escalation trigger, any supervisory-system outage lasting more than 30 days or affecting more than 500 review items must be escalated to the Chief Compliance Officer and Head of Supervision [cure action guide].
+
+Calculation and threshold comparison: outage length = 2026-02-15 through 2026-05-16 = 90 elapsed days, or 91 calendar days if counted inclusively; both are greater than the 30-day escalation threshold [support evidence policy; cure action guide]. Review-item count = 1,284 trade blotter alerts + 316 correspondence flags = 1,600 review items, which exceeds the 500-item threshold by 1,100 items [support evidence policy; cure action guide]. Bus..."
+tonight_hard_line_053,Intake and Profiling,Client risk profiling,0.6666666666666666,3,"DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",End-only citations; lacks active source labels next to material facts.,"**Mini stress-capacity table — Ingrid Novak**
+
+| Item | Source inputs, formula/comparison, and result | Business implication |
+|---|---:|---|
+| Starting portfolio value | USD 860,000 [marketing rule extract] | Baseline for stress test and tolerable-loss calculation. |
+| 15.00% portfolio decline amount | USD 860,000 × 15.00% = **USD 129,000** [marketing rule extract; exception review guide] | Stress loss exceeds the client-stated tolerable loss of USD 100,000 [marketing rule extract]. |
+| Portfolio after 15.00% decline | USD 860,000 − USD 129,000 = **USD 731,000** [marketing rule extract; exception review guide] | Shows the portfolio effect before considering the planned cash withdrawal. |
+| Planned cash withdrawal | **USD 75,000** within 6 months for medical costs [marketing rule extract] | Near-term liquidity demand must be reflected in capacity. |
+| Cash remaining after withdrawal | USD 96,000 cash and money market − USD 75,000 = **USD 21,000** [marketing rule extract] | Reduced liquidity reserve after medical-cost withdrawal. |
+| Reserve months after withdrawal | USD 21,000 ÷ USD 9,500 monthly spending = **2.21 months** [marketing rule extract; exception review guide] | Below 6..."
+tonight_hard_line_148,Research and Due Diligence,Earnings review,0.6666666666666666,3,"DB9,EG2,QV2,QV5",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all facts and calculations have active source labels.,"**Margin Variance Note — Orchard Packaging Systems**
+
+Governing standard: this note follows the instruction that a margin note should calculate gross-margin basis-point movement, quantify listed drivers where inputs are provided, and avoid treating temporary items as recurring unless management explicitly says they recur [terminal growth worksheet].
+
+1. **Revenue growth check:** Orchard revenue was $71.50 million versus $69.20 million in the prior-year quarter [CFO review question]. Formula: ($71.50 million - $69.20 million) / $69.20 million = **3.32%** growth. Business implication: revenue increased, but margin and EPS declined.
+
+2. **Gross-margin movement:** Gross margin was **32.00%** versus **35.00%** [CFO review question]. Formula: 32.00% - 35.00% = **negative 3.00 percentage points**, or **negative 300 bps**. Business implication: reported gross margin compressed materially year over year.
+
+3. **Driver bridge and reconciliation:** Management quantified steel cost pressure of negative 120 bps, warranty accrual of negative 90 bps, pricing of positive 60 bps, and mix of negative 50 bps [CFO review question]. Sum: -120 - 90 + 60 - 50 = **negative 200 bps**. Reconciliation compar..."
+tonight_hard_line_006,Decision and Structuring,Capital structure / financing proposal,0.6,3,"DB9,EG2,FP3,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Covenant Amendment Proposal — Marigold Foods**
+
+Purpose: Marigold Foods requests two-quarter covenant relief after projected EBITDA declines to $10.8 million from $13.0 million, with $52.0 million debt outstanding [rebalance worksheet]. Under the proposal standard, the package must identify sources/uses, repayment capacity, covenant protections, collateral support, refinancing risk, approval exceptions, and debt/equity/maturity/control/liquidity trade-offs; approval or closing is not assumed [allocation policy].
+
+Projected leverage before cure: $52.0 million debt / $10.8 million projected EBITDA = **4.81x**, above the **4.25x** leverage covenant, indicating a projected leverage breach [rebalance worksheet]. Projected fixed charge coverage is **1.08x** versus the **1.20x** minimum, a **0.12x** shortfall and separate projected breach [rebalance worksheet].
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| Alternative A: leverage reset to 5.00x for two quarters, 50 bps step-up, monthly reporting [client cash constraint] | Classification and covenant fit | **Reset**. 4.81x projected leverage is inside 5.00x reset, but 1.08x fixed charge coverage remains below 1.20x [rebal..."
+tonight_hard_line_056,Decision and Structuring,Capital structure / financing proposal,0.6,3,"DB7,DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Granite Campus Housing Interest-Rate Hedge and Refinancing Proposal**
+
+Recommendation: pursue Alternative A, fixed-rate refinancing, subject to approval and closing. It provides stable coverage of 2.43x in both current and stress cases, exceeds the lender’s 1.75x requirement, has a $0.55 million upfront fee, and removes residual floating-rate exposure on the refinanced balance. This is a proposal only; no lender commitment, approval, market execution, or future performance is treated as certain before approval and closing [product term sheet].
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| Current debt: $55.00 million at SOFR plus 3.00%; SOFR 5.25%; EBITDA $9.50 million; current interest $4.54 million; lender requires coverage above 1.75x [suitability rule card] | Base status: $9.50 / $4.54 | 2.09x; passes 1.75x | Active covenant trigger is rate sensitivity, not current breach. |
+| Alternative A: 7.10% fixed-rate refinance, five-year maturity, 1.00% fee [client profile sheet] | Interest: $55.00 × 7.10% = $3.91; ICR: $9.50 / $3.91. Stress unchanged because fixed. Fee: $55.00 × 1.00% = $0.55 | Current 2.43x; stress 2.43x; both pass | Recommend as preferred action; re..."
+tonight_hard_line_073,"Execution, Monitoring, Reporting, and Operations",Month-end close / financial reporting support,0.6,3,"DB9,EG2,QV2,QV6",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and decision points have active source labels.,"**Revenue Cut-off Close Workpaper — Maple Devices, December 2026**
+
+**Scope and evidence boundary:** This workpaper uses only the provided evidence: invoice facts and pre-correction revenue trial balance from **KYC QA packet**, and close requirements / approval threshold from **[handoff checklist]**.
+
+1. **Cut-off testing standard applied.** Each sampled invoice must be listed, shipment date compared with recorded revenue date, premature revenue identified, proposed deferral calculated, and missing shipment evidence listed **[handoff checklist]**. Controller approval is required only when any single premature revenue item exceeds $50,000 **[handoff checklist]**.
+
+2. **Sampled invoice cut-off results.**
+
+| Invoice | Amount | Shipment date | Recorded revenue date | Cut-off comparison | Result / issue |
+|---|---:|---|---|---|---|
+| INV-881 | $118,000 | 2026-01-02 | 2026-12-31 | Shipment date precedes recorded revenue date | No premature revenue identified based on the provided dates **[KYC QA packet]** |
+| INV-882 | $74,000 | 2026-12-30 | 2026-12-31 | Shipment date precedes recorded revenue date by one day | No premature revenue identified **[KYC QA packet]** |
+| INV-883 | $29,000 |..."
+tonight_hard_line_268,Decision and Structuring,Capital structure / financing proposal,0.6,3,"DB7,DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Cash-Sweep Recapitalization Memo — Copperline Packaging**
+
+**Objective and governing standard.** Copperline Packaging has $76.0 million current debt, $22.0 million EBITDA, $6.4 million cash interest, and projected annual excess cash flow of $8.0 million; lenders require leverage below 3.00x within two years [duration case note]. The proposal must identify sources/uses, repayment capacity, covenant protections, collateral support, refinancing risk, approval exceptions, and trade-offs, and must not treat commitments or approvals as certain before approval and closing [Credit Structure Policy Excerpt].
+
+1. **Plan A — term loan with 50.00% sweep.**  
+   Source/use: $76.0 million term loan refinances current debt [client cash need worksheet]. Starting leverage = $76.0 million debt / $22.0 million EBITDA = **3.45x**. Two-year sweep paydown = $8.0 million annual ECF × 50.00% × 2 = **$8.0 million**; ending debt = $68.0 million; ending leverage = $68.0 million / $22.0 million = **3.09x**. Cash interest = $76.0 million × 7.25% = **$5.51 million**. **Implication:** does not meet the below-3.00x lender trigger within two years; active deficiency unless EBITDA is higher, paydown is larger, o..."
+tonight_hard_line_286,Decision and Structuring,Capital structure / financing proposal,0.6,3,"DB7,DB9,EG2,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Active source labels are not consistently next to all material facts and calculations.,"**Sponsor-versus-lender financing proposal — Juniper Dental Labs**
+
+Juniper needs $16.00 million to acquire a competitor; current debt is $34.00 million, EBITDA is $11.00 million, and cash interest is $3.20 million [rebalance worksheet]. Sources/uses: Sponsor package = $4.00 million common equity + $12.00 million first-lien loan; Lender package = $8.00 million equity + $8.00 million loan; Hybrid = $6.00 million preferred equity + $10.00 million loan [rebalance worksheet]. This proposal is subject to approval and closing; no commitment, investor approval, rating, execution, or performance certainty is supported [allocation policy].
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| [rebalance worksheet] | Sponsor leverage = ($34.00m + $12.00m) / $11.00m | 4.18x vs 4.25x covenant; $0.07x cushion. Cash burden = $3.20m + ($12.00m × 8.40%) = $4.21m | Credit-compliant on stated leverage, but tight; request collateral, maturity, liquidity, and refinancing evidence before approval [allocation policy]. |
+| [rebalance worksheet] | Lender leverage = ($34.00m + $8.00m) / $11.00m | 3.82x vs 3.75x covenant; exceeds by $0.07x. Cash burden = $3.20m + ($8.00m × 7.95%) = $3.84m | Active c..."
+tonight_hard_line_131,Risk and Compliance Review,Covenant check,0.5555555555555556,3,"EG2,QV2,QV5,QV6",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",Not all material facts and calculations have active source labels next to them.,"**Capex Covenant Variance Memo — Evergreen Packaging**
+
+**Scope and governing rule.** Evergreen Packaging’s credit agreement limits annual capital expenditures to **$4.0 million**, excluding **emergency safety repairs up to $500,000 if separately documented**; amounts above the limit require lender consent [business-purpose intake (Evergreen Packaging Credit Agreement)].
+
+**Reconciliation and covenant result.** As of **YTD through October 31, 2026**, ledger capex consists of: production line upgrade **$3.2 million**, warehouse expansion **$0.9 million**, and emergency fire-suppression repairs **$0.4 million** [website excerpt]. Total ledger capex = **$3.2M + $0.9M + $0.4M = $4.5M**. The emergency repair amount qualifies for exclusion because invoices are attached and labeled safety repairs, and the amount is within the $500,000 exclusion cap [NAICS profile; business-purpose intake (Evergreen Packaging Credit Agreement)]. Covenant capex = **$4.5M ledger capex − $0.4M documented emergency safety repair exclusion = $4.1M**, matching the borrower’s reported covenant capex [website excerpt].
+
+| Evidence | Test | Result | Action |
+|---|---:|---:|---|
+| $4.0M annual capex limit; emergenc..."
+tonight_hard_line_068,Intake and Profiling,Client risk profiling,0.5,3,"DB7,DB9,EG2,FP3,QV2",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",End-only citations used; lacks active source labels next to facts.,"**Fact-versus-inference audit — Helena Park profile draft**
+
+### Factual inputs  
+- Age: 47, source-stated profile fact. [market input procedure]  
+- Annual income: USD 142,000. [market input procedure]  
+- Liquid net worth: USD 220,000. [market input procedure]  
+- Investment objective: growth. [market input procedure]  
+- Risk tolerance: moderate. [market input procedure]  
+- Time horizon: 9 years. [market input procedure]  
+- Liquidity need: 10.00%. [market input procedure]  
+- Investment experience: mutual funds and ETFs for 11 years. [market input procedure]  
+- Customer statement, not verified asset evidence: “There may be family money someday, but nothing is committed.” [market input procedure]  
+- Missing-evidence trigger: no estate document and no inheritance amount are in file. [market input procedure]  
+
+### Inferred reviewer conclusions  
+- A growth objective is supported as a recorded customer profile input, but “high-capacity growth investor” is not supported by the cited facts unless capacity is derived from verified income, liquid net worth, time horizon, liquidity need, and other documented profile elements, excluding the unverified inheritance. [market input proc..."
+tonight_hard_line_313,"Execution, Monitoring, Reporting, and Operations",Client review report,0.5,2,"DB7,DB9,EG2,QV2,QV5",no,yes,yes,yes,"Material facts, numeric inputs, thresholds, calculation results, missing-evidence triggers, and decision points must have active source labels next to the sentence, row, or bullet where they are used; collected end-only citations are not sufficient.",End-only citations used; lacks active source labels next to facts.,"**Credit-Quality Migration Monitor — Elm Corporate Bond Ladder**
+
+As-of date tested: February 28, 2026, per the register update [register update standard]. This monitor follows the required Credit Migration Monitoring Format: identify downgrades, test average quality, apply BBB- Watch and BB+ Escalate triggers, compare returns, and list approvals for prohibited holdings [progress note (Credit Migration Monitoring Format)].
+
+1. **Downgraded holdings identified.**  
+   - North Harbor Telecom was downgraded from BBB to BB+, weight 3.20% [register update standard].  
+   - Western Medical REIT was downgraded from A- to BBB-, weight 7.40% [register update standard].  
+   - Stable Utilities is listed at A rated, weight 12.00%; the packet does not provide a prior rating change path, so no downgrade trigger can be confirmed from the provided evidence [register update standard].
+
+2. **Average portfolio quality test.**  
+   - Source inputs: portfolio average credit quality = BBB+ [register update standard]; required minimum average credit quality = A- [board action record].  
+   - Comparison: BBB+ is below A-.  
+   - Result/business implication: Elm Corporate Bond Ladder is below the approve..."

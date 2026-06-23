@@ -1,0 +1,38 @@
+{
+  "total_items": 23,
+  "source_shards": [
+    "outputs/query_constraints_shards/aml_items.jsonl",
+    "outputs/query_constraints_shards/aml_supplement_items.jsonl",
+    "outputs/query_constraints_shards/communications_items.jsonl",
+    "outputs/query_constraints_shards/covenant_stress_items.jsonl",
+    "outputs/query_constraints_shards/disclosure_escalation_control_items.jsonl",
+    "outputs/query_constraints_shards/suitability_items.jsonl"
+  ],
+  "by_workflow": {
+    "Risk & Compliance Review": 23
+  },
+  "by_task": {
+    "AML red-flag review": 6,
+    "covenant check": 2,
+    "internal control review": 1,
+    "regulatory issue escalation": 2,
+    "risk disclosure review": 2,
+    "sales-script compliance": 4,
+    "stress testing": 1,
+    "suitability review": 5
+  },
+  "qa_warnings": [],
+  "constraint_policy": {
+    "definition": "A constraint is an explicit, checkable requirement stated in the query or explicitly triggered by the provided context/source. Default expectations of financial professionalism, legality, or compliance are not constraints unless the sample explicitly states them.",
+    "allowed_sources": [
+      "query",
+      "context"
+    ],
+    "exclude_examples": [
+      "generic requirement to be compliant/legal/professional when not stated",
+      "unstated best practice inferred only from finance domain knowledge",
+      "external knowledge not present in the query or context"
+    ]
+  },
+  "explicit_constraint_review": "Merged items were checked for required fields, source_ids, and query/context-labeled constraints. Future QA should remove any constraint that cannot be traced to explicit query wording or explicit context/source text."
+}

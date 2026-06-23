@@ -11,7 +11,7 @@ from openai import OpenAI
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DS_API_KEY = "sk-07ddf2d18dbd4cd4a98640d03c4b3643"
+DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DS_BASE_URL = "https://api.deepseek.com"
 client = OpenAI(api_key=DS_API_KEY, base_url=DS_BASE_URL)
 

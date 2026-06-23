@@ -7,11 +7,11 @@
 建议采用 **5 个金融工作流阶段** 作为最终主线。
 
 ```text
-Intake & Profiling
--> Research & Due Diligence
--> Decision & Structuring
--> Risk & Compliance Review
--> Execution, Monitoring, Reporting & Operations
+Intake and Profiling
+-> Research and Due Diligence
+-> Decision and Structuring
+-> Risk and Compliance Review
+-> Execution, Monitoring, Reporting, and Operations
 ```
 
 这个划分的好处是：
@@ -21,37 +21,37 @@ Intake & Profiling
 - 每个阶段都有明确工作产物，方便构造 query 和 protocol；
 - 广度足够，但不会散成职业百科。
 
-说明：`Risk & Compliance Review` 在真实机构中是横向 gate，可能发生在 intake、decision、execution 和 monitoring 的任意阶段。这里把它单独列为一个 workflow，是为了让 benchmark 能稳定采样风险识别、合规审查、适当性判断、压力测试和升级报告等能力。
+说明：`Risk and Compliance Review` 在真实机构中是横向 gate，可能发生在 intake、decision、execution 和 monitoring 的任意阶段。这里把它单独列为一个 workflow，是为了让 benchmark 能稳定采样风险识别、合规审查、适当性判断、压力测试和升级报告等能力。
 
 ## 最终任务表
 
 | Workflow | Workflow 对应任务 | Possible English Context Types and Sources |
 | --- | --- | --- |
-| **1. Intake & Profiling** | **KYC onboarding**：核验客户或企业身份、受益所有人、地址、制裁/PEP 风险。<br><br>**Client risk profiling**：根据收入、资产、负债、投资经验、风险承受能力、流动性需求建立客户画像。<br><br>**Loan application intake**：整理贷款申请、借款人基本信息、收入证明、企业财务资料、抵押品信息。<br><br>**Counterparty / issuer profile construction**：建立企业、交易对手、项目或发行人的基本面画像。<br><br>**Missing information checklist**：识别进入下一阶段前缺失的文件、字段或授权。<br><br>**Service scope explanation**：向客户说明服务范围、流程、限制和下一步，不提前承诺审批、收益或税务结果。 | **Customer documents**: customer intake form, onboarding questionnaire, identity documents, proof of address, beneficial ownership form, W-8/W-9 form.<br><br>**KYC / AML sources**: sanctions screening result, PEP screening result, adverse media summary, customer due diligence checklist, enhanced due diligence memo.<br><br>**Financial profile sources**: bank statements, brokerage account statements, insurance policies, tax status summary, income and expense worksheet, liabilities schedule.<br><br>**Loan intake sources**: loan application, borrower questionnaire, credit authorization form, collateral description, employment verification, corporate registration documents.<br><br>**Policy sources**: KYC policy excerpt, onboarding checklist, suitability questionnaire, customer classification policy, data privacy policy. |
-| **2. Research & Due Diligence** | **Financial statement analysis**：分析资产负债表、利润表、现金流量表、财务比率和趋势。<br><br>**Industry and market research**：整理行业规模、竞争格局、宏观因素、利率、商品价格或市场环境。<br><br>**Earnings review**：阅读 earnings release、management commentary、analyst Q&A，提取业绩驱动因素和风险。<br><br>**Credit due diligence**：审查借款人财务、信用历史、偿债能力、抵押品和同业对比。<br><br>**Investment due diligence**：对公司、证券、基金、资产或项目进行尽调，识别投资 thesis、风险和关键假设。<br><br>**Background screening**：检查交易对手、管理层、发行人或项目方的背景、声誉、法律或监管风险。<br><br>**Due diligence checklist completion**：根据政策或交易要求判断尽调材料是否完整。 | **Company financial sources**: annual report, 10-K, 10-Q, earnings release, investor presentation, management discussion and analysis, audited financial statements.<br><br>**Market and industry sources**: industry report excerpt, market data table, macroeconomic indicators, interest rate curve, commodity price data, competitor benchmark table.<br><br>**Credit research sources**: credit report, borrower financial statements, bank statements, debt schedule, collateral appraisal, covenant schedule, peer comparison table.<br><br>**Investment research sources**: equity research note, bond offering memorandum, fund factsheet, term sheet, cap table, historical price series, analyst transcript excerpt.<br><br>**Diligence sources**: due diligence request list, data room index, legal summary, background check report, adverse media summary, management interview notes.<br><br>**Policy sources**: due diligence policy, investment committee checklist, credit policy excerpt, documentation standard. |
-| **3. Decision & Structuring** | **Credit memo drafting**：基于研究和尽调结果形成授信建议，说明风险、偿债能力、抵押品、审批条件和升级项。<br><br>**Underwriting memo**：为贷款、保险、证券或项目融资形成 underwriting 判断。<br><br>**Loan approval package**：整理审批包，包括借款人概况、贷款用途、结构、担保、财务比率、例外事项。<br><br>**DCF valuation / pricing analysis**：基于现金流、贴现率、可比公司或证券价格形成估值和敏感性分析。<br><br>**Investment memo**：形成投资建议，区分事实、假设、风险、估值和推荐动作。<br><br>**Capital structure / financing proposal**：设计债务、股权、再融资或重组方案，比较金额、来源、期限和 trade-off。<br><br>**Portfolio proposal**：根据客户目标、风险承受能力和约束提出资产配置或再平衡方案。<br><br>**Trade order ticket preparation**：把客户交易意图转为结构化订单字段，并识别歧义或缺失字段。 | **Decision package sources**: credit memo template, underwriting guidelines, investment committee memo template, approval authority matrix, exception policy.<br><br>**Financial model sources**: DCF model output, valuation worksheet, comparable company table, comparable transaction table, sensitivity table, pricing model output.<br><br>**Loan structuring sources**: proposed loan terms, amortization schedule, collateral package, guarantor information, covenant package, loan approval form.<br><br>**Investment decision sources**: investment thesis notes, risk factor list, valuation assumptions, portfolio holdings, client investment policy statement, target allocation table.<br><br>**Capital markets sources**: term sheet, debt maturity schedule, refinancing proposal, rating agency considerations, market conditions memo, transaction timeline.<br><br>**Trading sources**: client order message, security master, price quote, account restrictions, order management policy, trade blotter template. |
-| **4. Risk & Compliance Review** | **AML red-flag review**：识别异常交易、资金来源问题、制裁/PEP 风险、可疑活动或需要升级的客户行为。<br><br>**Covenant check**：核验财务 covenant、信息披露 covenant 或贷款条件是否被触发或违反。<br><br>**Suitability review**：判断产品、交易或组合是否匹配客户画像、风险承受能力、投资目标和集中度限制。<br><br>**Sales-script / communication compliance**：检查客户话术是否包含保证收益、误导性表述、遗漏披露或越权建议。<br><br>**Stress testing**：在指定情景下评估组合、贷款、交易或机构资产负债的潜在损失。<br><br>**Risk disclosure review**：检查发行文件、投资 memo 或客户材料中的风险披露是否充分。<br><br>**Internal control review**：识别审批、账务、交易、数据权限或职责分离中的控制缺陷。<br><br>**Regulatory issue escalation**：把疑似违规、重大风险或超权限事项整理为升级报告。 | **AML / compliance sources**: transaction monitoring alert, suspicious activity narrative, sanctions screening result, PEP screening result, adverse media summary, AML policy excerpt.<br><br>**Covenant and credit control sources**: covenant schedule, compliance certificate, borrower financial statements, waiver request, loan agreement excerpt.<br><br>**Suitability sources**: customer risk profile, product risk rating, holdings report, concentration report, investment policy statement, disclosure document.<br><br>**Communication review sources**: sales script, client email, call transcript, marketing material, required disclosure checklist, prohibited claims policy.<br><br>**Risk analytics sources**: portfolio holdings, VaR report, stress scenario definitions, sensitivity table, liquidity report, counterparty exposure report.<br><br>**Control and audit sources**: internal audit report, control matrix, access log, segregation of duties matrix, exception report, policy and procedure manual.<br><br>**Regulatory sources**: regulation excerpt, compliance manual, examination findings, remediation tracker, escalation policy. |
-| **5. Execution, Monitoring, Reporting & Operations** | **Trade / loan / investment execution check**：复核交易、贷款或投资决策是否被正确落地，包括订单、确认、资金流、条件满足和异常项。<br><br>**Portfolio monitoring**：持续跟踪组合表现、风险暴露、集中度、漂移和再平衡需求。<br><br>**Post-investment / post-loan review**：复核投资或贷款执行后的表现、条件满足情况、风险变化和行动项。<br><br>**Risk alert generation**：根据阈值、limit breach、异常指标或新闻事件生成风险提醒。<br><br>**Client review report**：生成面向客户的定期报告，解释表现、费用、风险和下一步建议，避免保证性语言。<br><br>**Reconciliation**：核对交易、现金、持仓、费用、账簿、报表或外部托管数据的一致性。<br><br>**Month-end close / financial reporting support**：支持月结、分录、调节、报表复核和管理层报告。<br><br>**Board / regulatory reporting**：准备董事会、管理层或监管报告，标记缺失证据和不可确认事项。<br><br>**Remediation tracking**：跟踪审计、合规或风险问题的整改状态、owner、due date 和证据。 | **Execution sources**: trade confirmation, order ticket, trade blotter, settlement instruction, loan closing checklist, funding memo, wire instruction, investment allocation notice.<br><br>**Portfolio monitoring sources**: holdings report, performance report, benchmark return table, concentration report, risk dashboard, drift report, rebalance trigger list.<br><br>**Post-decision sources**: post-investment review memo, loan monitoring report, covenant compliance update, borrower performance update, action item tracker.<br><br>**Alert sources**: limit breach report, exception report, market news summary, rating downgrade notice, delinquency report, early warning indicator dashboard.<br><br>**Client reporting sources**: client statement, quarterly review deck, fee schedule, performance attribution report, tax lot report, disclosure language library.<br><br>**Reconciliation sources**: trade blotter, custodian statement, general ledger, cash ledger, settlement report, invoice records, journal entries.<br><br>**Financial reporting sources**: trial balance, month-end close checklist, adjusting entry log, variance analysis, management reporting package, regulatory reporting template.<br><br>**Remediation sources**: audit finding tracker, compliance remediation plan, control owner attestation, evidence upload log, board action register. |
+| **1. Intake and Profiling** | **KYC onboarding**：核验客户或企业身份、受益所有人、地址、制裁/PEP 风险。<br><br>**Client risk profiling**：根据收入、资产、负债、投资经验、风险承受能力、流动性需求建立客户画像。<br><br>**Loan application intake**：整理贷款申请、借款人基本信息、收入证明、企业财务资料、抵押品信息。<br><br>**Counterparty / issuer profile construction**：建立企业、交易对手、项目或发行人的基本面画像。<br><br>**Missing information checklist**：识别进入下一阶段前缺失的文件、字段或授权。<br><br>**Service scope explanation**：向客户说明服务范围、流程、限制和下一步，不提前承诺审批、收益或税务结果。 | **Customer documents**: customer intake form, onboarding questionnaire, identity documents, proof of address, beneficial ownership form, W-8/W-9 form.<br><br>**KYC / AML sources**: sanctions screening result, PEP screening result, adverse media summary, customer due diligence checklist, enhanced due diligence memo.<br><br>**Financial profile sources**: bank statements, brokerage account statements, insurance policies, tax status summary, income and expense worksheet, liabilities schedule.<br><br>**Loan intake sources**: loan application, borrower questionnaire, credit authorization form, collateral description, employment verification, corporate registration documents.<br><br>**Policy sources**: KYC policy excerpt, onboarding checklist, suitability questionnaire, customer classification policy, data privacy policy. |
+| **2. Research and Due Diligence** | **Financial statement analysis**：分析资产负债表、利润表、现金流量表、财务比率和趋势。<br><br>**Industry and market research**：整理行业规模、竞争格局、宏观因素、利率、商品价格或市场环境。<br><br>**Earnings review**：阅读 earnings release、management commentary、analyst Q&A，提取业绩驱动因素和风险。<br><br>**Credit due diligence**：审查借款人财务、信用历史、偿债能力、抵押品和同业对比。<br><br>**Investment due diligence**：对公司、证券、基金、资产或项目进行尽调，识别投资 thesis、风险和关键假设。<br><br>**Background screening**：检查交易对手、管理层、发行人或项目方的背景、声誉、法律或监管风险。<br><br>**Due diligence checklist completion**：根据政策或交易要求判断尽调材料是否完整。 | **Company financial sources**: annual report, 10-K, 10-Q, earnings release, investor presentation, management discussion and analysis, audited financial statements.<br><br>**Market and industry sources**: industry report excerpt, market data table, macroeconomic indicators, interest rate curve, commodity price data, competitor benchmark table.<br><br>**Credit research sources**: credit report, borrower financial statements, bank statements, debt schedule, collateral appraisal, covenant schedule, peer comparison table.<br><br>**Investment research sources**: equity research note, bond offering memorandum, fund factsheet, term sheet, cap table, historical price series, analyst transcript excerpt.<br><br>**Diligence sources**: due diligence request list, data room index, legal summary, background check report, adverse media summary, management interview notes.<br><br>**Policy sources**: due diligence policy, investment committee checklist, credit policy excerpt, documentation standard. |
+| **3. Decision and Structuring** | **Credit memo drafting**：基于研究和尽调结果形成授信建议，说明风险、偿债能力、抵押品、审批条件和升级项。<br><br>**Underwriting memo**：为贷款、保险、证券或项目融资形成 underwriting 判断。<br><br>**Loan approval package**：整理审批包，包括借款人概况、贷款用途、结构、担保、财务比率、例外事项。<br><br>**DCF valuation / pricing analysis**：基于现金流、贴现率、可比公司或证券价格形成估值和敏感性分析。<br><br>**Investment memo**：形成投资建议，区分事实、假设、风险、估值和推荐动作。<br><br>**Capital structure / financing proposal**：设计债务、股权、再融资或重组方案，比较金额、来源、期限和 trade-off。<br><br>**Portfolio proposal**：根据客户目标、风险承受能力和约束提出资产配置或再平衡方案。<br><br>**Trade order ticket preparation**：把客户交易意图转为结构化订单字段，并识别歧义或缺失字段。 | **Decision package sources**: credit memo template, underwriting guidelines, investment committee memo template, approval authority matrix, exception policy.<br><br>**Financial model sources**: DCF model output, valuation worksheet, comparable company table, comparable transaction table, sensitivity table, pricing model output.<br><br>**Loan structuring sources**: proposed loan terms, amortization schedule, collateral package, guarantor information, covenant package, loan approval form.<br><br>**Investment decision sources**: investment thesis notes, risk factor list, valuation assumptions, portfolio holdings, client investment policy statement, target allocation table.<br><br>**Capital markets sources**: term sheet, debt maturity schedule, refinancing proposal, rating agency considerations, market conditions memo, transaction timeline.<br><br>**Trading sources**: client order message, security master, price quote, account restrictions, order management policy, trade blotter template. |
+| **4. Risk and Compliance Review** | **AML red-flag review**：识别异常交易、资金来源问题、制裁/PEP 风险、可疑活动或需要升级的客户行为。<br><br>**Covenant check**：核验财务 covenant、信息披露 covenant 或贷款条件是否被触发或违反。<br><br>**Suitability review**：判断产品、交易或组合是否匹配客户画像、风险承受能力、投资目标和集中度限制。<br><br>**Sales-script / communication compliance**：检查客户话术是否包含保证收益、误导性表述、遗漏披露或越权建议。<br><br>**Stress testing**：在指定情景下评估组合、贷款、交易或机构资产负债的潜在损失。<br><br>**Risk disclosure review**：检查发行文件、投资 memo 或客户材料中的风险披露是否充分。<br><br>**Internal control review**：识别审批、账务、交易、数据权限或职责分离中的控制缺陷。<br><br>**Regulatory issue escalation**：把疑似违规、重大风险或超权限事项整理为升级报告。 | **AML / compliance sources**: transaction monitoring alert, suspicious activity narrative, sanctions screening result, PEP screening result, adverse media summary, AML policy excerpt.<br><br>**Covenant and credit control sources**: covenant schedule, compliance certificate, borrower financial statements, waiver request, loan agreement excerpt.<br><br>**Suitability sources**: customer risk profile, product risk rating, holdings report, concentration report, investment policy statement, disclosure document.<br><br>**Communication review sources**: sales script, client email, call transcript, marketing material, required disclosure checklist, prohibited claims policy.<br><br>**Risk analytics sources**: portfolio holdings, VaR report, stress scenario definitions, sensitivity table, liquidity report, counterparty exposure report.<br><br>**Control and audit sources**: internal audit report, control matrix, access log, segregation of duties matrix, exception report, policy and procedure manual.<br><br>**Regulatory sources**: regulation excerpt, compliance manual, examination findings, remediation tracker, escalation policy. |
+| **5. Execution, Monitoring, Reporting, and Operations** | **Trade / loan / investment execution check**：复核交易、贷款或投资决策是否被正确落地，包括订单、确认、资金流、条件满足和异常项。<br><br>**Portfolio monitoring**：持续跟踪组合表现、风险暴露、集中度、漂移和再平衡需求。<br><br>**Post-investment / post-loan review**：复核投资或贷款执行后的表现、条件满足情况、风险变化和行动项。<br><br>**Risk alert generation**：根据阈值、limit breach、异常指标或新闻事件生成风险提醒。<br><br>**Client review report**：生成面向客户的定期报告，解释表现、费用、风险和下一步建议，避免保证性语言。<br><br>**Reconciliation**：核对交易、现金、持仓、费用、账簿、报表或外部托管数据的一致性。<br><br>**Month-end close / financial reporting support**：支持月结、分录、调节、报表复核和管理层报告。<br><br>**Board / regulatory reporting**：准备董事会、管理层或监管报告，标记缺失证据和不可确认事项。<br><br>**Remediation tracking**：跟踪审计、合规或风险问题的整改状态、owner、due date 和证据。 | **Execution sources**: trade confirmation, order ticket, trade blotter, settlement instruction, loan closing checklist, funding memo, wire instruction, investment allocation notice.<br><br>**Portfolio monitoring sources**: holdings report, performance report, benchmark return table, concentration report, risk dashboard, drift report, rebalance trigger list.<br><br>**Post-decision sources**: post-investment review memo, loan monitoring report, covenant compliance update, borrower performance update, action item tracker.<br><br>**Alert sources**: limit breach report, exception report, market news summary, rating downgrade notice, delinquency report, early warning indicator dashboard.<br><br>**Client reporting sources**: client statement, quarterly review deck, fee schedule, performance attribution report, tax lot report, disclosure language library.<br><br>**Reconciliation sources**: trade blotter, custodian statement, general ledger, cash ledger, settlement report, invoice records, journal entries.<br><br>**Financial reporting sources**: trial balance, month-end close checklist, adjusting entry log, variance analysis, management reporting package, regulatory reporting template.<br><br>**Remediation sources**: audit finding tracker, compliance remediation plan, control owner attestation, evidence upload log, board action register. |
 
 ## O*NET 职业来源映射
 
 | Workflow | 主要 O*NET 职业 |
 | --- | --- |
-| Intake & Profiling | Personal Financial Advisors, 13-2052.00; Loan Officers, 13-2072.00; Compliance Officers, 13-1041.00 |
-| Research & Due Diligence | Credit Analysts, 13-2041.00; Financial and Investment Analysts, 13-2051.00; Financial Risk Specialists, 13-2054.00; Accountants and Auditors, 13-2011.00 |
-| Decision & Structuring | Credit Analysts, 13-2041.00; Loan Officers, 13-2072.00; Financial and Investment Analysts, 13-2051.00; Financial Quantitative Analysts, 13-2099.01; Financial Managers, 11-3031.00; Securities, Commodities, and Financial Services Sales Agents, 41-3031.00 |
-| Risk & Compliance Review | Financial Risk Specialists, 13-2054.00; Financial Examiners, 13-2061.00; Compliance Officers, 13-1041.00; Accountants and Auditors, 13-2011.00 |
-| Execution, Monitoring, Reporting & Operations | Financial Managers, 11-3031.00; Accountants and Auditors, 13-2011.00; Securities, Commodities, and Financial Services Sales Agents, 41-3031.00; Personal Financial Advisors, 13-2052.00; Financial Risk Specialists, 13-2054.00 |
+| Intake and Profiling | Personal Financial Advisors, 13-2052.00; Loan Officers, 13-2072.00; Compliance Officers, 13-1041.00 |
+| Research and Due Diligence | Credit Analysts, 13-2041.00; Financial and Investment Analysts, 13-2051.00; Financial Risk Specialists, 13-2054.00; Accountants and Auditors, 13-2011.00 |
+| Decision and Structuring | Credit Analysts, 13-2041.00; Loan Officers, 13-2072.00; Financial and Investment Analysts, 13-2051.00; Financial Quantitative Analysts, 13-2099.01; Financial Managers, 11-3031.00; Securities, Commodities, and Financial Services Sales Agents, 41-3031.00 |
+| Risk and Compliance Review | Financial Risk Specialists, 13-2054.00; Financial Examiners, 13-2061.00; Compliance Officers, 13-1041.00; Accountants and Auditors, 13-2011.00 |
+| Execution, Monitoring, Reporting, and Operations | Financial Managers, 11-3031.00; Accountants and Auditors, 13-2011.00; Securities, Commodities, and Financial Services Sales Agents, 41-3031.00; Personal Financial Advisors, 13-2052.00; Financial Risk Specialists, 13-2054.00 |
 
 ## 推荐样本占比
 
 | Workflow | 建议样本占比 | 主要能力 |
 | --- | ---: | --- |
-| Intake & Profiling | 15% | 信息抽取、缺失识别、客户画像、权限边界 |
-| Research & Due Diligence | 20% | 多文档阅读、财报/行业分析、尽调、证据整理 |
-| Decision & Structuring | 25% | memo 写作、估值、审批建议、方案设计、结构化输出 |
-| Risk & Compliance Review | 25% | 风险识别、压力测试、合规检查、适当性、升级判断 |
-| Execution, Monitoring, Reporting & Operations | 15% | 执行复核、持续监控、报告生成、账务核对、运营审查 |
+| Intake and Profiling | 15% | 信息抽取、缺失识别、客户画像、权限边界 |
+| Research and Due Diligence | 20% | 多文档阅读、财报/行业分析、尽调、证据整理 |
+| Decision and Structuring | 25% | memo 写作、估值、审批建议、方案设计、结构化输出 |
+| Risk and Compliance Review | 25% | 风险识别、压力测试、合规检查、适当性、升级判断 |
+| Execution, Monitoring, Reporting, and Operations | 15% | 执行复核、持续监控、报告生成、账务核对、运营审查 |
 
 ## 任务体系使用方式
 
@@ -72,7 +72,7 @@ workflow + task + deliverable
 推荐 item schema：
 
 ```yaml
-workflow: Risk & Compliance Review
+workflow: Risk and Compliance Review
 task: AML red-flag review
 work_product: compliance escalation report
 context_types:
@@ -162,19 +162,19 @@ workflow -> task -> work product -> context -> query -> extracted constraints ->
 
 使用本文件中的 5 个 workflow：
 
-- `Intake & Profiling`
-- `Research & Due Diligence`
-- `Decision & Structuring`
-- `Risk & Compliance Review`
-- `Execution, Monitoring, Reporting & Operations`
+- `Intake and Profiling`
+- `Research and Due Diligence`
+- `Decision and Structuring`
+- `Risk and Compliance Review`
+- `Execution, Monitoring, Reporting, and Operations`
 
 建议第一版样本占比：
 
-- `Intake & Profiling`: 15%
-- `Research & Due Diligence`: 20%
-- `Decision & Structuring`: 25%
-- `Risk & Compliance Review`: 25%
-- `Execution, Monitoring, Reporting & Operations`: 15%
+- `Intake and Profiling`: 15%
+- `Research and Due Diligence`: 20%
+- `Decision and Structuring`: 25%
+- `Risk and Compliance Review`: 25%
+- `Execution, Monitoring, Reporting, and Operations`: 15%
 
 优先覆盖表格第二列中的任务，例如：
 
@@ -249,7 +249,7 @@ context_pack:
       type: covenant schedule
       content: ...
   metadata:
-    workflow: Decision & Structuring
+    workflow: Decision and Structuring
     task: Credit memo drafting
     source_mode: synthetic / public / mixed
 ```
@@ -279,11 +279,11 @@ policy exceptions, missing information, and an approve/reject/escalate recommend
 
 | Workflow | Query 类型 |
 | --- | --- |
-| Intake & Profiling | complete checklist, build profile, classify onboarding risk, draft client next-step email |
-| Research & Due Diligence | summarize financials, complete diligence checklist, extract risks, compare peers |
-| Decision & Structuring | draft memo, prepare valuation summary, structure options, build approval package |
-| Risk & Compliance Review | review red flags, check covenant, review suitability, classify severity, draft escalation |
-| Execution, Monitoring, Reporting & Operations | reconcile records, generate monitoring report, produce risk alert, draft client review |
+| Intake and Profiling | complete checklist, build profile, classify onboarding risk, draft client next-step email |
+| Research and Due Diligence | summarize financials, complete diligence checklist, extract risks, compare peers |
+| Decision and Structuring | draft memo, prepare valuation summary, structure options, build approval package |
+| Risk and Compliance Review | review red flags, check covenant, review suitability, classify severity, draft escalation |
+| Execution, Monitoring, Reporting, and Operations | reconcile records, generate monitoring report, produce risk alert, draft client review |
 
 ### Step 5：从 context 和 query 中抽取 constraints
 
@@ -410,11 +410,11 @@ pilot 通过后再扩展：
 如果你是接手合成的 agent，请不要重新设计 taxonomy。当前 taxonomy 已经确定：
 
 ```text
-1. Intake & Profiling
-2. Research & Due Diligence
-3. Decision & Structuring
-4. Risk & Compliance Review
-5. Execution, Monitoring, Reporting & Operations
+1. Intake and Profiling
+2. Research and Due Diligence
+3. Decision and Structuring
+4. Risk and Compliance Review
+5. Execution, Monitoring, Reporting, and Operations
 ```
 
 你的任务不是重写工作流，而是基于这个 taxonomy 生成可评测的数据实例。

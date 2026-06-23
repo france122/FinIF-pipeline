@@ -26,7 +26,7 @@
 
 本版本暂不展开 query -> context 生成细节，只保留“任务体系”本身。
 
-## 1. Workflow A：客户 / 交易对手 Intake & Profiling
+## 1. Workflow A：客户 / 交易对手 Intake and Profiling
 
 ### 1.1 真实工作流含义
 
@@ -133,7 +133,7 @@ O*NET 原始任务：
 - 金融约束：通俗语言；不得保证收益、批准或税务结果；说明下一步流程
 - 评测规则：语气合规、禁止承诺识别、客户可理解性、信息完整性
 
-## 2. Workflow B：Credit & Underwriting
+## 2. Workflow B：Credit and Underwriting
 
 ### 2.1 真实工作流含义
 
@@ -257,7 +257,7 @@ O*NET 原始任务：
 - 金融约束：通俗语言；披露费用/利率/还款义务；不得误导或保证批准
 - 评测规则：还款计算、披露完整性、语气合规、客户可理解性
 
-## 3. Workflow C：Investment & Trading Decision
+## 3. Workflow C：Investment and Trading Decision
 
 ### 3.1 真实工作流含义
 
@@ -395,7 +395,7 @@ O*NET 原始任务：
 - 金融约束：区分模型输出和投资建议；标记模型限制和验证缺口
 - 评测规则：结果解释准确性、限制识别、边界遵循、技术内容压缩
 
-## 4. Workflow D：Risk & Compliance Review
+## 4. Workflow D：Risk and Compliance Review
 
 ### 4.1 真实工作流含义
 
@@ -549,10 +549,10 @@ O*NET 原始任务：
 
 | Workflow | 建议样本占比 | 主要能力 |
 | --- | ---: | --- |
-| Intake & Profiling | 20% | 信息抽取、缺失识别、客户画像、权限边界 |
-| Credit & Underwriting | 30% | 多文档推理、计算、政策阈值、审批升级 |
-| Investment & Trading Decision | 25% | 投资研究、交易指令、适当性、模型解释 |
-| Risk & Compliance Review | 25% | 风险识别、压力测试、合规审查、审计发现 |
+| Intake and Profiling | 20% | 信息抽取、缺失识别、客户画像、权限边界 |
+| Credit and Underwriting | 30% | 多文档推理、计算、政策阈值、审批升级 |
+| Investment and Trading Decision | 25% | 投资研究、交易指令、适当性、模型解释 |
+| Risk and Compliance Review | 25% | 风险识别、压力测试、合规审查、审计发现 |
 
 ## 6. 约束类型库
 

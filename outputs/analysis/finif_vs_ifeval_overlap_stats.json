@@ -1,0 +1,46 @@
+{
+  "character_length_overlap": {
+    "overlap_interval": [
+      1460,
+      1858
+    ],
+    "finif_in_overlap": 160,
+    "finif_percent": 15.037593984962406,
+    "ifeval_in_overlap": 1,
+    "ifeval_percent": 0.18484288354898337
+  },
+  "word_length_overlap": {
+    "overlap_interval": [
+      212,
+      295
+    ],
+    "finif_in_overlap": 188,
+    "finif_percent": 17.669172932330827,
+    "ifeval_in_overlap": 1,
+    "ifeval_percent": 0.18484288354898337
+  },
+  "finif_chars": {
+    "min": 1460,
+    "median": 2455.0,
+    "mean": 2405.2763157894738,
+    "max": 3334
+  },
+  "ifeval_chars": {
+    "min": 53,
+    "median": 191,
+    "mean": 210.75046210720888,
+    "max": 1858
+  },
+  "finif_words": {
+    "min": 212,
+    "median": 350.0,
+    "mean": 346.1588345864662,
+    "max": 518
+  },
+  "ifeval_words": {
+    "min": 10,
+    "median": 33,
+    "mean": 36.92606284658041,
+    "max": 295
+  }
+}

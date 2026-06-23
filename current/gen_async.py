@@ -8,10 +8,10 @@ from openai import AsyncOpenAI
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DS_API_KEY = "sk-07ddf2d18dbd4cd4a98640d03c4b3643"
+DS_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DS_BASE_URL = "https://api.deepseek.com"
 
-SF_API_KEY = "sk-cgjscnvmtbjmhxiebvxaiwqkyqnofnozhldypbdrsaahnssn"
+SF_API_KEY = os.environ.get("SILICONFLOW_API_KEY", "")
 SF_BASE_URL = "https://api.siliconflow.cn/v1"
 
 ds_client = AsyncOpenAI(api_key=DS_API_KEY, base_url=DS_BASE_URL)
