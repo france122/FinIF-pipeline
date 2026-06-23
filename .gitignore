@@ -2,6 +2,7 @@
 .DS_Store
 Thumbs.db
 .~*
+~$*
 
 # Python
 __pycache__/
@@ -19,76 +20,63 @@ key_ds.md
 key_siliconflow.md
 .env
 
-# Claude Agent internal memory
+# Internal project docs (not for public)
 memory/
 AGENT.md
 TASK_REPAIR_AGENT_BRIEF.md
 codex_to_do.md
 .tmp_extract/
 .tmp_papers/
+plan.md
+constraint_taxonomy_v2.md
+context_source_catalog_en.md
+finance_benchmark_task_system.md
+finance_lifecycle_onet_task_system_zh.md
+pilot_risk_compliance_workflow.md
+task_repair.md
+task_workflow_final.md
+download_contexts.ps1
 
-# Large data files (>100MB, GitHub limit)
-data/tracks/all_tracks.jsonl
-data/tracks/train_tracks.jsonl
-data/tracks/raw_gpt5_output.jsonl
-data/tracks/vulcan_track_gen_input.jsonl
-
-# Response files (large, local only)
-data/scores/*_responses.jsonl
-
-# Scores raw (only keep clean version)
-data/scores/soft_scores_raw.jsonl
-
-# History (archived old files, local only)
-history/
-
-# drawio editor backup
-.$*.drawio.bkp
-current/.$*.drawio.bkp
-paper/figures/.$*.drawio.bkp
-
-# Model run outputs (large JSON files)
-outputs/model_runs/
-
-# Temporary files
-outputs/tmp/
-
-# Context text cache (can be regenerated)
-outputs/context_text_cache/
-
-# Query constraint shards (intermediate)
-outputs/query_constraints_shards/
-
-# WPS lock files
-~$*
-
-# Large intermediate data files
-current/sft_data/sft_data.jsonl
-current/sft_data/sft_sharegpt_2132.json
-current/archive/data/
-current/sft_pipeline/data/samples_clean_2134.jsonl
-outputs/full_prompts/
-
-# Raw context PDFs (large)
-raw_contexts_batch1/
-outputs/context_raw_en/
-
-# Dashboard HTML (large, regenerable)
-outputs/benchmark/dashboard.html
-outputs/benchmark/*.bak
-outputs/benchmark/_dashboard_data*.json
-
-# Intermediate benchmark versions (keep only final benchmark307)
-outputs/benchmark/finif_v2_benchmark_360_*.jsonl
-outputs/benchmark/finif_v2_tonight_hard300.jsonl
-outputs/benchmark/finif_v2_tonight_hard300_ifclean.jsonl
-outputs/benchmark/finif_v2_tonight_hard325_*.jsonl
-outputs/benchmark/gpt55_targeted_benchmark307_candidate_*.jsonl
-
-# Training data backups
-outputs/training/**/*.bak
+# LaTeX paper source
+FinIF__Can_your_model_follow_instructions_in_financial_tasks___Copy_/
+paper/
+sft_case_study_tables.tex
+emnlp_industry_submission_plan.md
+paper_packet.md
 
 # Personal documents
 毕业论文_最终版.pdf
 项目介绍.docx
-.~项目介绍.docx
+
+# current/ data files (only keep code)
+current/archive/
+current/benchmark/
+current/docs/
+current/html/*.html
+current/html/*.png
+current/sft_data/*.jsonl
+current/sft_data/*.json
+current/sft_data/*.html
+current/sft_pipeline/config/
+current/sft_pipeline/data/
+current/AGENT.md
+current/DATA_INDEX.md
+
+# outputs/ intermediate data
+outputs/model_runs/
+outputs/tmp/
+outputs/context_text_cache/
+outputs/context_raw_en/
+outputs/query_constraints_shards/
+outputs/query_constraints/
+outputs/reports/
+outputs/training/
+outputs/benchmark/
+outputs/full_prompts/
+raw_contexts_batch1/
+
+# drawio editor backup
+.$*.drawio.bkp
+
+# History
+history/

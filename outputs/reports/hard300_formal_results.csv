@@ -1,9 +1,0 @@
-model,items,msr,rsr,osr_exact_item_pass_rate,quality_mean_0_10,strict_failed_items,passed_constraints,total_constraints,score_path
-GPT-5.5,300,62.67%,92.33%,58.67%,7.40,124,2924,3134,outputs/model_runs/gpt5.5_hard300_ifclean_generation_only_20260614/scores_gpt-5.5_judge_gpt4o.json
-GPT-5,300,58.00%,81.00%,47.33%,7.05,158,2863,3134,outputs/model_runs/gpt5_hard300_ifclean_combined_random50_plus_remaining250/scores_gpt5_judge_gpt4o_combined.json
-GLM5.1,300,26.67%,79.33%,20.33%,4.88,239,2579,3134,outputs/model_runs/glm5.1_siliconflow_hard300_ifclean_temp0_generation_only_20260614/scores_glm5.1_siliconflow_judge_gpt4o.json
-DS-v4-pro,300,23.67%,66.67%,16.00%,4.68,252,2546,3134,outputs/model_runs/ds-v4-pro_hard300_ifclean_temp0_judge_gpt4o/scores_ds-v4-pro_judge_gpt4o.json
-DS-v4-flash,300,17.67%,62.33%,9.00%,4.27,273,2442,3134,outputs/model_runs/ds-v4-flash_hard300_ifclean_temp0_judge_gpt4o/scores_ds-v4-flash_judge_gpt4o.json
-Qwen3.5-27B,300,15.33%,63.67%,9.00%,4.08,273,2449,3134,outputs/model_runs/qwen3.5-27b_siliconflow_hard300_ifclean_temp0_judge_gpt4o/scores_qwen3.5-27b_siliconflow_judge_gpt4o.json
-Qwen3.5-9B,300,8.67%,51.33%,4.00%,3.60,288,2259,3134,outputs/model_runs/qwen3.5-9b_siliconflow_hard300_ifclean_temp0_judge_gpt4o/scores_qwen3.5-9b_siliconflow_judge_gpt4o.json
-Qwen3.5-4B,300,9.33%,1.67%,0.00%,3.63,300,1938,3134,outputs/model_runs/qwen3.5-4b_siliconflow_hard300_ifclean_temp0_judge_gpt4o/scores_qwen3.5-4b_siliconflow_judge_gpt4o.json

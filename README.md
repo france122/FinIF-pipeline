@@ -17,10 +17,10 @@ Key features:
 ## Project Structure
 
 ```
-FinIF-Benchmark/
+FinIF-pipeline/
 │
-├── README.md                          # This file
-├── FinIF/                             # Public benchmark package (data + evaluator)
+├── README.md
+├── FinIF/                             # Benchmark package (data + evaluator)
 │   ├── data/
 │   │   ├── finif_test.jsonl           # 307 test instructions with constraints
 │   │   ├── finif_train.json           # 621 SFT training samples (ShareGPT)
@@ -29,86 +29,48 @@ FinIF-Benchmark/
 │   │   ├── evaluate.py                # Main evaluation script
 │   │   └── rule_checkers.py           # ~50 deterministic rule checkers
 │   └── examples/
-│       └── run_evaluation.sh          # Example evaluation command
+│       └── run_evaluation.sh
 │
 ├── evaluation/                        # Full evaluation pipeline
-│   ├── checkers.py                    # Extended rule-checker library
+│   ├── checkers.py                    # Extended rule-checker library (~1400 lines)
 │   ├── evaluate_responses.py          # Item-level evaluator (rule + LLM judge)
 │   ├── evaluator_spec.json            # Evaluation spec with judge prompts
 │   ├── run_gpt5_*.py                  # GPT-5/5.5 evaluation runners
 │   ├── run_deepseek_*.py              # DeepSeek-V4 evaluation runners
 │   ├── run_siliconflow_*.py           # Qwen/GLM evaluation via SiliconFlow
-│   ├── build_model_results_table.py   # Generate leaderboard markdown table
+│   ├── build_model_results_table.py   # Leaderboard table generation
 │   ├── build_paper_figure1.py         # Paper Figure 1 (case study)
-│   ├── plot_finif_test_data_statistics.py  # Test data distribution plots
-│   ├── build_dashboard.py             # Interactive HTML results dashboard
-│   ├── build_hard300_reporting_assets.py   # Reporting assets for hard300 slice
-│   ├── export_fail_cases.py           # Export IF failure cases for analysis
-│   ├── analyze_benchmark307_vs_ifeval.py   # FinIF vs IFEval comparison
+│   ├── plot_finif_test_data_statistics.py
+│   ├── analyze_benchmark307_vs_ifeval.py
 │   └── ...
 │
-├── current/                           # Data construction pipeline
-│   ├── checkers.py                    # Code-based constraint checker library
-│   ├── gen_responses_ds.py            # Multi-model response generation + eval
-│   ├── gen_async.py                   # Async parallel response generation
-│   ├── score_sft_responses.py         # SFT data quality scoring
-│   ├── plot_radar.py                  # Radar chart: model perf by constraint type
-│   ├── build_stats.py                 # Benchmark statistics HTML dashboard
-│   ├── trim_constraints.py            # Constraint pruning utility
-│   │
-│   ├── sft_pipeline/                  # Full SFT data construction pipeline
-│   │   ├── step1_prepare_contexts.py      # Extract contexts from benchmark
-│   │   ├── step3_assemble_constraints.py  # Sample & assemble constraints per query
-│   │   ├── step4_scale_to_2000.py         # Scale training data to 2000+ samples
-│   │   ├── step5_export.py                # Export to messages format
-│   │   ├── step6_expand_benchmark.py      # Expand benchmark with real documents
-│   │   ├── step8_redistribute.py          # Redistribute contexts (train/test split)
-│   │   ├── step9_gen_sft_responses.py     # Teacher response generation (1Q-N-A)
-│   │   ├── gen_constraint_text.py         # LLM-based constraint text generation
-│   │   ├── ingest_external_contexts.py    # Ingest real financial documents
-│   │   ├── dashboard.py                   # Pipeline monitoring dashboard
-│   │   └── viewer.py                      # Data viewer utility
-│   │
+├── current/                           # Data construction & SFT pipeline
+│   ├── sft_pipeline/                  # Full data construction pipeline
+│   │   ├── step1_prepare_contexts.py
+│   │   ├── step3_assemble_constraints.py
+│   │   ├── step4_scale_to_2000.py
+│   │   ├── step5_export.py
+│   │   ├── step6_expand_benchmark.py
+│   │   ├── step8_redistribute.py
+│   │   ├── step9_gen_sft_responses.py
+│   │   └── gen_constraint_text.py
 │   ├── sft_data/                      # SFT data repair pipeline
-│   │   ├── convert_sharegpt.py            # Convert to ShareGPT/LLaMA-Factory format
-│   │   ├── iterative_repair.py            # Iterative constraint-guided repair
-│   │   ├── async_repair.py                # Async batch repair
-│   │   ├── repair_round3.py               # Third-round targeted repair
-│   │   └── verify_repairs.py              # Verify repair quality
-│   │
-│   ├── html/                          # Interactive visualization
-│   │   ├── constraint_count_chart.py      # Constraint distribution charts
-│   │   └── task_taxonomy_chart.py         # Task taxonomy visualization
-│   │
-│   └── diagrams/                      # Pipeline architecture diagrams (draw.io)
-│       ├── pipeline.drawio
-│       └── whole_pipeline.drawio
+│   │   ├── iterative_repair.py
+│   │   ├── verify_repairs.py
+│   │   └── convert_sharegpt.py
+│   ├── checkers.py                    # Constraint checker library
+│   ├── gen_responses_ds.py            # Multi-model response generation
+│   ├── gen_async.py                   # Async parallel generation
+│   ├── score_sft_responses.py         # SFT quality scoring
+│   ├── plot_radar.py                  # Radar chart visualization
+│   └── build_stats.py                 # Statistics dashboard
 │
-├── outputs/                           # Generated outputs
-│   ├── benchmark/                     # Benchmark dataset files
-│   ├── paper_figures/                 # Paper-ready figures
-│   │   ├── scripts/                       # Figure generation scripts
-│   │   │   ├── fig_finif_constraint_taxonomy.py   # Constraint taxonomy donut chart
-│   │   │   ├── fig_finif_prompt_length.py         # FinIF vs IFEval prompt length
-│   │   │   ├── fig_response_length_boxplot.py     # Response length across models
-│   │   │   └── fig_sft_isr_by_workflow.py         # SFT ISR improvement by workflow
-│   │   └── pdf/                           # Output PDFs
-│   ├── figures/                       # Analysis figures (PNG + PDF)
-│   ├── analysis/                      # Comparative analysis outputs
-│   ├── reports/                       # Status reports
-│   ├── training/                      # LLaMA-Factory training exports
-│   ├── full_prompts/                  # Full prompt datasets
-│   └── context_raw_en/               # Source regulatory documents (PDF)
-│
-├── paper/                             # Paper materials
-│   └── figures/                       # Paper figures (Figure 1, draw.io)
-│
-├── FinIF__Can_your_..._Copy_/        # LaTeX paper source (Overleaf)
-│   ├── main.tex
-│   ├── sections/
-│   └── ref.bib
-│
-└── raw_contexts_batch1/              # Raw Chinese financial documents
+└── outputs/                           # Generated figures
+    ├── paper_figures/
+    │   ├── scripts/                   # Figure generation scripts
+    │   └── pdf/                       # Output PDFs
+    ├── figures/                       # Analysis figures (PNG + PDF)
+    └── analysis/                      # Comparative analysis outputs
 ```
 
 ## Pipeline Flow
