@@ -43,13 +43,13 @@ FinIF-pipeline/
     │   └── ...                            # SFT repair & export utilities
     │
     ├── pipeline/                          # Data construction & SFT pipeline
-    │   ├── step1_prepare_contexts.py      # Extract & normalize financial contexts
-    │   ├── step3_assemble_constraints.py  # Sample IF constraints per query
-    │   ├── step4_scale_to_2000.py         # Scale to 2000+ training samples
-    │   ├── step5_export.py                # Export to messages format
-    │   ├── step6_expand_benchmark.py      # Expand benchmark with regulatory docs
-    │   ├── step8_redistribute.py          # Redistribute train/test split
-    │   ├── step9_gen_sft_responses.py     # Generate teacher responses (GPT-5)
+    │   ├── step1_prepare_contexts.py      # Extract & normalize context pool
+    │   ├── step3_assemble_constraints.py  # Constraint sampling engine (G1-G10 + F1-F12)
+    │   ├── step4_scale_to_2000.py         # Synthesize queries + sample constraints + assemble prompts
+    │   ├── step5_export.py                # Export to messages + metadata format
+    │   ├── step6_expand_benchmark.py      # Expand benchmark (54→307) with real docs + hand-authored queries
+    │   ├── step8_redistribute.py          # Redistribute train/test context partition
+    │   ├── step9_gen_sft_responses.py     # Generate teacher responses (GPT-5, 1Q多A)
     │   ├── gen_responses_ds.py            # Multi-model response generation
     │   ├── gen_async.py                   # Async parallel generation
     │   ├── score_sft_responses.py         # SFT quality scoring + LLaMA-Factory export
@@ -76,7 +76,7 @@ FinIF-pipeline/
     │   └── analysis/                      # Analysis figures (PNG + PDF)
     │
     └── raw_contexts/                      # Source financial documents
-        ├── *.pdf                           # SEC, FDIC, FinCEN, 证监会, 上市公司公告
+        ├── *.pdf                           # 证监会处罚书、上市公司年报/公告、问询函
         ├── *.png                           # Statistical bureau data screenshots
         └── *.md                            # Court case documents
 ```
@@ -88,23 +88,27 @@ The complete FinIF pipeline consists of 4 major phases:
 ### Phase 1: Data Construction
 
 ```
-Real Financial Documents (SEC, FDIC, FinCEN, 证监会, 上市公司公告)
+Real Financial Documents (证监会处罚书, 上市公司年报, 问询函, 国家统计局数据)
   │
   ▼
-step1_prepare_contexts.py ── Extract & normalize contexts
+step1_prepare_contexts.py ── Extract & normalize context pool
   │
   ▼
-step3_assemble_constraints.py ── Sample IF constraints per query
-  │                               (visible constraints + hidden checkers)
+step4_scale_to_2000.py ── Synthesize queries from contexts (template + variant)
+  │                        → Sample visible constraints + hidden checkers per query
+  │                        → Assemble full prompt (context + query + constraint block)
+  │                        → Strict context partition: A=benchmark, B=training
   ▼
-step4_scale_to_2000.py ── Scale to 2000+ training samples
-  │                        (strict context partition: A=benchmark, B=training)
+step3_assemble_constraints.py ── Constraint sampling engine
+  │                               (G1-G10 general + F6-F12 financial soft
+  │                                + F1-F5 hidden hard checkers)
   ▼
-step5_export.py ── Export to messages format
+step5_export.py ── Export to messages + metadata format
   │
   ▼
-step6_expand_benchmark.py ── Expand benchmark using real regulatory documents
-  │
+step6_expand_benchmark.py ── Expand benchmark (54 → 307 items) using
+  │                           real regulatory & statistical documents
+  │                           (hand-authored queries + constraints)
   ▼
 step8_redistribute.py ── Redistribute contexts (train/test split)
 ```
@@ -247,12 +251,12 @@ export SILICONFLOW_API_KEY="your-siliconflow-key"
 export OPENAI_API_KEY="your-openai-key"
 
 # Phase 1: Data Construction
-python FinIF/pipeline/step1_prepare_contexts.py
-python FinIF/pipeline/step3_assemble_constraints.py
-python FinIF/pipeline/step4_scale_to_2000.py
-python FinIF/pipeline/step5_export.py
-python FinIF/pipeline/step6_expand_benchmark.py
-python FinIF/pipeline/step8_redistribute.py
+python FinIF/pipeline/step1_prepare_contexts.py        # extract context pool
+python FinIF/pipeline/step3_assemble_constraints.py    # constraint sampling engine
+python FinIF/pipeline/step4_scale_to_2000.py           # synthesize queries + assemble prompts
+python FinIF/pipeline/step5_export.py                  # export messages format
+python FinIF/pipeline/step6_expand_benchmark.py        # expand benchmark with real docs
+python FinIF/pipeline/step8_redistribute.py            # redistribute train/test split
 
 # Phase 2: Teacher Response Generation
 python FinIF/pipeline/step9_gen_sft_responses.py --mode training --model gpt-5 --n 3
